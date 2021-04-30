@@ -31,10 +31,14 @@ class XW540_T260 : public AddressTableBase
 public:
   XW540_T260()
   : AddressTableBase(
-      64, 116, std::numeric_limits<uint16_t>::quiet_NaN(), 132, 128,
-      std::numeric_limits<uint16_t>::quiet_NaN(), std::numeric_limits<uint16_t>::quiet_NaN(), 146)
-  {
-  }
+      64, 
+      116,
+      boost::none,
+      132,
+      128,
+      boost::none,
+      boost::none,
+      146) {}
 };
 }  // namespace address_tables
 

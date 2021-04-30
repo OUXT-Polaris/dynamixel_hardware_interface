@@ -64,15 +64,7 @@ DynamixelHardwareInterface::export_state_interfaces()
 {
   std::vector<hardware_interface::StateInterface> state_interfaces = {};
   for (const auto motor : motors_) {
-    RCLCPP_INFO_STREAM(
-      rclcpp::get_logger("dynamixel_hardware_interface"),
-      "appending state interface in : " << motor->joint_name);
     motor->appendStateInterfaces(state_interfaces);
-  }
-  for (const auto interface : state_interfaces) {
-    RCLCPP_INFO_STREAM(
-      rclcpp::get_logger("dynamixel_hardware_interface"),
-      "apend state interface : " << interface.get_name());
   }
   RCLCPP_INFO_STREAM(
     rclcpp::get_logger("dynamixel_hardware_interface"), state_interfaces.size()
@@ -87,11 +79,6 @@ DynamixelHardwareInterface::export_command_interfaces()
   for (const auto motor : motors_) {
     motor->appendCommandInterfaces(command_interfaces);
   }
-  /*
-  for(const auto interface : command_interfaces) {
-    RCLCPP_INFO_STREAM(rclcpp::get_logger("dynamixel_hardware_interface"), "apend state interface : " << interface.get_name());
-  }
-  */
   return command_interfaces;
 }
 

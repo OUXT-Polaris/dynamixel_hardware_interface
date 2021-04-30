@@ -58,7 +58,7 @@ Result MotorBase::configure()
 void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInterface> & interfaces)
 {
   for (const auto operation : Operation()) {
-    if (!address_table_->addressExists(operation)) {
+    if (address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::PRESENT_POSITION:
           interfaces.emplace_back(hardware_interface::StateInterface(
@@ -75,7 +75,7 @@ void MotorBase::appendCommandInterfaces(
   std::vector<hardware_interface::CommandInterface> & interfaces)
 {
   for (const auto operation : Operation()) {
-    if (!address_table_->addressExists(operation)) {
+    if (address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::GOAL_POSITION:
           interfaces.emplace_back(hardware_interface::CommandInterface(
@@ -90,38 +90,39 @@ void MotorBase::appendCommandInterfaces(
 
 Result MotorBase::torqueEnable(bool enable)
 {
-  if (!address_table_->addressExists(Operation::TORQUE_ENABLE)) {
+  const auto address = address_table_->getAddress(Operation::TORQUE_ENABLE);
+  if (!address) {
     return Result("TORQUE_ENABLE operation does not support in " + toString(motor_type), false);
   }
   uint8_t error = 0;
-  const auto address = address_table_->getAddress(Operation::TORQUE_ENABLE);
   const auto result =
-    packet_handler_->write1ByteTxRx(port_handler_.get(), id, address, enable, &error);
+    packet_handler_->write1ByteTxRx(port_handler_.get(), id, address.get(), enable, &error);
   return getResult(result, error);
 }
 
 Result MotorBase::setGoalPosition(double goal_position)
 {
-  if (!address_table_->addressExists(Operation::GOAL_POSITION)) {
+  const auto address = address_table_->getAddress(Operation::GOAL_POSITION);
+  if (!address) {
     return Result("TORQUE_ENABLE operation does not support in " + toString(motor_type), false);
   }
   uint8_t error = 0;
-  const auto address = address_table_->getAddress(Operation::GOAL_POSITION);
   const auto result = packet_handler_->write2ByteTxRx(
-    port_handler_.get(), id, address, radianToPosition(goal_position), &error);
+    port_handler_.get(), id, address.get(), radianToPosition(goal_position), &error);
   return getResult(result, error);
 }
 
 Result MotorBase::updateJointPosition()
 {
-  if (!address_table_->addressExists(Operation::PRESENT_POSITION)) {
+  const auto address = address_table_->getAddress(Operation::PRESENT_POSITION);
+  if (!address) {
     return Result("PRESENT_POSITION operation does not support in " + toString(motor_type), false);
   }
   uint8_t error = 0;
   uint16_t present_position = 0;
-  const auto address = address_table_->getAddress(Operation::PRESENT_POSITION);
-  const auto result =
-    packet_handler_->read2ByteTxRx(port_handler_.get(), id, address, &present_position, &error);
+
+  const auto result = packet_handler_->read2ByteTxRx(
+    port_handler_.get(), id, address.get(), &present_position, &error);
   joint_position_ = positionToRadian(present_position);
   return getResult(result, error);
 }

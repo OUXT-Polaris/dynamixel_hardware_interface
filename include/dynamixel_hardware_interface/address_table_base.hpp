@@ -15,6 +15,7 @@
 #ifndef DYNAMIXEL_HARDWARE_INTERFACE__ADDRESS_TABLE_BASE_HPP_
 #define DYNAMIXEL_HARDWARE_INTERFACE__ADDRESS_TABLE_BASE_HPP_
 
+#include <boost/optional.hpp>
 #include <cmath>
 #include <dynamixel_hardware_interface/constants.hpp>
 #include <limits>
@@ -24,19 +25,13 @@ namespace dynamixel_hardware_interface
 class AddressTableBase
 {
 public:
-  const uint16_t ADDR_TORQUE_ENABLE = std::numeric_limits<uint16_t>::quiet_NaN();
-  const uint16_t ADDR_GOAL_POSITION = std::numeric_limits<uint16_t>::quiet_NaN();
-  const uint16_t ADDR_MOVING_SPEED = std::numeric_limits<uint16_t>::quiet_NaN();
-  const uint16_t ADDR_PRESENT_POSITION = std::numeric_limits<uint16_t>::quiet_NaN();
-  const uint16_t ADDR_PRESENT_SPEED = std::numeric_limits<uint16_t>::quiet_NaN();
-  const uint16_t ADDR_PRESENT_LOAD = std::numeric_limits<uint16_t>::quiet_NaN();
-  const uint16_t ADDR_PRESENT_VOLTAGE = std::numeric_limits<uint16_t>::quiet_NaN();
-  const uint16_t ADDR_PRESENT_TEMPERATURE = std::numeric_limits<uint16_t>::quiet_NaN();
   AddressTableBase() = delete;
   explicit AddressTableBase(
-    uint16_t ADDR_TORQUE_ENABLE, uint16_t ADDR_GOAL_POSITION, uint16_t ADDR_MOVING_SPEED,
-    uint16_t ADDR_PRESENT_POSITION, uint16_t ADDR_PRESENT_SPEED, uint16_t ADDR_PRESENT_LOAD,
-    uint16_t ADDR_PRESENT_VOLTAGE, uint16_t ADDR_PRESENT_TEMPERATURE)
+    boost::optional<uint16_t> ADDR_TORQUE_ENABLE, boost::optional<uint16_t> ADDR_GOAL_POSITION,
+    boost::optional<uint16_t> ADDR_MOVING_SPEED, boost::optional<uint16_t> ADDR_PRESENT_POSITION,
+    boost::optional<uint16_t> ADDR_PRESENT_SPEED, boost::optional<uint16_t> ADDR_PRESENT_LOAD,
+    boost::optional<uint16_t> ADDR_PRESENT_VOLTAGE,
+    boost::optional<uint16_t> ADDR_PRESENT_TEMPERATURE)
   : ADDR_TORQUE_ENABLE(ADDR_TORQUE_ENABLE),
     ADDR_GOAL_POSITION(ADDR_GOAL_POSITION),
     ADDR_MOVING_SPEED(ADDR_MOVING_SPEED),
@@ -47,7 +42,7 @@ public:
     ADDR_PRESENT_TEMPERATURE(ADDR_PRESENT_TEMPERATURE)
   {
   }
-  uint16_t getAddress(const Operation & operaiton) const
+  boost::optional<uint16_t> getAddress(const Operation & operaiton) const
   {
     switch (operaiton) {
       case Operation::TORQUE_ENABLE:
@@ -67,13 +62,26 @@ public:
       case Operation::PRESENT_TEMPERATURE:
         return ADDR_PRESENT_TEMPERATURE;
       default:
-        return std::numeric_limits<uint16_t>::quiet_NaN();
+        return boost::none;
     }
   }
-  bool addressExists(const Operation & operaiton) const
+  bool addressExists(const Operation & operation) const
   {
-    return !std::isnan(getAddress(operaiton));
+    if (getAddress(operation)) {
+      return true;
+    }
+    return false;
   }
+
+private:
+  const boost::optional<uint16_t> ADDR_TORQUE_ENABLE = boost::none;
+  const boost::optional<uint16_t> ADDR_GOAL_POSITION = boost::none;
+  const boost::optional<uint16_t> ADDR_MOVING_SPEED = boost::none;
+  const boost::optional<uint16_t> ADDR_PRESENT_POSITION = boost::none;
+  const boost::optional<uint16_t> ADDR_PRESENT_SPEED = boost::none;
+  const boost::optional<uint16_t> ADDR_PRESENT_LOAD = boost::none;
+  const boost::optional<uint16_t> ADDR_PRESENT_VOLTAGE = boost::none;
+  const boost::optional<uint16_t> ADDR_PRESENT_TEMPERATURE = boost::none;
 };
 }  // namespace dynamixel_hardware_interface
 
