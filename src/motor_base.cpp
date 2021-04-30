@@ -61,7 +61,8 @@ void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInter
   }
 }
 
-void MotorBase::appendCommandInterfaces(std::vector<hardware_interface::CommandInterface> & interfaces)
+void MotorBase::appendCommandInterfaces(
+  std::vector<hardware_interface::CommandInterface> & interfaces)
 {
   for (const auto operation : Operation()) {
     if (!address_table_->addressExists(operation)) {
