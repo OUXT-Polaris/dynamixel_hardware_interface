@@ -12,9 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <dynamixel_hardware_interface/motors/motors.hpp>
+#ifndef DYNAMIXEL_HARDWARE_INTERFACE__MOTOR_BASE_HPP_
+#define DYNAMIXEL_HARDWARE_INTERFACE__MOTOR_BASE_HPP_
 
 namespace dynamixel_hardware_interface
 {
+}  //  namespace dynamixel_hardware_interface
 
-}  // namespace dynamixel_hardware_interface
+#endif  // DYNAMIXEL_HARDWARE_INTERFACE__MOTOR_BASE_HPP_

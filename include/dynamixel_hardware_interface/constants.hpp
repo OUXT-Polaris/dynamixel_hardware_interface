@@ -31,6 +31,6 @@ constexpr double TO_SPEED_RAD_PER_MIN = TO_SPEED_REV_PER_MIN * 2.0 * M_PI;
 constexpr double TO_SPEED_RAD_PER_SEC = TO_SPEED_RAD_PER_MIN / 60.0;
 constexpr double TO_LOAD_PERCENT = 0.1;
 constexpr double TO_VOLTAGE = 0.1;
-}
+}  //  namespace dynamixel_hardware_interface
 
-#endif // DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_
+#endif  // DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_
