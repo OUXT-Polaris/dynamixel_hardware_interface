@@ -16,18 +16,32 @@
 
 #include <memory>
 #include <string>
+#include <vector>
 
 namespace dynamixel_hardware_interface
 {
 hardware_interface::return_type DynamixelHardwareInterface::configure(
   const hardware_interface::HardwareInfo & info)
 {
-  port_name_ = info_.hardware_parameters.at("port_name");
-  baudrate_ = std::stoi(info_.hardware_parameters.at("baudrate"));
+  info_ = info;
+  RCLCPP_INFO(
+    rclcpp::get_logger("dynamixel_hardware_interface"),
+    "configure hardware " + info.name);
+  for (const auto hardware_parameter : info_.hardware_parameters) {
+    RCLCPP_INFO_STREAM(
+      rclcpp::get_logger(
+        "dynamixel_hardware_interface"), "parameter : " << hardware_parameter.first <<
+        " = " << hardware_parameter.second);
+  }
+  port_name_ = getHardwareParameter<std::string>("port_name");
+  baudrate_ = getHardwareParameter<int>("baudrate");
+  RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "initialize port handler");
   port_handler_ = std::shared_ptr<dynamixel::PortHandler>(
     dynamixel::PortHandler::getPortHandler(port_name_.c_str()));
+  RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "initialize packet handler");
   packet_handler_ = std::shared_ptr<dynamixel::PacketHandler>(
     dynamixel::PacketHandler::getPacketHandler(PROTOCOL_VERSION));
+  RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "configure each motors");
   for (const auto joint : info.joints) {
     const auto motor = constructMotorInstance(joint);
     const auto result = motor->configure();
@@ -40,7 +54,8 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
   return hardware_interface::return_type::OK;
 }
 
-std::vector<hardware_interface::StateInterface> DynamixelHardwareInterface::export_state_interfaces()
+std::vector<hardware_interface::StateInterface> DynamixelHardwareInterface::
+export_state_interfaces()
 {
   std::vector<hardware_interface::StateInterface> state_interfaces = {};
   for (const auto motor : motors_) {
@@ -71,8 +86,11 @@ const
 std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
   const hardware_interface::ComponentInfo & info) const
 {
+  RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "constructing motor instance");
   if (info.type == "joint") {
-    const auto motor_type = strToSupportMotorsEnum(info.parameters.at("motor_type"));
+    std::string motor_type_str = "";
+    getParameter("motor_type", info, motor_type_str);
+    const auto motor_type = strToSupportMotorsEnum(motor_type_str);
     uint8_t id = static_cast<uint8_t>(std::stoi(info.parameters.at("id")));
     switch (motor_type) {
       case SupportedMotors::XW54_T260:
@@ -93,4 +111,25 @@ hardware_interface::return_type DynamixelHardwareInterface::start()
   status_ = hardware_interface::status::STARTED;
   return hardware_interface::return_type::OK;
 }
+
+hardware_interface::return_type DynamixelHardwareInterface::stop()
+{
+  return hardware_interface::return_type::OK;
+}
+
+hardware_interface::return_type DynamixelHardwareInterface::read()
+{
+  return hardware_interface::return_type::OK;
+}
+
+hardware_interface::return_type DynamixelHardwareInterface::write()
+{
+  return hardware_interface::return_type::OK;
+}
 }  // namespace dynamixel_hardware_interface
+
+#include "pluginlib/class_list_macros.hpp"
+
+PLUGINLIB_EXPORT_CLASS(
+  dynamixel_hardware_interface::DynamixelHardwareInterface,
+  hardware_interface::SystemInterface)

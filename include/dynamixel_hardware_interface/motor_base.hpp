@@ -29,6 +29,8 @@
 
 #include <memory>
 #include <string>
+#include <limits>
+#include <vector>
 
 namespace dynamixel_hardware_interface
 {

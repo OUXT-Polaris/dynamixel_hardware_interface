@@ -66,6 +66,55 @@ private:
   std::string port_name_;
   int baudrate_;
   SupportedMotors strToSupportMotorsEnum(const std::string & motor_type) const;
+
+
+  void getParameter(
+    const std::string & key,
+    const hardware_interface::ComponentInfo & info,
+    std::string & parameter) const
+  {
+    try {
+      parameter = info.parameters.at(key);
+    } catch (std::out_of_range & e) {
+      RCLCPP_ERROR_STREAM(
+        rclcpp::get_logger(
+          "dynamixel_hardware_interface"), "parameter : " << key << " does not exist.");
+      throw e;
+    }
+  }
+  void getParameter(
+    const std::string & key,
+    const hardware_interface::ComponentInfo & info,
+    int & parameter) const
+  {
+    std::string param_string;
+    getParameter(key, info, param_string);
+    parameter = std::stoi(param_string);
+  }
+  template<typename T>
+  T getHardwareParameter(const std::string key) const
+  {
+    T param;
+    getHardwareParameter(key, param);
+    return param;
+  }
+  void getHardwareParameter(const std::string & key, std::string & parameter) const
+  {
+    try {
+      parameter = info_.hardware_parameters.at(key);
+    } catch (std::out_of_range & e) {
+      RCLCPP_ERROR_STREAM(
+        rclcpp::get_logger(
+          "dynamixel_hardware_interface"), "hardware parameter : " << key << " does not exist.");
+      throw e;
+    }
+  }
+  void getHardwareParameter(const std::string & key, int & parameter) const
+  {
+    std::string param_string;
+    getHardwareParameter(key, param_string);
+    parameter = std::stoi(param_string);
+  }
   std::shared_ptr<MotorBase> constructMotorInstance(
     const hardware_interface::ComponentInfo & info) const;
   std::vector<std::shared_ptr<MotorBase>> motors_;

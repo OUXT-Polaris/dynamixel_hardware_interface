@@ -21,7 +21,7 @@
 #include <cmath>
 #include <string>
 #include <limits>
-
+#include <memory>
 
 namespace dynamixel_hardware_interface
 {
@@ -30,7 +30,7 @@ namespace address_tables
 class XW54_T260 : public AddressTableBase
 {
 public:
-  explicit XW54_T260()
+  XW54_T260()
   : AddressTableBase(
       64,
       116,
@@ -58,7 +58,7 @@ public:
       address_tables::XW54_T260(), baudrate, id, port_handler, packet_handler)
   {}
 };
-}
+}  // namespace motors
 }  // namespace dynamixel_hardware_interface
 
 #endif  // DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__XW54_T260_HPP_
