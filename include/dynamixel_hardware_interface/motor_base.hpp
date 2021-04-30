@@ -58,9 +58,11 @@ public:
   }
   ~MotorBase();
   Result torqueEnable(bool enable);
+  Result setGoalPosition(double goal_position);
 
 private:
   Result getResult(int communication_result, uint8_t packet_error);
+  uint16_t radianToPosition(double radian) const;
   std::shared_ptr<AddressTableBase> address_table_;
   std::shared_ptr<dynamixel::PortHandler> port_handler_;
   std::shared_ptr<dynamixel::PacketHandler> packet_handler_;

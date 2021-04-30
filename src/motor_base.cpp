@@ -20,6 +20,11 @@ MotorBase::~MotorBase()
 {
 }
 
+uint16_t MotorBase::radianToPosition(double radian) const
+{
+  return radian * TO_DXL_POS + DXL_HOME_POSITION;
+}
+
 Result MotorBase::getResult(int communication_result, uint8_t packet_error)
 {
   if (communication_result != COMM_SUCCESS) {
@@ -38,7 +43,20 @@ Result MotorBase::torqueEnable(bool enable)
   }
   uint8_t error = 0;
   const auto address = address_table_->getAddress(Operation::TORQUE_ENABLE);
-  const auto result = packet_handler_->write1ByteTxRx(port_handler_.get(), id, address, enable, &error);
+  const auto result = packet_handler_->write1ByteTxRx(
+    port_handler_.get(), id, address, enable, &error);
+  return getResult(result, error);
+}
+
+Result MotorBase::setGoalPosition(double goal_position)
+{
+  if (!address_table_->addressExists(Operation::GOAL_POSITION)) {
+    return Result("TORQUE_ENABLE operation does not support in " + motor_type, false);
+  }
+  uint8_t error = 0;
+  const auto address = address_table_->getAddress(Operation::GOAL_POSITION);
+  const auto result = packet_handler_->write2ByteTxRx(
+    port_handler_.get(), id, address, radianToPosition(goal_position), &error);
   return getResult(result, error);
 }
 }  //  namespace dynamixel_hardware_interface
