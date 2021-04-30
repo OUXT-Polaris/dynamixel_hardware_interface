@@ -90,6 +90,16 @@ private:
     getParameter(key, info, param_string);
     parameter = std::stoi(param_string);
   }
+  void getParameter(
+    const std::string & key, const hardware_interface::ComponentInfo & info, bool & parameter) const
+  {
+    parameter = false;
+    std::string param_string;
+    getParameter(key, info, param_string);
+    if (param_string == "true" || param_string == "True") {
+      parameter = true;
+    }
+  }
   template <typename T>
   T getHardwareParameter(const std::string key) const
   {
@@ -112,6 +122,15 @@ private:
     std::string param_string;
     getHardwareParameter(key, param_string);
     parameter = std::stoi(param_string);
+  }
+  void getHardwareParameter(const std::string & key, bool & parameter) const
+  {
+    parameter = false;
+    std::string param_string;
+    getHardwareParameter(key, param_string);
+    if (param_string == "true" || param_string == "True") {
+      parameter = true;
+    }
   }
   std::shared_ptr<MotorBase> constructMotorInstance(
     const hardware_interface::ComponentInfo & info) const;

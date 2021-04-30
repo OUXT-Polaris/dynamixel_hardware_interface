@@ -39,12 +39,12 @@ class XW540_T260 : public MotorBase
 {
 public:
   explicit XW540_T260(
-    const std::string joint_name, int baudrate, uint8_t id,
+    const std::string joint_name, bool enable_dummy, int baudrate, uint8_t id,
     std::shared_ptr<dynamixel::PortHandler> port_handler,
     std::shared_ptr<dynamixel::PacketHandler> packet_handler)
   : MotorBase(
-      SupportedMotors::XW540_T260, joint_name, address_tables::XW540_T260(), baudrate, id,
-      port_handler, packet_handler)
+      SupportedMotors::XW540_T260, joint_name, enable_dummy, address_tables::XW540_T260(), baudrate,
+      id, port_handler, packet_handler)
   {
   }
 };

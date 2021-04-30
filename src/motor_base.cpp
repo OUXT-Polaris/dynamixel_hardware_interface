@@ -139,12 +139,17 @@ Result MotorBase::updateJointPosition()
   if (!address) {
     return Result("PRESENT_POSITION operation does not support in " + toString(motor_type), false);
   }
-  uint8_t error = 0;
-  uint16_t present_position = 0;
+  if (enable_dummy) {
+    joint_position_ = goal_position_;
+    return Result("", true);
+  } else {
+    uint8_t error = 0;
+    uint16_t present_position = 0;
 
-  const auto result = packet_handler_->read2ByteTxRx(
-    port_handler_.get(), id, address.get(), &present_position, &error);
-  joint_position_ = positionToRadian(present_position);
-  return getResult(result, error);
+    const auto result = packet_handler_->read2ByteTxRx(
+      port_handler_.get(), id, address.get(), &present_position, &error);
+    joint_position_ = positionToRadian(present_position);
+    return getResult(result, error);
+  }
 }
 }  //  namespace dynamixel_hardware_interface

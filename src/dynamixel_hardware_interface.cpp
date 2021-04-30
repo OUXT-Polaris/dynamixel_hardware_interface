@@ -110,8 +110,9 @@ std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
     const auto id = static_cast<uint8_t>(getParameter<int>("id", info));
     switch (motor_type) {
       case SupportedMotors::XW540_T260:
-        return std::make_shared<MotorBase>(
-          motors::XW540_T260(info.name, baudrate_, id, port_handler_, packet_handler_));
+        return std::make_shared<MotorBase>(motors::XW540_T260(
+          info.name, getHardwareParameter<bool>("enable_dummy"), baudrate_, id, port_handler_,
+          packet_handler_));
         break;
       default:
         break;

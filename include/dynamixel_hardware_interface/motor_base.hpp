@@ -47,16 +47,19 @@ class MotorBase
 public:
   const SupportedMotors motor_type;
   const std::string joint_name;
+  const bool enable_dummy;
   const int baudrate;
   const uint8_t id;
   MotorBase() = delete;
   template <typename AddressTable>
   MotorBase(
-    const SupportedMotors & motor_type, const std::string & joint_name, const AddressTable & table,
-    int baudrate, uint8_t id, std::shared_ptr<dynamixel::PortHandler> port_handler,
+    const SupportedMotors & motor_type, const std::string & joint_name, const bool enable_dummy,
+    const AddressTable & table, int baudrate, uint8_t id,
+    std::shared_ptr<dynamixel::PortHandler> port_handler,
     std::shared_ptr<dynamixel::PacketHandler> packet_handler)
   : motor_type(motor_type),
     joint_name(joint_name),
+    enable_dummy(enable_dummy),
     baudrate(baudrate),
     id(id),
     port_handler_(port_handler),
