@@ -38,8 +38,7 @@ std::vector<hardware_interface::StateInterface> DynamixelHardwareInterface::expo
 {
   std::vector<hardware_interface::StateInterface> state_interfaces = {};
   for (const auto motor : motors_) {
-    const auto interfaces = motor->getStateInterfaces();
-    std::copy(interfaces.begin(), interfaces.end(), std::back_inserter(state_interfaces));
+    motor->appendStateInterfaces(state_interfaces);
   }
   return state_interfaces;
 }
@@ -48,6 +47,9 @@ std::vector<hardware_interface::CommandInterface> DynamixelHardwareInterface::
 export_command_interfaces()
 {
   std::vector<hardware_interface::CommandInterface> command_interfaces = {};
+  for (const auto motor : motors_) {
+    motor->appendCommandInterfaces(command_interfaces);
+  }
   return command_interfaces;
 }
 

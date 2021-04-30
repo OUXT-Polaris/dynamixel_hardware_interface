@@ -72,8 +72,8 @@ public:
   double getJointPosition() const {return joint_position_;}
   double getGoalPosition() const {return goal_position_;}
   Result updateJointPosition();
-  std::vector<hardware_interface::StateInterface> getStateInterfaces();
-  std::vector<hardware_interface::CommandInterface> getCommandInterfaces();
+  void appendStateInterfaces(std::vector<hardware_interface::StateInterface> & interfaces);
+  void appendCommandInterfaces(std::vector<hardware_interface::CommandInterface> & interfaces);
 
 private:
   Result getResult(int communication_result, uint8_t packet_error);
