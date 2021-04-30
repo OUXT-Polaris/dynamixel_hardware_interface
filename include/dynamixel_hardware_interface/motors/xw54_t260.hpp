@@ -15,6 +15,7 @@
 #ifndef DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__XW54_T260_HPP_
 #define DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__XW54_T260_HPP_
 
+#include <dynamixel_hardware_interface/motor_base.hpp>
 #include <dynamixel_hardware_interface/address_table_base.hpp>
 
 #include <cmath>
@@ -27,7 +28,7 @@ namespace address_tables
 class XW54_T260 : public AddressTableBase
 {
 public:
-  XW54_T260()
+  explicit XW54_T260()
   : AddressTableBase(
       64,
       116,
@@ -40,6 +41,17 @@ public:
   {}
 };
 }  // namespace address_tables
+
+namespace motors
+{
+class XW54_T260 : public MotorBase
+{
+public:
+  explicit XW54_T260(int baudrate, uint8_t id)
+  : MotorBase("XW540-T260", address_tables::XW54_T260(), baudrate, id)
+  {}
+};
+}
 }  // namespace dynamixel_hardware_interface
 
 #endif  // DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__XW54_T260_HPP_

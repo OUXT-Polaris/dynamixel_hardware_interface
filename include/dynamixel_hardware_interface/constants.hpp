@@ -17,6 +17,8 @@
 
 #include <cmath>
 #include <cstdint>
+#include <string>
+#include <stdexcept>
 
 namespace dynamixel_hardware_interface
 {
@@ -31,6 +33,23 @@ constexpr double TO_SPEED_RAD_PER_MIN = TO_SPEED_REV_PER_MIN * 2.0 * M_PI;
 constexpr double TO_SPEED_RAD_PER_SEC = TO_SPEED_RAD_PER_MIN / 60.0;
 constexpr double TO_LOAD_PERCENT = 0.1;
 constexpr double TO_VOLTAGE = 0.1;
+
+enum class Operation
+{
+  TORQUE_ENABLE,
+  GOAL_POSITION,
+  MOVING_SPEED,
+  PRESENT_POSITION,
+  PRESENT_SPEED,
+  PRESENT_LOAD,
+  PRESENT_VOLTAGE,
+  PRESENT_TEMPERATURE
+};
+
+enum class SupportedMotors
+{
+  XW54_T260
+};
 }  //  namespace dynamixel_hardware_interface
 
 #endif  // DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_

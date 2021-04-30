@@ -22,18 +22,6 @@
 
 namespace dynamixel_hardware_interface
 {
-enum class Operation
-{
-  TORQUE_ENABLE,
-  GOAL_POSITION,
-  MOVING_SPEED,
-  PRESENT_POSITION,
-  PRESENT_SPEED,
-  PRESENT_LOAD,
-  PRESENT_VOLTAGE,
-  PRESENT_TEMPERATURE
-};
-
 class AddressTableBase
 {
 public:

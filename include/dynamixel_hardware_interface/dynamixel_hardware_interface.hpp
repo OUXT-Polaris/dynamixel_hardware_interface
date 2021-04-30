@@ -20,6 +20,8 @@
 
 #include <rclcpp/rclcpp.hpp>
 
+#include <dynamixel_sdk/dynamixel_sdk.h>
+
 #include <hardware_interface/base_interface.hpp>
 #include <hardware_interface/handle.hpp>
 #include <hardware_interface/hardware_info.hpp>
@@ -28,6 +30,8 @@
 #include <hardware_interface/types/hardware_interface_status_values.hpp>
 
 #include <vector>
+#include <memory>
+#include <string>
 
 namespace dynamixel_hardware_interface
 {
@@ -59,6 +63,14 @@ public:
   hardware_interface::return_type write() override;
 
 private:
+  std::string port_name_;
+  int baudrate_;
+  SupportedMotors strToSupportMotorsEnum(const std::string & motor_type) const;
+  std::shared_ptr<MotorBase> constructMotorInstance(
+    const hardware_interface::ComponentInfo & info) const;
+  std::vector<std::shared_ptr<MotorBase>> motors_;
+  std::shared_ptr<dynamixel::PortHandler> port_handler_;
+  std::shared_ptr<dynamixel::PacketHandler> packet_handler_;
 };
 }  // namespace dynamixel_hardware_interface
 
