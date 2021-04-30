@@ -67,7 +67,7 @@ public:
     RCLCPP_INFO_STREAM(
       rclcpp::get_logger("dynamixel_hardware_interface"), "start constructing motor instance");
     RCLCPP_INFO_STREAM(
-      rclcpp::get_logger("dynamixel_hardware_interface"), "joint_name :" << joint_name);
+      rclcpp::get_logger("dynamixel_hardware_interface"), "joint_name : " << joint_name);
     address_table_ = std::make_shared<AddressTableBase>(table);
     RCLCPP_INFO_STREAM(
       rclcpp::get_logger("dynamixel_hardware_interface"), "end constructing motor instance");

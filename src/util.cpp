@@ -11,3 +11,21 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+#include <dynamixel_hardware_interface/util.hpp>
+
+namespace dynamixel_hardware_interface
+{
+const std::string toString(const SupportedMotors motor)
+{
+  switch (motor) {
+    case SupportedMotors::XW540_T260:
+      return "XW540-T260";
+      break;
+    case SupportedMotors::INVALID:
+      throw std::runtime_error("invalid moter type");
+      break;
+  }
+  return "";
+}
+}  //  namespace dynamixel_hardware_interface

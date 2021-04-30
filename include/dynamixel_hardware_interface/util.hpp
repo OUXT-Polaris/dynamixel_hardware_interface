@@ -15,4 +15,11 @@
 #ifndef DYNAMIXEL_HARDWARE_INTERFACE__UTIL_HPP_
 #define DYNAMIXEL_HARDWARE_INTERFACE__UTIL_HPP_
 
+#include <dynamixel_hardware_interface/constants.hpp>
+
+namespace dynamixel_hardware_interface
+{
+const std::string toString(const SupportedMotors motor);
+}  //  namespace dynamixel_hardware_interface
+
 #endif  // DYNAMIXEL_HARDWARE_INTERFACE__UTIL_HPP_

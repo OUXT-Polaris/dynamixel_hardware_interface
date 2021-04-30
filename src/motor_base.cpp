@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include <dynamixel_hardware_interface/motor_base.hpp>
+#include <dynamixel_hardware_interface/util.hpp>
 #include <hardware_interface/types/hardware_interface_return_values.hpp>
 #include <hardware_interface/types/hardware_interface_type_values.hpp>
 #include <string>

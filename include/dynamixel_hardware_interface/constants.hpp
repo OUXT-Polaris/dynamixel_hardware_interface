@@ -61,20 +61,6 @@ enum class SupportedMotors { XW540_T260, INVALID };
 
 GENERATE_ENUM_ITERATOR(SupportedMotors, XW540_T260)
 
-const std::string toString(const SupportedMotors motor)
-{
-  switch (motor) {
-    case SupportedMotors::XW540_T260:
-      return "XW540-T260";
-      break;
-    case SupportedMotors::INVALID:
-      throw std::runtime_error("invalid moter type");
-      break;
-  }
-  return "";
-}
-
-// GENERATE_ENUM_ITERATOR(SupportedMotors)
 }  //  namespace dynamixel_hardware_interface
 
 #endif  // DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_
