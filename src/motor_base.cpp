@@ -14,15 +14,28 @@
 
 #include <dynamixel_hardware_interface/motor_base.hpp>
 
+#include <hardware_interface/types/hardware_interface_return_values.hpp>
+#include <hardware_interface/types/hardware_interface_type_values.hpp>
+
 namespace dynamixel_hardware_interface
 {
 MotorBase::~MotorBase()
 {
 }
 
+double MotorBase::getJointPosition() const
+{
+  return joint_position_;
+}
+
 uint16_t MotorBase::radianToPosition(double radian) const
 {
   return radian * TO_DXL_POS + DXL_HOME_POSITION;
+}
+
+double MotorBase::positionToRadian(const uint16_t position) const
+{
+  return (position - DXL_HOME_POSITION) * TO_RADIANS;
 }
 
 Result MotorBase::getResult(int communication_result, uint8_t packet_error)
@@ -41,7 +54,10 @@ std::vector<hardware_interface::StateInterface> MotorBase::getStateInterfaces()
   std::vector<hardware_interface::StateInterface> interfaces = {};
   for (const auto operation : Operation()) {
     switch (operation) {
-      case Operation::GOAL_POSITION:
+      case Operation::PRESENT_POSITION:
+        interfaces.emplace_back(
+          hardware_interface::StateInterface(
+            joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
         break;
       default:
         break;
@@ -71,6 +87,21 @@ Result MotorBase::setGoalPosition(double goal_position)
   const auto address = address_table_->getAddress(Operation::GOAL_POSITION);
   const auto result = packet_handler_->write2ByteTxRx(
     port_handler_.get(), id, address, radianToPosition(goal_position), &error);
+  return getResult(result, error);
+}
+
+Result MotorBase::updateJointPosition()
+{
+  if (!address_table_->addressExists(Operation::PRESENT_POSITION)) {
+    return Result("PRESENT_POSITION operation does not support in " + motor_type, false);
+  }
+  uint8_t error = 0;
+  uint16_t present_position = 0;
+  const auto address = address_table_->getAddress(Operation::PRESENT_POSITION);
+  const auto result = packet_handler_->read2ByteTxRx(
+    port_handler_.get(),
+    id, address, &present_position, &error);
+  joint_position_ = positionToRadian(present_position);
   return getResult(result, error);
 }
 }  //  namespace dynamixel_hardware_interface
