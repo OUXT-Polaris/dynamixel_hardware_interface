@@ -23,11 +23,11 @@ import xacro
 
 from pathlib import Path
 
-share_dir_path = os.path.join(get_package_share_directory('dynamixel_hardware_interface'))
-xacro_path = os.path.join(share_dir_path, 'config', 'urdf', 'open_manipulator_x_robot.urdf.xacro')
-
 
 def generate_launch_description():
+    share_dir_path = os.path.join(get_package_share_directory('dynamixel_hardware_interface'))
+    xacro_path = os.path.join(share_dir_path, 'config', 'urdf', 'open_manipulator_x_robot.urdf.xacro')
+    
     doc = xacro.process_file(xacro_path)
     robot_description = {"robot_description": doc.toxml()}
     robot_state_publisher = Node(

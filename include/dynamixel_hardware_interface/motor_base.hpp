@@ -73,6 +73,8 @@ public:
       rclcpp::get_logger("dynamixel_hardware_interface"), "end constructing motor instance");
   }
   ~MotorBase();
+  bool operationSupports(const Operation & operation);
+  std::vector<Operation> getSupportedOperations();
   Result configure();
   Result torqueEnable(bool enable);
   Result setGoalPosition(double goal_position);

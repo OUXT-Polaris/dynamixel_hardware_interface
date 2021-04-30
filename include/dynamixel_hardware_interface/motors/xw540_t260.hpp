@@ -29,16 +29,7 @@ namespace address_tables
 class XW540_T260 : public AddressTableBase
 {
 public:
-  XW540_T260()
-  : AddressTableBase(
-      64, 
-      116,
-      boost::none,
-      132,
-      128,
-      boost::none,
-      boost::none,
-      146) {}
+  XW540_T260() : AddressTableBase(64, 116, boost::none, 132, 128, boost::none, boost::none, 146) {}
 };
 }  // namespace address_tables
 

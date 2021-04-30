@@ -133,6 +133,17 @@ hardware_interface::return_type DynamixelHardwareInterface::stop()
 
 hardware_interface::return_type DynamixelHardwareInterface::read()
 {
+  for (const auto motor : motors_) {
+    if (motor->operationSupports(Operation::PRESENT_POSITION)) {
+      const auto result = motor->updateJointPosition();
+      if (result.success) {
+        motor->getJointPosition();
+      } else {
+        RCLCPP_ERROR_STREAM(rclcpp::get_logger("dynamixel_hardware_interface"), result.description);
+        return hardware_interface::return_type::ERROR;
+      }
+    }
+  }
   return hardware_interface::return_type::OK;
 }
 

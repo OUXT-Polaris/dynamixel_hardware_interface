@@ -23,6 +23,27 @@ namespace dynamixel_hardware_interface
 {
 MotorBase::~MotorBase() {}
 
+bool MotorBase::operationSupports(const Operation & operation)
+{
+  const auto address = address_table_->getAddress(operation);
+  if (!address) {
+    return false;
+  }
+  return true;
+}
+
+std::vector<Operation> MotorBase::getSupportedOperations()
+{
+  std::vector<Operation> ret = {};
+  for (const auto operation : Operation()) {
+    const auto address = address_table_->getAddress(operation);
+    if (address) {
+      ret.emplace_back(operation);
+    }
+  }
+  return ret;
+}
+
 uint16_t MotorBase::radianToPosition(double radian) const
 {
   return radian * TO_DXL_POS + DXL_HOME_POSITION;
