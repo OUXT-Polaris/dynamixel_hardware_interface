@@ -13,7 +13,6 @@
 // limitations under the License.
 
 #include <dynamixel_hardware_interface/dynamixel_hardware_interface.hpp>
-
 #include <memory>
 #include <string>
 #include <vector>
@@ -23,16 +22,15 @@ namespace dynamixel_hardware_interface
 hardware_interface::return_type DynamixelHardwareInterface::configure(
   const hardware_interface::HardwareInfo & info)
 {
-  info_ = info;
+  if (configure_default(info) != hardware_interface::return_type::OK) {
+    return hardware_interface::return_type::ERROR;
+  }
   RCLCPP_INFO(
-    rclcpp::get_logger("dynamixel_hardware_interface"),
-    "configure hardware " + info.name);
+    rclcpp::get_logger("dynamixel_hardware_interface"), "configure hardware " + info.name);
   for (const auto hardware_parameter : info_.hardware_parameters) {
     RCLCPP_INFO_STREAM(
-      rclcpp::get_logger(
-        "dynamixel_hardware_interface"),
-      "hardware parameter : " << hardware_parameter.first <<
-        " = " << hardware_parameter.second);
+      rclcpp::get_logger("dynamixel_hardware_interface"),
+      "hardware parameter : " << hardware_parameter.first << " = " << hardware_parameter.second);
   }
   port_name_ = getHardwareParameter<std::string>("port_name");
   baudrate_ = getHardwareParameter<int>("baudrate");
@@ -61,27 +59,44 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
   return hardware_interface::return_type::OK;
 }
 
-std::vector<hardware_interface::StateInterface> DynamixelHardwareInterface::export_state_interfaces()
+std::vector<hardware_interface::StateInterface>
+DynamixelHardwareInterface::export_state_interfaces()
 {
   std::vector<hardware_interface::StateInterface> state_interfaces = {};
   for (const auto motor : motors_) {
+    RCLCPP_INFO_STREAM(
+      rclcpp::get_logger("dynamixel_hardware_interface"),
+      "appending state interface in : " << motor->joint_name);
     motor->appendStateInterfaces(state_interfaces);
   }
+  for (const auto interface : state_interfaces) {
+    RCLCPP_INFO_STREAM(
+      rclcpp::get_logger("dynamixel_hardware_interface"),
+      "apend state interface : " << interface.get_name());
+  }
+  RCLCPP_INFO_STREAM(
+    rclcpp::get_logger("dynamixel_hardware_interface"), state_interfaces.size()
+                                                          << " state interfaces exported.");
   return state_interfaces;
 }
 
-std::vector<hardware_interface::CommandInterface> DynamixelHardwareInterface::
-export_command_interfaces()
+std::vector<hardware_interface::CommandInterface>
+DynamixelHardwareInterface::export_command_interfaces()
 {
   std::vector<hardware_interface::CommandInterface> command_interfaces = {};
   for (const auto motor : motors_) {
     motor->appendCommandInterfaces(command_interfaces);
   }
+  /*
+  for(const auto interface : command_interfaces) {
+    RCLCPP_INFO_STREAM(rclcpp::get_logger("dynamixel_hardware_interface"), "apend state interface : " << interface.get_name());
+  }
+  */
   return command_interfaces;
 }
 
-SupportedMotors DynamixelHardwareInterface::strToSupportMotorsEnum(const std::string & motor_type)
-const
+SupportedMotors DynamixelHardwareInterface::strToSupportMotorsEnum(
+  const std::string & motor_type) const
 {
   if (motor_type == "XW540-T260") {
     return SupportedMotors::XW540_T260;
@@ -92,13 +107,13 @@ const
 std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
   const hardware_interface::ComponentInfo & info) const
 {
-  RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "constructing motor instance");
+  RCLCPP_INFO_STREAM(
+    rclcpp::get_logger("dynamixel_hardware_interface"),
+    "constructing motor instance : " << info.name);
   for (const auto parameter : info.parameters) {
     RCLCPP_INFO_STREAM(
-      rclcpp::get_logger(
-        "dynamixel_hardware_interface"),
-      "parameter " << parameter.first << " : " << parameter.second
-    );
+      rclcpp::get_logger("dynamixel_hardware_interface"),
+      "parameter " << parameter.first << " : " << parameter.second);
   }
   if (info.type == "joint") {
     const auto motor_type = strToSupportMotorsEnum(getParameter<std::string>("motor_type", info));
@@ -109,12 +124,7 @@ std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
     switch (motor_type) {
       case SupportedMotors::XW540_T260:
         return std::make_shared<MotorBase>(
-          motors::XW540_T260(
-            info.name,
-            baudrate_,
-            id,
-            port_handler_,
-            packet_handler_));
+          motors::XW540_T260(info.name, baudrate_, id, port_handler_, packet_handler_));
         break;
       default:
         break;
@@ -148,5 +158,4 @@ hardware_interface::return_type DynamixelHardwareInterface::write()
 #include "pluginlib/class_list_macros.hpp"
 
 PLUGINLIB_EXPORT_CLASS(
-  dynamixel_hardware_interface::DynamixelHardwareInterface,
-  hardware_interface::SystemInterface)
+  dynamixel_hardware_interface::DynamixelHardwareInterface, hardware_interface::SystemInterface)

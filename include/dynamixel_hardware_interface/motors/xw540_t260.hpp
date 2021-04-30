@@ -15,13 +15,12 @@
 #ifndef DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__XW540_T260_HPP_
 #define DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__XW540_T260_HPP_
 
-#include <dynamixel_hardware_interface/motor_base.hpp>
-#include <dynamixel_hardware_interface/address_table_base.hpp>
-
 #include <cmath>
-#include <string>
+#include <dynamixel_hardware_interface/address_table_base.hpp>
+#include <dynamixel_hardware_interface/motor_base.hpp>
 #include <limits>
 #include <memory>
+#include <string>
 
 namespace dynamixel_hardware_interface
 {
@@ -32,15 +31,10 @@ class XW540_T260 : public AddressTableBase
 public:
   XW540_T260()
   : AddressTableBase(
-      64,
-      116,
-      std::numeric_limits<uint16_t>::quiet_NaN(),
-      132,
-      128,
-      std::numeric_limits<uint16_t>::quiet_NaN(),
-      std::numeric_limits<uint16_t>::quiet_NaN(),
-      146)
-  {}
+      64, 116, std::numeric_limits<uint16_t>::quiet_NaN(), 132, 128,
+      std::numeric_limits<uint16_t>::quiet_NaN(), std::numeric_limits<uint16_t>::quiet_NaN(), 146)
+  {
+  }
 };
 }  // namespace address_tables
 
@@ -50,13 +44,14 @@ class XW540_T260 : public MotorBase
 {
 public:
   explicit XW540_T260(
-    const std::string joint_name,
-    int baudrate, uint8_t id,
+    const std::string joint_name, int baudrate, uint8_t id,
     std::shared_ptr<dynamixel::PortHandler> port_handler,
     std::shared_ptr<dynamixel::PacketHandler> packet_handler)
-  : MotorBase(joint_name, "XW540-T260",
-      address_tables::XW540_T260(), baudrate, id, port_handler, packet_handler)
-  {}
+  : MotorBase(
+      SupportedMotors::XW540_T260, joint_name, address_tables::XW540_T260(), baudrate, id,
+      port_handler, packet_handler)
+  {
+  }
 };
 }  // namespace motors
 }  // namespace dynamixel_hardware_interface

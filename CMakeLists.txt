@@ -28,6 +28,7 @@ add_library(
   SHARED
   src/dynamixel_hardware_interface.cpp
   src/motor_base.cpp
+  src/util.cpp
 )
 target_include_directories(
   dynamixel_hardware_interface

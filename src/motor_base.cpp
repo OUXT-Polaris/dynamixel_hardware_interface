@@ -13,18 +13,14 @@
 // limitations under the License.
 
 #include <dynamixel_hardware_interface/motor_base.hpp>
-
 #include <hardware_interface/types/hardware_interface_return_values.hpp>
 #include <hardware_interface/types/hardware_interface_type_values.hpp>
-
-#include <vector>
 #include <string>
+#include <vector>
 
 namespace dynamixel_hardware_interface
 {
-MotorBase::~MotorBase()
-{
-}
+MotorBase::~MotorBase() {}
 
 uint16_t MotorBase::radianToPosition(double radian) const
 {
@@ -64,9 +60,8 @@ void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInter
     if (!address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::PRESENT_POSITION:
-          interfaces.emplace_back(
-            hardware_interface::StateInterface(
-              joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
+          interfaces.emplace_back(hardware_interface::StateInterface(
+            joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
           break;
         default:
           break;
@@ -82,11 +77,8 @@ void MotorBase::appendCommandInterfaces(
     if (!address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::GOAL_POSITION:
-          interfaces.emplace_back(
-            hardware_interface::CommandInterface(
-              joint_name,
-              hardware_interface::HW_IF_POSITION,
-              &goal_position_));
+          interfaces.emplace_back(hardware_interface::CommandInterface(
+            joint_name, hardware_interface::HW_IF_POSITION, &goal_position_));
           break;
         default:
           break;
@@ -98,19 +90,19 @@ void MotorBase::appendCommandInterfaces(
 Result MotorBase::torqueEnable(bool enable)
 {
   if (!address_table_->addressExists(Operation::TORQUE_ENABLE)) {
-    return Result("TORQUE_ENABLE operation does not support in " + motor_type, false);
+    return Result("TORQUE_ENABLE operation does not support in " + toString(motor_type), false);
   }
   uint8_t error = 0;
   const auto address = address_table_->getAddress(Operation::TORQUE_ENABLE);
-  const auto result = packet_handler_->write1ByteTxRx(
-    port_handler_.get(), id, address, enable, &error);
+  const auto result =
+    packet_handler_->write1ByteTxRx(port_handler_.get(), id, address, enable, &error);
   return getResult(result, error);
 }
 
 Result MotorBase::setGoalPosition(double goal_position)
 {
   if (!address_table_->addressExists(Operation::GOAL_POSITION)) {
-    return Result("TORQUE_ENABLE operation does not support in " + motor_type, false);
+    return Result("TORQUE_ENABLE operation does not support in " + toString(motor_type), false);
   }
   uint8_t error = 0;
   const auto address = address_table_->getAddress(Operation::GOAL_POSITION);
@@ -122,14 +114,13 @@ Result MotorBase::setGoalPosition(double goal_position)
 Result MotorBase::updateJointPosition()
 {
   if (!address_table_->addressExists(Operation::PRESENT_POSITION)) {
-    return Result("PRESENT_POSITION operation does not support in " + motor_type, false);
+    return Result("PRESENT_POSITION operation does not support in " + toString(motor_type), false);
   }
   uint8_t error = 0;
   uint16_t present_position = 0;
   const auto address = address_table_->getAddress(Operation::PRESENT_POSITION);
-  const auto result = packet_handler_->read2ByteTxRx(
-    port_handler_.get(),
-    id, address, &present_position, &error);
+  const auto result =
+    packet_handler_->read2ByteTxRx(port_handler_.get(), id, address, &present_position, &error);
   joint_position_ = positionToRadian(present_position);
   return getResult(result, error);
 }

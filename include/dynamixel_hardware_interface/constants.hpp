@@ -17,8 +17,8 @@
 
 #include <cmath>
 #include <cstdint>
-#include <string>
 #include <stdexcept>
+#include <string>
 
 namespace dynamixel_hardware_interface
 {
@@ -34,14 +34,17 @@ constexpr double TO_SPEED_RAD_PER_SEC = TO_SPEED_RAD_PER_MIN / 60.0;
 constexpr double TO_LOAD_PERCENT = 0.1;
 constexpr double TO_VOLTAGE = 0.1;
 
-#define GENERATE_ENUM_ITERATOR(T, LAST_VALUE) \
-  inline T operator++(T & x) {return x = (T)(std::underlying_type<T>::type(x) + 1);} \
-  inline T operator*(T c) {return c;} \
-  inline T begin(T) {return static_cast<T>(0);} \
-  inline T end(T) {T l = T::LAST_VALUE; return l;}
+#define GENERATE_ENUM_ITERATOR(T, LAST_VALUE)                                          \
+  inline T operator++(T & x) { return x = (T)(std::underlying_type<T>::type(x) + 1); } \
+  inline T operator*(T c) { return c; }                                                \
+  inline T begin(T) { return static_cast<T>(0); }                                      \
+  inline T end(T)                                                                      \
+  {                                                                                    \
+    T l = T::LAST_VALUE;                                                               \
+    return l;                                                                          \
+  }
 
-enum class Operation
-{
+enum class Operation {
   TORQUE_ENABLE,
   GOAL_POSITION,
   MOVING_SPEED,
@@ -54,13 +57,22 @@ enum class Operation
 
 GENERATE_ENUM_ITERATOR(Operation, PRESENT_TEMPERATURE)
 
-enum class SupportedMotors
-{
-  XW540_T260,
-  INVALID
-};
+enum class SupportedMotors { XW540_T260, INVALID };
 
 GENERATE_ENUM_ITERATOR(SupportedMotors, XW540_T260)
+
+const std::string toString(const SupportedMotors motor)
+{
+  switch (motor) {
+    case SupportedMotors::XW540_T260:
+      return "XW540-T260";
+      break;
+    case SupportedMotors::INVALID:
+      throw std::runtime_error("invalid moter type");
+      break;
+  }
+  return "";
+}
 
 // GENERATE_ENUM_ITERATOR(SupportedMotors)
 }  //  namespace dynamixel_hardware_interface

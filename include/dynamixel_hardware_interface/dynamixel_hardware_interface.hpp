@@ -16,27 +16,24 @@
 #define DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL_HARDWARE_INTERFACE_HPP_
 
 #include <dynamixel_hardware_interface/visiblity_control.h>
-#include <dynamixel_hardware_interface/motors/motors.hpp>
-
-#include <rclcpp/rclcpp.hpp>
-
 #include <dynamixel_sdk/dynamixel_sdk.h>
 
+#include <dynamixel_hardware_interface/motors/motors.hpp>
 #include <hardware_interface/base_interface.hpp>
 #include <hardware_interface/handle.hpp>
 #include <hardware_interface/hardware_info.hpp>
 #include <hardware_interface/system_interface.hpp>
 #include <hardware_interface/types/hardware_interface_return_values.hpp>
 #include <hardware_interface/types/hardware_interface_status_values.hpp>
-
-#include <vector>
 #include <memory>
+#include <rclcpp/rclcpp.hpp>
 #include <string>
+#include <vector>
 
 namespace dynamixel_hardware_interface
 {
 class DynamixelHardwareInterface
-  : public hardware_interface::BaseInterface<hardware_interface::SystemInterface>
+: public hardware_interface::BaseInterface<hardware_interface::SystemInterface>
 {
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(DynamixelHardwareInterface)
@@ -67,7 +64,7 @@ private:
   int baudrate_;
   SupportedMotors strToSupportMotorsEnum(const std::string & motor_type) const;
 
-  template<typename T>
+  template <typename T>
   T getParameter(const std::string key, const hardware_interface::ComponentInfo & info) const
   {
     T param;
@@ -75,28 +72,25 @@ private:
     return param;
   }
   void getParameter(
-    const std::string & key,
-    const hardware_interface::ComponentInfo & info,
+    const std::string & key, const hardware_interface::ComponentInfo & info,
     std::string & parameter) const
   {
     try {
       parameter = info.parameters.at(key);
     } catch (std::out_of_range & e) {
       RCLCPP_ERROR_STREAM(
-        rclcpp::get_logger(
-          "dynamixel_hardware_interface"), "parameter : " << key << " does not exist.");
+        rclcpp::get_logger("dynamixel_hardware_interface"),
+        "parameter : " << key << " does not exist.");
     }
   }
   void getParameter(
-    const std::string & key,
-    const hardware_interface::ComponentInfo & info,
-    int & parameter) const
+    const std::string & key, const hardware_interface::ComponentInfo & info, int & parameter) const
   {
     std::string param_string;
     getParameter(key, info, param_string);
     parameter = std::stoi(param_string);
   }
-  template<typename T>
+  template <typename T>
   T getHardwareParameter(const std::string key) const
   {
     T param;
@@ -109,8 +103,8 @@ private:
       parameter = info_.hardware_parameters.at(key);
     } catch (std::out_of_range & e) {
       RCLCPP_ERROR_STREAM(
-        rclcpp::get_logger(
-          "dynamixel_hardware_interface"), "hardware parameter : " << key << " does not exist.");
+        rclcpp::get_logger("dynamixel_hardware_interface"),
+        "hardware parameter : " << key << " does not exist.");
     }
   }
   void getHardwareParameter(const std::string & key, int & parameter) const
