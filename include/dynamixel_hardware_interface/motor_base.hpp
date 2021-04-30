@@ -45,17 +45,22 @@ public:
     const std::string & motor_type,
     const AddressTable & table,
     int baudrate,
-    uint8_t id)
+    uint8_t id,
+    std::shared_ptr<dynamixel::PortHandler> port_handler,
+    std::shared_ptr<dynamixel::PacketHandler> packet_handler)
   : motor_type(motor_type),
     baudrate(baudrate),
-    id(id)
+    id(id),
+    port_handler_(port_handler),
+    packet_handler_(packet_handler)
   {
     address_table_ = std::make_shared<AddressTableBase>(table);
   }
   ~MotorBase();
-  Result torqueEnable();
+  Result torqueEnable(bool enable);
 
 private:
+  Result getResult(int communication_result, uint8_t packet_error);
   std::shared_ptr<AddressTableBase> address_table_;
   std::shared_ptr<dynamixel::PortHandler> port_handler_;
   std::shared_ptr<dynamixel::PacketHandler> packet_handler_;

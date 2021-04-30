@@ -20,11 +20,25 @@ MotorBase::~MotorBase()
 {
 }
 
-Result MotorBase::torqueEnable()
+Result MotorBase::getResult(int communication_result, uint8_t packet_error)
+{
+  if (communication_result != COMM_SUCCESS) {
+    return Result(std::string(packet_handler_->getTxRxResult(communication_result)), false);
+  }
+  if (packet_error != 0) {
+    return Result(std::string(packet_handler_->getRxPacketError(packet_error)), true);
+  }
+  return Result("", true);
+}
+
+Result MotorBase::torqueEnable(bool enable)
 {
   if (!address_table_->addressExists(Operation::TORQUE_ENABLE)) {
     return Result("TORQUE_ENABLE operation does not support in " + motor_type, false);
   }
-  // const auto address = address_table_->getAddress(Operation::TORQUE_ENABLE);
+  uint8_t error = 0;
+  const auto address = address_table_->getAddress(Operation::TORQUE_ENABLE);
+  const auto result = packet_handler_->write1ByteTxRx(port_handler_.get(), id, address, enable, &error);
+  return getResult(result, error);
 }
 }  //  namespace dynamixel_hardware_interface

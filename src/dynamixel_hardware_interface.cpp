@@ -29,7 +29,7 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
   packet_handler_ = std::shared_ptr<dynamixel::PacketHandler>(
     dynamixel::PacketHandler::getPacketHandler(PROTOCOL_VERSION));
   for (const auto joint : info.joints) {
-    // joint.parameters["type"];
+    const auto motor = constructMotorInstance(joint);
   }
   return hardware_interface::return_type::OK;
 }
@@ -50,7 +50,13 @@ std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
   uint8_t id = static_cast<uint8_t>(std::stoi(info.parameters.at("id")));
   switch (motor_type) {
     case SupportedMotors::XW54_T260:
-      return std::make_shared<MotorBase>(motors::XW54_T260(baudrate_, id));
+      return std::make_shared<MotorBase>(
+        motors::XW54_T260(
+          baudrate_,
+          id,
+          port_handler_,
+          packet_handler_));
   }
+  throw std::runtime_error("failed to construct motor instance");
 }
 }  // namespace dynamixel_hardware_interface
