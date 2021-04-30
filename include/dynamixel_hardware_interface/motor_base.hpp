@@ -62,11 +62,14 @@ public:
     baudrate(baudrate),
     id(id),
     port_handler_(port_handler),
-    packet_handler_(packet_handler)
+    packet_handler_(packet_handler),
+    joint_position_(std::numeric_limits<double>::quiet_NaN()),
+    goal_position_(std::numeric_limits<double>::quiet_NaN())
   {
     address_table_ = std::make_shared<AddressTableBase>(table);
   }
   ~MotorBase();
+  Result configure();
   Result torqueEnable(bool enable);
   Result setGoalPosition(double goal_position);
   double getJointPosition() const {return joint_position_;}

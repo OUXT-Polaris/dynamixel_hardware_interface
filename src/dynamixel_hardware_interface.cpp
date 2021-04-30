@@ -30,6 +30,12 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
     dynamixel::PacketHandler::getPacketHandler(PROTOCOL_VERSION));
   for (const auto joint : info.joints) {
     const auto motor = constructMotorInstance(joint);
+    const auto result = motor->configure();
+    if (!result.success) {
+      RCLCPP_ERROR(rclcpp::get_logger("dynamixel_hardware_interface"), result.description);
+      return hardware_interface::return_type::ERROR;
+    }
+    motors_.emplace_back(motor);
   }
   return hardware_interface::return_type::OK;
 }
@@ -80,5 +86,11 @@ std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
     }
   }
   throw std::runtime_error("failed to construct motor instance");
+}
+
+hardware_interface::return_type DynamixelHardwareInterface::start()
+{
+  status_ = hardware_interface::status::STARTED;
+  return hardware_interface::return_type::OK;
 }
 }  // namespace dynamixel_hardware_interface

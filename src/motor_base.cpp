@@ -44,6 +44,17 @@ Result MotorBase::getResult(int communication_result, uint8_t packet_error)
   return Result("", true);
 }
 
+Result MotorBase::configure()
+{
+  if (address_table_->addressExists(Operation::PRESENT_POSITION)) {
+    joint_position_ = 0;
+  }
+  if (address_table_->addressExists(Operation::GOAL_POSITION)) {
+    goal_position_ = 0;
+  }
+  return Result("", true);
+}
+
 void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInterface> & interfaces)
 {
   for (const auto operation : Operation()) {
