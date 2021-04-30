@@ -67,7 +67,13 @@ private:
   int baudrate_;
   SupportedMotors strToSupportMotorsEnum(const std::string & motor_type) const;
 
-
+  template<typename T>
+  T getParameter(const std::string key, const hardware_interface::ComponentInfo & info) const
+  {
+    T param;
+    getParameter(key, info, param);
+    return param;
+  }
   void getParameter(
     const std::string & key,
     const hardware_interface::ComponentInfo & info,
@@ -79,7 +85,6 @@ private:
       RCLCPP_ERROR_STREAM(
         rclcpp::get_logger(
           "dynamixel_hardware_interface"), "parameter : " << key << " does not exist.");
-      throw e;
     }
   }
   void getParameter(
@@ -106,7 +111,6 @@ private:
       RCLCPP_ERROR_STREAM(
         rclcpp::get_logger(
           "dynamixel_hardware_interface"), "hardware parameter : " << key << " does not exist.");
-      throw e;
     }
   }
   void getHardwareParameter(const std::string & key, int & parameter) const

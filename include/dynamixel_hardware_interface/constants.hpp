@@ -56,10 +56,11 @@ GENERATE_ENUM_ITERATOR(Operation, PRESENT_TEMPERATURE)
 
 enum class SupportedMotors
 {
-  XW54_T260
+  XW540_T260,
+  INVALID
 };
 
-GENERATE_ENUM_ITERATOR(SupportedMotors, XW54_T260)
+GENERATE_ENUM_ITERATOR(SupportedMotors, XW540_T260)
 
 // GENERATE_ENUM_ITERATOR(SupportedMotors)
 }  //  namespace dynamixel_hardware_interface

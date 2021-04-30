@@ -15,6 +15,6 @@
 #ifndef DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__MOTORS_HPP_
 #define DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__MOTORS_HPP_
 
-#include <dynamixel_hardware_interface/motors/xw54_t260.hpp>
+#include <dynamixel_hardware_interface/motors/xw540_t260.hpp>
 
 #endif  // DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__MOTORS_HPP_
