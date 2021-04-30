@@ -20,6 +20,13 @@
 
 #include <dynamixel_sdk/dynamixel_sdk.h>
 
+#include <hardware_interface/base_interface.hpp>
+#include <hardware_interface/handle.hpp>
+#include <hardware_interface/hardware_info.hpp>
+#include <hardware_interface/system_interface.hpp>
+#include <hardware_interface/types/hardware_interface_return_values.hpp>
+#include <hardware_interface/types/hardware_interface_status_values.hpp>
+
 #include <memory>
 #include <string>
 
@@ -37,18 +44,21 @@ class MotorBase
 {
 public:
   const std::string motor_type;
+  const std::string joint_name;
   const int baudrate;
   const uint8_t id;
   MotorBase() = delete;
   template<typename AddressTable>
   MotorBase(
     const std::string & motor_type,
+    const std::string & joint_name,
     const AddressTable & table,
     int baudrate,
     uint8_t id,
     std::shared_ptr<dynamixel::PortHandler> port_handler,
     std::shared_ptr<dynamixel::PacketHandler> packet_handler)
   : motor_type(motor_type),
+    joint_name(joint_name),
     baudrate(baudrate),
     id(id),
     port_handler_(port_handler),
@@ -59,6 +69,7 @@ public:
   ~MotorBase();
   Result torqueEnable(bool enable);
   Result setGoalPosition(double goal_position);
+  std::vector<hardware_interface::StateInterface> getStateInterfaces();
 
 private:
   Result getResult(int communication_result, uint8_t packet_error);

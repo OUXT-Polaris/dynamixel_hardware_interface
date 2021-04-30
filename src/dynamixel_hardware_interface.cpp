@@ -34,6 +34,16 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
   return hardware_interface::return_type::OK;
 }
 
+std::vector<hardware_interface::StateInterface> DynamixelHardwareInterface::export_state_interfaces()
+{
+  std::vector<hardware_interface::StateInterface> state_interfaces;
+  for (const auto motor : motors_) {
+    const auto interfaces = motor->getStateInterfaces();
+    std::copy(interfaces.begin(), interfaces.end(), std::back_inserter(state_interfaces));
+  }
+  return state_interfaces;
+}
+
 SupportedMotors DynamixelHardwareInterface::strToSupportMotorsEnum(const std::string & motor_type)
 const
 {
@@ -46,16 +56,19 @@ const
 std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
   const hardware_interface::ComponentInfo & info) const
 {
-  const auto motor_type = strToSupportMotorsEnum(info.parameters.at("motor_type"));
-  uint8_t id = static_cast<uint8_t>(std::stoi(info.parameters.at("id")));
-  switch (motor_type) {
-    case SupportedMotors::XW54_T260:
-      return std::make_shared<MotorBase>(
-        motors::XW54_T260(
-          baudrate_,
-          id,
-          port_handler_,
-          packet_handler_));
+  if (info.type == "joint") {
+    const auto motor_type = strToSupportMotorsEnum(info.parameters.at("motor_type"));
+    uint8_t id = static_cast<uint8_t>(std::stoi(info.parameters.at("id")));
+    switch (motor_type) {
+      case SupportedMotors::XW54_T260:
+        return std::make_shared<MotorBase>(
+          motors::XW54_T260(
+            info.name,
+            baudrate_,
+            id,
+            port_handler_,
+            packet_handler_));
+    }
   }
   throw std::runtime_error("failed to construct motor instance");
 }

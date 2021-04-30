@@ -36,6 +36,20 @@ Result MotorBase::getResult(int communication_result, uint8_t packet_error)
   return Result("", true);
 }
 
+std::vector<hardware_interface::StateInterface> MotorBase::getStateInterfaces()
+{
+  std::vector<hardware_interface::StateInterface> interfaces = {};
+  for (const auto operation : Operation()) {
+    switch (operation) {
+      case Operation::GOAL_POSITION:
+        break;
+      default:
+        break;
+    }
+  }
+  return interfaces;
+}
+
 Result MotorBase::torqueEnable(bool enable)
 {
   if (!address_table_->addressExists(Operation::TORQUE_ENABLE)) {

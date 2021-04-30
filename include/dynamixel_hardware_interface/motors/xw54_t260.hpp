@@ -19,7 +19,9 @@
 #include <dynamixel_hardware_interface/address_table_base.hpp>
 
 #include <cmath>
+#include <string>
 #include <limits>
+
 
 namespace dynamixel_hardware_interface
 {
@@ -48,10 +50,12 @@ class XW54_T260 : public MotorBase
 {
 public:
   explicit XW54_T260(
+    const std::string joint_name,
     int baudrate, uint8_t id,
     std::shared_ptr<dynamixel::PortHandler> port_handler,
     std::shared_ptr<dynamixel::PacketHandler> packet_handler)
-  : MotorBase("XW540-T260", address_tables::XW54_T260(), baudrate, id, port_handler, packet_handler)
+  : MotorBase(joint_name, "XW540-T260",
+      address_tables::XW54_T260(), baudrate, id, port_handler, packet_handler)
   {}
 };
 }
