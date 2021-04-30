@@ -23,11 +23,6 @@ MotorBase::~MotorBase()
 {
 }
 
-double MotorBase::getJointPosition() const
-{
-  return joint_position_;
-}
-
 uint16_t MotorBase::radianToPosition(double radian) const
 {
   return radian * TO_DXL_POS + DXL_HOME_POSITION;
@@ -53,14 +48,37 @@ std::vector<hardware_interface::StateInterface> MotorBase::getStateInterfaces()
 {
   std::vector<hardware_interface::StateInterface> interfaces = {};
   for (const auto operation : Operation()) {
-    switch (operation) {
-      case Operation::PRESENT_POSITION:
-        interfaces.emplace_back(
-          hardware_interface::StateInterface(
-            joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
-        break;
-      default:
-        break;
+    if (!address_table_->addressExists(operation)) {
+      switch (operation) {
+        case Operation::PRESENT_POSITION:
+          interfaces.emplace_back(
+            hardware_interface::StateInterface(
+              joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  return interfaces;
+}
+
+std::vector<hardware_interface::CommandInterface> MotorBase::getCommandInterfaces()
+{
+  std::vector<hardware_interface::CommandInterface> interfaces = {};
+  for (const auto operation : Operation()) {
+    if (!address_table_->addressExists(operation)) {
+      switch (operation) {
+        case Operation::GOAL_POSITION:
+          interfaces.emplace_back(
+            hardware_interface::CommandInterface(
+              joint_name,
+              hardware_interface::HW_IF_POSITION,
+              &goal_position_));
+          break;
+        default:
+          break;
+      }
     }
   }
   return interfaces;

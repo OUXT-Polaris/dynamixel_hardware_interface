@@ -69,9 +69,11 @@ public:
   ~MotorBase();
   Result torqueEnable(bool enable);
   Result setGoalPosition(double goal_position);
-  double getJointPosition() const;
+  double getJointPosition() const {return joint_position_;}
+  double getGoalPosition() const {return goal_position_;}
   Result updateJointPosition();
   std::vector<hardware_interface::StateInterface> getStateInterfaces();
+  std::vector<hardware_interface::CommandInterface> getCommandInterfaces();
 
 private:
   Result getResult(int communication_result, uint8_t packet_error);
@@ -81,6 +83,7 @@ private:
   std::shared_ptr<dynamixel::PortHandler> port_handler_;
   std::shared_ptr<dynamixel::PacketHandler> packet_handler_;
   double joint_position_;
+  double goal_position_;
 };
 }  //  namespace dynamixel_hardware_interface
 

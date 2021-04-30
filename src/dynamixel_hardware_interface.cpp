@@ -36,12 +36,19 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
 
 std::vector<hardware_interface::StateInterface> DynamixelHardwareInterface::export_state_interfaces()
 {
-  std::vector<hardware_interface::StateInterface> state_interfaces;
+  std::vector<hardware_interface::StateInterface> state_interfaces = {};
   for (const auto motor : motors_) {
     const auto interfaces = motor->getStateInterfaces();
     std::copy(interfaces.begin(), interfaces.end(), std::back_inserter(state_interfaces));
   }
   return state_interfaces;
+}
+
+std::vector<hardware_interface::CommandInterface> DynamixelHardwareInterface::
+export_command_interfaces()
+{
+  std::vector<hardware_interface::CommandInterface> command_interfaces = {};
+  return command_interfaces;
 }
 
 SupportedMotors DynamixelHardwareInterface::strToSupportMotorsEnum(const std::string & motor_type)
