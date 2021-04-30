@@ -1,0 +1,9 @@
+<library path="dynamixel_hardware_interface">
+  <class name="dynamixel_hardware_interface/DynamixelHardwareInterface"
+         type="dynamixel_hardware_interface::DynamixelHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      A dynamixel hardware plugin for the ros2_control.
+    </description>
+  </class>
+</library>
