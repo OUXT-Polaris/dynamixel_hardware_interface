@@ -16,6 +16,9 @@
 #define DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL_HARDWARE_INTERFACE_HPP_
 
 #include <dynamixel_hardware_interface/visiblity_control.h>
+#include <dynamixel_hardware_interface/motors/motors.hpp>
+
+#include <rclcpp/rclcpp.hpp>
 
 #include <hardware_interface/base_interface.hpp>
 #include <hardware_interface/handle.hpp>
@@ -24,40 +27,39 @@
 #include <hardware_interface/types/hardware_interface_return_values.hpp>
 #include <hardware_interface/types/hardware_interface_status_values.hpp>
 
+#include <vector>
+
 namespace dynamixel_hardware_interface
 {
 class DynamixelHardwareInterface
-: public hardware_interface::BaseInterface<hardware_interface::SystemInterface>
+  : public hardware_interface::BaseInterface<hardware_interface::SystemInterface>
 {
 public:
-  RCLCPP_SHARED_PTR_DEFINITIONS(DynamixelHardware)
+  RCLCPP_SHARED_PTR_DEFINITIONS(DynamixelHardwareInterface)
 
-  DYNAMIXEL_HARDWARE_PUBLIC
-  return_type configure(const hardware_interface::HardwareInfo & info) override;
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  hardware_interface::return_type configure(const hardware_interface::HardwareInfo & info) override;
 
-  DYNAMIXEL_HARDWARE_PUBLIC
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
 
-  DYNAMIXEL_HARDWARE_PUBLIC
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
-  DYNAMIXEL_HARDWARE_PUBLIC
-  return_type start() override;
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  hardware_interface::return_type start() override;
 
-  DYNAMIXEL_HARDWARE_PUBLIC
-  return_type stop() override;
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  hardware_interface::return_type stop() override;
 
-  DYNAMIXEL_HARDWARE_PUBLIC
-  return_type read() override;
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  hardware_interface::return_type read() override;
 
-  DYNAMIXEL_HARDWARE_PUBLIC
-  return_type write() override;
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  hardware_interface::return_type write() override;
 
 private:
 };
-}  // namespace dynamixel_hardware
-
-#endif  // DYNAMIXEL_HARDWARE__DYNAMIXEL_HARDWARE_HPP_
 }  // namespace dynamixel_hardware_interface
 
 #endif  // DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL_HARDWARE_INTERFACE_HPP_
