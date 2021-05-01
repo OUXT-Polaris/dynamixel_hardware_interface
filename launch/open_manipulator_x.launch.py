@@ -27,8 +27,12 @@ from pathlib import Path
 
 def generate_launch_description():
     share_dir_path = os.path.join(get_package_share_directory('dynamixel_hardware_interface'))
-    xacro_path = os.path.join(share_dir_path, 'config', 'urdf', 'open_manipulator_x_robot.urdf.xacro')
-    
+    xacro_path = os.path.join(
+        share_dir_path,
+        'config',
+        'urdf',
+        'open_manipulator_x_robot.urdf.xacro')
+
     doc = xacro.process_file(xacro_path)
     robot_description = {"robot_description": doc.toxml()}
     robot_state_publisher = Node(
@@ -52,7 +56,8 @@ def generate_launch_description():
                 arguments=[
                     '-d', str(
                         Path(get_package_share_directory('dynamixel_hardware_interface')) /
-                        'example.rviz')])
+                        'config' /
+                        'open_manipulator_x.rviz')])
     controller_config = os.path.join(
         get_package_share_directory("dynamixel_hardware_interface"),
         "config",
@@ -76,19 +81,28 @@ def generate_launch_description():
             rviz,
             control_node,
             ExecuteProcess(
-                cmd=["ros2", "control", "load_start_controller",
+                cmd=[
+                    "ros2",
+                    "control",
+                    "load_start_controller",
                     "joint_state_controller"],
                 output="screen",
                 shell=True,
             ),
             ExecuteProcess(
-                cmd=["ros2", "control", "load_configure_controller",
+                cmd=[
+                    "ros2",
+                    "control",
+                    "load_configure_controller",
                     "velocity_controller"],
                 output="screen",
                 shell=True,
             ),
             ExecuteProcess(
-                cmd=["ros2", "control", "load_configure_controller",
+                cmd=[
+                    "ros2",
+                    "control",
+                    "load_configure_controller",
                     "joint_trajectory_controller"],
                 output="screen",
                 shell=True,
