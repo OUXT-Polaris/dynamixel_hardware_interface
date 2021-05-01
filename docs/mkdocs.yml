@@ -1,6 +1,6 @@
-repo_url: https://github.com/OUXT-Polaris/robotx_buildfarm
-site_name: RobotX Buildfarm
-site_description: OUXT Polaris package buildfarm and develop management tools
+repo_url: https://github.com/OUXT-Polaris/dynamixel_hardware_interface
+site_name: Dynamixel Hardware Interface
+site_description: ROS2 Hardware Interface for dynamixel motor
 site_author: OUXT Polaris
 theme: 
   name: material
@@ -21,8 +21,6 @@ markdown_extensions:
     - pymdownx.superfences
     - fontawesome_markdown
     - pymdownx.arithmatex
-    - pymdownx.emoji :
-        emoji_generator: !!python/name:pymdownx.emoji.to_svg
     - codehilite:
         guess_lang: false
     - mdx_math
