@@ -1,3 +1,12 @@
+/**
+ * @file motor_base.hpp
+ * @author Masaya Kataoka (ms.kataoka@gmail.com)
+ * @brief base class of the dynamixel motor
+ * @version 0.1
+ * @date 2021-05-01
+ * @copyright Copyright (c) OUXT Polaris 2021
+ */
+
 // Copyright (c) 2019 OUXT Polaris
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,24 +42,67 @@
 
 namespace dynamixel_hardware_interface
 {
+/**
+ * @brief Struct describes the command result.
+ */
 struct Result
 {
+  /**
+   * @brief Description of the result.
+   */
   const std::string description;
+  /**
+   * @brief If true, command execute successfully.
+   */
   const bool success;
+  /**
+   * @brief Construct a new Result object.
+   * @param description Description of the result.
+   * @param success If true, command execute successfully.
+   */
   Result(const std::string & description, bool success) : description(description), success(success)
   {
   }
 };
 
+/**
+ * @brief Base class for controlling dynamixel motor.
+ */
 class MotorBase
 {
 public:
+  /**
+   * @brief Describe the type of the motor.
+   */
   const SupportedMotors motor_type;
+  /**
+   * @brief Name of the joint which the motor is attaching to.
+   */
   const std::string joint_name;
+  /**
+   * @brief If true, you can communicate with virtual dinamixel motor.
+   */
   const bool enable_dummy;
+  /**
+   * @brief Baudrate of the serial communication.
+   */
   const int baudrate;
+  /**
+   * @brief Id of the dynamixel motor.
+   */
   const uint8_t id;
-  MotorBase() = delete;
+  /**
+   * @brief Construct a new Motor Base object.
+   * @tparam AddressTable address table type of the motor.
+   * @param motor_type Type of the motor.
+   * @param joint_name Name of the joint which the motor is attaching to.
+   * @param enable_dummy If true, you can communicate with virtual dinamixel motor.
+   * @param table address table of the motor.
+   * @param baudrate Baudrate of the serial communication.
+   * @param id Id of the dynamixel motor.
+   * @param port_handler Port handler class of the dynamixel sdk.
+   * @param packet_handler Packet handler class of the dynamixel sdk
+   */
   template <typename AddressTable>
   MotorBase(
     const SupportedMotors & motor_type, const std::string & joint_name, const bool enable_dummy,
@@ -75,20 +127,71 @@ public:
     RCLCPP_INFO_STREAM(
       rclcpp::get_logger("dynamixel_hardware_interface"), "end constructing motor instance");
   }
+  /**
+   * @brief Destroy the Motor Base object
+   */
   ~MotorBase();
+  /**
+   * @brief Check the operation is support in your motor.
+   * @param operation Operation which you want to execute.
+   * @return true Operation supports.
+   * @return false Operation does not support.
+   */
   bool operationSupports(const Operation & operation);
+  /**
+   * @brief Get list of supported Operations in your motor.
+   * @return std::vector<Operation> List of supported operations.
+   */
   virtual std::vector<Operation> getSupportedOperations();
+  /**
+   * @brief Configure dynamixel motor.
+   * @return Result result of the configuration.
+   */
   virtual Result configure();
+  /**
+   * @brief Execute torqu_enabled command to the motor.
+   * @param enable if true, enable torque.
+   * @return Result result of the command.
+   */
   virtual Result torqueEnable(bool enable);
+  /**
+   * @brief Execute goal_position command to the motor.
+   * @param goal_position goal position angle in radian.
+   * @return Result result of the command.
+   */
   virtual Result setGoalPosition(double goal_position);
+  /**
+   * @brief Get current joint position of the motor.
+   * @return double Current joint position of the motor in radian.
+   */
   virtual double getJointPosition() const { return joint_position_; }
+  /**
+   * @brief Get current goal position of the motor.
+   * @return double Current goal position of the motor in radian.
+   */
   virtual double getGoalPosition() const { return goal_position_; }
+  /**
+   * @brief Execute update joint position command to the motor.
+   * @return Result result of the command.
+   */
   virtual Result updateJointPosition();
+  /**
+   * @brief Append state interface described in the URDF file.
+   * @param interfaces List of state interface.
+   */
   virtual void appendStateInterfaces(std::vector<hardware_interface::StateInterface> & interfaces);
+  /**
+   * @brief Append command interface described in the URDF file.
+   * @param interfaces List of command interface.
+   */
   virtual void appendCommandInterfaces(
     std::vector<hardware_interface::CommandInterface> & interfaces);
 
 private:
+  /**
+   * @brief Construct a new Motor Base object
+   */
+  MotorBase() = delete;
   Result getResult(int communication_result, uint8_t packet_error);
   uint16_t radianToPosition(double radian) const;
   double positionToRadian(const uint16_t position) const;

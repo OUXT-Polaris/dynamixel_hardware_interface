@@ -1,3 +1,14 @@
+/**
+ * @file dynamixel_hardware_interface.hpp
+ * @author Masaya Kataoka (ms.kataoka@gmail.com)
+ * @brief Hardware interface class for dynamixel motor.
+ * @version 0.1
+ * @date 2021-05-01
+ * 
+ * @copyright Copyright (c) OUXT Polaris 2021
+ * 
+ */
+
 // Copyright (c) 2019 OUXT Polaris
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,6 +43,9 @@
 
 namespace dynamixel_hardware_interface
 {
+/**
+ * @brief Hardware interface for the dynamixel motor.
+ */
 class DynamixelHardwareInterface
 : public hardware_interface::BaseInterface<hardware_interface::SystemInterface>
 {

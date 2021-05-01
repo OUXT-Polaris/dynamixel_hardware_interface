@@ -1,3 +1,14 @@
+/**
+ * @file address_table_base.hpp
+ * @author Masaya Kataoka (ms.kataoka@gmail.com)
+ * @brief Base class for the address tabele
+ * @version 0.1
+ * @date 2021-05-01
+ * 
+ * @copyright Copyright (c) OUXT Polaris 2021
+ * 
+ */
+
 // Copyright (c) 2019 OUXT Polaris
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,10 +33,23 @@
 
 namespace dynamixel_hardware_interface
 {
+/**
+ * @brief base class for address table class
+ */
 class AddressTableBase
 {
 public:
-  AddressTableBase() = delete;
+  /**
+   * @brief Construct a new Address Table Base object, each parameter describes the address of the operation.
+   * @param ADDR_TORQUE_ENABLE If this value is boost::none, writing torque_enable command address exists.
+   * @param ADDR_GOAL_POSITION If this value is boost::none, writing goal_position command address exists.
+   * @param ADDR_MOVING_SPEED If this value is boost::none, writing moving_speed command address exists.
+   * @param ADDR_PRESENT_POSITION If this value is boost::none, reading present_position command address exists.
+   * @param ADDR_PRESENT_SPEED If this value is boost::none, reading present_speed command address exists.
+   * @param ADDR_PRESENT_LOAD If this value is boost::none, reading present_load command address exists.
+   * @param ADDR_PRESENT_VOLTAGE If this value is boost::none, reading present_voltage command address exists.
+   * @param ADDR_PRESENT_TEMPERATURE If this value is boost::none, reading present_tempelature command address exists.
+   */
   explicit AddressTableBase(
     boost::optional<uint16_t> ADDR_TORQUE_ENABLE, boost::optional<uint16_t> ADDR_GOAL_POSITION,
     boost::optional<uint16_t> ADDR_MOVING_SPEED, boost::optional<uint16_t> ADDR_PRESENT_POSITION,
@@ -42,6 +66,12 @@ public:
     ADDR_PRESENT_TEMPERATURE(ADDR_PRESENT_TEMPERATURE)
   {
   }
+  /**
+   * @brief Get address of which operation you want to execute.
+   * @param operaiton operation you want to execute
+   * @retval boost::none operation is not supported
+   * @retval uint16_t address of the operation you want to execute 
+   */
   boost::optional<uint16_t> getAddress(const Operation & operaiton) const
   {
     switch (operaiton) {
@@ -65,6 +95,12 @@ public:
         return boost::none;
     }
   }
+  /**
+   * @brief Check the address exists or not.
+   * @param operation operation you want to execute
+   * @return true address exist
+   * @return false address does not exist
+   */
   bool addressExists(const Operation & operation) const
   {
     if (getAddress(operation)) {
@@ -74,6 +110,7 @@ public:
   }
 
 private:
+  AddressTableBase() = delete;
   const boost::optional<uint16_t> ADDR_TORQUE_ENABLE = boost::none;
   const boost::optional<uint16_t> ADDR_GOAL_POSITION = boost::none;
   const boost::optional<uint16_t> ADDR_MOVING_SPEED = boost::none;

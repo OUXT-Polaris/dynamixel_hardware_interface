@@ -1,0 +1,7 @@
+mkdocs
+mkdocs-material
+pymdown-extensions
+fontawesome_markdown
+markdown>=3.2.1
+python-markdown-math
+plantuml-markdown
