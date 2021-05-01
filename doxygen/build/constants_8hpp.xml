@@ -38,7 +38,7 @@
     <invincdepgraph>
       <node id="2">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp</label>
-        <link refid="address__table__base_8hpp_source"/>
+        <link refid="address__table__base_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -46,7 +46,7 @@
       </node>
       <node id="3">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp</label>
-        <link refid="motor__base_8hpp_source"/>
+        <link refid="motor__base_8hpp"/>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
@@ -62,23 +62,23 @@
       </node>
       <node id="4">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp</label>
-        <link refid="xw540__t260_8hpp_source"/>
+        <link refid="xw540__t260_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="6">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp</label>
-        <link refid="dynamixel__hardware__interface_8hpp_source"/>
+        <link refid="dynamixel__hardware__interface_8hpp"/>
       </node>
       <node id="5">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/motors.hpp</label>
-        <link refid="motors_8hpp_source"/>
+        <link refid="motors_8hpp"/>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="7">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/util.hpp</label>
-        <link refid="util_8hpp_source"/>
+        <link refid="util_8hpp"/>
       </node>
     </invincdepgraph>
     <innernamespace refid="namespacedynamixel__hardware__interface">dynamixel_hardware_interface</innernamespace>
@@ -101,84 +101,95 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="37" column="9" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="37" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="48" column="9" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="48" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Header for defineing constant values. </para>
     </briefdescription>
     <detaileddescription>
+<para><simplesect kind="author"><para>Masaya Kataoka (<ulink url="mailto:ms.kataoka@gmail.com">ms.kataoka@gmail.com</ulink>) </para>
+</simplesect>
+<simplesect kind="version"><para>0.1 </para>
+</simplesect>
+<simplesect kind="date"><para>2021-05-01</para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) OUXT Polaris 2021 </para>
+</simplesect>
+</para>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2019<sp/>OUXT<sp/>Polaris</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">dynamixel_hardware_interface</highlight></codeline>
-<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>PROTOCOL_VERSION<sp/>=<sp/>1.0;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DXL_HOME_POSITION<sp/>=<sp/>511;<sp/><sp/></highlight><highlight class="comment">//<sp/>value<sp/>range:0<sp/>~<sp/>1023</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DXL_MAX_POSITION<sp/>=<sp/>1023.0;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DXL_MAX_POSITION_DEGREES<sp/>=<sp/>300.0;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_RADIANS<sp/>=<sp/>(DXL_MAX_POSITION_DEGREES<sp/>/<sp/>DXL_MAX_POSITION)<sp/>*<sp/>M_PI<sp/>/<sp/>180.0;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_DXL_POS<sp/>=<sp/>1.0<sp/>/<sp/>TO_RADIANS;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_SPEED_REV_PER_MIN<sp/>=<sp/>0.111;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_SPEED_RAD_PER_MIN<sp/>=<sp/>TO_SPEED_REV_PER_MIN<sp/>*<sp/>2.0<sp/>*<sp/>M_PI;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_SPEED_RAD_PER_SEC<sp/>=<sp/>TO_SPEED_RAD_PER_MIN<sp/>/<sp/>60.0;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_LOAD_PERCENT<sp/>=<sp/>0.1;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_VOLTAGE<sp/>=<sp/>0.1;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERATE_ENUM_ITERATOR(T,<sp/>LAST_VALUE)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="38"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>operator++(T<sp/>&amp;<sp/>x)<sp/>{<sp/>return<sp/>x<sp/>=<sp/>(T)(std::underlying_type&lt;T&gt;::type(x)<sp/>+<sp/>1);<sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="39"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>operator*(T<sp/>c)<sp/>{<sp/>return<sp/>c;<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="40"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>begin(T)<sp/>{<sp/>return<sp/>static_cast&lt;T&gt;(0);<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="41"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>end(T)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="42"><highlight class="preprocessor"><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="43"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>T<sp/>l<sp/>=<sp/>T::LAST_VALUE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="44"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>l;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="45"><highlight class="preprocessor"><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>Operation<sp/>{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/>TORQUE_ENABLE,</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/>GOAL_POSITION,</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/>MOVING_SPEED,</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/>PRESENT_POSITION,</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/>PRESENT_SPEED,</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/>PRESENT_LOAD,</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/>PRESENT_VOLTAGE,</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/>PRESENT_TEMPERATURE</highlight></codeline>
-<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal">GENERATE_ENUM_ITERATOR(Operation,<sp/>PRESENT_TEMPERATURE)</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>SupportedMotors<sp/>{</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/>XW540_T260,</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/>INVALID</highlight></codeline>
-<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal">GENERATE_ENUM_ITERATOR(SupportedMotors,<sp/>INVALID)</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>dynamixel_hardware_interface</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</highlight></codeline>
+<codeline lineno="1"></codeline>
+<codeline lineno="12"><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2019<sp/>OUXT<sp/>Polaris</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">dynamixel_hardware_interface</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>PROTOCOL_VERSION<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DXL_HOME_POSITION<sp/>=<sp/>511;<sp/><sp/></highlight><highlight class="comment">//<sp/>value<sp/>range:0<sp/>~<sp/>1023</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DXL_MAX_POSITION<sp/>=<sp/>1023.0;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DXL_MAX_POSITION_DEGREES<sp/>=<sp/>300.0;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_RADIANS<sp/>=<sp/>(DXL_MAX_POSITION_DEGREES<sp/>/<sp/>DXL_MAX_POSITION)<sp/>*<sp/>M_PI<sp/>/<sp/>180.0;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_DXL_POS<sp/>=<sp/>1.0<sp/>/<sp/>TO_RADIANS;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_SPEED_REV_PER_MIN<sp/>=<sp/>0.111;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_SPEED_RAD_PER_MIN<sp/>=<sp/>TO_SPEED_REV_PER_MIN<sp/>*<sp/>2.0<sp/>*<sp/>M_PI;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_SPEED_RAD_PER_SEC<sp/>=<sp/>TO_SPEED_RAD_PER_MIN<sp/>/<sp/>60.0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_LOAD_PERCENT<sp/>=<sp/>0.1;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_VOLTAGE<sp/>=<sp/>0.1;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERATE_ENUM_ITERATOR(T,<sp/>LAST_VALUE)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>operator++(T<sp/>&amp;<sp/>x)<sp/>{<sp/>return<sp/>x<sp/>=<sp/>(T)(std::underlying_type&lt;T&gt;::type(x)<sp/>+<sp/>1);<sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>operator*(T<sp/>c)<sp/>{<sp/>return<sp/>c;<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>begin(T)<sp/>{<sp/>return<sp/>static_cast&lt;T&gt;(0);<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>end(T)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>T<sp/>l<sp/>=<sp/>T::LAST_VALUE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>l;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90" refkind="member"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90" kindref="member">Operation</ref><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>TORQUE_ENABLE,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>GOAL_POSITION,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>MOVING_SPEED,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>PRESENT_POSITION,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>PRESENT_SPEED,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>PRESENT_LOAD,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>PRESENT_VOLTAGE,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>PRESENT_TEMPERATURE</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">GENERATE_ENUM_ITERATOR(Operation,<sp/>PRESENT_TEMPERATURE)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" refkind="member"><highlight class="normal">enum<sp/>class<sp/><ref refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" kindref="member">SupportedMotors</ref><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>XW540_T260,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>INVALID</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">GENERATE_ENUM_ITERATOR(SupportedMotors,<sp/>INVALID)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>dynamixel_hardware_interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp"/>
   </compounddef>
