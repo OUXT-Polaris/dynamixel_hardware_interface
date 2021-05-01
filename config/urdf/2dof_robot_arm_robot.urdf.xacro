@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="2dof_robot_arm" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find dynamixel_hardware_interface)/config/urdf/2dof_robot_arm.xacro" />
+  <xacro:include filename="$(find dynamixel_hardware_interface)/config/urdf/2dof_robot_arm.ros2_control.xacro" />
+
+  <link name="world"/>
+
+  <xacro:robot_arm parent="world">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:robot_arm>
+  <xacro:robot_arm_ros2_control name="2dof_robot_arm_ros2_control"/>
+</robot>
