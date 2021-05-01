@@ -1,3 +1,14 @@
+/**
+ * @file util.cpp
+ * @author Masaya Kataoka (ms.kataoka@gmail.com)
+ * @brief implementation of the utility function.
+ * @version 0.1
+ * @date 2021-05-01
+ * 
+ * @copyright Copyright (c) OUXT Polaris 2021
+ * 
+ */
+
 // Copyright (c) 2019 OUXT Polaris
 //
 // Licensed under the Apache License, Version 2.0 (the "License");

@@ -1,3 +1,14 @@
+/**
+ * @file motor_base.cpp
+ * @author Masaya Kataoka (ms.kataoka@gmail.com)
+ * @brief Implementation of the motor class.
+ * @version 0.1
+ * @date 2021-05-01
+ * 
+ * @copyright Copyright (c) OUXT Polaris 2021
+ * 
+ */
+
 // Copyright (c) 2019 OUXT Polaris
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
