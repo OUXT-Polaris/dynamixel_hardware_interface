@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel_hardware_interface::address_tables::XW540_T260</compoundname>
+    <basecompoundref refid="classdynamixel__hardware__interface_1_1AddressTableBase" prot="public" virt="non-virtual">dynamixel_hardware_interface::AddressTableBase</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260_1ae3d276535eb0127dd5a8de817994cff0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel_hardware_interface::address_tables::XW540_T260::XW540_T260</definition>
+        <argsstring>()</argsstring>
+        <name>XW540_T260</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="32" column="3" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>dynamixel_hardware_interface::address_tables::XW540_T260</label>
+        <link refid="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dynamixel_hardware_interface::AddressTableBase</label>
+        <link refid="classdynamixel__hardware__interface_1_1AddressTableBase"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>dynamixel_hardware_interface::address_tables::XW540_T260</label>
+        <link refid="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dynamixel_hardware_interface::AddressTableBase</label>
+        <link refid="classdynamixel__hardware__interface_1_1AddressTableBase"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="30" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="29" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a43e69aa8a1a3a28ac6278744fba9fcad" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::address_tables::XW540_T260</scope><name>addressExists</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a5dfc09c9955027305728c95d1c3bc52b" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::address_tables::XW540_T260</scope><name>AddressTableBase</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a75379c5c98a794a4b1d671b47b5453c9" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::address_tables::XW540_T260</scope><name>getAddress</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260_1ae3d276535eb0127dd5a8de817994cff0" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::address_tables::XW540_T260</scope><name>XW540_T260</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src</compoundname>
+    <innerfile refid="dynamixel__hardware__interface_8cpp">dynamixel_hardware_interface.cpp</innerfile>
+    <innerfile refid="motor__base_8cpp">motor_base.cpp</innerfile>
+    <innerfile refid="util_8cpp">util.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/"/>
+  </compounddef>
+</doxygen>

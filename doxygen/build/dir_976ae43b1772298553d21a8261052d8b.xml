@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_976ae43b1772298553d21a8261052d8b" kind="dir">
+    <compoundname>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface</compoundname>
+    <innerdir refid="dir_928fd2f9e5178dedf5db7221eddd41a5">/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors</innerdir>
+    <innerfile refid="address__table__base_8hpp">address_table_base.hpp</innerfile>
+    <innerfile refid="constants_8hpp">constants.hpp</innerfile>
+    <innerfile refid="dynamixel__hardware__interface_8hpp">dynamixel_hardware_interface.hpp</innerfile>
+    <innerfile refid="motor__base_8hpp">motor_base.hpp</innerfile>
+    <innerfile refid="util_8hpp">util.hpp</innerfile>
+    <innerfile refid="visiblity__control_8h">visiblity_control.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/"/>
+  </compounddef>
+</doxygen>

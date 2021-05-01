@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel_hardware_interface::motors::XW540_T260</compoundname>
+    <basecompoundref refid="classdynamixel__hardware__interface_1_1MotorBase" prot="public" virt="non-virtual">dynamixel_hardware_interface::MotorBase</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a32dbaa72347b1aabadde6572a9c2014f" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel_hardware_interface::motors::XW540_T260::XW540_T260</definition>
+        <argsstring>(const std::string joint_name, bool enable_dummy, int baudrate, uint8_t id, std::shared_ptr&lt; dynamixel::PortHandler &gt; port_handler, std::shared_ptr&lt; dynamixel::PacketHandler &gt; packet_handler)</argsstring>
+        <name>XW540_T260</name>
+        <param>
+          <type>const std::string</type>
+          <declname>joint_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enable_dummy</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>baudrate</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; dynamixel::PortHandler &gt;</type>
+          <declname>port_handler</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; dynamixel::PacketHandler &gt;</type>
+          <declname>packet_handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="41" column="12" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="41" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>dynamixel_hardware_interface::motors::XW540_T260</label>
+        <link refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dynamixel_hardware_interface::MotorBase</label>
+        <link refid="classdynamixel__hardware__interface_1_1MotorBase"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>dynamixel_hardware_interface::motors::XW540_T260</label>
+        <link refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dynamixel_hardware_interface::MotorBase</label>
+        <link refid="classdynamixel__hardware__interface_1_1MotorBase"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="39" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="38" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1af843d62c840add6bf55529328dfd8671" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>appendCommandInterfaces</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a01939d63582a3a4b02702ee0aa2f3ea0" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>appendStateInterfaces</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a2544c335b4468b9cc297dc801f813528" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>baudrate</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa591961812734c1abff2f611203c95aa" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>configure</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a48c5d0ab85e71ddfcd3f4add1093234a" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>enable_dummy</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a8dc023990da7f0be486d2cf07039d5c4" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>getGoalPosition</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ae78771bd4b59d5b6208d69d4f05b94b2" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>getJointPosition</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad6f046868a2fbe904877885f9c6d493c" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>getSupportedOperations</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a06d490867e164574608c317402d82343" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>id</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a1d6aa8e0f66c5b8fab97417c489a50fa" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>joint_name</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1afd0cec859955b5eebef3fb979685d4f6" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>motor_type</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a283620455af3d064295177fb969e6d5e" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>MotorBase</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a7e00bde66e9d41ec2d62772463fe9583" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>operationSupports</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab48629d464aee02829702273248c1fde" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>setGoalPosition</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad9b1da7088d91b73431038f4b179db0f" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>torqueEnable</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa12729f083f20c8168079795053689f9" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>updateJointPosition</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a32dbaa72347b1aabadde6572a9c2014f" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>XW540_T260</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa0901f99af1ab546e41c809048679d68" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>~MotorBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

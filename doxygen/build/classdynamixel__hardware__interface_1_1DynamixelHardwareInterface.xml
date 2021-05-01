@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel_hardware_interface::DynamixelHardwareInterface</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">hardware_interface::BaseInterface&lt; hardware_interface::SystemInterface &gt;</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a8b945e8e564bbde7abfd2e7d5b7447d4" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string dynamixel_hardware_interface::DynamixelHardwareInterface::port_name_</definition>
+        <argsstring></argsstring>
+        <name>port_name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="63" column="15" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a027ed49323b295436e1b0e30ca494a16" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int dynamixel_hardware_interface::DynamixelHardwareInterface::baudrate_</definition>
+        <argsstring></argsstring>
+        <name>baudrate_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="64" column="7" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a9a9e911e0edaf353ef5b0796e450a368" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classdynamixel__hardware__interface_1_1MotorBase" kindref="compound">MotorBase</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;MotorBase&gt; &gt; dynamixel_hardware_interface::DynamixelHardwareInterface::motors_</definition>
+        <argsstring></argsstring>
+        <name>motors_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="137" column="15" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1afb5b736369ec24b89e3f9bee77e1cf3f" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; dynamixel::PortHandler &gt;</type>
+        <definition>std::shared_ptr&lt;dynamixel::PortHandler&gt; dynamixel_hardware_interface::DynamixelHardwareInterface::port_handler_</definition>
+        <argsstring></argsstring>
+        <name>port_handler_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="138" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1aa8c186b3f47235c85fef99a21df929a1" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; dynamixel::PacketHandler &gt;</type>
+        <definition>std::shared_ptr&lt;dynamixel::PacketHandler&gt; dynamixel_hardware_interface::DynamixelHardwareInterface::packet_handler_</definition>
+        <argsstring></argsstring>
+        <name>packet_handler_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="139" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ad0f44c8124d6768ac06cc181a850ee95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC hardware_interface::return_type</type>
+        <definition>hardware_interface::return_type dynamixel_hardware_interface::DynamixelHardwareInterface::configure</definition>
+        <argsstring>(const hardware_interface::HardwareInfo &amp;info) override</argsstring>
+        <name>configure</name>
+        <param>
+          <type>const hardware_interface::HardwareInfo &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="42" column="35" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="22" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a26334a17e6798229f799293bacf2c1bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC std::vector&lt; hardware_interface::StateInterface &gt;</type>
+        <definition>std::vector&lt; hardware_interface::StateInterface &gt; dynamixel_hardware_interface::DynamixelHardwareInterface::export_state_interfaces</definition>
+        <argsstring>() override</argsstring>
+        <name>export_state_interfaces</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="45" column="15" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="63" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1af971786f88a914f534fe471c60a2aaad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC std::vector&lt; hardware_interface::CommandInterface &gt;</type>
+        <definition>std::vector&lt; hardware_interface::CommandInterface &gt; dynamixel_hardware_interface::DynamixelHardwareInterface::export_command_interfaces</definition>
+        <argsstring>() override</argsstring>
+        <name>export_command_interfaces</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="48" column="15" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="76" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1adedbbaee0cac112a5a6011b00c71b8d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC hardware_interface::return_type</type>
+        <definition>hardware_interface::return_type dynamixel_hardware_interface::DynamixelHardwareInterface::start</definition>
+        <argsstring>() override</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="51" column="35" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="127" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a9c6352e47de81cd00e97000b76025cde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC hardware_interface::return_type</type>
+        <definition>hardware_interface::return_type dynamixel_hardware_interface::DynamixelHardwareInterface::stop</definition>
+        <argsstring>() override</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="54" column="35" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a2ddd0eb8b4bfaaca6bafa10c27a13e05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC hardware_interface::return_type</type>
+        <definition>hardware_interface::return_type dynamixel_hardware_interface::DynamixelHardwareInterface::read</definition>
+        <argsstring>() override</argsstring>
+        <name>read</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="57" column="35" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="138" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a551bd0018fbaa8bb6893edebff56115c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC hardware_interface::return_type</type>
+        <definition>hardware_interface::return_type dynamixel_hardware_interface::DynamixelHardwareInterface::write</definition>
+        <argsstring>() override</argsstring>
+        <name>write</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="60" column="35" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="154" bodyend="157"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a15f1ffbcb24f674dfb9cfd11e7b09d4d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>SupportedMotors</type>
+        <definition>SupportedMotors dynamixel_hardware_interface::DynamixelHardwareInterface::strToSupportMotorsEnum</definition>
+        <argsstring>(const std::string &amp;motor_type) const</argsstring>
+        <name>strToSupportMotorsEnum</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>motor_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="65" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="88" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1adc541294f39d35d046806028f7c309be" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T dynamixel_hardware_interface::DynamixelHardwareInterface::getParameter</definition>
+        <argsstring>(const std::string key, const hardware_interface::ComponentInfo &amp;info) const</argsstring>
+        <name>getParameter</name>
+        <param>
+          <type>const std::string</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const hardware_interface::ComponentInfo &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="68" column="5" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="68" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ab42cb398baff91138d26eae457f14a8c" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamixel_hardware_interface::DynamixelHardwareInterface::getParameter</definition>
+        <argsstring>(const std::string &amp;key, const hardware_interface::ComponentInfo &amp;info, std::string &amp;parameter) const</argsstring>
+        <name>getParameter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const hardware_interface::ComponentInfo &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="74" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="74" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a02ef84719c417fb8dbe6d4698c39e585" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamixel_hardware_interface::DynamixelHardwareInterface::getParameter</definition>
+        <argsstring>(const std::string &amp;key, const hardware_interface::ComponentInfo &amp;info, int &amp;parameter) const</argsstring>
+        <name>getParameter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const hardware_interface::ComponentInfo &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="86" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="86" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ae013f782a5399fbc4f56b61062970f67" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamixel_hardware_interface::DynamixelHardwareInterface::getParameter</definition>
+        <argsstring>(const std::string &amp;key, const hardware_interface::ComponentInfo &amp;info, bool &amp;parameter) const</argsstring>
+        <name>getParameter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const hardware_interface::ComponentInfo &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="93" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="93" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1aacc0f26c12661efe1a11d2a9ffdadbbe" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T dynamixel_hardware_interface::DynamixelHardwareInterface::getHardwareParameter</definition>
+        <argsstring>(const std::string key) const</argsstring>
+        <name>getHardwareParameter</name>
+        <param>
+          <type>const std::string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="104" column="5" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="104" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a08b5292c0bb72e759c5545737ac2a65f" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamixel_hardware_interface::DynamixelHardwareInterface::getHardwareParameter</definition>
+        <argsstring>(const std::string &amp;key, std::string &amp;parameter) const</argsstring>
+        <name>getHardwareParameter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="110" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="110" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a28c5ec187c8843d49d54e75193eb5a34" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamixel_hardware_interface::DynamixelHardwareInterface::getHardwareParameter</definition>
+        <argsstring>(const std::string &amp;key, int &amp;parameter) const</argsstring>
+        <name>getHardwareParameter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="120" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="120" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ae7bac45987d8ecb9c9bcb3054315c156" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamixel_hardware_interface::DynamixelHardwareInterface::getHardwareParameter</definition>
+        <argsstring>(const std::string &amp;key, bool &amp;parameter) const</argsstring>
+        <name>getHardwareParameter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="126" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="126" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a4c26d257f0a29763c8cb35a65b98c9f6" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classdynamixel__hardware__interface_1_1MotorBase" kindref="compound">MotorBase</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; MotorBase &gt; dynamixel_hardware_interface::DynamixelHardwareInterface::constructMotorInstance</definition>
+        <argsstring>(const hardware_interface::ComponentInfo &amp;info) const</argsstring>
+        <name>constructMotorInstance</name>
+        <param>
+          <type>const hardware_interface::ComponentInfo &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="135" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="97" bodyend="125"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>hardware_interface::BaseInterface&lt; hardware_interface::SystemInterface &gt;</label>
+      </node>
+      <node id="1">
+        <label>dynamixel_hardware_interface::DynamixelHardwareInterface</label>
+        <link refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>hardware_interface::BaseInterface&lt; hardware_interface::SystemInterface &gt;</label>
+      </node>
+      <node id="1">
+        <label>dynamixel_hardware_interface::DynamixelHardwareInterface</label>
+        <link refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="37" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" bodystart="35" bodyend="140"/>
+    <listofallmembers>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a027ed49323b295436e1b0e30ca494a16" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>baudrate_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ad0f44c8124d6768ac06cc181a850ee95" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>configure</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a4c26d257f0a29763c8cb35a65b98c9f6" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>constructMotorInstance</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1af971786f88a914f534fe471c60a2aaad" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>export_command_interfaces</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a26334a17e6798229f799293bacf2c1bb" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>export_state_interfaces</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1aacc0f26c12661efe1a11d2a9ffdadbbe" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>getHardwareParameter</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a08b5292c0bb72e759c5545737ac2a65f" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>getHardwareParameter</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a28c5ec187c8843d49d54e75193eb5a34" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>getHardwareParameter</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ae7bac45987d8ecb9c9bcb3054315c156" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>getHardwareParameter</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1adc541294f39d35d046806028f7c309be" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>getParameter</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ab42cb398baff91138d26eae457f14a8c" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>getParameter</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a02ef84719c417fb8dbe6d4698c39e585" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>getParameter</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ae013f782a5399fbc4f56b61062970f67" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>getParameter</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a9a9e911e0edaf353ef5b0796e450a368" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>motors_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1aa8c186b3f47235c85fef99a21df929a1" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>packet_handler_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1afb5b736369ec24b89e3f9bee77e1cf3f" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>port_handler_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a8b945e8e564bbde7abfd2e7d5b7447d4" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>port_name_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a2ddd0eb8b4bfaaca6bafa10c27a13e05" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>read</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1adedbbaee0cac112a5a6011b00c71b8d4" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>start</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a9c6352e47de81cd00e97000b76025cde" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>stop</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a15f1ffbcb24f674dfb9cfd11e7b09d4d" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>strToSupportMotorsEnum</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a551bd0018fbaa8bb6893edebff56115c" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelHardwareInterface</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

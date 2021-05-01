@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classdynamixel__hardware__interface_1_1AddressTableBase" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel_hardware_interface::AddressTableBase</compoundname>
+    <derivedcompoundref refid="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260" prot="public" virt="non-virtual">dynamixel_hardware_interface::address_tables::XW540_T260</derivedcompoundref>
+    <includes refid="address__table__base_8hpp" local="no">address_table_base.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a76bf65c065a25b26ad3a4edf45f35a1b" prot="private" static="no" mutable="no">
+        <type>const boost::optional&lt; uint16_t &gt;</type>
+        <definition>const boost::optional&lt;uint16_t&gt; dynamixel_hardware_interface::AddressTableBase::ADDR_TORQUE_ENABLE</definition>
+        <argsstring></argsstring>
+        <name>ADDR_TORQUE_ENABLE</name>
+        <initializer>= boost::none</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="103" column="25" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1ace626278d1647f38b1d40814b6cfb97c" prot="private" static="no" mutable="no">
+        <type>const boost::optional&lt; uint16_t &gt;</type>
+        <definition>const boost::optional&lt;uint16_t&gt; dynamixel_hardware_interface::AddressTableBase::ADDR_GOAL_POSITION</definition>
+        <argsstring></argsstring>
+        <name>ADDR_GOAL_POSITION</name>
+        <initializer>= boost::none</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="104" column="25" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a2c87a363081ffea0fabb24d1b2620911" prot="private" static="no" mutable="no">
+        <type>const boost::optional&lt; uint16_t &gt;</type>
+        <definition>const boost::optional&lt;uint16_t&gt; dynamixel_hardware_interface::AddressTableBase::ADDR_MOVING_SPEED</definition>
+        <argsstring></argsstring>
+        <name>ADDR_MOVING_SPEED</name>
+        <initializer>= boost::none</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="105" column="25" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1aef3a946c2fd61ed0cb413bc69ee2a5e6" prot="private" static="no" mutable="no">
+        <type>const boost::optional&lt; uint16_t &gt;</type>
+        <definition>const boost::optional&lt;uint16_t&gt; dynamixel_hardware_interface::AddressTableBase::ADDR_PRESENT_POSITION</definition>
+        <argsstring></argsstring>
+        <name>ADDR_PRESENT_POSITION</name>
+        <initializer>= boost::none</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="106" column="25" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1ab83e468c3556cb365caf7f06d82a305d" prot="private" static="no" mutable="no">
+        <type>const boost::optional&lt; uint16_t &gt;</type>
+        <definition>const boost::optional&lt;uint16_t&gt; dynamixel_hardware_interface::AddressTableBase::ADDR_PRESENT_SPEED</definition>
+        <argsstring></argsstring>
+        <name>ADDR_PRESENT_SPEED</name>
+        <initializer>= boost::none</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="107" column="25" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1af4e64b016b33b7fcad1dab7334239b4c" prot="private" static="no" mutable="no">
+        <type>const boost::optional&lt; uint16_t &gt;</type>
+        <definition>const boost::optional&lt;uint16_t&gt; dynamixel_hardware_interface::AddressTableBase::ADDR_PRESENT_LOAD</definition>
+        <argsstring></argsstring>
+        <name>ADDR_PRESENT_LOAD</name>
+        <initializer>= boost::none</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="108" column="25" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a3548c143abe1cd9abe7ca8cf591170ca" prot="private" static="no" mutable="no">
+        <type>const boost::optional&lt; uint16_t &gt;</type>
+        <definition>const boost::optional&lt;uint16_t&gt; dynamixel_hardware_interface::AddressTableBase::ADDR_PRESENT_VOLTAGE</definition>
+        <argsstring></argsstring>
+        <name>ADDR_PRESENT_VOLTAGE</name>
+        <initializer>= boost::none</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="109" column="25" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1aa9512682fc7b9556394f0c1a6bceecdf" prot="private" static="no" mutable="no">
+        <type>const boost::optional&lt; uint16_t &gt;</type>
+        <definition>const boost::optional&lt;uint16_t&gt; dynamixel_hardware_interface::AddressTableBase::ADDR_PRESENT_TEMPERATURE</definition>
+        <argsstring></argsstring>
+        <name>ADDR_PRESENT_TEMPERATURE</name>
+        <initializer>= boost::none</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="110" column="25" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a5dfc09c9955027305728c95d1c3bc52b" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel_hardware_interface::AddressTableBase::AddressTableBase</definition>
+        <argsstring>(boost::optional&lt; uint16_t &gt; ADDR_TORQUE_ENABLE, boost::optional&lt; uint16_t &gt; ADDR_GOAL_POSITION, boost::optional&lt; uint16_t &gt; ADDR_MOVING_SPEED, boost::optional&lt; uint16_t &gt; ADDR_PRESENT_POSITION, boost::optional&lt; uint16_t &gt; ADDR_PRESENT_SPEED, boost::optional&lt; uint16_t &gt; ADDR_PRESENT_LOAD, boost::optional&lt; uint16_t &gt; ADDR_PRESENT_VOLTAGE, boost::optional&lt; uint16_t &gt; ADDR_PRESENT_TEMPERATURE)</argsstring>
+        <name>AddressTableBase</name>
+        <param>
+          <type>boost::optional&lt; uint16_t &gt;</type>
+          <declname>ADDR_TORQUE_ENABLE</declname>
+        </param>
+        <param>
+          <type>boost::optional&lt; uint16_t &gt;</type>
+          <declname>ADDR_GOAL_POSITION</declname>
+        </param>
+        <param>
+          <type>boost::optional&lt; uint16_t &gt;</type>
+          <declname>ADDR_MOVING_SPEED</declname>
+        </param>
+        <param>
+          <type>boost::optional&lt; uint16_t &gt;</type>
+          <declname>ADDR_PRESENT_POSITION</declname>
+        </param>
+        <param>
+          <type>boost::optional&lt; uint16_t &gt;</type>
+          <declname>ADDR_PRESENT_SPEED</declname>
+        </param>
+        <param>
+          <type>boost::optional&lt; uint16_t &gt;</type>
+          <declname>ADDR_PRESENT_LOAD</declname>
+        </param>
+        <param>
+          <type>boost::optional&lt; uint16_t &gt;</type>
+          <declname>ADDR_PRESENT_VOLTAGE</declname>
+        </param>
+        <param>
+          <type>boost::optional&lt; uint16_t &gt;</type>
+          <declname>ADDR_PRESENT_TEMPERATURE</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new Address Table Base object, each parameter describes the address of the operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ADDR_TORQUE_ENABLE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this value is boost::none, writing torque_enable command address exists. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ADDR_GOAL_POSITION</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this value is boost::none, writing goal_position command address exists. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ADDR_MOVING_SPEED</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this value is boost::none, writing moving_speed command address exists. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ADDR_PRESENT_POSITION</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this value is boost::none, reading present_position command address exists. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ADDR_PRESENT_SPEED</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this value is boost::none, reading present_speed command address exists. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ADDR_PRESENT_LOAD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this value is boost::none, reading present_load command address exists. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ADDR_PRESENT_VOLTAGE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this value is boost::none, reading present_voltage command address exists. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ADDR_PRESENT_TEMPERATURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If this value is boost::none, reading present_tempelature command address exists. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="42" column="12" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="42" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a75379c5c98a794a4b1d671b47b5453c9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>boost::optional&lt; uint16_t &gt;</type>
+        <definition>boost::optional&lt;uint16_t&gt; dynamixel_hardware_interface::AddressTableBase::getAddress</definition>
+        <argsstring>(const Operation &amp;operaiton) const</argsstring>
+        <name>getAddress</name>
+        <param>
+          <type>const Operation &amp;</type>
+          <declname>operaiton</declname>
+        </param>
+        <briefdescription>
+<para>Get address of which operation you want to execute. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>operaiton</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>operation you want to execute </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>boost::none</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>operation is not supported </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uint16_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the operation you want to execute </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="64" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="64" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a43e69aa8a1a3a28ac6278744fba9fcad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dynamixel_hardware_interface::AddressTableBase::addressExists</definition>
+        <argsstring>(const Operation &amp;operation) const</argsstring>
+        <name>addressExists</name>
+        <param>
+          <type>const Operation &amp;</type>
+          <declname>operation</declname>
+        </param>
+        <briefdescription>
+<para>Check the address exists or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>operation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>operation you want to execute </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true address exist </para>
+</simplesect>
+<simplesect kind="return"><para>false address does not exist </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="93" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="93" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a88842a6e56d6e9b4d80befb6ea3fd4f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel_hardware_interface::AddressTableBase::AddressTableBase</definition>
+        <argsstring>()=delete</argsstring>
+        <name>AddressTableBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="102" column="3"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>base class for address table class </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>dynamixel_hardware_interface::address_tables::XW540_T260</label>
+        <link refid="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>dynamixel_hardware_interface::AddressTableBase</label>
+        <link refid="classdynamixel__hardware__interface_1_1AddressTableBase"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="29" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="28" bodyend="111"/>
+    <listofallmembers>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1ace626278d1647f38b1d40814b6cfb97c" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_GOAL_POSITION</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a2c87a363081ffea0fabb24d1b2620911" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_MOVING_SPEED</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1af4e64b016b33b7fcad1dab7334239b4c" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_PRESENT_LOAD</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aef3a946c2fd61ed0cb413bc69ee2a5e6" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_PRESENT_POSITION</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1ab83e468c3556cb365caf7f06d82a305d" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_PRESENT_SPEED</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aa9512682fc7b9556394f0c1a6bceecdf" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_PRESENT_TEMPERATURE</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a3548c143abe1cd9abe7ca8cf591170ca" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_PRESENT_VOLTAGE</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a76bf65c065a25b26ad3a4edf45f35a1b" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_TORQUE_ENABLE</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a43e69aa8a1a3a28ac6278744fba9fcad" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>addressExists</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a5dfc09c9955027305728c95d1c3bc52b" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>AddressTableBase</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a88842a6e56d6e9b4d80befb6ea3fd4f3" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>AddressTableBase</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a75379c5c98a794a4b1d671b47b5453c9" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>getAddress</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

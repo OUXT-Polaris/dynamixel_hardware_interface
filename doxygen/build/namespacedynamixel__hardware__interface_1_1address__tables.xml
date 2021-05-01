@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacedynamixel__hardware__interface_1_1address__tables" kind="namespace" language="C++">
+    <compoundname>dynamixel_hardware_interface::address_tables</compoundname>
+    <innerclass refid="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260" prot="public">dynamixel_hardware_interface::address_tables::XW540_T260</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="28" column="1"/>
+  </compounddef>
+</doxygen>
