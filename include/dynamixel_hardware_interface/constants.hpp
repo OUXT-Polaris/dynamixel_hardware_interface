@@ -44,6 +44,9 @@ constexpr double TO_VOLTAGE = 0.1;
     return l;                                                                          \
   }
 
+/**
+ * @brief Enum class of the commands
+ */
 enum class Operation {
   TORQUE_ENABLE,
   GOAL_POSITION,
@@ -57,9 +60,22 @@ enum class Operation {
 
 GENERATE_ENUM_ITERATOR(Operation, PRESENT_TEMPERATURE)
 
-enum class SupportedMotors { XW540_T260, INVALID };
+/**
+ * @brief Enum class of the supported motor
+ */
+enum class SupportedMotors {
+  /**
+   * @brief Robotis xw540-t260 motor
+   * @sa https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/
+   */
+  XW540_T260,
+  /**
+   * @brief Invalid motor type
+   */
+  INVALID
+};
 
-GENERATE_ENUM_ITERATOR(SupportedMotors, XW540_T260)
+GENERATE_ENUM_ITERATOR(SupportedMotors, INVALID)
 
 }  //  namespace dynamixel_hardware_interface
 
