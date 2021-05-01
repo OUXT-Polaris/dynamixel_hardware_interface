@@ -132,6 +132,10 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="4">
+        <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp</label>
+        <link refid="dynamixel__hardware__interface_8cpp"/>
+      </node>
       <node id="1">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp</label>
         <link refid="xw540__t260_8hpp"/>
@@ -141,6 +145,8 @@
       <node id="3">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp</label>
         <link refid="dynamixel__hardware__interface_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/motors.hpp</label>

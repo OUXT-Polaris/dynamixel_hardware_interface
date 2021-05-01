@@ -37,6 +37,24 @@
         </childnode>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp</label>
+        <link refid="motor__base_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/util.hpp</label>
+        <link refid="util_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/util.cpp</label>
+        <link refid="util_8cpp"/>
+      </node>
+    </invincdepgraph>
     <innernamespace refid="namespacedynamixel__hardware__interface">dynamixel_hardware_interface</innernamespace>
     <briefdescription>
 <para>utility functions </para>

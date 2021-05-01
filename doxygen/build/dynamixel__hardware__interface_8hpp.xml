@@ -178,6 +178,18 @@
         <label>memory</label>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp</label>
+        <link refid="dynamixel__hardware__interface_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp</label>
+        <link refid="dynamixel__hardware__interface_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
     <innerclass refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface" prot="public">dynamixel_hardware_interface::DynamixelHardwareInterface</innerclass>
     <innernamespace refid="namespacedynamixel__hardware__interface">dynamixel_hardware_interface</innernamespace>
     <briefdescription>

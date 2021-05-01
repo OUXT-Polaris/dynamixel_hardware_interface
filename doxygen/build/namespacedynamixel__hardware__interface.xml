@@ -281,7 +281,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/util.cpp" line="19" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/util.cpp" bodystart="19" bodyend="30" declfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/util.hpp" declline="33" declcolumn="19"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/util.cpp" line="30" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/util.cpp" bodystart="30" bodyend="41" declfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/util.hpp" declline="33" declcolumn="19"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

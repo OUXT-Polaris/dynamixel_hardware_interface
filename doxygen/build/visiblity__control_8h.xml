@@ -4,6 +4,10 @@
     <compoundname>visiblity_control.h</compoundname>
     <includedby refid="dynamixel__hardware__interface_8hpp" local="no">/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp</includedby>
     <invincdepgraph>
+      <node id="3">
+        <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp</label>
+        <link refid="dynamixel__hardware__interface_8cpp"/>
+      </node>
       <node id="1">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/visiblity_control.h</label>
         <link refid="visiblity__control_8h"/>
@@ -13,6 +17,8 @@
       <node id="2">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp</label>
         <link refid="dynamixel__hardware__interface_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">
