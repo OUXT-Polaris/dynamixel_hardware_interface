@@ -49,7 +49,7 @@ jobs:
             cd docs
             mkdocs build
         - name: Publish Document
-          if: ${{ github.event_name == 'push' || github.event_name == 'schedule'}}
+          # if: ${{ github.event_name == 'push' || github.event_name == 'schedule'}}
           uses: peaceiris/actions-gh-pages@v3
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
