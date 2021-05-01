@@ -37,8 +37,7 @@ struct Result
 {
   const std::string description;
   const bool success;
-  Result(const std::string & description, bool success)
-  : description(description), success(success)
+  Result(const std::string & description, bool success) : description(description), success(success)
   {
   }
 };
@@ -52,7 +51,7 @@ public:
   const int baudrate;
   const uint8_t id;
   MotorBase() = delete;
-  template<typename AddressTable>
+  template <typename AddressTable>
   MotorBase(
     const SupportedMotors & motor_type, const std::string & joint_name, const bool enable_dummy,
     const AddressTable & table, int baudrate, uint8_t id,
@@ -82,11 +81,12 @@ public:
   virtual Result configure();
   virtual Result torqueEnable(bool enable);
   virtual Result setGoalPosition(double goal_position);
-  virtual double getJointPosition() const {return joint_position_;}
-  virtual double getGoalPosition() const {return goal_position_;}
+  virtual double getJointPosition() const { return joint_position_; }
+  virtual double getGoalPosition() const { return goal_position_; }
   virtual Result updateJointPosition();
   virtual void appendStateInterfaces(std::vector<hardware_interface::StateInterface> & interfaces);
-  virtual void appendCommandInterfaces(std::vector<hardware_interface::CommandInterface> & interfaces);
+  virtual void appendCommandInterfaces(
+    std::vector<hardware_interface::CommandInterface> & interfaces);
 
 private:
   Result getResult(int communication_result, uint8_t packet_error);
