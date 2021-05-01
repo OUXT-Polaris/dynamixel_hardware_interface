@@ -78,15 +78,15 @@ public:
   }
   ~MotorBase();
   bool operationSupports(const Operation & operation);
-  std::vector<Operation> getSupportedOperations();
-  Result configure();
-  Result torqueEnable(bool enable);
-  Result setGoalPosition(double goal_position);
-  double getJointPosition() const {return joint_position_;}
-  double getGoalPosition() const {return goal_position_;}
-  Result updateJointPosition();
-  void appendStateInterfaces(std::vector<hardware_interface::StateInterface> & interfaces);
-  void appendCommandInterfaces(std::vector<hardware_interface::CommandInterface> & interfaces);
+  virtual std::vector<Operation> getSupportedOperations();
+  virtual Result configure();
+  virtual Result torqueEnable(bool enable);
+  virtual Result setGoalPosition(double goal_position);
+  virtual double getJointPosition() const {return joint_position_;}
+  virtual double getGoalPosition() const {return goal_position_;}
+  virtual Result updateJointPosition();
+  virtual void appendStateInterfaces(std::vector<hardware_interface::StateInterface> & interfaces);
+  virtual void appendCommandInterfaces(std::vector<hardware_interface::CommandInterface> & interfaces);
 
 private:
   Result getResult(int communication_result, uint8_t packet_error);
