@@ -22,14 +22,20 @@
 
 namespace dynamixel_hardware_interface
 {
+/**
+ * @brief base class for address table class
+ */
 class AddressTableBase
 {
 public:
   AddressTableBase() = delete;
   explicit AddressTableBase(
-    boost::optional<uint16_t> ADDR_TORQUE_ENABLE, boost::optional<uint16_t> ADDR_GOAL_POSITION,
-    boost::optional<uint16_t> ADDR_MOVING_SPEED, boost::optional<uint16_t> ADDR_PRESENT_POSITION,
-    boost::optional<uint16_t> ADDR_PRESENT_SPEED, boost::optional<uint16_t> ADDR_PRESENT_LOAD,
+    boost::optional<uint16_t> ADDR_TORQUE_ENABLE,
+    boost::optional<uint16_t> ADDR_GOAL_POSITION,
+    boost::optional<uint16_t> ADDR_MOVING_SPEED,
+    boost::optional<uint16_t> ADDR_PRESENT_POSITION,
+    boost::optional<uint16_t> ADDR_PRESENT_SPEED,
+    boost::optional<uint16_t> ADDR_PRESENT_LOAD,
     boost::optional<uint16_t> ADDR_PRESENT_VOLTAGE,
     boost::optional<uint16_t> ADDR_PRESENT_TEMPERATURE)
   : ADDR_TORQUE_ENABLE(ADDR_TORQUE_ENABLE),

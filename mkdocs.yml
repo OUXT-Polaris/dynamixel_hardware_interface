@@ -1,0 +1,46 @@
+repo_url: https://github.com/OUXT-Polaris/robotx_buildfarm
+site_name: RobotX Buildfarm
+site_description: OUXT Polaris package buildfarm and develop management tools
+site_author: OUXT Polaris
+theme: 
+  name: material
+  feature:
+    tabs: true
+    features:
+    - navigation.tabs
+  palette:
+    primary: blue
+    accent: lime
+    scheme: slate
+  icon:
+    logo: material/robot
+    repo: fontawesome/brands/github
+copyright: 'Copyright &copy; 2020- OUXT Polaris'
+markdown_extensions:
+    - pymdownx.highlight
+    - pymdownx.superfences
+    - fontawesome_markdown
+    - pymdownx.arithmatex
+    - pymdownx.emoji :
+        emoji_generator: !!python/name:pymdownx.emoji.to_svg
+    - codehilite:
+        guess_lang: false
+    - mdx_math
+    - plantuml_markdown:
+        server: http://www.plantuml.com/plantuml
+    - toc:
+        permalink: "#"
+extra_css:
+    - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+extra_javascript: 
+  - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+extra:
+  font:
+    text: "Noto Sans JP"
+    code: "Consolas"
+  search:
+    language: en
+plugins:
+    - search
+nav:
+  - Home: index.md
