@@ -40,12 +40,9 @@ public:
    * @param ADDR_PRESENT_TEMPERATURE If this value is boost::none, reading present_tempelature command address exists.
    */
   explicit AddressTableBase(
-    boost::optional<uint16_t> ADDR_TORQUE_ENABLE,
-    boost::optional<uint16_t> ADDR_GOAL_POSITION,
-    boost::optional<uint16_t> ADDR_MOVING_SPEED,
-    boost::optional<uint16_t> ADDR_PRESENT_POSITION,
-    boost::optional<uint16_t> ADDR_PRESENT_SPEED,
-    boost::optional<uint16_t> ADDR_PRESENT_LOAD,
+    boost::optional<uint16_t> ADDR_TORQUE_ENABLE, boost::optional<uint16_t> ADDR_GOAL_POSITION,
+    boost::optional<uint16_t> ADDR_MOVING_SPEED, boost::optional<uint16_t> ADDR_PRESENT_POSITION,
+    boost::optional<uint16_t> ADDR_PRESENT_SPEED, boost::optional<uint16_t> ADDR_PRESENT_LOAD,
     boost::optional<uint16_t> ADDR_PRESENT_VOLTAGE,
     boost::optional<uint16_t> ADDR_PRESENT_TEMPERATURE)
   : ADDR_TORQUE_ENABLE(ADDR_TORQUE_ENABLE),
@@ -55,7 +52,9 @@ public:
     ADDR_PRESENT_SPEED(ADDR_PRESENT_SPEED),
     ADDR_PRESENT_LOAD(ADDR_PRESENT_LOAD),
     ADDR_PRESENT_VOLTAGE(ADDR_PRESENT_VOLTAGE),
-    ADDR_PRESENT_TEMPERATURE(ADDR_PRESENT_TEMPERATURE) {}
+    ADDR_PRESENT_TEMPERATURE(ADDR_PRESENT_TEMPERATURE)
+  {
+  }
   /**
    * @brief Get address of which operation you want to execute.
    * @param operaiton operation you want to execute

@@ -51,7 +51,9 @@ struct Result
    * @param description Description of the result.
    * @param success If true, command execute successfully.
    */
-  Result(const std::string & description, bool success) : description(description), success(success) {}
+  Result(const std::string & description, bool success) : description(description), success(success)
+  {
+  }
 };
 
 /**
