@@ -420,7 +420,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">dynamixel_hardware_interface</span>
+<span class="k">namespace</span> <span class="nn">dynamixel_hardware_interface</span>
 <span class="p">{</span>
 <span class="n">MotorBase</span><span class="o">::~</span><span class="n">MotorBase</span><span class="p">()</span> <span class="p">{}</span>
 
@@ -458,10 +458,10 @@
 <span class="n">Result</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">getResult</span><span class="p">(</span><span class="kt">int</span> <span class="n">communication_result</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">packet_error</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">communication_result</span> <span class="o">!=</span> <span class="n">COMM_SUCCESS</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nf">Result</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">getTxRxResult</span><span class="p">(</span><span class="n">communication_result</span><span class="p">)),</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">getTxRxResult</span><span class="p">(</span><span class="n">communication_result</span><span class="p">)),</span> <span class="nb">false</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">packet_error</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nf">Result</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">getRxPacketError</span><span class="p">(</span><span class="n">packet_error</span><span class="p">)),</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">getRxPacketError</span><span class="p">(</span><span class="n">packet_error</span><span class="p">)),</span> <span class="nb">true</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
 <span class="p">}</span>
@@ -514,35 +514,35 @@
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">address</span> <span class="o">=</span> <span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">(</span><span class="n">Operation</span><span class="o">::</span><span class="n">TORQUE_ENABLE</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nf">Result</span><span class="p">(</span><span class="s">&quot;TORQUE_ENABLE operation does not support in &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;TORQUE_ENABLE operation does not support in &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span> <span class="nb">false</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="kt">uint8_t</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span>
     <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">write1ByteTxRx</span><span class="p">(</span><span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">enable</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nf">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">Result</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">setGoalPosition</span><span class="p">(</span><span class="kt">double</span> <span class="n">goal_position</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">address</span> <span class="o">=</span> <span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">(</span><span class="n">Operation</span><span class="o">::</span><span class="n">GOAL_POSITION</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nf">Result</span><span class="p">(</span><span class="s">&quot;TORQUE_ENABLE operation does not support in &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;TORQUE_ENABLE operation does not support in &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span> <span class="nb">false</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="kt">uint8_t</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">write2ByteTxRx</span><span class="p">(</span>
     <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">radianToPosition</span><span class="p">(</span><span class="n">goal_position</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nf">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">Result</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">updateJointPosition</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">address</span> <span class="o">=</span> <span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">(</span><span class="n">Operation</span><span class="o">::</span><span class="n">PRESENT_POSITION</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nf">Result</span><span class="p">(</span><span class="s">&quot;PRESENT_POSITION operation does not support in &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;PRESENT_POSITION operation does not support in &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span> <span class="nb">false</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">enable_dummy</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">joint_position_</span> <span class="o">=</span> <span class="n">goal_position_</span><span class="p">;</span>
-    <span class="k">return</span> <span class="nf">Result</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="kt">uint8_t</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="kt">uint16_t</span> <span class="n">present_position</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -550,13 +550,13 @@
     <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">read2ByteTxRx</span><span class="p">(</span>
       <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">present_position</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
     <span class="n">joint_position_</span> <span class="o">=</span> <span class="n">positionToRadian</span><span class="p">(</span><span class="n">present_position</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nf">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">}</span>  <span class="c1">//  namespace dynamixel_hardware_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on  3 May 2021 at 00:45:50 UTC</p>
+<p>Updated on  4 May 2021 at 00:40:56 UTC</p>
                 
                   
                 
