@@ -178,6 +178,11 @@ hardware_interface::return_type DynamixelHardwareInterface::read()
 
 hardware_interface::return_type DynamixelHardwareInterface::write()
 {
+  for (const auto motor : motors_) {
+    if (motor->operationSupports(Operation::GOAL_POSITION)) {
+      motor->setCurrentGoalPosition();
+    }
+  }
   return hardware_interface::return_type::OK;
 }
 }  // namespace dynamixel_hardware_interface

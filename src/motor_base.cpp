@@ -144,35 +144,31 @@ Result MotorBase::torqueEnable(bool enable)
 
 Result MotorBase::setGoalPosition(double goal_position)
 {
+  goal_position_ = goal_position;
   const auto address = address_table_->getAddress(Operation::GOAL_POSITION);
   if (!address.exists()) {
     return Result("TORQUE_ENABLE operation does not support in " + toString(motor_type), false);
   }
-  uint8_t error = 0;
   if (enable_dummy) {
-    goal_position_ = goal_position;
+    joint_position_ = goal_position_;
     return Result("", true);
   } else {
     uint8_t error = 0;
     if (address.byte_size == PacketByteSize::ONE_BYTE) {
       const auto result = packet_handler_->write1ByteTxRx(
-        port_handler_.get(), id, address.address, radianToPosition<uint8_t>(goal_position), &error);
+        port_handler_.get(), id, address.address, radianToPosition<uint8_t>(goal_position_), &error);
       return getResult(result, error);
     }
     if (address.byte_size == PacketByteSize::TWO_BYTE) {
-      uint16_t present_position = 0;
       const auto result = packet_handler_->write2ByteTxRx(
-        port_handler_.get(), id, address.address, radianToPosition<uint16_t>(goal_position),
+        port_handler_.get(), id, address.address, radianToPosition<uint16_t>(goal_position_),
         &error);
-      joint_position_ = positionToRadian(present_position);
       return getResult(result, error);
     }
     if (address.byte_size == PacketByteSize::FOUR_BYTE) {
-      uint32_t present_position = 0;
       const auto result = packet_handler_->write4ByteTxRx(
-        port_handler_.get(), id, address.address, radianToPosition<uint32_t>(goal_position),
+        port_handler_.get(), id, address.address, radianToPosition<uint32_t>(goal_position_),
         &error);
-      joint_position_ = positionToRadian(present_position);
       return getResult(result, error);
     }
     return Result("Invalid packet size", false);
