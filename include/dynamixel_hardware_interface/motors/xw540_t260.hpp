@@ -70,6 +70,11 @@ public:
     return static_cast<double>(position) / static_cast<double>(4096) * M_PI * 2;
     return 0;
   }
+
+  void radianToPosition(double radian, uint32_t & value) const override
+  {
+    value = static_cast<uint32_t>((radian / M_PI) * 4096);
+  }
 };
 }  // namespace motors
 }  // namespace dynamixel_hardware_interface
