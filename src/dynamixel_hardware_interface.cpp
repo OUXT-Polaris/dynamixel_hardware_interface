@@ -4,9 +4,9 @@
  * @brief Class implementation of the hardware interface for the Dynamixel motor.
  * @version 0.1
  * @date 2021-05-01
- * 
+ *
  * @copyright Copyright (c) OUXT Polaris 2021
- * 
+ *
  */
 
 // Copyright (c) 2019 OUXT Polaris
@@ -92,8 +92,8 @@ DynamixelHardwareInterface::export_state_interfaces()
     motor->appendStateInterfaces(state_interfaces);
   }
   RCLCPP_INFO_STREAM(
-    rclcpp::get_logger("dynamixel_hardware_interface"), state_interfaces.size()
-                                                          << " state interfaces exported.");
+    rclcpp::get_logger("dynamixel_hardware_interface"), state_interfaces.size() <<
+      " state interfaces exported.");
   return state_interfaces;
 }
 
@@ -105,8 +105,8 @@ DynamixelHardwareInterface::export_command_interfaces()
     motor->appendCommandInterfaces(command_interfaces);
   }
   RCLCPP_INFO_STREAM(
-    rclcpp::get_logger("dynamixel_hardware_interface"), command_interfaces.size()
-                                                          << " command interfaces exported.");
+    rclcpp::get_logger("dynamixel_hardware_interface"), command_interfaces.size() <<
+      " command interfaces exported.");
   return command_interfaces;
 }
 
@@ -138,9 +138,10 @@ std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
     const auto id = static_cast<uint8_t>(getParameter<int>("id", info));
     switch (motor_type) {
       case SupportedMotors::XW540_T260:
-        return std::make_shared<MotorBase>(motors::XW540_T260(
-          info.name, getHardwareParameter<bool>("enable_dummy"), baudrate_, id, port_handler_,
-          packet_handler_));
+        return std::make_shared<MotorBase>(
+          motors::XW540_T260(
+            info.name, getHardwareParameter<bool>("enable_dummy"), baudrate_, id, port_handler_,
+            packet_handler_));
         break;
       default:
         break;

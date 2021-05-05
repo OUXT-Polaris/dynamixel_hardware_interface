@@ -4,9 +4,9 @@
  * @brief utility functions
  * @version 0.1
  * @date 2021-05-01
- * 
+ *
  * @copyright Copyright (c) OUXT Polaris 2021
- * 
+ *
  */
 
 // Copyright (c) 2019 OUXT Polaris

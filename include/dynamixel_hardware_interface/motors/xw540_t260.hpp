@@ -6,7 +6,7 @@
  * @date 2021-05-01
  * @sa https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/
  * @copyright Copyright (c) OUXT Polaris 2021
- * 
+ *
  */
 
 // Copyright (c) 2019 OUXT Polaris
@@ -40,7 +40,16 @@ namespace address_tables
 class XW540_T260 : public AddressTableBase
 {
 public:
-  XW540_T260() : AddressTableBase(64, 116, boost::none, 132, 128, boost::none, boost::none, 146) {}
+  XW540_T260()
+  : AddressTableBase(
+      Address(64, PacketByteSize::ONE_BYTE),
+      Address(116, PacketByteSize::ONE_BYTE),
+      Address(),
+      Address(132, PacketByteSize::FOUR_BYTE),
+      Address(128, PacketByteSize::FOUR_BYTE),
+      Address(),
+      Address(),
+      Address(146, PacketByteSize::FOUR_BYTE)) {}
 };
 }  // namespace address_tables
 

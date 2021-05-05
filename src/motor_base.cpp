@@ -4,9 +4,9 @@
  * @brief Implementation of the motor class.
  * @version 0.1
  * @date 2021-05-01
- * 
+ *
  * @copyright Copyright (c) OUXT Polaris 2021
- * 
+ *
  */
 
 // Copyright (c) 2019 OUXT Polaris
@@ -37,7 +37,7 @@ MotorBase::~MotorBase() {}
 bool MotorBase::operationSupports(const Operation & operation)
 {
   const auto address = address_table_->getAddress(operation);
-  if (!address) {
+  if (!address.exists()) {
     return false;
   }
   return true;
@@ -48,7 +48,7 @@ std::vector<Operation> MotorBase::getSupportedOperations()
   std::vector<Operation> ret = {};
   for (const auto operation : Operation()) {
     const auto address = address_table_->getAddress(operation);
-    if (address) {
+    if (address.exists()) {
       ret.emplace_back(operation);
     }
   }
@@ -98,8 +98,9 @@ void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInter
     if (address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::PRESENT_POSITION:
-          interfaces.emplace_back(hardware_interface::StateInterface(
-            joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
+          interfaces.emplace_back(
+            hardware_interface::StateInterface(
+              joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
           break;
         default:
           break;
@@ -115,8 +116,9 @@ void MotorBase::appendCommandInterfaces(
     if (address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::GOAL_POSITION:
-          interfaces.emplace_back(hardware_interface::CommandInterface(
-            joint_name, hardware_interface::HW_IF_POSITION, &goal_position_));
+          interfaces.emplace_back(
+            hardware_interface::CommandInterface(
+              joint_name, hardware_interface::HW_IF_POSITION, &goal_position_));
           break;
         default:
           break;
@@ -128,31 +130,31 @@ void MotorBase::appendCommandInterfaces(
 Result MotorBase::torqueEnable(bool enable)
 {
   const auto address = address_table_->getAddress(Operation::TORQUE_ENABLE);
-  if (!address) {
+  if (!address.exists()) {
     return Result("TORQUE_ENABLE operation does not support in " + toString(motor_type), false);
   }
   uint8_t error = 0;
   const auto result =
-    packet_handler_->write1ByteTxRx(port_handler_.get(), id, address.get(), enable, &error);
+    packet_handler_->write1ByteTxRx(port_handler_.get(), id, address.address, enable, &error);
   return getResult(result, error);
 }
 
 Result MotorBase::setGoalPosition(double goal_position)
 {
   const auto address = address_table_->getAddress(Operation::GOAL_POSITION);
-  if (!address) {
+  if (!address.exists()) {
     return Result("TORQUE_ENABLE operation does not support in " + toString(motor_type), false);
   }
   uint8_t error = 0;
   const auto result = packet_handler_->write2ByteTxRx(
-    port_handler_.get(), id, address.get(), radianToPosition(goal_position), &error);
+    port_handler_.get(), id, address.address, radianToPosition(goal_position), &error);
   return getResult(result, error);
 }
 
 Result MotorBase::updateJointPosition()
 {
   const auto address = address_table_->getAddress(Operation::PRESENT_POSITION);
-  if (!address) {
+  if (!address.exists()) {
     return Result("PRESENT_POSITION operation does not support in " + toString(motor_type), false);
   }
   if (enable_dummy) {
@@ -163,7 +165,7 @@ Result MotorBase::updateJointPosition()
     uint32_t present_position = 0;
 
     const auto result = packet_handler_->read4ByteTxRx(
-      port_handler_.get(), id, address.get(), &present_position, &error);
+      port_handler_.get(), id, address.address, &present_position, &error);
     joint_position_ = positionToRadian(present_position);
     return getResult(result, error);
   }

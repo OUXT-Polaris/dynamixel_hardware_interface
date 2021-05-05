@@ -60,7 +60,8 @@ struct Result
    * @param description Description of the result.
    * @param success If true, command execute successfully.
    */
-  Result(const std::string & description, bool success) : description(description), success(success)
+  Result(const std::string & description, bool success)
+  : description(description), success(success)
   {
   }
 };
@@ -103,7 +104,7 @@ public:
    * @param port_handler Port handler class of the dynamixel sdk.
    * @param packet_handler Packet handler class of the dynamixel sdk
    */
-  template <typename AddressTable>
+  template<typename AddressTable>
   MotorBase(
     const SupportedMotors & motor_type, const std::string & joint_name, const bool enable_dummy,
     const AddressTable & table, int baudrate, uint8_t id,
@@ -164,12 +165,12 @@ public:
    * @brief Get current joint position of the motor.
    * @return double Current joint position of the motor in radian.
    */
-  virtual double getJointPosition() const { return joint_position_; }
+  virtual double getJointPosition() const {return joint_position_;}
   /**
    * @brief Get current goal position of the motor.
    * @return double Current goal position of the motor in radian.
    */
-  virtual double getGoalPosition() const { return goal_position_; }
+  virtual double getGoalPosition() const {return goal_position_;}
   /**
    * @brief Execute update joint position command to the motor.
    * @return Result result of the command.
