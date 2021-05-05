@@ -88,6 +88,10 @@ enum class SupportedMotors {
 
 GENERATE_ENUM_ITERATOR(SupportedMotors, INVALID)
 
+enum class PacketByteSize { ONE_BYTE, TWO_BYTE, FOUR_BYTE, INVALID };
+
+GENERATE_ENUM_ITERATOR(PacketByteSize, INVALID)
+
 }  //  namespace dynamixel_hardware_interface
 
 #endif  // DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_

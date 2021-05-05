@@ -60,8 +60,7 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
       "baudrate : " << port_handler_->getBaudRate());
     if (port_handler_->openPort()) {
       RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "open serial port succeed");
-    }
-    else {
+    } else {
       RCLCPP_ERROR(rclcpp::get_logger("dynamixel_hardware_interface"), "open serial port failed");
       return hardware_interface::return_type::ERROR;
     }
