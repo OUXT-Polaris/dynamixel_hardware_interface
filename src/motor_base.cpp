@@ -32,7 +32,12 @@
 
 namespace dynamixel_hardware_interface
 {
-MotorBase::~MotorBase() {}
+MotorBase::~MotorBase()
+{
+  if(!enable_dummy) {
+    torqueEnable(false);
+  }
+}
 
 bool MotorBase::operationSupports(const Operation & operation)
 {
@@ -93,6 +98,9 @@ Result MotorBase::configure()
   }
   if (address_table_->addressExists(Operation::GOAL_POSITION)) {
     goal_position_ = 0;
+  }
+  if(!enable_dummy) {
+    torqueEnable(true);
   }
   return Result("", true);
 }
