@@ -65,6 +65,11 @@ double MotorBase::positionToRadian(const uint16_t position) const
   return (position - DXL_HOME_POSITION) * TO_RADIANS;
 }
 
+double MotorBase::positionToRadian(const uint32_t position) const
+{
+  return static_cast<double>(position) / static_cast<double>(4096) * M_PI * 2;
+}
+
 Result MotorBase::getResult(int communication_result, uint8_t packet_error)
 {
   if (communication_result != COMM_SUCCESS) {

@@ -195,6 +195,7 @@ private:
   Result getResult(int communication_result, uint8_t packet_error);
   uint16_t radianToPosition(double radian) const;
   double positionToRadian(const uint16_t position) const;
+  double positionToRadian(const uint32_t position) const;
   std::shared_ptr<AddressTableBase> address_table_;
   std::shared_ptr<dynamixel::PortHandler> port_handler_;
   std::shared_ptr<dynamixel::PacketHandler> packet_handler_;

@@ -33,8 +33,8 @@
 
 namespace dynamixel_hardware_interface
 {
-constexpr double PROTOCOL_VERSION = 1.0;
-constexpr int DXL_HOME_POSITION = 511;  // value range:0 ~ 1023
+constexpr double PROTOCOL_VERSION = 2.0;
+constexpr int DXL_HOME_POSITION = 0;  // value range:0 ~ 1023
 constexpr double DXL_MAX_POSITION = 1023.0;
 constexpr double DXL_MAX_POSITION_DEGREES = 300.0;
 constexpr double TO_RADIANS = (DXL_MAX_POSITION_DEGREES / DXL_MAX_POSITION) * M_PI / 180.0;
