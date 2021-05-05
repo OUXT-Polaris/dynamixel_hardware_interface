@@ -91,6 +91,7 @@
   <compound refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260" kind="class"><name>dynamixel_hardware_interface::motors::XW540_T260</name>
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a32dbaa72347b1aabadde6572a9c2014f" kind="function"><name>XW540_T260</name></member>
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a410454f35d60ec836a234f935d55070b" kind="function"><name>positionToRadian</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1ae3afc71eca920388803a54c596d56b47" kind="function"><name>radianToPosition</name></member>
   </compound>
   <compound refid="namespacedynamixel__hardware__interface" kind="namespace"><name>dynamixel_hardware_interface</name>
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90" kind="enum"><name>Operation</name></member>

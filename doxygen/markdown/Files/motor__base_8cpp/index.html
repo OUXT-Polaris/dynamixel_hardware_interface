@@ -422,7 +422,12 @@
 
 <span class="k">namespace</span> <span class="nn">dynamixel_hardware_interface</span>
 <span class="p">{</span>
-<span class="n">MotorBase</span><span class="o">::~</span><span class="n">MotorBase</span><span class="p">()</span> <span class="p">{}</span>
+<span class="n">MotorBase</span><span class="o">::~</span><span class="n">MotorBase</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">enable_dummy</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">torqueEnable</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
 <span class="kt">bool</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">operationSupports</span><span class="p">(</span><span class="k">const</span> <span class="n">Operation</span> <span class="o">&amp;</span> <span class="n">operation</span><span class="p">)</span>
 <span class="p">{</span>
@@ -483,6 +488,9 @@
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">addressExists</span><span class="p">(</span><span class="n">Operation</span><span class="o">::</span><span class="n">GOAL_POSITION</span><span class="p">))</span> <span class="p">{</span>
     <span class="n">goal_position_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">enable_dummy</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">torqueEnable</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
 <span class="p">}</span>
@@ -604,7 +612,7 @@
 <span class="p">}</span>  <span class="c1">//  namespace dynamixel_hardware_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on  5 May 2021 at 09:17:45 UTC</p>
+<p>Updated on  5 May 2021 at 09:41:52 UTC</p>
                 
                   
                 

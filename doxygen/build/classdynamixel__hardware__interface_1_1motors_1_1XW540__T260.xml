@@ -59,6 +59,28 @@
         </inbodydescription>
         <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="68" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="68" bodyend="72"/>
       </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1ae3afc71eca920388803a54c596d56b47" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void dynamixel_hardware_interface::motors::XW540_T260::radianToPosition</definition>
+        <argsstring>(double radian, uint32_t &amp;value) const override</argsstring>
+        <name>radianToPosition</name>
+        <reimplements refid="classdynamixel__hardware__interface_1_1MotorBase_1aa20a2cbb2d797806280fb0fdfc7d7204">radianToPosition</reimplements>
+        <param>
+          <type>double</type>
+          <declname>radian</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="74" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="74" bodyend="77"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
@@ -88,7 +110,7 @@
         <link refid="classdynamixel__hardware__interface_1_1MotorBase"/>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="56" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="55" bodyend="73"/>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="56" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="55" bodyend="78"/>
     <listofallmembers>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a4bad8497fcbc452e049e631506248f6c" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>address_table_</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1af843d62c840add6bf55529328dfd8671" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>appendCommandInterfaces</name></member>
@@ -113,11 +135,10 @@
       <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a410454f35d60ec836a234f935d55070b" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>positionToRadian</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aff47adf49a24cdde7dc4c0ba9657607e" prot="protected" virt="virtual" ambiguityscope="dynamixel_hardware_interface::MotorBase::"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>positionToRadian</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad21e92cf98c25b77c9109e778e58d708" prot="protected" virt="virtual" ambiguityscope="dynamixel_hardware_interface::MotorBase::"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>positionToRadian</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3a65d6fbf4fe86598e813e785029b631" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>radianToPosition</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad571c9fa630416e965ae5fbb09be0aa9" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>radianToPosition</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab71275abcacc084fc407cc4550e0c227" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>radianToPosition</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a24d3c861d64e057de8f6bd1b9cca4868" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>radianToPosition</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa20a2cbb2d797806280fb0fdfc7d7204" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>radianToPosition</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1ae3afc71eca920388803a54c596d56b47" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>radianToPosition</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3a65d6fbf4fe86598e813e785029b631" prot="protected" virt="non-virtual" ambiguityscope="dynamixel_hardware_interface::MotorBase::"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>radianToPosition</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab71275abcacc084fc407cc4550e0c227" prot="protected" virt="virtual" ambiguityscope="dynamixel_hardware_interface::MotorBase::"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>radianToPosition</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a24d3c861d64e057de8f6bd1b9cca4868" prot="protected" virt="virtual" ambiguityscope="dynamixel_hardware_interface::MotorBase::"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>radianToPosition</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a9a396f2f42004b8f208249f112cf502a" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>setCurrentGoalPosition</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab48629d464aee02829702273248c1fde" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>setGoalPosition</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad9b1da7088d91b73431038f4b179db0f" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::motors::XW540_T260</scope><name>torqueEnable</name></member>
