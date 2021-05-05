@@ -43,13 +43,13 @@ public:
   XW540_T260()
   : AddressTableBase(
       Address(64, PacketByteSize::ONE_BYTE),
-      Address(116, PacketByteSize::ONE_BYTE),
+      Address(116, PacketByteSize::FOUR_BYTE),
       Address(),
       Address(132, PacketByteSize::FOUR_BYTE),
       Address(128, PacketByteSize::FOUR_BYTE),
       Address(),
       Address(),
-      Address(146, PacketByteSize::FOUR_BYTE)) {}
+      Address(146, PacketByteSize::ONE_BYTE)) {}
 };
 }  // namespace address_tables
 
