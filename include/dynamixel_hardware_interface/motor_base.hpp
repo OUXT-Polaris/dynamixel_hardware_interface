@@ -211,15 +211,15 @@ protected:
   double goal_position_;
 
 private:
-  void radianToPosition(double radian, uint8_t & value)
+  void radianToPosition(double radian, uint8_t & value) const
   {
     value = static_cast<uint8_t>((radian / M_PI) * 256);
   }
-  void radianToPosition(double radian, uint16_t & value)
+  void radianToPosition(double radian, uint16_t & value) const
   {
     value = static_cast<uint16_t>((radian / M_PI) * 65536);
   }
-  void radianToPosition(double radian, uint32_t & value)
+  void radianToPosition(double radian, uint32_t & value) const
   {
     value = static_cast<uint32_t>((radian / M_PI) * 4294967296);
   }
