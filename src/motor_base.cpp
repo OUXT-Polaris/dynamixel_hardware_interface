@@ -60,14 +60,19 @@ uint16_t MotorBase::radianToPosition(double radian) const
   return radian * TO_DXL_POS + DXL_HOME_POSITION;
 }
 
+double MotorBase::positionToRadian(const uint8_t position) const
+{
+  return static_cast<double>(position) / static_cast<double>(256) * M_PI * 2;
+}
+
 double MotorBase::positionToRadian(const uint16_t position) const
 {
-  return (position - DXL_HOME_POSITION) * TO_RADIANS;
+  return static_cast<double>(position) / static_cast<double>(65536) * M_PI * 2;
 }
 
 double MotorBase::positionToRadian(const uint32_t position) const
 {
-  return static_cast<double>(position) / static_cast<double>(4096) * M_PI * 2;
+  return static_cast<double>(position) / static_cast<double>(4294967296) * M_PI * 2;
 }
 
 Result MotorBase::getResult(int communication_result, uint8_t packet_error)
@@ -98,9 +103,8 @@ void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInter
     if (address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::PRESENT_POSITION:
-          interfaces.emplace_back(
-            hardware_interface::StateInterface(
-              joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
+          interfaces.emplace_back(hardware_interface::StateInterface(
+            joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
           break;
         default:
           break;
@@ -116,9 +120,8 @@ void MotorBase::appendCommandInterfaces(
     if (address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::GOAL_POSITION:
-          interfaces.emplace_back(
-            hardware_interface::CommandInterface(
-              joint_name, hardware_interface::HW_IF_POSITION, &goal_position_));
+          interfaces.emplace_back(hardware_interface::CommandInterface(
+            joint_name, hardware_interface::HW_IF_POSITION, &goal_position_));
           break;
         default:
           break;
@@ -162,12 +165,28 @@ Result MotorBase::updateJointPosition()
     return Result("", true);
   } else {
     uint8_t error = 0;
-    uint32_t present_position = 0;
-
-    const auto result = packet_handler_->read4ByteTxRx(
-      port_handler_.get(), id, address.address, &present_position, &error);
-    joint_position_ = positionToRadian(present_position);
-    return getResult(result, error);
+    if (address.byte_size == PacketByteSize::ONE_BYTE) {
+      uint8_t present_position = 0;
+      const auto result = packet_handler_->read1ByteTxRx(
+        port_handler_.get(), id, address.address, &present_position, &error);
+      joint_position_ = positionToRadian(present_position);
+      return getResult(result, error);
+    }
+    if (address.byte_size == PacketByteSize::TWO_BYTE) {
+      uint16_t present_position = 0;
+      const auto result = packet_handler_->read2ByteTxRx(
+        port_handler_.get(), id, address.address, &present_position, &error);
+      joint_position_ = positionToRadian(present_position);
+      return getResult(result, error);
+    }
+    if (address.byte_size == PacketByteSize::FOUR_BYTE) {
+      uint32_t present_position = 0;
+      const auto result = packet_handler_->read4ByteTxRx(
+        port_handler_.get(), id, address.address, &present_position, &error);
+      joint_position_ = positionToRadian(present_position);
+      return getResult(result, error);
+    }
+    return Result("Invalid packet size", false);
   }
 }
 }  //  namespace dynamixel_hardware_interface

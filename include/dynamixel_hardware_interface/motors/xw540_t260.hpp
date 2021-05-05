@@ -42,14 +42,11 @@ class XW540_T260 : public AddressTableBase
 public:
   XW540_T260()
   : AddressTableBase(
-      Address(64, PacketByteSize::ONE_BYTE),
-      Address(116, PacketByteSize::FOUR_BYTE),
-      Address(),
-      Address(132, PacketByteSize::FOUR_BYTE),
-      Address(128, PacketByteSize::FOUR_BYTE),
-      Address(),
-      Address(),
-      Address(146, PacketByteSize::ONE_BYTE)) {}
+      Address(64, PacketByteSize::ONE_BYTE), Address(116, PacketByteSize::FOUR_BYTE), Address(),
+      Address(132, PacketByteSize::FOUR_BYTE), Address(128, PacketByteSize::FOUR_BYTE), Address(),
+      Address(), Address(146, PacketByteSize::ONE_BYTE))
+  {
+  }
 };
 }  // namespace address_tables
 
@@ -66,6 +63,12 @@ public:
       SupportedMotors::XW540_T260, joint_name, enable_dummy, address_tables::XW540_T260(), baudrate,
       id, port_handler, packet_handler)
   {
+  }
+
+  double positionToRadian(const uint32_t position) const override
+  {
+    return static_cast<double>(position) / static_cast<double>(4096) * M_PI * 2;
+    return 0;
   }
 };
 }  // namespace motors

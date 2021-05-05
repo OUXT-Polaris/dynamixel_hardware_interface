@@ -36,10 +36,8 @@ namespace dynamixel_hardware_interface
 class Address
 {
 public:
-  Address(uint16_t address, PacketByteSize byte_size)
-  : address(address), byte_size(byte_size) {}
-  Address()
-  : address(0), byte_size(PacketByteSize::INVALID) {}
+  Address(uint16_t address, PacketByteSize byte_size) : address(address), byte_size(byte_size) {}
+  Address() : address(0), byte_size(PacketByteSize::INVALID) {}
   const uint16_t address;
   const PacketByteSize byte_size;
   bool exists() const
@@ -69,11 +67,9 @@ public:
    * @param ADDR_PRESENT_TEMPERATURE If this value is boost::none, reading present_tempelature command address exists.
    */
   explicit AddressTableBase(
-    Address ADDR_TORQUE_ENABLE, Address ADDR_GOAL_POSITION,
-    Address ADDR_MOVING_SPEED, Address ADDR_PRESENT_POSITION,
-    Address ADDR_PRESENT_SPEED, Address ADDR_PRESENT_LOAD,
-    Address ADDR_PRESENT_VOLTAGE,
-    Address ADDR_PRESENT_TEMPERATURE)
+    Address ADDR_TORQUE_ENABLE, Address ADDR_GOAL_POSITION, Address ADDR_MOVING_SPEED,
+    Address ADDR_PRESENT_POSITION, Address ADDR_PRESENT_SPEED, Address ADDR_PRESENT_LOAD,
+    Address ADDR_PRESENT_VOLTAGE, Address ADDR_PRESENT_TEMPERATURE)
   : ADDR_TORQUE_ENABLE(ADDR_TORQUE_ENABLE),
     ADDR_GOAL_POSITION(ADDR_GOAL_POSITION),
     ADDR_MOVING_SPEED(ADDR_MOVING_SPEED),
@@ -119,10 +115,7 @@ public:
    * @return true address exist
    * @return false address does not exist
    */
-  bool addressExists(const Operation & operation) const
-  {
-    return getAddress(operation).exists();
-  }
+  bool addressExists(const Operation & operation) const { return getAddress(operation).exists(); }
 
 private:
   AddressTableBase() = delete;
