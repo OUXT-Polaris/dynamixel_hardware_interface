@@ -155,9 +155,9 @@ Result MotorBase::updateJointPosition()
     return Result("", true);
   } else {
     uint8_t error = 0;
-    uint16_t present_position = 0;
+    uint32_t present_position = 0;
 
-    const auto result = packet_handler_->read2ByteTxRx(
+    const auto result = packet_handler_->read4ByteTxRx(
       port_handler_.get(), id, address.get(), &present_position, &error);
     joint_position_ = positionToRadian(present_position);
     return getResult(result, error);

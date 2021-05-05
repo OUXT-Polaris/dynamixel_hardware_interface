@@ -51,6 +51,21 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
   RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "initialize packet handler");
   packet_handler_ = std::shared_ptr<dynamixel::PacketHandler>(
     dynamixel::PacketHandler::getPacketHandler(PROTOCOL_VERSION));
+  if (!getHardwareParameter<bool>("enable_dummy")) {
+    RCLCPP_INFO_STREAM(
+      rclcpp::get_logger("dynamixel_hardware_interface"),
+      "serial port : " << port_handler_->getPortName());
+    RCLCPP_INFO_STREAM(
+      rclcpp::get_logger("dynamixel_hardware_interface"),
+      "baudrate : " << port_handler_->getBaudRate());
+    if (port_handler_->openPort()) {
+      RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "open serial port succeed");
+    }
+    else {
+      RCLCPP_ERROR(rclcpp::get_logger("dynamixel_hardware_interface"), "open serial port failed");
+      return hardware_interface::return_type::ERROR;
+    }
+  }
   RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "configure each motors");
   for (const auto joint : info.joints) {
     std::shared_ptr<MotorBase> motor;
