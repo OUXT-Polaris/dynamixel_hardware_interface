@@ -4,9 +4,9 @@
  * @brief Header for defineing constant values.
  * @version 0.1
  * @date 2021-05-01
- * 
+ *
  * @copyright Copyright (c) OUXT Polaris 2021
- * 
+ *
  */
 
 // Copyright (c) 2019 OUXT Polaris
@@ -33,8 +33,8 @@
 
 namespace dynamixel_hardware_interface
 {
-constexpr double PROTOCOL_VERSION = 1.0;
-constexpr int DXL_HOME_POSITION = 511;  // value range:0 ~ 1023
+constexpr double PROTOCOL_VERSION = 2.0;
+constexpr int DXL_HOME_POSITION = 0;  // value range:0 ~ 1023
 constexpr double DXL_MAX_POSITION = 1023.0;
 constexpr double DXL_MAX_POSITION_DEGREES = 300.0;
 constexpr double TO_RADIANS = (DXL_MAX_POSITION_DEGREES / DXL_MAX_POSITION) * M_PI / 180.0;
@@ -44,6 +44,7 @@ constexpr double TO_SPEED_RAD_PER_MIN = TO_SPEED_REV_PER_MIN * 2.0 * M_PI;
 constexpr double TO_SPEED_RAD_PER_SEC = TO_SPEED_RAD_PER_MIN / 60.0;
 constexpr double TO_LOAD_PERCENT = 0.1;
 constexpr double TO_VOLTAGE = 0.1;
+constexpr double PULSE_RESOLUTION = 4096;
 
 #define GENERATE_ENUM_ITERATOR(T, LAST_VALUE)                                          \
   inline T operator++(T & x) { return x = (T)(std::underlying_type<T>::type(x) + 1); } \
@@ -87,6 +88,10 @@ enum class SupportedMotors {
 };
 
 GENERATE_ENUM_ITERATOR(SupportedMotors, INVALID)
+
+enum class PacketByteSize { ONE_BYTE, TWO_BYTE, FOUR_BYTE, INVALID };
+
+GENERATE_ENUM_ITERATOR(PacketByteSize, INVALID)
 
 }  //  namespace dynamixel_hardware_interface
 

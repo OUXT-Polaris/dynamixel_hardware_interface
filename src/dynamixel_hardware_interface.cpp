@@ -4,9 +4,9 @@
  * @brief Class implementation of the hardware interface for the Dynamixel motor.
  * @version 0.1
  * @date 2021-05-01
- * 
+ *
  * @copyright Copyright (c) OUXT Polaris 2021
- * 
+ *
  */
 
 // Copyright (c) 2019 OUXT Polaris
@@ -51,6 +51,20 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
   RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "initialize packet handler");
   packet_handler_ = std::shared_ptr<dynamixel::PacketHandler>(
     dynamixel::PacketHandler::getPacketHandler(PROTOCOL_VERSION));
+  if (!getHardwareParameter<bool>("enable_dummy")) {
+    RCLCPP_INFO_STREAM(
+      rclcpp::get_logger("dynamixel_hardware_interface"),
+      "serial port : " << port_handler_->getPortName());
+    RCLCPP_INFO_STREAM(
+      rclcpp::get_logger("dynamixel_hardware_interface"),
+      "baudrate : " << port_handler_->getBaudRate());
+    if (port_handler_->openPort()) {
+      RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "open serial port succeed");
+    } else {
+      RCLCPP_ERROR(rclcpp::get_logger("dynamixel_hardware_interface"), "open serial port failed");
+      return hardware_interface::return_type::ERROR;
+    }
+  }
   RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "configure each motors");
   for (const auto joint : info.joints) {
     std::shared_ptr<MotorBase> motor;
@@ -124,9 +138,9 @@ std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
     const auto id = static_cast<uint8_t>(getParameter<int>("id", info));
     switch (motor_type) {
       case SupportedMotors::XW540_T260:
-        return std::make_shared<MotorBase>(motors::XW540_T260(
+        return std::make_shared<motors::XW540_T260>(
           info.name, getHardwareParameter<bool>("enable_dummy"), baudrate_, id, port_handler_,
-          packet_handler_));
+          packet_handler_);
         break;
       default:
         break;
@@ -164,6 +178,11 @@ hardware_interface::return_type DynamixelHardwareInterface::read()
 
 hardware_interface::return_type DynamixelHardwareInterface::write()
 {
+  for (const auto motor : motors_) {
+    if (motor->operationSupports(Operation::GOAL_POSITION)) {
+      motor->setCurrentGoalPosition();
+    }
+  }
   return hardware_interface::return_type::OK;
 }
 }  // namespace dynamixel_hardware_interface

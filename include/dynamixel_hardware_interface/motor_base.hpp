@@ -161,6 +161,11 @@ public:
    */
   virtual Result setGoalPosition(double goal_position);
   /**
+   * @brief Execute goal_position command to the motor without update current goal position
+   * @return Result result of the command.
+   */
+  virtual Result setCurrentGoalPosition() { return setGoalPosition(goal_position_); }
+  /**
    * @brief Get current joint position of the motor.
    * @return double Current joint position of the motor in radian.
    */
@@ -187,14 +192,35 @@ public:
   virtual void appendCommandInterfaces(
     std::vector<hardware_interface::CommandInterface> & interfaces);
 
-private:
+protected:
   /**
    * @brief Construct a new Motor Base object
    */
   MotorBase() = delete;
   Result getResult(int communication_result, uint8_t packet_error);
+  template <typename T>
+  T radianToPosition(double radian) const
+  {
+    T value;
+    radianToPosition(radian, value);
+    return value;
+  }
   uint16_t radianToPosition(double radian) const;
-  double positionToRadian(const uint16_t position) const;
+  virtual double positionToRadian(const uint8_t position) const;
+  virtual double positionToRadian(const uint16_t position) const;
+  virtual double positionToRadian(const uint32_t position) const;
+  virtual void radianToPosition(double radian, uint8_t & value) const
+  {
+    value = static_cast<uint8_t>((radian / M_PI) * 256);
+  }
+  virtual void radianToPosition(double radian, uint16_t & value) const
+  {
+    value = static_cast<uint16_t>((radian / M_PI) * 65536);
+  }
+  virtual void radianToPosition(double radian, uint32_t & value) const
+  {
+    value = static_cast<uint32_t>((radian / M_PI) * 4294967296);
+  }
   std::shared_ptr<AddressTableBase> address_table_;
   std::shared_ptr<dynamixel::PortHandler> port_handler_;
   std::shared_ptr<dynamixel::PacketHandler> packet_handler_;

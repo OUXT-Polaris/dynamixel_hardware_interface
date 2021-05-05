@@ -4,9 +4,9 @@
  * @brief Base class for the address tabele
  * @version 0.1
  * @date 2021-05-01
- * 
+ *
  * @copyright Copyright (c) OUXT Polaris 2021
- * 
+ *
  */
 
 // Copyright (c) 2019 OUXT Polaris
@@ -33,6 +33,22 @@
 
 namespace dynamixel_hardware_interface
 {
+class Address
+{
+public:
+  Address(uint16_t address, PacketByteSize byte_size) : address(address), byte_size(byte_size) {}
+  Address() : address(0), byte_size(PacketByteSize::INVALID) {}
+  const uint16_t address;
+  const PacketByteSize byte_size;
+  bool exists() const
+  {
+    if (byte_size == PacketByteSize::INVALID) {
+      return false;
+    }
+    return true;
+  }
+};
+
 /**
  * @brief base class for address table class
  */
@@ -51,11 +67,9 @@ public:
    * @param ADDR_PRESENT_TEMPERATURE If this value is boost::none, reading present_tempelature command address exists.
    */
   explicit AddressTableBase(
-    boost::optional<uint16_t> ADDR_TORQUE_ENABLE, boost::optional<uint16_t> ADDR_GOAL_POSITION,
-    boost::optional<uint16_t> ADDR_MOVING_SPEED, boost::optional<uint16_t> ADDR_PRESENT_POSITION,
-    boost::optional<uint16_t> ADDR_PRESENT_SPEED, boost::optional<uint16_t> ADDR_PRESENT_LOAD,
-    boost::optional<uint16_t> ADDR_PRESENT_VOLTAGE,
-    boost::optional<uint16_t> ADDR_PRESENT_TEMPERATURE)
+    Address ADDR_TORQUE_ENABLE, Address ADDR_GOAL_POSITION, Address ADDR_MOVING_SPEED,
+    Address ADDR_PRESENT_POSITION, Address ADDR_PRESENT_SPEED, Address ADDR_PRESENT_LOAD,
+    Address ADDR_PRESENT_VOLTAGE, Address ADDR_PRESENT_TEMPERATURE)
   : ADDR_TORQUE_ENABLE(ADDR_TORQUE_ENABLE),
     ADDR_GOAL_POSITION(ADDR_GOAL_POSITION),
     ADDR_MOVING_SPEED(ADDR_MOVING_SPEED),
@@ -70,9 +84,9 @@ public:
    * @brief Get address of which operation you want to execute.
    * @param operaiton operation you want to execute
    * @retval boost::none operation is not supported
-   * @retval uint16_t address of the operation you want to execute 
+   * @retval uint16_t address of the operation you want to execute
    */
-  boost::optional<uint16_t> getAddress(const Operation & operaiton) const
+  Address getAddress(const Operation & operaiton) const
   {
     switch (operaiton) {
       case Operation::TORQUE_ENABLE:
@@ -92,7 +106,7 @@ public:
       case Operation::PRESENT_TEMPERATURE:
         return ADDR_PRESENT_TEMPERATURE;
       default:
-        return boost::none;
+        return Address();
     }
   }
   /**
@@ -101,24 +115,18 @@ public:
    * @return true address exist
    * @return false address does not exist
    */
-  bool addressExists(const Operation & operation) const
-  {
-    if (getAddress(operation)) {
-      return true;
-    }
-    return false;
-  }
+  bool addressExists(const Operation & operation) const { return getAddress(operation).exists(); }
 
 private:
   AddressTableBase() = delete;
-  const boost::optional<uint16_t> ADDR_TORQUE_ENABLE = boost::none;
-  const boost::optional<uint16_t> ADDR_GOAL_POSITION = boost::none;
-  const boost::optional<uint16_t> ADDR_MOVING_SPEED = boost::none;
-  const boost::optional<uint16_t> ADDR_PRESENT_POSITION = boost::none;
-  const boost::optional<uint16_t> ADDR_PRESENT_SPEED = boost::none;
-  const boost::optional<uint16_t> ADDR_PRESENT_LOAD = boost::none;
-  const boost::optional<uint16_t> ADDR_PRESENT_VOLTAGE = boost::none;
-  const boost::optional<uint16_t> ADDR_PRESENT_TEMPERATURE = boost::none;
+  const Address ADDR_TORQUE_ENABLE;
+  const Address ADDR_GOAL_POSITION;
+  const Address ADDR_MOVING_SPEED;
+  const Address ADDR_PRESENT_POSITION;
+  const Address ADDR_PRESENT_SPEED;
+  const Address ADDR_PRESENT_LOAD;
+  const Address ADDR_PRESENT_VOLTAGE;
+  const Address ADDR_PRESENT_TEMPERATURE;
 };
 }  // namespace dynamixel_hardware_interface
 
