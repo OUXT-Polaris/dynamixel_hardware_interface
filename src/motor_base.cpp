@@ -156,7 +156,8 @@ Result MotorBase::setGoalPosition(double goal_position)
     uint8_t error = 0;
     if (address.byte_size == PacketByteSize::ONE_BYTE) {
       const auto result = packet_handler_->write1ByteTxRx(
-        port_handler_.get(), id, address.address, radianToPosition<uint8_t>(goal_position_), &error);
+        port_handler_.get(), id, address.address, radianToPosition<uint8_t>(goal_position_),
+        &error);
       return getResult(result, error);
     }
     if (address.byte_size == PacketByteSize::TWO_BYTE) {

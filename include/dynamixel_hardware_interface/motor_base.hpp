@@ -164,10 +164,7 @@ public:
    * @brief Execute goal_position command to the motor without update current goal position
    * @return Result result of the command.
    */
-  virtual Result setCurrentGoalPosition()
-  {
-    return setGoalPosition(goal_position_);
-  }
+  virtual Result setCurrentGoalPosition() { return setGoalPosition(goal_position_); }
   /**
    * @brief Get current joint position of the motor.
    * @return double Current joint position of the motor in radian.
