@@ -463,7 +463,13 @@
 <span class="k">class</span> <span class="nc">XW540_T260</span> <span class="o">:</span> <span class="k">public</span> <span class="n">AddressTableBase</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="n">XW540_T260</span><span class="p">()</span> <span class="o">:</span> <span class="n">AddressTableBase</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">,</span> <span class="mi">132</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">,</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">,</span> <span class="mi">146</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="n">XW540_T260</span><span class="p">()</span>
+  <span class="o">:</span> <span class="n">AddressTableBase</span><span class="p">(</span>
+      <span class="n">Address</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">ONE_BYTE</span><span class="p">),</span> <span class="n">Address</span><span class="p">(</span><span class="mi">116</span><span class="p">,</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">),</span> <span class="n">Address</span><span class="p">(),</span>
+      <span class="n">Address</span><span class="p">(</span><span class="mi">132</span><span class="p">,</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">),</span> <span class="n">Address</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">),</span> <span class="n">Address</span><span class="p">(),</span>
+      <span class="n">Address</span><span class="p">(),</span> <span class="n">Address</span><span class="p">(</span><span class="mi">146</span><span class="p">,</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">ONE_BYTE</span><span class="p">))</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace address_tables</span>
 
@@ -481,6 +487,12 @@
       <span class="n">id</span><span class="p">,</span> <span class="n">port_handler</span><span class="p">,</span> <span class="n">packet_handler</span><span class="p">)</span>
   <span class="p">{</span>
   <span class="p">}</span>
+
+  <span class="kt">double</span> <span class="n">positionToRadian</span><span class="p">(</span><span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span> <span class="k">override</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">)</span> <span class="o">/</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span> <span class="o">*</span> <span class="n">M_PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace motors</span>
 <span class="p">}</span>  <span class="c1">// namespace dynamixel_hardware_interface</span>
@@ -488,7 +500,7 @@
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__XW540_T260_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  5 May 2021 at 00:36:50 UTC</p>
+<p>Updated on  5 May 2021 at 09:17:41 UTC</p>
                 
                   
                 

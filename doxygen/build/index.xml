@@ -1,16 +1,23 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="classdynamixel__hardware__interface_1_1Address" kind="class"><name>dynamixel_hardware_interface::Address</name>
+    <member refid="classdynamixel__hardware__interface_1_1Address_1a5b2fc111cfc557507dcccbf337d854be" kind="variable"><name>address</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1Address_1aa80d7e6a794e89b258178753543a1447" kind="variable"><name>byte_size</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1Address_1a9d48e7d9679ec7c5aa8e38e3c4f4d269" kind="function"><name>Address</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1Address_1a77404a5cd4756a241d621fcc5a34c031" kind="function"><name>Address</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1Address_1a48f080f3ef824ab3736c5bc5d453c412" kind="function"><name>exists</name></member>
+  </compound>
   <compound refid="classdynamixel__hardware__interface_1_1AddressTableBase" kind="class"><name>dynamixel_hardware_interface::AddressTableBase</name>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a76bf65c065a25b26ad3a4edf45f35a1b" kind="variable"><name>ADDR_TORQUE_ENABLE</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1ace626278d1647f38b1d40814b6cfb97c" kind="variable"><name>ADDR_GOAL_POSITION</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a2c87a363081ffea0fabb24d1b2620911" kind="variable"><name>ADDR_MOVING_SPEED</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aef3a946c2fd61ed0cb413bc69ee2a5e6" kind="variable"><name>ADDR_PRESENT_POSITION</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1ab83e468c3556cb365caf7f06d82a305d" kind="variable"><name>ADDR_PRESENT_SPEED</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1af4e64b016b33b7fcad1dab7334239b4c" kind="variable"><name>ADDR_PRESENT_LOAD</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a3548c143abe1cd9abe7ca8cf591170ca" kind="variable"><name>ADDR_PRESENT_VOLTAGE</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aa9512682fc7b9556394f0c1a6bceecdf" kind="variable"><name>ADDR_PRESENT_TEMPERATURE</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a5dfc09c9955027305728c95d1c3bc52b" kind="function"><name>AddressTableBase</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a75379c5c98a794a4b1d671b47b5453c9" kind="function"><name>getAddress</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aef5fb4e505dd07b1e7c7faa07772f74b" kind="variable"><name>ADDR_TORQUE_ENABLE</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a748dd5407fb6069eb4023c91bcac68af" kind="variable"><name>ADDR_GOAL_POSITION</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a9599b1232ad9074f15f3a9ed853bfc54" kind="variable"><name>ADDR_MOVING_SPEED</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a12aa3fa62b56a2f3ccabcef7fcc9ad2e" kind="variable"><name>ADDR_PRESENT_POSITION</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aab18c3181921b9e62cc6f8fd829bda01" kind="variable"><name>ADDR_PRESENT_SPEED</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a564871d4ce48320f2e27cfad03592ffb" kind="variable"><name>ADDR_PRESENT_LOAD</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a897b825ab95cde8ab5ccc038f4218a90" kind="variable"><name>ADDR_PRESENT_VOLTAGE</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1acd21c6495c162bbc22cba0e44b715e23" kind="variable"><name>ADDR_PRESENT_TEMPERATURE</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a1f9b990a81b2e609ffedeb59ecec30e7" kind="function"><name>AddressTableBase</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aafbbe33ef5157bfd733e3e0d7c4fce47" kind="function"><name>getAddress</name></member>
     <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a43e69aa8a1a3a28ac6278744fba9fcad" kind="function"><name>addressExists</name></member>
     <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a88842a6e56d6e9b4d80befb6ea3fd4f3" kind="function"><name>AddressTableBase</name></member>
   </compound>
@@ -56,6 +63,7 @@
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa591961812734c1abff2f611203c95aa" kind="function"><name>configure</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad9b1da7088d91b73431038f4b179db0f" kind="function"><name>torqueEnable</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab48629d464aee02829702273248c1fde" kind="function"><name>setGoalPosition</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a9a396f2f42004b8f208249f112cf502a" kind="function"><name>setCurrentGoalPosition</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ae78771bd4b59d5b6208d69d4f05b94b2" kind="function"><name>getJointPosition</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a8dc023990da7f0be486d2cf07039d5c4" kind="function"><name>getGoalPosition</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa12729f083f20c8168079795053689f9" kind="function"><name>updateJointPosition</name></member>
@@ -63,19 +71,26 @@
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1af843d62c840add6bf55529328dfd8671" kind="function"><name>appendCommandInterfaces</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a9c759216740b75670731b8827b169317" kind="function"><name>MotorBase</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3751a2cf2afb2e3b4ef0832429880a8e" kind="function"><name>getResult</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3a65d6fbf4fe86598e813e785029b631" kind="function"><name>radianToPosition</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad571c9fa630416e965ae5fbb09be0aa9" kind="function"><name>radianToPosition</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aff47adf49a24cdde7dc4c0ba9657607e" kind="function"><name>positionToRadian</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad21e92cf98c25b77c9109e778e58d708" kind="function"><name>positionToRadian</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aaf372d2b65dc26886d8ed06690609842" kind="function"><name>positionToRadian</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab71275abcacc084fc407cc4550e0c227" kind="function"><name>radianToPosition</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a24d3c861d64e057de8f6bd1b9cca4868" kind="function"><name>radianToPosition</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa20a2cbb2d797806280fb0fdfc7d7204" kind="function"><name>radianToPosition</name></member>
   </compound>
   <compound refid="structdynamixel__hardware__interface_1_1Result" kind="struct"><name>dynamixel_hardware_interface::Result</name>
     <member refid="structdynamixel__hardware__interface_1_1Result_1aadf4f7601005c07f1930a3b823587dd9" kind="variable"><name>description</name></member>
     <member refid="structdynamixel__hardware__interface_1_1Result_1a124d322b5ccf036a5437e40baadb25e4" kind="variable"><name>success</name></member>
     <member refid="structdynamixel__hardware__interface_1_1Result_1a1702e34ebfe8336aeb3c951230dfb92e" kind="function"><name>Result</name></member>
   </compound>
-  <compound refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260" kind="class"><name>dynamixel_hardware_interface::motors::XW540_T260</name>
-    <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a32dbaa72347b1aabadde6572a9c2014f" kind="function"><name>XW540_T260</name></member>
-  </compound>
   <compound refid="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260" kind="class"><name>dynamixel_hardware_interface::address_tables::XW540_T260</name>
     <member refid="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260_1ae3d276535eb0127dd5a8de817994cff0" kind="function"><name>XW540_T260</name></member>
+  </compound>
+  <compound refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260" kind="class"><name>dynamixel_hardware_interface::motors::XW540_T260</name>
+    <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a32dbaa72347b1aabadde6572a9c2014f" kind="function"><name>XW540_T260</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a410454f35d60ec836a234f935d55070b" kind="function"><name>positionToRadian</name></member>
   </compound>
   <compound refid="namespacedynamixel__hardware__interface" kind="namespace"><name>dynamixel_hardware_interface</name>
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90" kind="enum"><name>Operation</name></member>
@@ -90,6 +105,11 @@
     <member refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" kind="enum"><name>SupportedMotors</name></member>
     <member refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257ab38bdf146e8b4e1717a3fac10e77650e" kind="enumvalue"><name>XW540_T260</name></member>
     <member refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257accc0377a8afbf50e7094f5c23a8af223" kind="enumvalue"><name>INVALID</name></member>
+    <member refid="constants_8hpp_1acc7178615a1af6be422831cca58d19d9" kind="enum"><name>PacketByteSize</name></member>
+    <member refid="constants_8hpp_1acc7178615a1af6be422831cca58d19d9ae3f95f50dd5170143e7693c622ca68f8" kind="enumvalue"><name>ONE_BYTE</name></member>
+    <member refid="constants_8hpp_1acc7178615a1af6be422831cca58d19d9a00878d7028ed6a80e3f1a5e7c900eb13" kind="enumvalue"><name>TWO_BYTE</name></member>
+    <member refid="constants_8hpp_1acc7178615a1af6be422831cca58d19d9a57cea784ab21374ee79f490919089bf1" kind="enumvalue"><name>FOUR_BYTE</name></member>
+    <member refid="constants_8hpp_1acc7178615a1af6be422831cca58d19d9accc0377a8afbf50e7094f5c23a8af223" kind="enumvalue"><name>INVALID</name></member>
     <member refid="constants_8hpp_1a775acb9f947870ed740c890ed7f63871" kind="variable"><name>PROTOCOL_VERSION</name></member>
     <member refid="constants_8hpp_1a3adede4bf976ea268b2fa8b7fd209555" kind="variable"><name>DXL_HOME_POSITION</name></member>
     <member refid="constants_8hpp_1ae0bb0f0810579fe228630100fc770929" kind="variable"><name>DXL_MAX_POSITION</name></member>
@@ -101,6 +121,7 @@
     <member refid="constants_8hpp_1a34480f6d2cf326dd1c7a2613e0949ef0" kind="variable"><name>TO_SPEED_RAD_PER_SEC</name></member>
     <member refid="constants_8hpp_1abd0abdf7c1007914bf10fe755a776524" kind="variable"><name>TO_LOAD_PERCENT</name></member>
     <member refid="constants_8hpp_1a64b5d835ea93fd3a57c1300d79c0ff15" kind="variable"><name>TO_VOLTAGE</name></member>
+    <member refid="constants_8hpp_1abcc422a60ffd9bfcbd55709af9118bdc" kind="variable"><name>PULSE_RESOLUTION</name></member>
     <member refid="util_8hpp_1a6ec12534148816ae5437d77651ba9707" kind="function"><name>toString</name></member>
   </compound>
   <compound refid="namespacedynamixel__hardware__interface_1_1address__tables" kind="namespace"><name>dynamixel_hardware_interface::address_tables</name>

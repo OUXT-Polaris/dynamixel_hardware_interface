@@ -427,7 +427,7 @@
 <span class="kt">bool</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">operationSupports</span><span class="p">(</span><span class="k">const</span> <span class="n">Operation</span> <span class="o">&amp;</span> <span class="n">operation</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">address</span> <span class="o">=</span> <span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">(</span><span class="n">operation</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">.</span><span class="n">exists</span><span class="p">())</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
@@ -438,7 +438,7 @@
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Operation</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="p">{};</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">operation</span> <span class="p">:</span> <span class="n">Operation</span><span class="p">())</span> <span class="p">{</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">address</span> <span class="o">=</span> <span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">(</span><span class="n">operation</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">exists</span><span class="p">())</span> <span class="p">{</span>
       <span class="n">ret</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">operation</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -450,9 +450,19 @@
   <span class="k">return</span> <span class="n">radian</span> <span class="o">*</span> <span class="n">TO_DXL_POS</span> <span class="o">+</span> <span class="n">DXL_HOME_POSITION</span><span class="p">;</span>
 <span class="p">}</span>
 
+<span class="kt">double</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">positionToRadian</span><span class="p">(</span><span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">)</span> <span class="o">/</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span> <span class="o">*</span> <span class="n">M_PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
 <span class="kt">double</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">positionToRadian</span><span class="p">(</span><span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span><span class="n">position</span> <span class="o">-</span> <span class="n">DXL_HOME_POSITION</span><span class="p">)</span> <span class="o">*</span> <span class="n">TO_RADIANS</span><span class="p">;</span>
+  <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">)</span> <span class="o">/</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">65536</span><span class="p">)</span> <span class="o">*</span> <span class="n">M_PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">positionToRadian</span><span class="p">(</span><span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">)</span> <span class="o">/</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">4294967296</span><span class="p">)</span> <span class="o">*</span> <span class="n">M_PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="n">Result</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">getResult</span><span class="p">(</span><span class="kt">int</span> <span class="n">communication_result</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">packet_error</span><span class="p">)</span>
@@ -513,31 +523,53 @@
 <span class="n">Result</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">torqueEnable</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enable</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">address</span> <span class="o">=</span> <span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">(</span><span class="n">Operation</span><span class="o">::</span><span class="n">TORQUE_ENABLE</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">.</span><span class="n">exists</span><span class="p">())</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;TORQUE_ENABLE operation does not support in &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span> <span class="nb">false</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="kt">uint8_t</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span>
-    <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">write1ByteTxRx</span><span class="p">(</span><span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">enable</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+    <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">write1ByteTxRx</span><span class="p">(</span><span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="n">enable</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
   <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">Result</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">setGoalPosition</span><span class="p">(</span><span class="kt">double</span> <span class="n">goal_position</span><span class="p">)</span>
 <span class="p">{</span>
+  <span class="n">goal_position_</span> <span class="o">=</span> <span class="n">goal_position</span><span class="p">;</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">address</span> <span class="o">=</span> <span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">(</span><span class="n">Operation</span><span class="o">::</span><span class="n">GOAL_POSITION</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">.</span><span class="n">exists</span><span class="p">())</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;TORQUE_ENABLE operation does not support in &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span> <span class="nb">false</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="kt">uint8_t</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">write2ByteTxRx</span><span class="p">(</span>
-    <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">radianToPosition</span><span class="p">(</span><span class="n">goal_position</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
-  <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">enable_dummy</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">joint_position_</span> <span class="o">=</span> <span class="n">goal_position_</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="kt">uint8_t</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">byte_size</span> <span class="o">==</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">ONE_BYTE</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">write1ByteTxRx</span><span class="p">(</span>
+        <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="n">radianToPosition</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">goal_position_</span><span class="p">),</span>
+        <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">byte_size</span> <span class="o">==</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">TWO_BYTE</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">write2ByteTxRx</span><span class="p">(</span>
+        <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="n">radianToPosition</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">goal_position_</span><span class="p">),</span>
+        <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">byte_size</span> <span class="o">==</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">write4ByteTxRx</span><span class="p">(</span>
+        <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="n">radianToPosition</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">goal_position_</span><span class="p">),</span>
+        <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;Invalid packet size&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="n">Result</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">updateJointPosition</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">address</span> <span class="o">=</span> <span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">(</span><span class="n">Operation</span><span class="o">::</span><span class="n">PRESENT_POSITION</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">address</span><span class="p">.</span><span class="n">exists</span><span class="p">())</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;PRESENT_POSITION operation does not support in &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span> <span class="nb">false</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">enable_dummy</span><span class="p">)</span> <span class="p">{</span>
@@ -545,18 +577,34 @@
     <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="kt">uint8_t</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kt">uint16_t</span> <span class="n">present_position</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">read2ByteTxRx</span><span class="p">(</span>
-      <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">present_position</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
-    <span class="n">joint_position_</span> <span class="o">=</span> <span class="n">positionToRadian</span><span class="p">(</span><span class="n">present_position</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">byte_size</span> <span class="o">==</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">ONE_BYTE</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">uint8_t</span> <span class="n">present_position</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">read1ByteTxRx</span><span class="p">(</span>
+        <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">present_position</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+      <span class="n">joint_position_</span> <span class="o">=</span> <span class="n">positionToRadian</span><span class="p">(</span><span class="n">present_position</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">byte_size</span> <span class="o">==</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">TWO_BYTE</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">uint16_t</span> <span class="n">present_position</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">read2ByteTxRx</span><span class="p">(</span>
+        <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">present_position</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+      <span class="n">joint_position_</span> <span class="o">=</span> <span class="n">positionToRadian</span><span class="p">(</span><span class="n">present_position</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">byte_size</span> <span class="o">==</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">uint32_t</span> <span class="n">present_position</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">read4ByteTxRx</span><span class="p">(</span>
+        <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">present_position</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+      <span class="n">joint_position_</span> <span class="o">=</span> <span class="n">positionToRadian</span><span class="p">(</span><span class="n">present_position</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;Invalid packet size&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">}</span>  <span class="c1">//  namespace dynamixel_hardware_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on  5 May 2021 at 00:36:50 UTC</p>
+<p>Updated on  5 May 2021 at 09:17:41 UTC</p>
                 
                   
                 

@@ -121,7 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="48" column="9" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="48" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="49" column="9" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="49" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -164,8 +164,8 @@
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">dynamixel_hardware_interface</highlight></codeline>
 <codeline lineno="35"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>PROTOCOL_VERSION<sp/>=<sp/>1.0;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DXL_HOME_POSITION<sp/>=<sp/>511;<sp/><sp/></highlight><highlight class="comment">//<sp/>value<sp/>range:0<sp/>~<sp/>1023</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>PROTOCOL_VERSION<sp/>=<sp/>2.0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DXL_HOME_POSITION<sp/>=<sp/>0;<sp/><sp/></highlight><highlight class="comment">//<sp/>value<sp/>range:0<sp/>~<sp/>1023</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DXL_MAX_POSITION<sp/>=<sp/>1023.0;</highlight></codeline>
 <codeline lineno="39"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DXL_MAX_POSITION_DEGREES<sp/>=<sp/>300.0;</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_RADIANS<sp/>=<sp/>(DXL_MAX_POSITION_DEGREES<sp/>/<sp/>DXL_MAX_POSITION)<sp/>*<sp/>M_PI<sp/>/<sp/>180.0;</highlight></codeline>
@@ -175,41 +175,46 @@
 <codeline lineno="44"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_SPEED_RAD_PER_SEC<sp/>=<sp/>TO_SPEED_RAD_PER_MIN<sp/>/<sp/>60.0;</highlight></codeline>
 <codeline lineno="45"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_LOAD_PERCENT<sp/>=<sp/>0.1;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TO_VOLTAGE<sp/>=<sp/>0.1;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERATE_ENUM_ITERATOR(T,<sp/>LAST_VALUE)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="49"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>operator++(T<sp/>&amp;<sp/>x)<sp/>{<sp/>return<sp/>x<sp/>=<sp/>(T)(std::underlying_type&lt;T&gt;::type(x)<sp/>+<sp/>1);<sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="50"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>operator*(T<sp/>c)<sp/>{<sp/>return<sp/>c;<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="51"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>begin(T)<sp/>{<sp/>return<sp/>static_cast&lt;T&gt;(0);<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="52"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>end(T)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="54"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>T<sp/>l<sp/>=<sp/>T::LAST_VALUE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="55"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>l;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="56"><highlight class="preprocessor"><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61" refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90" refkind="member"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90" kindref="member">Operation</ref><sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/>TORQUE_ENABLE,</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/>GOAL_POSITION,</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/>MOVING_SPEED,</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/>PRESENT_POSITION,</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/>PRESENT_SPEED,</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/>PRESENT_LOAD,</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/>PRESENT_VOLTAGE,</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/>PRESENT_TEMPERATURE</highlight></codeline>
-<codeline lineno="70"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal">GENERATE_ENUM_ITERATOR(Operation,<sp/>PRESENT_TEMPERATURE)</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>PULSE_RESOLUTION<sp/>=<sp/>4096;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERATE_ENUM_ITERATOR(T,<sp/>LAST_VALUE)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>operator++(T<sp/>&amp;<sp/>x)<sp/>{<sp/>return<sp/>x<sp/>=<sp/>(T)(std::underlying_type&lt;T&gt;::type(x)<sp/>+<sp/>1);<sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>operator*(T<sp/>c)<sp/>{<sp/>return<sp/>c;<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>begin(T)<sp/>{<sp/>return<sp/>static_cast&lt;T&gt;(0);<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/>inline<sp/>T<sp/>end(T)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>T<sp/>l<sp/>=<sp/>T::LAST_VALUE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>l;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90" refkind="member"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90" kindref="member">Operation</ref><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>TORQUE_ENABLE,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>GOAL_POSITION,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>MOVING_SPEED,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>PRESENT_POSITION,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>PRESENT_SPEED,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>PRESENT_LOAD,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>PRESENT_VOLTAGE,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>PRESENT_TEMPERATURE</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">GENERATE_ENUM_ITERATOR(Operation,<sp/>PRESENT_TEMPERATURE)</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77" refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" refkind="member"><highlight class="normal">enum<sp/>class<sp/><ref refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" kindref="member">SupportedMotors</ref><sp/>{</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/>XW540_T260,</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/>INVALID</highlight></codeline>
-<codeline lineno="87"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal">GENERATE_ENUM_ITERATOR(SupportedMotors,<sp/>INVALID)</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>dynamixel_hardware_interface</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" refkind="member"><highlight class="normal">enum<sp/>class<sp/><ref refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" kindref="member">SupportedMotors</ref><sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>XW540_T260,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>INVALID</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">GENERATE_ENUM_ITERATOR(SupportedMotors,<sp/>INVALID)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>PacketByteSize<sp/>{<sp/>ONE_BYTE,<sp/>TWO_BYTE,<sp/>FOUR_BYTE,<sp/>INVALID<sp/>};</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">GENERATE_ENUM_ITERATOR(PacketByteSize,<sp/>INVALID)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>dynamixel_hardware_interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp"/>
   </compounddef>

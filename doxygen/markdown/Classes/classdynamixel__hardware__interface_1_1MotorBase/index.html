@@ -347,8 +347,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#protected-functions" class="md-nav__link">
+    Protected Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-attributes" class="md-nav__link">
     Public Attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-attributes" class="md-nav__link">
+    Protected Attributes
   </a>
   
 </li>
@@ -385,6 +399,13 @@
           <li class="md-nav__item">
   <a href="#function-setgoalposition" class="md-nav__link">
     function setGoalPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-setcurrentgoalposition" class="md-nav__link">
+    function setCurrentGoalPosition
   </a>
   
 </li>
@@ -451,6 +472,89 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#protected-functions-documentation" class="md-nav__link">
+    Protected Functions Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Protected Functions Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-radiantoposition" class="md-nav__link">
+    function radianToPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-radiantoposition_1" class="md-nav__link">
+    function radianToPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-radiantoposition_2" class="md-nav__link">
+    function radianToPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-radiantoposition_3" class="md-nav__link">
+    function radianToPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-radiantoposition_4" class="md-nav__link">
+    function radianToPosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-positiontoradian" class="md-nav__link">
+    function positionToRadian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-positiontoradian_1" class="md-nav__link">
+    function positionToRadian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-positiontoradian_2" class="md-nav__link">
+    function positionToRadian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getresult" class="md-nav__link">
+    function getResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-motorbase_2" class="md-nav__link">
+    function MotorBase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-attributes-documentation" class="md-nav__link">
     Public Attributes Documentation
   </a>
@@ -489,6 +593,54 @@
           <li class="md-nav__item">
   <a href="#variable-baudrate" class="md-nav__link">
     variable baudrate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-attributes-documentation" class="md-nav__link">
+    Protected Attributes Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Protected Attributes Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-port_handler_" class="md-nav__link">
+    variable port_handler_
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-packet_handler_" class="md-nav__link">
+    variable packet_handler_
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-joint_position_" class="md-nav__link">
+    variable joint_position_
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-goal_position_" class="md-nav__link">
+    variable goal_position_
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-address_table_" class="md-nav__link">
+    variable address_table_
   </a>
   
 </li>
@@ -545,6 +697,10 @@
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-setgoalposition">setGoalPosition</a></strong>(double goal_position) <br>Execute goal_position command to the motor.</td>
 </tr>
 <tr>
+<td>virtual <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-setcurrentgoalposition">setCurrentGoalPosition</a></strong>() <br>Execute goal_position command to the motor without update current goal position.</td>
+</tr>
+<tr>
 <td>bool</td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-operationsupports">operationSupports</a></strong>(const <a href="/dynamixel_hardware_interface/doxygen/markdown/Namespaces/namespacedynamixel__hardware__interface#enum-operation">Operation</a> &amp; operation) <br>Check the operation is support in your motor.</td>
 </tr>
@@ -575,6 +731,57 @@
 <tr>
 <td>template \&lt;typename AddressTable ></br></td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-motorbase">MotorBase</a></strong>(const <a href="/dynamixel_hardware_interface/doxygen/markdown/Namespaces/namespacedynamixel__hardware__interface#enum-supportedmotors">SupportedMotors</a> &amp; motor_type, const std::string &amp; joint_name, const bool enable_dummy, const AddressTable &amp; table, int baudrate, uint8_t id, std::shared_ptr&lt; dynamixel::PortHandler &gt; port_handler, std::shared_ptr&lt; dynamixel::PacketHandler &gt; packet_handler) <br>Construct a new Motor Base object.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-functions">Protected Functions<a class="headerlink" href="#protected-functions" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>template \&lt;typename T ></br>T</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-radiantoposition">radianToPosition</a></strong>(double radian) const</td>
+</tr>
+<tr>
+<td>uint16_t</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-radiantoposition">radianToPosition</a></strong>(double radian) const</td>
+</tr>
+<tr>
+<td>virtual void</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-radiantoposition">radianToPosition</a></strong>(double radian, uint8_t &amp; value) const</td>
+</tr>
+<tr>
+<td>virtual void</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-radiantoposition">radianToPosition</a></strong>(double radian, uint16_t &amp; value) const</td>
+</tr>
+<tr>
+<td>virtual void</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-radiantoposition">radianToPosition</a></strong>(double radian, uint32_t &amp; value) const</td>
+</tr>
+<tr>
+<td>virtual double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-positiontoradian">positionToRadian</a></strong>(const uint8_t position) const</td>
+</tr>
+<tr>
+<td>virtual double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-positiontoradian">positionToRadian</a></strong>(const uint16_t position) const</td>
+</tr>
+<tr>
+<td>virtual double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-positiontoradian">positionToRadian</a></strong>(const uint32_t position) const</td>
+</tr>
+<tr>
+<td><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-getresult">getResult</a></strong>(int communication_result, uint8_t packet_error)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-motorbase">MotorBase</a></strong>() <br>Construct a new Motor Base object.</td>
 </tr>
 </tbody>
 </table>
@@ -609,6 +816,37 @@
 </tr>
 </tbody>
 </table>
+<h2 id="protected-attributes">Protected Attributes<a class="headerlink" href="#protected-attributes" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>std::shared_ptr&lt; dynamixel::PortHandler &gt;</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-port_handler_">port_handler_</a></strong></td>
+</tr>
+<tr>
+<td>std::shared_ptr&lt; dynamixel::PacketHandler &gt;</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-packet_handler_">packet_handler_</a></strong></td>
+</tr>
+<tr>
+<td>double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-joint_position_">joint_position_</a></strong></td>
+</tr>
+<tr>
+<td>double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-goal_position_">goal_position_</a></strong></td>
+</tr>
+<tr>
+<td>std::shared_ptr&lt; <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1AddressTableBase">AddressTableBase</a> &gt;</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-address_table_">address_table_</a></strong></td>
+</tr>
+</tbody>
+</table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-motorbase">function ~MotorBase<a class="headerlink" href="#function-motorbase" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="o">~</span><span class="n">MotorBase</span><span class="p">()</span>
@@ -640,6 +878,11 @@
 <ul>
 <li><strong>goal_position</strong> goal position angle in radian. </li>
 </ul>
+<p><strong>Return</strong>: <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a> result of the command. </p>
+<h3 id="function-setcurrentgoalposition">function setCurrentGoalPosition<a class="headerlink" href="#function-setcurrentgoalposition" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="n">Result</span> <span class="n">setCurrentGoalPosition</span><span class="p">()</span>
+</code></pre></div>
+<p>Execute goal_position command to the motor without update current goal position. </p>
 <p><strong>Return</strong>: <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a> result of the command. </p>
 <h3 id="function-operationsupports">function operationSupports<a class="headerlink" href="#function-operationsupports" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">operationSupports</span><span class="p">(</span>
@@ -725,6 +968,62 @@
 <ul>
 <li><strong>AddressTable</strong> address table type of the motor. </li>
 </ul>
+<h2 id="protected-functions-documentation">Protected Functions Documentation<a class="headerlink" href="#protected-functions-documentation" title="Permanent link">#</a></h2>
+<h3 id="function-radiantoposition">function radianToPosition<a class="headerlink" href="#function-radiantoposition" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span> <span class="o">&gt;</span>
+<span class="kr">inline</span> <span class="n">T</span> <span class="n">radianToPosition</span><span class="p">(</span>
+    <span class="kt">double</span> <span class="n">radian</span>
+<span class="p">)</span> <span class="k">const</span>
+</code></pre></div>
+<h3 id="function-radiantoposition_1">function radianToPosition<a class="headerlink" href="#function-radiantoposition_1" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">uint16_t</span> <span class="n">radianToPosition</span><span class="p">(</span>
+    <span class="kt">double</span> <span class="n">radian</span>
+<span class="p">)</span> <span class="k">const</span>
+</code></pre></div>
+<h3 id="function-radiantoposition_2">function radianToPosition<a class="headerlink" href="#function-radiantoposition_2" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">radianToPosition</span><span class="p">(</span>
+    <span class="kt">double</span> <span class="n">radian</span><span class="p">,</span>
+    <span class="kt">uint8_t</span> <span class="o">&amp;</span> <span class="n">value</span>
+<span class="p">)</span> <span class="k">const</span>
+</code></pre></div>
+<h3 id="function-radiantoposition_3">function radianToPosition<a class="headerlink" href="#function-radiantoposition_3" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">radianToPosition</span><span class="p">(</span>
+    <span class="kt">double</span> <span class="n">radian</span><span class="p">,</span>
+    <span class="kt">uint16_t</span> <span class="o">&amp;</span> <span class="n">value</span>
+<span class="p">)</span> <span class="k">const</span>
+</code></pre></div>
+<h3 id="function-radiantoposition_4">function radianToPosition<a class="headerlink" href="#function-radiantoposition_4" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">radianToPosition</span><span class="p">(</span>
+    <span class="kt">double</span> <span class="n">radian</span><span class="p">,</span>
+    <span class="kt">uint32_t</span> <span class="o">&amp;</span> <span class="n">value</span>
+<span class="p">)</span> <span class="k">const</span>
+</code></pre></div>
+<h3 id="function-positiontoradian">function positionToRadian<a class="headerlink" href="#function-positiontoradian" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="kt">double</span> <span class="n">positionToRadian</span><span class="p">(</span>
+    <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">position</span>
+<span class="p">)</span> <span class="k">const</span>
+</code></pre></div>
+<h3 id="function-positiontoradian_1">function positionToRadian<a class="headerlink" href="#function-positiontoradian_1" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="kt">double</span> <span class="n">positionToRadian</span><span class="p">(</span>
+    <span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">position</span>
+<span class="p">)</span> <span class="k">const</span>
+</code></pre></div>
+<h3 id="function-positiontoradian_2">function positionToRadian<a class="headerlink" href="#function-positiontoradian_2" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="kt">double</span> <span class="n">positionToRadian</span><span class="p">(</span>
+    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">position</span>
+<span class="p">)</span> <span class="k">const</span>
+</code></pre></div>
+<p><strong>Reimplemented by</strong>: <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1motors_1_1XW540__T260#function-positiontoradian">dynamixel_hardware_interface::motors::XW540_T260::positionToRadian</a></p>
+<h3 id="function-getresult">function getResult<a class="headerlink" href="#function-getresult" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">Result</span> <span class="n">getResult</span><span class="p">(</span>
+    <span class="kt">int</span> <span class="n">communication_result</span><span class="p">,</span>
+    <span class="kt">uint8_t</span> <span class="n">packet_error</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-motorbase_2">function MotorBase<a class="headerlink" href="#function-motorbase_2" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">MotorBase</span><span class="p">()</span>
+</code></pre></div>
+<p>Construct a new Motor Base object. </p>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">#</a></h2>
 <h3 id="variable-motor_type">variable motor_type<a class="headerlink" href="#variable-motor_type" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">SupportedMotors</span> <span class="n">motor_type</span><span class="p">;</span>
@@ -746,8 +1045,24 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="kt">int</span> <span class="n">baudrate</span><span class="p">;</span>
 </code></pre></div>
 <p>Baudrate of the serial communication. </p>
+<h2 id="protected-attributes-documentation">Protected Attributes Documentation<a class="headerlink" href="#protected-attributes-documentation" title="Permanent link">#</a></h2>
+<h3 id="variable-port_handler_">variable port_handler_<a class="headerlink" href="#variable-port_handler_" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">PortHandler</span> <span class="o">&gt;</span> <span class="n">port_handler_</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-packet_handler_">variable packet_handler_<a class="headerlink" href="#variable-packet_handler_" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">PacketHandler</span> <span class="o">&gt;</span> <span class="n">packet_handler_</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-joint_position_">variable joint_position_<a class="headerlink" href="#variable-joint_position_" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">joint_position_</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-goal_position_">variable goal_position_<a class="headerlink" href="#variable-goal_position_" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">goal_position_</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-address_table_">variable address_table_<a class="headerlink" href="#variable-address_table_" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">AddressTableBase</span> <span class="o">&gt;</span> <span class="n">address_table_</span><span class="p">;</span>
+</code></pre></div>
 <hr />
-<p>Updated on  5 May 2021 at 00:36:50 UTC</p>
+<p>Updated on  5 May 2021 at 09:17:41 UTC</p>
                 
                   
                 

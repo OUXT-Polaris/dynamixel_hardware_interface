@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classdynamixel__hardware__interface_1_1Address" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel_hardware_interface::Address</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1Address_1a5b2fc111cfc557507dcccbf337d854be" prot="public" static="no" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t dynamixel_hardware_interface::Address::address</definition>
+        <argsstring></argsstring>
+        <name>address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="41" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1Address_1aa80d7e6a794e89b258178753543a1447" prot="public" static="no" mutable="no">
+        <type>const PacketByteSize</type>
+        <definition>const PacketByteSize dynamixel_hardware_interface::Address::byte_size</definition>
+        <argsstring></argsstring>
+        <name>byte_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="42" column="24" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1Address_1a9d48e7d9679ec7c5aa8e38e3c4f4d269" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel_hardware_interface::Address::Address</definition>
+        <argsstring>(uint16_t address, PacketByteSize byte_size)</argsstring>
+        <name>Address</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>PacketByteSize</type>
+          <declname>byte_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="39" column="3" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1Address_1a77404a5cd4756a241d621fcc5a34c031" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel_hardware_interface::Address::Address</definition>
+        <argsstring>()</argsstring>
+        <name>Address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="40" column="3" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1Address_1a48f080f3ef824ab3736c5bc5d453c412" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dynamixel_hardware_interface::Address::exists</definition>
+        <argsstring>() const</argsstring>
+        <name>exists</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="43" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="43" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="37" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="36" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classdynamixel__hardware__interface_1_1Address_1a5b2fc111cfc557507dcccbf337d854be" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::Address</scope><name>address</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1Address_1a9d48e7d9679ec7c5aa8e38e3c4f4d269" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::Address</scope><name>Address</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1Address_1a77404a5cd4756a241d621fcc5a34c031" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::Address</scope><name>Address</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1Address_1aa80d7e6a794e89b258178753543a1447" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::Address</scope><name>byte_size</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1Address_1a48f080f3ef824ab3736c5bc5d453c412" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::Address</scope><name>exists</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -479,8 +479,8 @@
 
 <span class="k">namespace</span> <span class="nn">dynamixel_hardware_interface</span>
 <span class="p">{</span>
-<span class="k">constexpr</span> <span class="kt">double</span> <span class="n">PROTOCOL_VERSION</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
-<span class="k">constexpr</span> <span class="kt">int</span> <span class="n">DXL_HOME_POSITION</span> <span class="o">=</span> <span class="mi">511</span><span class="p">;</span>  <span class="c1">// value range:0 ~ 1023</span>
+<span class="k">constexpr</span> <span class="kt">double</span> <span class="n">PROTOCOL_VERSION</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+<span class="k">constexpr</span> <span class="kt">int</span> <span class="n">DXL_HOME_POSITION</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// value range:0 ~ 1023</span>
 <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">DXL_MAX_POSITION</span> <span class="o">=</span> <span class="mf">1023.0</span><span class="p">;</span>
 <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">DXL_MAX_POSITION_DEGREES</span> <span class="o">=</span> <span class="mf">300.0</span><span class="p">;</span>
 <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">TO_RADIANS</span> <span class="o">=</span> <span class="p">(</span><span class="n">DXL_MAX_POSITION_DEGREES</span> <span class="o">/</span> <span class="n">DXL_MAX_POSITION</span><span class="p">)</span> <span class="o">*</span> <span class="n">M_PI</span> <span class="o">/</span> <span class="mf">180.0</span><span class="p">;</span>
@@ -490,6 +490,7 @@
 <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">TO_SPEED_RAD_PER_SEC</span> <span class="o">=</span> <span class="n">TO_SPEED_RAD_PER_MIN</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">;</span>
 <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">TO_LOAD_PERCENT</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
 <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">TO_VOLTAGE</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+<span class="k">constexpr</span> <span class="kt">double</span> <span class="n">PULSE_RESOLUTION</span> <span class="o">=</span> <span class="mi">4096</span><span class="p">;</span>
 
 <span class="cp">#define GENERATE_ENUM_ITERATOR(T, LAST_VALUE)                                          \</span>
 <span class="cp">  inline T operator++(T &amp; x) { return x = (T)(std::underlying_type&lt;T&gt;::type(x) + 1); } \</span>
@@ -522,12 +523,16 @@
 
 <span class="n">GENERATE_ENUM_ITERATOR</span><span class="p">(</span><span class="n">SupportedMotors</span><span class="p">,</span> <span class="n">INVALID</span><span class="p">)</span>
 
+<span class="k">enum</span> <span class="k">class</span> <span class="nc">PacketByteSize</span> <span class="p">{</span> <span class="n">ONE_BYTE</span><span class="p">,</span> <span class="n">TWO_BYTE</span><span class="p">,</span> <span class="n">FOUR_BYTE</span><span class="p">,</span> <span class="n">INVALID</span> <span class="p">};</span>
+
+<span class="n">GENERATE_ENUM_ITERATOR</span><span class="p">(</span><span class="n">PacketByteSize</span><span class="p">,</span> <span class="n">INVALID</span><span class="p">)</span>
+
 <span class="p">}</span>  <span class="c1">//  namespace dynamixel_hardware_interface</span>
 
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  5 May 2021 at 00:36:50 UTC</p>
+<p>Updated on  5 May 2021 at 09:17:41 UTC</p>
                 
                   
                 

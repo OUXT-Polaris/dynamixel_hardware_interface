@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="43" column="3" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="43" bodyend="43"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="43" column="3" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="43" bodyend="49"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -46,11 +46,11 @@
         <link refid="classdynamixel__hardware__interface_1_1AddressTableBase"/>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="41" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="40" bodyend="44"/>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" line="41" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors/xw540_t260.hpp" bodystart="40" bodyend="50"/>
     <listofallmembers>
       <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a43e69aa8a1a3a28ac6278744fba9fcad" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::address_tables::XW540_T260</scope><name>addressExists</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a5dfc09c9955027305728c95d1c3bc52b" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::address_tables::XW540_T260</scope><name>AddressTableBase</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a75379c5c98a794a4b1d671b47b5453c9" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::address_tables::XW540_T260</scope><name>getAddress</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a1f9b990a81b2e609ffedeb59ecec30e7" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::address_tables::XW540_T260</scope><name>AddressTableBase</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aafbbe33ef5157bfd733e3e0d7c4fce47" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::address_tables::XW540_T260</scope><name>getAddress</name></member>
       <member refid="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260_1ae3d276535eb0127dd5a8de817994cff0" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::address_tables::XW540_T260</scope><name>XW540_T260</name></member>
     </listofallmembers>
   </compounddef>
