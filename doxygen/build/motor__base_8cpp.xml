@@ -247,7 +247,7 @@
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>goal_position_<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classdynamixel__hardware__interface_1_1MotorBase_1a48c5d0ab85e71ddfcd3f4add1093234a" kindref="member">enable_dummy</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classdynamixel__hardware__interface_1_1MotorBase_1ad9b1da7088d91b73431038f4b179db0f" kindref="member">torqueEnable</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classdynamixel__hardware__interface_1_1MotorBase_1ad9b1da7088d91b73431038f4b179db0f" kindref="member">torqueEnable</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Result(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="106"><highlight class="normal">}</highlight></codeline>
