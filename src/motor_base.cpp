@@ -100,7 +100,7 @@ Result MotorBase::configure()
     goal_position_ = 0;
   }
   if (!enable_dummy) {
-    torqueEnable(true);
+    return torqueEnable(true);
   }
   return Result("", true);
 }
