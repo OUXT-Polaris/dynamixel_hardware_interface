@@ -47,7 +47,7 @@ namespace dynamixel_hardware_interface
  * @brief Hardware interface for the dynamixel motor.
  */
 class DynamixelHardwareInterface
-: public hardware_interface::BaseInterface<hardware_interface::SystemInterface>
+  : public hardware_interface::BaseInterface<hardware_interface::SystemInterface>
 {
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(DynamixelHardwareInterface)
@@ -78,7 +78,7 @@ private:
   int baudrate_;
   SupportedMotors strToSupportMotorsEnum(const std::string & motor_type) const;
 
-  template <typename T>
+  template<typename T>
   T getParameter(const std::string key, const hardware_interface::ComponentInfo & info) const
   {
     T param;
@@ -114,7 +114,7 @@ private:
       parameter = true;
     }
   }
-  template <typename T>
+  template<typename T>
   T getHardwareParameter(const std::string key) const
   {
     T param;

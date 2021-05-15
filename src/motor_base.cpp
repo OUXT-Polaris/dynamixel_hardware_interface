@@ -75,11 +75,6 @@ double MotorBase::valueToRpm(uint32_t) const
   throw std::runtime_error("value to rpm function should be implemented for each motor");
 }
 
-uint16_t MotorBase::radianToPosition(double radian) const
-{
-  return radian * TO_DXL_POS + DXL_HOME_POSITION;
-}
-
 double MotorBase::positionToRadian(const uint8_t) const
 {
   throw std::runtime_error("position to radian function should be implemented for each motor");
@@ -126,12 +121,14 @@ void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInter
     if (address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::PRESENT_POSITION:
-          interfaces.emplace_back(hardware_interface::StateInterface(
-            joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
+          interfaces.emplace_back(
+            hardware_interface::StateInterface(
+              joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
           break;
         case Operation::PRESENT_SPEED:
-          interfaces.emplace_back(hardware_interface::StateInterface(
-            joint_name, hardware_interface::HW_IF_VELOCITY, &joint_position_));
+          interfaces.emplace_back(
+            hardware_interface::StateInterface(
+              joint_name, hardware_interface::HW_IF_VELOCITY, &joint_position_));
           break;
         default:
           break;
@@ -147,8 +144,9 @@ void MotorBase::appendCommandInterfaces(
     if (address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::GOAL_POSITION:
-          interfaces.emplace_back(hardware_interface::CommandInterface(
-            joint_name, hardware_interface::HW_IF_POSITION, &goal_position_));
+          interfaces.emplace_back(
+            hardware_interface::CommandInterface(
+              joint_name, hardware_interface::HW_IF_POSITION, &goal_position_));
           break;
         default:
           break;
