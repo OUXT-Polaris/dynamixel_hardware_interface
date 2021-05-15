@@ -498,6 +498,11 @@
   <span class="p">{</span>
     <span class="n">value</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">((</span><span class="n">radian</span> <span class="o">/</span> <span class="n">M_PI</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4096</span><span class="p">);</span>
   <span class="p">}</span>
+
+  <span class="kt">double</span> <span class="n">valueToRpm</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span> <span class="k">override</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="mf">2.29</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">M_PI</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">*</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace motors</span>
 <span class="p">}</span>  <span class="c1">// namespace dynamixel_hardware_interface</span>
@@ -505,7 +510,7 @@
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__XW540_T260_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 May 2021 at 13:33:01 UTC</p>
+<p>Updated on 15 May 2021 at 14:54:11 UTC</p>
                 
                   
                 

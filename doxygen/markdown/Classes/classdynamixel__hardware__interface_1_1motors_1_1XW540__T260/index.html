@@ -362,6 +362,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-valuetorpm" class="md-nav__link">
+    function valueToRpm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-radiantoposition" class="md-nav__link">
     function radianToPosition
   </a>
@@ -416,6 +423,10 @@
 </thead>
 <tbody>
 <tr>
+<td>virtual double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1motors_1_1XW540__T260#function-valuetorpm">valueToRpm</a></strong>(uint32_t value) const override</td>
+</tr>
+<tr>
 <td>virtual void</td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1motors_1_1XW540__T260#function-radiantoposition">radianToPosition</a></strong>(double radian, uint32_t &amp; value) const override</td>
 </tr>
@@ -442,6 +453,10 @@
 <tr>
 <td></td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-~motorbase">~MotorBase</a></strong>() <br>Destroy the Motor Base object.</td>
+</tr>
+<tr>
+<td>virtual <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-updatejointvelocity">updateJointVelocity</a></strong>() <br>Execute update joint velocity command to the motor.</td>
 </tr>
 <tr>
 <td>virtual <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
@@ -503,6 +518,10 @@
 </thead>
 <tbody>
 <tr>
+<td>void</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-rpmtovelocity">rpmToVelocity</a></strong>(double rpm, double &amp; radian) const</td>
+</tr>
+<tr>
 <td><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-getresult">getResult</a></strong>(int communication_result, uint8_t packet_error)</td>
 </tr>
@@ -562,7 +581,15 @@
 </tr>
 <tr>
 <td>double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-joint_velocity_">joint_velocity_</a></strong></td>
+</tr>
+<tr>
+<td>double</td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-joint_position_">joint_position_</a></strong></td>
+</tr>
+<tr>
+<td>double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-goal_velocity_">goal_velocity_</a></strong></td>
 </tr>
 <tr>
 <td>double</td>
@@ -575,6 +602,12 @@
 </tbody>
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
+<h3 id="function-valuetorpm">function valueToRpm<a class="headerlink" href="#function-valuetorpm" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">double</span> <span class="n">valueToRpm</span><span class="p">(</span>
+    <span class="kt">uint32_t</span> <span class="n">value</span>
+<span class="p">)</span> <span class="k">const</span> <span class="k">override</span>
+</code></pre></div>
+<p><strong>Reimplements</strong>: <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-valuetorpm">dynamixel_hardware_interface::MotorBase::valueToRpm</a></p>
 <h3 id="function-radiantoposition">function radianToPosition<a class="headerlink" href="#function-radiantoposition" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">radianToPosition</span><span class="p">(</span>
     <span class="kt">double</span> <span class="n">radian</span><span class="p">,</span>
@@ -599,7 +632,7 @@
 <span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 May 2021 at 13:33:01 UTC</p>
+<p>Updated on 15 May 2021 at 14:54:11 UTC</p>
                 
                   
                 
