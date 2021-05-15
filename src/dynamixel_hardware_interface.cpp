@@ -92,8 +92,8 @@ DynamixelHardwareInterface::export_state_interfaces()
     motor->appendStateInterfaces(state_interfaces);
   }
   RCLCPP_INFO_STREAM(
-    rclcpp::get_logger("dynamixel_hardware_interface"), state_interfaces.size() <<
-      " state interfaces exported.");
+    rclcpp::get_logger("dynamixel_hardware_interface"), state_interfaces.size()
+                                                          << " state interfaces exported.");
   return state_interfaces;
 }
 
@@ -105,8 +105,8 @@ DynamixelHardwareInterface::export_command_interfaces()
     motor->appendCommandInterfaces(command_interfaces);
   }
   RCLCPP_INFO_STREAM(
-    rclcpp::get_logger("dynamixel_hardware_interface"), command_interfaces.size() <<
-      " command interfaces exported.");
+    rclcpp::get_logger("dynamixel_hardware_interface"), command_interfaces.size()
+                                                          << " command interfaces exported.");
   return command_interfaces;
 }
 

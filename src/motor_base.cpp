@@ -121,14 +121,12 @@ void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInter
     if (address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::PRESENT_POSITION:
-          interfaces.emplace_back(
-            hardware_interface::StateInterface(
-              joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
+          interfaces.emplace_back(hardware_interface::StateInterface(
+            joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
           break;
         case Operation::PRESENT_SPEED:
-          interfaces.emplace_back(
-            hardware_interface::StateInterface(
-              joint_name, hardware_interface::HW_IF_VELOCITY, &joint_position_));
+          interfaces.emplace_back(hardware_interface::StateInterface(
+            joint_name, hardware_interface::HW_IF_VELOCITY, &joint_position_));
           break;
         default:
           break;
@@ -144,10 +142,12 @@ void MotorBase::appendCommandInterfaces(
     if (address_table_->addressExists(operation)) {
       switch (operation) {
         case Operation::GOAL_POSITION:
-          interfaces.emplace_back(
-            hardware_interface::CommandInterface(
-              joint_name, hardware_interface::HW_IF_POSITION, &goal_position_));
+          interfaces.emplace_back(hardware_interface::CommandInterface(
+            joint_name, hardware_interface::HW_IF_POSITION, &goal_position_));
           break;
+        case Operation::MOVING_SPEED:
+          interfaces.emplace_back(hardware_interface::CommandInterface(
+            joint_name, hardware_interface::HW_IF_VELOCITY, &goal_velocity_));
         default:
           break;
       }
@@ -205,32 +205,32 @@ Result MotorBase::updateJointVelocity()
 {
   const auto address = address_table_->getAddress(Operation::PRESENT_SPEED);
   if (!address.exists()) {
-    return Result("PRESENT_POSITION operation does not support in " + toString(motor_type), false);
+    return Result("PRESENT_SPEED operation does not support in " + toString(motor_type), false);
   }
   if (enable_dummy) {
-    // joint_position_ = goal_position_;
+    joint_velocity_ = goal_velocity_;
     return Result("", true);
   } else {
     uint8_t error = 0;
     if (address.byte_size == PacketByteSize::ONE_BYTE) {
-      uint8_t present_position = 0;
+      uint8_t present_speed = 0;
       const auto result = packet_handler_->read1ByteTxRx(
-        port_handler_.get(), id, address.address, &present_position, &error);
-      // joint_position_ = positionToRadian(present_position);
+        port_handler_.get(), id, address.address, &present_speed, &error);
+      joint_velocity_ = valueToRpm(present_speed);
       return getResult(result, error);
     }
     if (address.byte_size == PacketByteSize::TWO_BYTE) {
-      uint16_t present_position = 0;
+      uint16_t present_speed = 0;
       const auto result = packet_handler_->read2ByteTxRx(
-        port_handler_.get(), id, address.address, &present_position, &error);
-      // joint_position_ = positionToRadian(present_position);
+        port_handler_.get(), id, address.address, &present_speed, &error);
+      joint_velocity_ = valueToRpm(present_speed);
       return getResult(result, error);
     }
     if (address.byte_size == PacketByteSize::FOUR_BYTE) {
-      uint32_t present_position = 0;
+      uint32_t present_speed = 0;
       const auto result = packet_handler_->read4ByteTxRx(
-        port_handler_.get(), id, address.address, &present_position, &error);
-      // joint_position_ = positionToRadian(present_position);
+        port_handler_.get(), id, address.address, &present_speed, &error);
+      joint_velocity_ = valueToRpm(present_speed);
       return getResult(result, error);
     }
     return Result("Invalid packet size", false);
