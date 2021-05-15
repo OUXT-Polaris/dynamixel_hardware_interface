@@ -60,7 +60,8 @@ struct Result
    * @param description Description of the result.
    * @param success If true, command execute successfully.
    */
-  Result(const std::string & description, bool success) : description(description), success(success)
+  Result(const std::string & description, bool success)
+  : description(description), success(success)
   {
   }
 };
@@ -103,7 +104,7 @@ public:
    * @param port_handler Port handler class of the dynamixel sdk.
    * @param packet_handler Packet handler class of the dynamixel sdk
    */
-  template <typename AddressTable>
+  template<typename AddressTable>
   MotorBase(
     const SupportedMotors & motor_type, const std::string & joint_name, const bool enable_dummy,
     const AddressTable & table, int baudrate, uint8_t id,
@@ -164,17 +165,17 @@ public:
    * @brief Execute goal_position command to the motor without update current goal position
    * @return Result result of the command.
    */
-  virtual Result setCurrentGoalPosition() { return setGoalPosition(goal_position_); }
+  virtual Result setCurrentGoalPosition() {return setGoalPosition(goal_position_);}
   /**
    * @brief Get current joint position of the motor.
    * @return double Current joint position of the motor in radian.
    */
-  virtual double getJointPosition() const { return joint_position_; }
+  virtual double getJointPosition() const {return joint_position_;}
   /**
    * @brief Get current goal position of the motor.
    * @return double Current goal position of the motor in radian.
    */
-  virtual double getGoalPosition() const { return goal_position_; }
+  virtual double getGoalPosition() const {return goal_position_;}
   /**
    * @brief Execute update joint position command to the motor.
    * @return Result result of the command.
@@ -203,7 +204,7 @@ protected:
    */
   MotorBase() = delete;
   Result getResult(int communication_result, uint8_t packet_error);
-  template <typename T>
+  template<typename T>
   T radianToPosition(double radian) const
   {
     T value;
@@ -226,7 +227,7 @@ protected:
   {
     value = static_cast<uint32_t>((radian / M_PI) * 4294967296);
   }
-  void rpmToVelocity(double rpm, double & radian) const { radian = rpm / 60.0 * 2 * M_PI; }
+  void rpmToVelocity(double rpm, double & radian) const {radian = rpm / 60.0 * 2 * M_PI;}
   virtual double valueToRpm(uint8_t value) const;
   virtual double valueToRpm(uint16_t value) const;
   virtual double valueToRpm(uint32_t value) const;

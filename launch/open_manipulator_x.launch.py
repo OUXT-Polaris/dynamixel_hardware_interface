@@ -88,24 +88,6 @@ def generate_launch_description():
                     "joint_state_controller"],
                 output="screen",
                 shell=True,
-            ),
-            ExecuteProcess(
-                cmd=[
-                    "ros2",
-                    "control",
-                    "load_configure_controller",
-                    "velocity_controller"],
-                output="screen",
-                shell=True,
-            ),
-            ExecuteProcess(
-                cmd=[
-                    "ros2",
-                    "control",
-                    "load_configure_controller",
-                    "joint_trajectory_controller"],
-                output="screen",
-                shell=True,
             )
         ]
     )
