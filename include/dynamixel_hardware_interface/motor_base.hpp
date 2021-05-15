@@ -26,6 +26,7 @@
 
 #include <dynamixel_sdk/dynamixel_sdk.h>
 
+#include <boost/optional.hpp>
 #include <dynamixel_hardware_interface/address_table_base.hpp>
 #include <dynamixel_hardware_interface/constants.hpp>
 #include <hardware_interface/base_interface.hpp>
@@ -181,6 +182,11 @@ public:
    */
   virtual Result updateJointPosition();
   /**
+   * @brief Execute update joint velocity command to the motor.
+   * @return Result 
+   */
+  virtual Result updateJointVelocity();
+  /**
    * @brief Append state interface described in the URDF file.
    * @param interfaces List of state interface.
    */
@@ -221,11 +227,17 @@ protected:
   {
     value = static_cast<uint32_t>((radian / M_PI) * 4294967296);
   }
+  void rpmToVelocity(double rpm, double & radian) const { radian = rpm / 60.0 * 2 * M_PI; }
+  virtual double valueToRpm(uint8_t value) const;
+  virtual double valueToRpm(uint16_t value) const;
+  virtual double valueToRpm(uint32_t value) const;
   std::shared_ptr<AddressTableBase> address_table_;
   std::shared_ptr<dynamixel::PortHandler> port_handler_;
   std::shared_ptr<dynamixel::PacketHandler> packet_handler_;
   double joint_position_;
   double goal_position_;
+  boost::optional<double> joint_velocity_;
+  double goal_velocity_;
 };
 }  //  namespace dynamixel_hardware_interface
 
