@@ -221,6 +221,9 @@ protected:
   virtual double valueToRpm(uint8_t value) const;
   virtual double valueToRpm(uint16_t value) const;
   virtual double valueToRpm(uint32_t value) const;
+  virtual double valueToTempelature(uint8_t value) const;
+  virtual double valueToTempelature(uint16_t value) const;
+  virtual double valueToTempelature(uint32_t value) const;
   std::shared_ptr<AddressTableBase> address_table_;
   std::shared_ptr<dynamixel::PortHandler> port_handler_;
   std::shared_ptr<dynamixel::PacketHandler> packet_handler_;
