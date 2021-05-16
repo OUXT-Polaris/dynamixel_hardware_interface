@@ -25,7 +25,7 @@
 #include <realtime_tools/realtime_buffer.h>
 
 #include <controller_interface/controller_interface.hpp>
-#include <memory>
+#include <diagnostic_updater/diagnostic_updater.hpp>
 #include <rclcpp/subscription.hpp>
 #include <rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp>
 #include <rclcpp_lifecycle/state.hpp>
@@ -37,12 +37,16 @@ class DynamixelDiagnosticController : public controller_interface::ControllerInt
 {
   controller_interface::return_type init(const std::string & controller_name) override;
 
-  controller_interface::InterfaceConfiguration command_interface_configuration() const override;
+  controller_interface::InterfaceConfiguration command_interface_configuration() const override
+  {
+    return controller_interface::InterfaceConfiguration{
+      controller_interface::interface_configuration_type::NONE};
+  }
 
   controller_interface::InterfaceConfiguration state_interface_configuration() const override
   {
     return controller_interface::InterfaceConfiguration{
-      controller_interface::interface_configuration_type::NONE};
+      controller_interface::interface_configuration_type::INDIVIDUAL};
   }
 
   rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_configure(

@@ -25,4 +25,30 @@
 
 namespace dynamixel_hardware_interface
 {
+controller_interface::return_type DynamixelDiagnosticController::init(
+  const std::string & controller_name)
+{
+  auto ret = ControllerInterface::init(controller_name);
+  if (ret != controller_interface::return_type::OK) {
+    return ret;
+  }
+  return controller_interface::return_type::OK;
+}
+
+rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
+DynamixelDiagnosticController::on_configure(const rclcpp_lifecycle::State & /*previous_state*/)
+{
+  return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
+}
+
+controller_interface::return_type DynamixelDiagnosticController::update()
+{
+  return controller_interface::return_type::OK;
+}
 }  // namespace dynamixel_hardware_interface
+
+#include "pluginlib/class_list_macros.hpp"
+
+PLUGINLIB_EXPORT_CLASS(
+  dynamixel_hardware_interface::DynamixelDiagnosticController,
+  controller_interface::ControllerInterface)
