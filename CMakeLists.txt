@@ -66,7 +66,7 @@ ament_target_dependencies(
   rclcpp
   ros2_control
 )
-pluginlib_export_plugin_description_file(controller_interface dynamixel_hardware_interface.xml)
+pluginlib_export_plugin_description_file(controller_interface dynamixel_diagnostic_controller.xml)
 
 install(
   TARGETS dynamixel_hardware_interface dynamixel_diagnostic_controller
@@ -86,6 +86,7 @@ ament_export_libraries(
 )
 ament_export_dependencies(
   dynamixel_sdk
+  controller_interface
   hardware_interface
   pluginlib
   rclcpp

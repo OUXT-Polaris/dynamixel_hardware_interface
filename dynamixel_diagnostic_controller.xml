@@ -1,9 +1,9 @@
 <library path="dynamixel_dynamixel_diagnostic_controller">
-    <class name="dynamixel_hardware_interface/DynamixelDiagnosticController"
-           type="dynamixel_hardware_interface::DynamixelDiagnosticController"
-           base_class_type="controller_interface::ControllerInterface">
-      <description>
-        A dynamixel hardware plugin for the ros2_control.
-      </description>
-    </class>
-  </library>
+  <class name="dynamixel_hardware_interface/DynamixelDiagnosticController"
+          type="dynamixel_hardware_interface::DynamixelDiagnosticController"
+          base_class_type="controller_interface::ControllerInterface">
+    <description>
+      A dynamixel diagnostic plugin for the ros2_control.
+    </description>
+  </class>
+</library>
