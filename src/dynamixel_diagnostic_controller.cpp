@@ -38,6 +38,7 @@ controller_interface::return_type DynamixelDiagnosticController::init(
 rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
 DynamixelDiagnosticController::on_configure(const rclcpp_lifecycle::State & /*previous_state*/)
 {
+  auto node = get_node();
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
 }
 

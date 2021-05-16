@@ -26,15 +26,18 @@
 
 #include <controller_interface/controller_interface.hpp>
 #include <diagnostic_updater/diagnostic_updater.hpp>
+#include <memory>
 #include <rclcpp/subscription.hpp>
 #include <rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp>
 #include <rclcpp_lifecycle/state.hpp>
 #include <string>
+#include <unordered_map>
 
 namespace dynamixel_hardware_interface
 {
 class DynamixelDiagnosticController : public controller_interface::ControllerInterface
 {
+public:
   controller_interface::return_type init(const std::string & controller_name) override;
 
   controller_interface::InterfaceConfiguration command_interface_configuration() const override
@@ -65,5 +68,9 @@ class DynamixelDiagnosticController : public controller_interface::ControllerInt
   }
 
   controller_interface::return_type update() override;
+
+private:
+  std::unordered_map<std::string, std::shared_ptr<diagnostic_updater::Updater>>
+    diagnostic_updaters_;
 };
 }  // namespace dynamixel_hardware_interface

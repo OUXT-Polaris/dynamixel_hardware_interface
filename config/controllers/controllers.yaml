@@ -5,7 +5,19 @@ controller_manager:
     joint_state_controller:
       type: joint_state_controller/JointStateController
 
+    dinamixel_diagnostic_controller:
+      type: dynamixel_hardware_interface/DynamixelDiagnosticController
+
 joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - gripper
+
+dinamixel_diagnostic_controller:
   ros__parameters:
     joints:
       - joint1

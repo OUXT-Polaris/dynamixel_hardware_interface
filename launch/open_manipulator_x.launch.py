@@ -88,6 +88,15 @@ def generate_launch_description():
                     "joint_state_controller"],
                 output="screen",
                 shell=True,
+            ),
+            ExecuteProcess(
+                cmd=[
+                    "ros2",
+                    "control",
+                    "load_start_controller",
+                    "dinamixel_diagnostic_controller"],
+                output="screen",
+                shell=True,
             )
         ]
     )
