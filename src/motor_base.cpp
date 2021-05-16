@@ -157,6 +157,10 @@ void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInter
           interfaces.emplace_back(hardware_interface::StateInterface(
             joint_name, hardware_interface::HW_IF_VELOCITY, &joint_position_));
           break;
+        case Operation::PRESENT_TEMPERATURE:
+          interfaces.emplace_back(
+            hardware_interface::StateInterface(joint_name, "tempelature", &present_tempelature_));
+          break;
         default:
           break;
       }
