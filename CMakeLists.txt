@@ -20,6 +20,7 @@ find_package(ament_cmake REQUIRED)
 find_package(dynamixel_sdk REQUIRED)
 find_package(controller_interface REQUIRED)
 find_package(diagnostic_updater REQUIRED)
+find_package(diagnostic_msgs REQUIRED)
 find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -65,6 +66,8 @@ ament_target_dependencies(
   pluginlib
   rclcpp
   ros2_control
+  diagnostic_updater
+  diagnostic_msgs
 )
 pluginlib_export_plugin_description_file(controller_interface dynamixel_diagnostic_controller.xml)
 

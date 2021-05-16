@@ -23,9 +23,10 @@
 
 #include <dynamixel_hardware_interface/visiblity_control.h>
 #include <realtime_tools/realtime_buffer.h>
+#include <realtime_tools/realtime_publisher.h>
 
 #include <controller_interface/controller_interface.hpp>
-#include <diagnostic_updater/diagnostic_updater.hpp>
+#include <diagnostic_msgs/msg/diagnostic_array.hpp>
 #include <dynamixel_hardware_interface/constants.hpp>
 #include <memory>
 #include <rclcpp/subscription.hpp>
@@ -36,46 +37,54 @@
 #include <vector>
 
 namespace dynamixel_hardware_interface
-{
+{    
 class DynamixelDiagnosticController : public controller_interface::ControllerInterface
 {
 public:
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   controller_interface::return_type init(const std::string & controller_name) override;
 
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   controller_interface::InterfaceConfiguration command_interface_configuration() const override
   {
     return controller_interface::InterfaceConfiguration{
       controller_interface::interface_configuration_type::NONE};
   }
 
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   controller_interface::InterfaceConfiguration state_interface_configuration() const override
   {
     return controller_interface::InterfaceConfiguration{
       controller_interface::interface_configuration_type::INDIVIDUAL};
   }
 
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_configure(
     const rclcpp_lifecycle::State & /*previous_state*/) override;
 
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_activate(
     const rclcpp_lifecycle::State & /*previous_state*/) override
   {
     return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
   }
 
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_deactivate(
     const rclcpp_lifecycle::State & /*previous_state*/) override
   {
     return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
   }
 
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   controller_interface::return_type update() override;
 
 private:
-  std::unordered_map<std::string, std::shared_ptr<diagnostic_updater::Updater>>
-    diagnostic_updaters_;
   std::vector<std::string> joints_;
   std::unordered_map<std::string, std::vector<dynamixel_hardware_interface::DiagnosticsType>>
     diagnostics_;
+  rclcpp::Publisher<diagnostic_msgs::msg::DiagnosticArray>::SharedPtr diag_pub_;
+  std::shared_ptr<realtime_tools::RealtimePublisher<diagnostic_msgs::msg::DiagnosticArray>>
+    diag_pub_realtime_;
 };
 }  // namespace dynamixel_hardware_interface
