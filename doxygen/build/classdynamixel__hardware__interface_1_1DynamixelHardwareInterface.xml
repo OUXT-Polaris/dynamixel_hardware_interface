@@ -152,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="71" column="35" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="163" bodyend="177"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="71" column="35" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="163" bodyend="189"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a551bd0018fbaa8bb6893edebff56115c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC hardware_interface::return_type</type>
@@ -165,7 +165,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="74" column="35" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="179" bodyend="187"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp" line="74" column="35" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp" bodystart="191" bodyend="199"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">

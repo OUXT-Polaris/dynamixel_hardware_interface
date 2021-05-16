@@ -362,6 +362,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-valuetotempelature" class="md-nav__link">
+    function valueToTempelature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-valuetorpm" class="md-nav__link">
     function valueToRpm
   </a>
@@ -424,6 +431,10 @@
 <tbody>
 <tr>
 <td>virtual double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1motors_1_1XW540__T260#function-valuetotempelature">valueToTempelature</a></strong>(uint8_t value) const override</td>
+</tr>
+<tr>
+<td>virtual double</td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1motors_1_1XW540__T260#function-valuetorpm">valueToRpm</a></strong>(uint32_t value) const override</td>
 </tr>
 <tr>
@@ -453,6 +464,10 @@
 <tr>
 <td></td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-~motorbase">~MotorBase</a></strong>() <br>Destroy the Motor Base object.</td>
+</tr>
+<tr>
+<td>virtual <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-updatepresenttemperature">updatePresentTemperature</a></strong>() <br>Execute update present tempelature command to the motor.</td>
 </tr>
 <tr>
 <td>virtual <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
@@ -572,6 +587,10 @@
 </thead>
 <tbody>
 <tr>
+<td>double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-present_tempelature_">present_tempelature_</a></strong></td>
+</tr>
+<tr>
 <td>std::shared_ptr&lt; dynamixel::PortHandler &gt;</td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-port_handler_">port_handler_</a></strong></td>
 </tr>
@@ -602,6 +621,12 @@
 </tbody>
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
+<h3 id="function-valuetotempelature">function valueToTempelature<a class="headerlink" href="#function-valuetotempelature" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">double</span> <span class="n">valueToTempelature</span><span class="p">(</span>
+    <span class="kt">uint8_t</span> <span class="n">value</span>
+<span class="p">)</span> <span class="k">const</span> <span class="k">override</span>
+</code></pre></div>
+<p><strong>Reimplements</strong>: <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-valuetotempelature">dynamixel_hardware_interface::MotorBase::valueToTempelature</a></p>
 <h3 id="function-valuetorpm">function valueToRpm<a class="headerlink" href="#function-valuetorpm" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">virtual</span> <span class="kt">double</span> <span class="n">valueToRpm</span><span class="p">(</span>
     <span class="kt">uint32_t</span> <span class="n">value</span>
@@ -632,7 +657,7 @@
 <span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>Updated on 16 May 2021 at 01:21:04 UTC</p>
+<p>Updated on 16 May 2021 at 01:52:26 UTC</p>
                 
                   
                 

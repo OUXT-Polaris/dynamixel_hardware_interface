@@ -58,6 +58,7 @@
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a1942236120379f185ba57e41b9e8c572" kind="variable"><name>goal_position_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a86bb1b4e279ba89214597cc3f75b51d5" kind="variable"><name>joint_velocity_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a54893f81b010e087a21aa10d16892596" kind="variable"><name>goal_velocity_</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aacbf1e4ea97b9cc64bf6e083721deaab" kind="variable"><name>present_tempelature_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a283620455af3d064295177fb969e6d5e" kind="function"><name>MotorBase</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa0901f99af1ab546e41c809048679d68" kind="function"><name>~MotorBase</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a7e00bde66e9d41ec2d62772463fe9583" kind="function"><name>operationSupports</name></member>
@@ -70,6 +71,7 @@
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a8dc023990da7f0be486d2cf07039d5c4" kind="function"><name>getGoalPosition</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa12729f083f20c8168079795053689f9" kind="function"><name>updateJointPosition</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ac0e0fa9c00f1c06b3e06feeefd18d385" kind="function"><name>updateJointVelocity</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a594088d475d683f10b1ed76ed0cfcb7e" kind="function"><name>updatePresentTemperature</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a01939d63582a3a4b02702ee0aa2f3ea0" kind="function"><name>appendStateInterfaces</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1af843d62c840add6bf55529328dfd8671" kind="function"><name>appendCommandInterfaces</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a9c759216740b75670731b8827b169317" kind="function"><name>MotorBase</name></member>
@@ -79,13 +81,16 @@
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aff47adf49a24cdde7dc4c0ba9657607e" kind="function"><name>positionToRadian</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad21e92cf98c25b77c9109e778e58d708" kind="function"><name>positionToRadian</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aaf372d2b65dc26886d8ed06690609842" kind="function"><name>positionToRadian</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab71275abcacc084fc407cc4550e0c227" kind="function"><name>radianToPosition</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a24d3c861d64e057de8f6bd1b9cca4868" kind="function"><name>radianToPosition</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa20a2cbb2d797806280fb0fdfc7d7204" kind="function"><name>radianToPosition</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aec07829d735ae24b33709af115b1bbe6" kind="function"><name>radianToPosition</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa1e750c2efb5fbdf6a004bf93333ecc9" kind="function"><name>radianToPosition</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aac77e76813644e05496df947730ed56a" kind="function"><name>radianToPosition</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3a3b86d26a74e2e4506610d9e36a4b99" kind="function"><name>rpmToVelocity</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab6d236f81ccf27c6859cbabea544a9ca" kind="function"><name>valueToRpm</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a4d9dc908f5e38862148182148343af28" kind="function"><name>valueToRpm</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a411cb14662011a3a20f1970ad40da61e" kind="function"><name>valueToRpm</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3ad2ce74abf0d6b8ce39f059b039ad7e" kind="function"><name>valueToTempelature</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a28fae4f9702aeb063d160905a64008d5" kind="function"><name>valueToTempelature</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a4f05a504eb189fe3c076530ab240642f" kind="function"><name>valueToTempelature</name></member>
   </compound>
   <compound refid="structdynamixel__hardware__interface_1_1Result" kind="struct"><name>dynamixel_hardware_interface::Result</name>
     <member refid="structdynamixel__hardware__interface_1_1Result_1aadf4f7601005c07f1930a3b823587dd9" kind="variable"><name>description</name></member>
@@ -100,6 +105,7 @@
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a410454f35d60ec836a234f935d55070b" kind="function"><name>positionToRadian</name></member>
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1ae3afc71eca920388803a54c596d56b47" kind="function"><name>radianToPosition</name></member>
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1af7ca356a4eda19c82d117ad20f1b9d84" kind="function"><name>valueToRpm</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a2b692474605583de8416da1807ee3c77" kind="function"><name>valueToTempelature</name></member>
   </compound>
   <compound refid="namespacedynamixel__hardware__interface" kind="namespace"><name>dynamixel_hardware_interface</name>
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90" kind="enum"><name>Operation</name></member>
