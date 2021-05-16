@@ -511,7 +511,6 @@
   <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">getJointPosition</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">joint_position_</span><span class="p">;</span> <span class="p">}</span>
   <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">getGoalPosition</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">goal_position_</span><span class="p">;</span> <span class="p">}</span>
   <span class="k">virtual</span> <span class="n">Result</span> <span class="nf">updateJointPosition</span><span class="p">();</span>
-  <span class="k">virtual</span> <span class="n">Result</span> <span class="nf">updateJointVelocity</span><span class="p">();</span>
   <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">appendStateInterfaces</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">StateInterface</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">interfaces</span><span class="p">);</span>
   <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">appendCommandInterfaces</span><span class="p">(</span>
     <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">CommandInterface</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">interfaces</span><span class="p">);</span>
@@ -542,24 +541,18 @@
   <span class="p">{</span>
     <span class="n">value</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">((</span><span class="n">radian</span> <span class="o">/</span> <span class="n">M_PI</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4294967296</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="kt">void</span> <span class="nf">rpmToVelocity</span><span class="p">(</span><span class="kt">double</span> <span class="n">rpm</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span> <span class="n">radian</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="n">radian</span> <span class="o">=</span> <span class="n">rpm</span> <span class="o">/</span> <span class="mf">60.0</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">M_PI</span><span class="p">;</span> <span class="p">}</span>
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">valueToRpm</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">valueToRpm</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">valueToRpm</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">value</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
   <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">AddressTableBase</span><span class="o">&gt;</span> <span class="n">address_table_</span><span class="p">;</span>
   <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PortHandler</span><span class="o">&gt;</span> <span class="n">port_handler_</span><span class="p">;</span>
   <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PacketHandler</span><span class="o">&gt;</span> <span class="n">packet_handler_</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">joint_position_</span><span class="p">;</span>
   <span class="kt">double</span> <span class="n">goal_position_</span><span class="p">;</span>
-  <span class="kt">double</span> <span class="n">joint_velocity_</span><span class="p">;</span>
-  <span class="kt">double</span> <span class="n">goal_velocity_</span><span class="p">;</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">//  namespace dynamixel_hardware_interface</span>
 
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__MOTOR_BASE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 May 2021 at 14:54:11 UTC</p>
+<p>Updated on 16 May 2021 at 00:51:34 UTC</p>
                 
                   
                 
