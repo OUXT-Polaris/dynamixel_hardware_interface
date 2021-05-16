@@ -186,6 +186,11 @@ public:
    */
   virtual Result updateJointVelocity();
   /**
+   * @brief Execute update present tempelature command to the motor.
+   * @return Result 
+   */
+  virtual Result updatePresentTemperature();
+  /**
    * @brief Append state interface described in the URDF file.
    * @param interfaces List of state interface.
    */
@@ -214,22 +219,16 @@ protected:
   virtual double positionToRadian(const uint8_t position) const;
   virtual double positionToRadian(const uint16_t position) const;
   virtual double positionToRadian(const uint32_t position) const;
-  virtual void radianToPosition(double radian, uint8_t & value) const
-  {
-    value = static_cast<uint8_t>((radian / M_PI) * 256);
-  }
-  virtual void radianToPosition(double radian, uint16_t & value) const
-  {
-    value = static_cast<uint16_t>((radian / M_PI) * 65536);
-  }
-  virtual void radianToPosition(double radian, uint32_t & value) const
-  {
-    value = static_cast<uint32_t>((radian / M_PI) * 4294967296);
-  }
+  virtual void radianToPosition(double radian, uint8_t & value) const;
+  virtual void radianToPosition(double radian, uint16_t & value) const;
+  virtual void radianToPosition(double radian, uint32_t & value) const;
   void rpmToVelocity(double rpm, double & radian) const { radian = rpm / 60.0 * 2 * M_PI; }
   virtual double valueToRpm(uint8_t value) const;
   virtual double valueToRpm(uint16_t value) const;
   virtual double valueToRpm(uint32_t value) const;
+  virtual double valueToTempelature(uint8_t value) const;
+  virtual double valueToTempelature(uint16_t value) const;
+  virtual double valueToTempelature(uint32_t value) const;
   std::shared_ptr<AddressTableBase> address_table_;
   std::shared_ptr<dynamixel::PortHandler> port_handler_;
   std::shared_ptr<dynamixel::PacketHandler> packet_handler_;
@@ -237,6 +236,7 @@ protected:
   double goal_position_;
   double joint_velocity_;
   double goal_velocity_;
+  double present_tempelature_;
 };
 }  //  namespace dynamixel_hardware_interface
 

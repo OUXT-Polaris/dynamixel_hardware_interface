@@ -80,6 +80,8 @@ public:
   {
     return 2.29 * 2 * M_PI / 60 * static_cast<double>(value);
   }
+
+  double valueToTempelature(uint8_t value) const override { return static_cast<double>(value); }
 };
 }  // namespace motors
 }  // namespace dynamixel_hardware_interface
