@@ -21,6 +21,45 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include <dynamixel_hardware_interface/visiblity_control.h>
+#include <realtime_tools/realtime_buffer.h>
+
+#include <controller_interface/controller_interface.hpp>
+#include <memory>
+#include <rclcpp/subscription.hpp>
+#include <rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp>
+#include <rclcpp_lifecycle/state.hpp>
+#include <string>
+
 namespace dynamixel_hardware_interface
 {
+class DynamixelDiagnosticController : public controller_interface::ControllerInterface
+{
+  controller_interface::return_type init(const std::string & controller_name) override;
+
+  controller_interface::InterfaceConfiguration command_interface_configuration() const override;
+
+  controller_interface::InterfaceConfiguration state_interface_configuration() const override
+  {
+    return controller_interface::InterfaceConfiguration{
+      controller_interface::interface_configuration_type::NONE};
+  }
+
+  rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_configure(
+    const rclcpp_lifecycle::State & /*previous_state*/) override;
+
+  rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_activate(
+    const rclcpp_lifecycle::State & /*previous_state*/) override
+  {
+    return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
+  }
+
+  rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_deactivate(
+    const rclcpp_lifecycle::State & /*previous_state*/) override
+  {
+    return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
+  }
+
+  controller_interface::return_type update() override;
+};
 }  // namespace dynamixel_hardware_interface
