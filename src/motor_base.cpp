@@ -90,6 +90,20 @@ double MotorBase::positionToRadian(const uint32_t) const
   throw std::runtime_error("position to radian function should be implemented for each motor");
 }
 
+void MotorBase::radianToPosition(double, uint8_t &) const
+{
+  throw std::runtime_error("radian to position function should be implemented for each motor");
+}
+
+void MotorBase::radianToPosition(double, uint16_t &) const
+{
+  throw std::runtime_error("radian to position function should be implemented for each motor");
+}
+void MotorBase::radianToPosition(double, uint32_t &) const
+{
+  throw std::runtime_error("radian to position function should be implemented for each motor");
+}
+
 Result MotorBase::getResult(int communication_result, uint8_t packet_error)
 {
   if (communication_result != COMM_SUCCESS) {
