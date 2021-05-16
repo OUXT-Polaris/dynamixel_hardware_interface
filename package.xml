@@ -11,6 +11,7 @@
 
   <depend>dynamixel_sdk</depend>
   <depend>hardware_interface</depend>
+  <depend>controller_interface</depend>
   <depend>pluginlib</depend>
   <depend>rclcpp</depend>
   <depend>ros2_control</depend>

@@ -59,9 +59,9 @@ Use [dynamixel wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dy
 ## Support Status
 
 ### State Interface
-|                                Motor                                | Position Interface | Velocity Interface | Effort Interface |
-| ------------------------------------------------------------------- | ------------------ | ------------------ | ---------------- |
-| [XW540-T260](https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/) | ✔                  | ✔                  |                  |
+|                                Motor                                | Position Interface | Velocity Interface | Effort Interface | Tempelature Interface |
+| ------------------------------------------------------------------- | ------------------ | ------------------ | ---------------- | --------------------- |
+| [XW540-T260](https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/) | ✔                  | ✔                  |                  | ✔                     |
 
 ### Command Interface
 |                                Motor                                | Position Interface | Velocity Interface | Effort Interface |
