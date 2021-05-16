@@ -26,12 +26,14 @@
 
 #include <controller_interface/controller_interface.hpp>
 #include <diagnostic_updater/diagnostic_updater.hpp>
+#include <dynamixel_hardware_interface/constants.hpp>
 #include <memory>
 #include <rclcpp/subscription.hpp>
 #include <rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp>
 #include <rclcpp_lifecycle/state.hpp>
 #include <string>
 #include <unordered_map>
+#include <vector>
 
 namespace dynamixel_hardware_interface
 {
@@ -72,5 +74,8 @@ public:
 private:
   std::unordered_map<std::string, std::shared_ptr<diagnostic_updater::Updater>>
     diagnostic_updaters_;
+  std::vector<std::string> joints_;
+  std::unordered_map<std::string, std::vector<dynamixel_hardware_interface::DiagnosticsType>>
+    diagnostics_;
 };
 }  // namespace dynamixel_hardware_interface

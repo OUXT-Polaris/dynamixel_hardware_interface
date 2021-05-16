@@ -25,3 +25,14 @@ dinamixel_diagnostic_controller:
       - joint3
       - joint4
       - gripper
+    diagnostics:
+      joint1:
+        - tempelature
+      joint2:
+        - tempelature
+      joint3:
+        - tempelature
+      joint4:
+        - tempelature
+      gripper:
+        - tempelature

@@ -32,6 +32,26 @@ controller_interface::return_type DynamixelDiagnosticController::init(
   if (ret != controller_interface::return_type::OK) {
     return ret;
   }
+  rclcpp::Parameter joints;
+  if (get_node()->get_parameter("joints", joints)) {
+    joints_ = joints.as_string_array();
+    for (const auto & joint : joints_) {
+      rclcpp::Parameter diagnostics;
+      if (!get_node()->get_parameter("diagnostics/" + joint, diagnostics)) {
+        return controller_interface::return_type::ERROR;
+      }
+      std::vector<dynamixel_hardware_interface::DiagnosticsType> diag_list;
+      const auto diagnostics_strings = diagnostics.as_string_array();
+      for (const auto & diag_string : diagnostics_strings) {
+        if (diag_string == "tempelature") {
+          diag_list.emplace_back(dynamixel_hardware_interface::DiagnosticsType::TEMPELATURE);
+        }
+      }
+      diagnostics_[joint] = diag_list;
+    }
+  } else {
+    return controller_interface::return_type::ERROR;
+  }
   return controller_interface::return_type::OK;
 }
 
@@ -39,6 +59,9 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
 DynamixelDiagnosticController::on_configure(const rclcpp_lifecycle::State & /*previous_state*/)
 {
   auto node = get_node();
+  for (const auto & joint : joints_) {
+    diagnostic_updaters_[joint] = std::make_shared<diagnostic_updater::Updater>(node);
+  }
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
 }
 
