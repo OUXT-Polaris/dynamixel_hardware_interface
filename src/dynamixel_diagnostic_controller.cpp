@@ -63,10 +63,9 @@ DynamixelDiagnosticController::on_configure(const rclcpp_lifecycle::State & /*pr
   diag_pub_realtime_ =
     std::make_shared<realtime_tools::RealtimePublisher<diagnostic_msgs::msg::DiagnosticArray>>(
       diag_pub_);
-  /*
   for (const auto & joint : joints_) {
+    const auto diagnostic_types = diagnostics_.at(joint);
   }
-  */
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
 }
 

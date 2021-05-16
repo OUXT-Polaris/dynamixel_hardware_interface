@@ -37,7 +37,7 @@
 #include <vector>
 
 namespace dynamixel_hardware_interface
-{    
+{
 class DynamixelDiagnosticController : public controller_interface::ControllerInterface
 {
 public:
@@ -54,8 +54,21 @@ public:
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   controller_interface::InterfaceConfiguration state_interface_configuration() const override
   {
+    std::vector<std::string> interface_names;
+    for (const auto & joint : joints_) {
+      const auto diagnostic_types = diagnostics_.at(joint);
+      for (const auto & diagnostic_type : diagnostic_types) {
+        switch (diagnostic_type) {
+          case DiagnosticsType::TEMPELATURE:
+            interface_names.emplace_back(joint + "/tempelature");
+            break;
+          default:
+            break;
+        }
+      }
+    }
     return controller_interface::InterfaceConfiguration{
-      controller_interface::interface_configuration_type::INDIVIDUAL};
+      controller_interface::interface_configuration_type::INDIVIDUAL, interface_names};
   }
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
