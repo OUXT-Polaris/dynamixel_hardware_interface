@@ -75,6 +75,11 @@ public:
   {
     value = static_cast<uint32_t>((radian / M_PI) * 4096);
   }
+
+  double valueToRpm(uint32_t value) const override
+  {
+    return 2.29 * 2 * M_PI / 60 * static_cast<double>(value);
+  }
 };
 }  // namespace motors
 }  // namespace dynamixel_hardware_interface

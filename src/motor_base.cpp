@@ -60,24 +60,34 @@ std::vector<Operation> MotorBase::getSupportedOperations()
   return ret;
 }
 
-uint16_t MotorBase::radianToPosition(double radian) const
+double MotorBase::valueToRpm(uint8_t) const
 {
-  return radian * TO_DXL_POS + DXL_HOME_POSITION;
+  throw std::runtime_error("value to rpm function should be implemented for each motor");
 }
 
-double MotorBase::positionToRadian(const uint8_t position) const
+double MotorBase::valueToRpm(uint16_t) const
 {
-  return static_cast<double>(position) / static_cast<double>(256) * M_PI * 2;
+  throw std::runtime_error("value to rpm function should be implemented for each motor");
 }
 
-double MotorBase::positionToRadian(const uint16_t position) const
+double MotorBase::valueToRpm(uint32_t) const
 {
-  return static_cast<double>(position) / static_cast<double>(65536) * M_PI * 2;
+  throw std::runtime_error("value to rpm function should be implemented for each motor");
 }
 
-double MotorBase::positionToRadian(const uint32_t position) const
+double MotorBase::positionToRadian(const uint8_t) const
 {
-  return static_cast<double>(position) / static_cast<double>(4294967296) * M_PI * 2;
+  throw std::runtime_error("position to radian function should be implemented for each motor");
+}
+
+double MotorBase::positionToRadian(const uint16_t) const
+{
+  throw std::runtime_error("position to radian function should be implemented for each motor");
+}
+
+double MotorBase::positionToRadian(const uint32_t) const
+{
+  throw std::runtime_error("position to radian function should be implemented for each motor");
 }
 
 Result MotorBase::getResult(int communication_result, uint8_t packet_error)
@@ -114,6 +124,10 @@ void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInter
           interfaces.emplace_back(hardware_interface::StateInterface(
             joint_name, hardware_interface::HW_IF_POSITION, &joint_position_));
           break;
+        case Operation::PRESENT_SPEED:
+          interfaces.emplace_back(hardware_interface::StateInterface(
+            joint_name, hardware_interface::HW_IF_VELOCITY, &joint_position_));
+          break;
         default:
           break;
       }
@@ -131,6 +145,9 @@ void MotorBase::appendCommandInterfaces(
           interfaces.emplace_back(hardware_interface::CommandInterface(
             joint_name, hardware_interface::HW_IF_POSITION, &goal_position_));
           break;
+        case Operation::MOVING_SPEED:
+          interfaces.emplace_back(hardware_interface::CommandInterface(
+            joint_name, hardware_interface::HW_IF_VELOCITY, &goal_velocity_));
         default:
           break;
       }
@@ -178,6 +195,42 @@ Result MotorBase::setGoalPosition(double goal_position)
       const auto result = packet_handler_->write4ByteTxRx(
         port_handler_.get(), id, address.address, radianToPosition<uint32_t>(goal_position_),
         &error);
+      return getResult(result, error);
+    }
+    return Result("Invalid packet size", false);
+  }
+}
+
+Result MotorBase::updateJointVelocity()
+{
+  const auto address = address_table_->getAddress(Operation::PRESENT_SPEED);
+  if (!address.exists()) {
+    return Result("PRESENT_SPEED operation does not support in " + toString(motor_type), false);
+  }
+  if (enable_dummy) {
+    joint_velocity_ = goal_velocity_;
+    return Result("", true);
+  } else {
+    uint8_t error = 0;
+    if (address.byte_size == PacketByteSize::ONE_BYTE) {
+      uint8_t present_speed = 0;
+      const auto result = packet_handler_->read1ByteTxRx(
+        port_handler_.get(), id, address.address, &present_speed, &error);
+      joint_velocity_ = valueToRpm(present_speed);
+      return getResult(result, error);
+    }
+    if (address.byte_size == PacketByteSize::TWO_BYTE) {
+      uint16_t present_speed = 0;
+      const auto result = packet_handler_->read2ByteTxRx(
+        port_handler_.get(), id, address.address, &present_speed, &error);
+      joint_velocity_ = valueToRpm(present_speed);
+      return getResult(result, error);
+    }
+    if (address.byte_size == PacketByteSize::FOUR_BYTE) {
+      uint32_t present_speed = 0;
+      const auto result = packet_handler_->read4ByteTxRx(
+        port_handler_.get(), id, address.address, &present_speed, &error);
+      joint_velocity_ = valueToRpm(present_speed);
       return getResult(result, error);
     }
     return Result("Invalid packet size", false);

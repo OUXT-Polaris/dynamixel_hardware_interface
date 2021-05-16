@@ -35,6 +35,20 @@ You can use dynamixel hardware interface by writing URDF like below.
 </xacro:macro>
 ```
 
+#### Hardware parameters in URDF/XACRO
+
+|     Name     |  Type  |                              Description                              |
+| ------------ | ------ | --------------------------------------------------------------------- |
+| port_name    | string | USB port name of the U2D2                                             |
+| baudrate     | int    | baudrate of the RS485 communication                                   |
+| enable_dummy | bool   | If true, this hardware interface runs without real dynamixel hardwre. |
+
+#### Joint parameters in URDF/XACRO
+|    Name    |  Type  |                   Description                   |
+| ---------- | ------ | ----------------------------------------------- |
+| id         | int    | id of the dynamixel motor attached to the joint |
+| motor_type | string | type of the dynamixel motor                     |
+
 ### Connect motors to the U2D2
 Connect motors to the [U2D2](https://e-shop.robotis.co.jp/product.php?id=190).
 Power cable is also required.
@@ -47,7 +61,7 @@ Use [dynamixel wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dy
 ### State Interface
 |                                Motor                                | Position Interface | Velocity Interface | Effort Interface |
 | ------------------------------------------------------------------- | ------------------ | ------------------ | ---------------- |
-| [XW540-T260](https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/) | ✔                  |                    |                  |
+| [XW540-T260](https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/) | ✔                  | ✔                  |                  |
 
 ### Command Interface
 |                                Motor                                | Position Interface | Velocity Interface | Effort Interface |
