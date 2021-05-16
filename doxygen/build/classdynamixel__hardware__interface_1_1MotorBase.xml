@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="224" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="224" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="233" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="233" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1MotorBase_1ade60a9c0e0b0130383d1b4e7bae15289" prot="protected" static="no" mutable="no">
         <type>std::shared_ptr&lt; dynamixel::PortHandler &gt;</type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="225" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="225" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="234" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="234" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1MotorBase_1a7babe4c4818efb35a78a832399f8ddc8" prot="protected" static="no" mutable="no">
         <type>std::shared_ptr&lt; dynamixel::PacketHandler &gt;</type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="226" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="226" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="235" column="19" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="235" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1MotorBase_1ad0febabad2b58fe90202228b83cac88f" prot="protected" static="no" mutable="no">
         <type>double</type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="227" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="227" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="236" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="236" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1MotorBase_1a1942236120379f185ba57e41b9e8c572" prot="protected" static="no" mutable="no">
         <type>double</type>
@@ -140,7 +140,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="228" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="228" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="237" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1MotorBase_1a86bb1b4e279ba89214597cc3f75b51d5" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double dynamixel_hardware_interface::MotorBase::joint_velocity_</definition>
+        <argsstring></argsstring>
+        <name>joint_velocity_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="238" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1MotorBase_1a54893f81b010e087a21aa10d16892596" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double dynamixel_hardware_interface::MotorBase::goal_velocity_</definition>
+        <argsstring></argsstring>
+        <name>goal_velocity_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="239" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="239" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -348,7 +374,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="150" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="94" bodyend="106"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="150" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="104" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1ad9b1da7088d91b73431038f4b179db0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="structdynamixel__hardware__interface_1_1Result" kindref="compound">Result</ref></type>
@@ -378,7 +404,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="156" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="141" bodyend="151"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="156" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="158" bodyend="168"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1ab48629d464aee02829702273248c1fde" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="structdynamixel__hardware__interface_1_1Result" kindref="compound">Result</ref></type>
@@ -408,7 +434,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="162" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="153" bodyend="185"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="162" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="170" bodyend="202"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a9a396f2f42004b8f208249f112cf502a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="structdynamixel__hardware__interface_1_1Result" kindref="compound">Result</ref></type>
@@ -476,7 +502,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="182" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="187" bodyend="221"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="182" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="240" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1ac0e0fa9c00f1c06b3e06feeefd18d385" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="structdynamixel__hardware__interface_1_1Result" kindref="compound">Result</ref></type>
+        <definition>Result dynamixel_hardware_interface::MotorBase::updateJointVelocity</definition>
+        <argsstring>()</argsstring>
+        <name>updateJointVelocity</name>
+        <briefdescription>
+<para>Execute update joint velocity command to the motor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="structdynamixel__hardware__interface_1_1Result" kindref="compound">Result</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="187" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="204" bodyend="238"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a01939d63582a3a4b02702ee0aa2f3ea0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -504,7 +547,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="187" column="16" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="108" bodyend="122"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="192" column="16" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="118" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1af843d62c840add6bf55529328dfd8671" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -532,7 +575,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="192" column="16" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="124" bodyend="139"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="197" column="16" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="138" bodyend="156"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -548,7 +591,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="199" column="3"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="204" column="3"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a3751a2cf2afb2e3b4ef0832429880a8e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structdynamixel__hardware__interface_1_1Result" kindref="compound">Result</ref></type>
@@ -569,7 +612,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="200" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="83" bodyend="92"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="205" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="93" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a3a65d6fbf4fe86598e813e785029b631" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -591,7 +634,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="202" column="5" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="202" bodyend="207"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="207" column="5" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="207" bodyend="212"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1ad571c9fa630416e965ae5fbb09be0aa9" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -608,7 +651,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="208" column="12" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="63" bodyend="66"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="213" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1aff47adf49a24cdde7dc4c0ba9657607e" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -625,7 +668,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="209" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="68" bodyend="71"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="214" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="78" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1ad21e92cf98c25b77c9109e778e58d708" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -642,7 +685,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="210" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="73" bodyend="76"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="215" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="83" bodyend="86"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1aaf372d2b65dc26886d8ed06690609842" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -660,7 +703,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="211" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="78" bodyend="81"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="216" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="88" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1ab71275abcacc084fc407cc4550e0c227" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -681,7 +724,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="212" column="16" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="212" bodyend="215"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="217" column="16" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="217" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a24d3c861d64e057de8f6bd1b9cca4868" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -702,7 +745,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="216" column="16" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="216" bodyend="219"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="221" column="16" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="221" bodyend="224"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1aa20a2cbb2d797806280fb0fdfc7d7204" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -724,7 +767,80 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="220" column="16" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="220" bodyend="223"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="225" column="16" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="225" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a3a3b86d26a74e2e4506610d9e36a4b99" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamixel_hardware_interface::MotorBase::rpmToVelocity</definition>
+        <argsstring>(double rpm, double &amp;radian) const</argsstring>
+        <name>rpmToVelocity</name>
+        <param>
+          <type>double</type>
+          <declname>rpm</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>radian</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="229" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="229" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1ab6d236f81ccf27c6859cbabea544a9ca" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double dynamixel_hardware_interface::MotorBase::valueToRpm</definition>
+        <argsstring>(uint8_t value) const</argsstring>
+        <name>valueToRpm</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="230" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a4d9dc908f5e38862148182148343af28" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double dynamixel_hardware_interface::MotorBase::valueToRpm</definition>
+        <argsstring>(uint16_t value) const</argsstring>
+        <name>valueToRpm</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="231" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a411cb14662011a3a20f1970ad40da61e" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double dynamixel_hardware_interface::MotorBase::valueToRpm</definition>
+        <argsstring>(uint32_t value) const</argsstring>
+        <name>valueToRpm</name>
+        <reimplementedby refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1af7ca356a4eda19c82d117ad20f1b9d84">valueToRpm</reimplementedby>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="232" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="73" bodyend="76"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -744,7 +860,7 @@
         <link refid="classdynamixel__hardware__interface_1_1MotorBase"/>
       </node>
     </inheritancegraph>
-    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="72" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="71" bodyend="229"/>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="72" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="71" bodyend="240"/>
     <listofallmembers>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a4bad8497fcbc452e049e631506248f6c" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>address_table_</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1af843d62c840add6bf55529328dfd8671" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>appendCommandInterfaces</name></member>
@@ -757,9 +873,11 @@
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3751a2cf2afb2e3b4ef0832429880a8e" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>getResult</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad6f046868a2fbe904877885f9c6d493c" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>getSupportedOperations</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a1942236120379f185ba57e41b9e8c572" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>goal_position_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a54893f81b010e087a21aa10d16892596" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>goal_velocity_</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a06d490867e164574608c317402d82343" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>id</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a1d6aa8e0f66c5b8fab97417c489a50fa" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>joint_name</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad0febabad2b58fe90202228b83cac88f" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>joint_position_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a86bb1b4e279ba89214597cc3f75b51d5" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>joint_velocity_</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1afd0cec859955b5eebef3fb979685d4f6" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>motor_type</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a283620455af3d064295177fb969e6d5e" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>MotorBase</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a9c759216740b75670731b8827b169317" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>MotorBase</name></member>
@@ -774,10 +892,15 @@
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab71275abcacc084fc407cc4550e0c227" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>radianToPosition</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a24d3c861d64e057de8f6bd1b9cca4868" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>radianToPosition</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa20a2cbb2d797806280fb0fdfc7d7204" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>radianToPosition</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3a3b86d26a74e2e4506610d9e36a4b99" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>rpmToVelocity</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a9a396f2f42004b8f208249f112cf502a" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>setCurrentGoalPosition</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab48629d464aee02829702273248c1fde" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>setGoalPosition</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad9b1da7088d91b73431038f4b179db0f" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>torqueEnable</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa12729f083f20c8168079795053689f9" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>updateJointPosition</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ac0e0fa9c00f1c06b3e06feeefd18d385" prot="public" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>updateJointVelocity</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab6d236f81ccf27c6859cbabea544a9ca" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToRpm</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a4d9dc908f5e38862148182148343af28" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToRpm</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a411cb14662011a3a20f1970ad40da61e" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToRpm</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa0901f99af1ab546e41c809048679d68" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>~MotorBase</name></member>
     </listofallmembers>
   </compounddef>

@@ -250,6 +250,26 @@
     Write URDF/XACRO file for your robot
   </a>
   
+    <nav class="md-nav" aria-label="Write URDF/XACRO file for your robot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-parameters-in-urdfxacro" class="md-nav__link">
+    Hardware parameters in URDF/XACRO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-parameters-in-urdfxacro" class="md-nav__link">
+    Joint parameters in URDF/XACRO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -446,6 +466,26 @@
     Write URDF/XACRO file for your robot
   </a>
   
+    <nav class="md-nav" aria-label="Write URDF/XACRO file for your robot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-parameters-in-urdfxacro" class="md-nav__link">
+    Hardware parameters in URDF/XACRO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-parameters-in-urdfxacro" class="md-nav__link">
+    Joint parameters in URDF/XACRO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -544,6 +584,55 @@ You can use dynamixel hardware interface by writing URDF like below.</p>
     <span class="nt">&lt;/ros2_control&gt;</span>
 <span class="nt">&lt;/xacro:macro&gt;</span>
 </code></pre></div>
+<h4 id="hardware-parameters-in-urdfxacro">Hardware parameters in URDF/XACRO<a class="headerlink" href="#hardware-parameters-in-urdfxacro" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>port_name</td>
+<td>string</td>
+<td>USB port name of the U2D2</td>
+</tr>
+<tr>
+<td>baudrate</td>
+<td>int</td>
+<td>baudrate of the RS485 communication</td>
+</tr>
+<tr>
+<td>enable_dummy</td>
+<td>bool</td>
+<td>If true, this hardware interface runs without real dynamixel hardwre.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="joint-parameters-in-urdfxacro">Joint parameters in URDF/XACRO<a class="headerlink" href="#joint-parameters-in-urdfxacro" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>id of the dynamixel motor attached to the joint</td>
+</tr>
+<tr>
+<td>motor_type</td>
+<td>string</td>
+<td>type of the dynamixel motor</td>
+</tr>
+</tbody>
+</table>
 <h3 id="connect-motors-to-the-u2d2">Connect motors to the U2D2<a class="headerlink" href="#connect-motors-to-the-u2d2" title="Permanent link">#</a></h3>
 <p>Connect motors to the <a href="https://e-shop.robotis.co.jp/product.php?id=190">U2D2</a>.
 Power cable is also required.</p>
@@ -564,7 +653,7 @@ Power cable is also required.</p>
 <tr>
 <td><a href="https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/">XW540-T260</a></td>
 <td>✔</td>
-<td></td>
+<td>✔</td>
 <td></td>
 </tr>
 </tbody>
