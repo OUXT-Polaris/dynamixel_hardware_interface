@@ -177,6 +177,13 @@ hardware_interface::return_type DynamixelHardwareInterface::read()
         return hardware_interface::return_type::ERROR;
       }
     }
+    if (motor->operationSupports(Operation::PRESENT_TEMPERATURE)) {
+      const auto result = motor->updatePresentTemperature();
+      if (!result.success) {
+        RCLCPP_ERROR_STREAM(rclcpp::get_logger("dynamixel_hardware_interface"), result.description);
+        return hardware_interface::return_type::ERROR;
+      }
+    }
   }
   return hardware_interface::return_type::OK;
 }

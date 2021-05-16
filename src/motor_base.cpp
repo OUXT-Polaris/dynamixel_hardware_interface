@@ -301,4 +301,41 @@ Result MotorBase::updateJointPosition()
     return Result("Invalid packet size", false);
   }
 }
+
+Result MotorBase::updatePresentTemperature()
+{
+  const auto address = address_table_->getAddress(Operation::PRESENT_TEMPERATURE);
+  if (!address.exists()) {
+    return Result(
+      "PRESENT_TEMPERATURE operation does not support in " + toString(motor_type), false);
+  }
+  if (enable_dummy) {
+    present_tempelature_ = 0;
+    return Result("", true);
+  } else {
+    uint8_t error = 0;
+    if (address.byte_size == PacketByteSize::ONE_BYTE) {
+      uint8_t present_temperature = 0;
+      const auto result = packet_handler_->read1ByteTxRx(
+        port_handler_.get(), id, address.address, &present_temperature, &error);
+      present_tempelature_ = valueToTempelature(present_temperature);
+      return getResult(result, error);
+    }
+    if (address.byte_size == PacketByteSize::TWO_BYTE) {
+      uint16_t present_temperature = 0;
+      const auto result = packet_handler_->read2ByteTxRx(
+        port_handler_.get(), id, address.address, &present_temperature, &error);
+      present_tempelature_ = valueToTempelature(present_temperature);
+      return getResult(result, error);
+    }
+    if (address.byte_size == PacketByteSize::FOUR_BYTE) {
+      uint32_t present_temperature = 0;
+      const auto result = packet_handler_->read4ByteTxRx(
+        port_handler_.get(), id, address.address, &present_temperature, &error);
+      present_tempelature_ = valueToTempelature(present_temperature);
+      return getResult(result, error);
+    }
+    return Result("Invalid packet size", false);
+  }
+}
 }  //  namespace dynamixel_hardware_interface

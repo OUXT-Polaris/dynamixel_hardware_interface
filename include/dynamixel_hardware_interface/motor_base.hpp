@@ -186,6 +186,11 @@ public:
    */
   virtual Result updateJointVelocity();
   /**
+   * @brief Execute update present tempelature command to the motor.
+   * @return Result 
+   */
+  virtual Result updatePresentTemperature();
+  /**
    * @brief Append state interface described in the URDF file.
    * @param interfaces List of state interface.
    */
