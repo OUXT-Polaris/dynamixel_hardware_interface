@@ -494,19 +494,19 @@
   <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;radian to position function should be implemented for each motor&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kt">double</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">valueToTempelature</span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span> <span class="k">const</span>
+<span class="kt">double</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">valueToTemperature</span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span> <span class="k">const</span>
 <span class="p">{</span>
-  <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;value to tempelature function should be implemented for each motor&quot;</span><span class="p">);</span>
+  <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;value to temperature function should be implemented for each motor&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kt">double</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">valueToTempelature</span><span class="p">(</span><span class="kt">uint16_t</span><span class="p">)</span> <span class="k">const</span>
+<span class="kt">double</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">valueToTemperature</span><span class="p">(</span><span class="kt">uint16_t</span><span class="p">)</span> <span class="k">const</span>
 <span class="p">{</span>
-  <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;value to tempelature function should be implemented for each motor&quot;</span><span class="p">);</span>
+  <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;value to temperature function should be implemented for each motor&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kt">double</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">valueToTempelature</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">)</span> <span class="k">const</span>
+<span class="kt">double</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">valueToTemperature</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">)</span> <span class="k">const</span>
 <span class="p">{</span>
-  <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;value to tempelature function should be implemented for each motor&quot;</span><span class="p">);</span>
+  <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;value to temperature function should be implemented for each motor&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">Result</span> <span class="n">MotorBase</span><span class="o">::</span><span class="n">getResult</span><span class="p">(</span><span class="kt">int</span> <span class="n">communication_result</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">packet_error</span><span class="p">)</span>
@@ -549,7 +549,7 @@
           <span class="k">break</span><span class="p">;</span>
         <span class="k">case</span> <span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_TEMPERATURE</span><span class="p">:</span>
           <span class="n">interfaces</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span>
-            <span class="n">hardware_interface</span><span class="o">::</span><span class="n">StateInterface</span><span class="p">(</span><span class="n">joint_name</span><span class="p">,</span> <span class="s">&quot;tempelature&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">present_tempelature_</span><span class="p">));</span>
+            <span class="n">hardware_interface</span><span class="o">::</span><span class="n">StateInterface</span><span class="p">(</span><span class="n">joint_name</span><span class="p">,</span> <span class="s">&quot;temperature&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">present_temperature_</span><span class="p">));</span>
           <span class="k">break</span><span class="p">;</span>
         <span class="k">default</span><span class="o">:</span>
           <span class="k">break</span><span class="p">;</span>
@@ -704,7 +704,7 @@
       <span class="s">&quot;PRESENT_TEMPERATURE operation does not support in &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span> <span class="nb">false</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">enable_dummy</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">present_tempelature_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">present_temperature_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="kt">uint8_t</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -712,21 +712,21 @@
       <span class="kt">uint8_t</span> <span class="n">present_temperature</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
       <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">read1ByteTxRx</span><span class="p">(</span>
         <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">present_temperature</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
-      <span class="n">present_tempelature_</span> <span class="o">=</span> <span class="n">valueToTempelature</span><span class="p">(</span><span class="n">present_temperature</span><span class="p">);</span>
+      <span class="n">present_temperature_</span> <span class="o">=</span> <span class="n">valueToTemperature</span><span class="p">(</span><span class="n">present_temperature</span><span class="p">);</span>
       <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">byte_size</span> <span class="o">==</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">TWO_BYTE</span><span class="p">)</span> <span class="p">{</span>
       <span class="kt">uint16_t</span> <span class="n">present_temperature</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
       <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">read2ByteTxRx</span><span class="p">(</span>
         <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">present_temperature</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
-      <span class="n">present_tempelature_</span> <span class="o">=</span> <span class="n">valueToTempelature</span><span class="p">(</span><span class="n">present_temperature</span><span class="p">);</span>
+      <span class="n">present_temperature_</span> <span class="o">=</span> <span class="n">valueToTemperature</span><span class="p">(</span><span class="n">present_temperature</span><span class="p">);</span>
       <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">address</span><span class="p">.</span><span class="n">byte_size</span> <span class="o">==</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">)</span> <span class="p">{</span>
       <span class="kt">uint32_t</span> <span class="n">present_temperature</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
       <span class="k">const</span> <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">read4ByteTxRx</span><span class="p">(</span>
         <span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">present_temperature</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
-      <span class="n">present_tempelature_</span> <span class="o">=</span> <span class="n">valueToTempelature</span><span class="p">(</span><span class="n">present_temperature</span><span class="p">);</span>
+      <span class="n">present_temperature_</span> <span class="o">=</span> <span class="n">valueToTemperature</span><span class="p">(</span><span class="n">present_temperature</span><span class="p">);</span>
       <span class="k">return</span> <span class="n">getResult</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="s">&quot;Invalid packet size&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
@@ -735,7 +735,7 @@
 <span class="p">}</span>  <span class="c1">//  namespace dynamixel_hardware_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on 31 May 2021 at 01:47:40 UTC</p>
+<p>Updated on 31 May 2021 at 14:28:20 UTC</p>
                 
                   
                 

@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel_hardware_interface::DynamixelDiagnosticController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ControllerInterface</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a427880ddadf6d6ce08127453788307cd" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; dynamixel_hardware_interface::DynamixelDiagnosticController::joints_</definition>
+        <argsstring></argsstring>
+        <name>joints_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="96" column="15" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a8f9798775a595efd1bb5b73763cecc8a" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; dynamixel_hardware_interface::DiagnosticsType &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;dynamixel_hardware_interface::DiagnosticsType&gt; &gt; dynamixel_hardware_interface::DynamixelDiagnosticController::diagnostics_</definition>
+        <argsstring></argsstring>
+        <name>diagnostics_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="98" column="5" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1affb2bf765afa7ca4188cc3e551a62d72" prot="private" static="no" mutable="no">
+        <type>rclcpp::Publisher&lt; diagnostic_msgs::msg::DiagnosticArray &gt;::SharedPtr</type>
+        <definition>rclcpp::Publisher&lt;diagnostic_msgs::msg::DiagnosticArray&gt;::SharedPtr dynamixel_hardware_interface::DynamixelDiagnosticController::diag_pub_</definition>
+        <argsstring></argsstring>
+        <name>diag_pub_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="99" column="33" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a3be3a0cb0f9758ffa4dfebe92f3d0af7" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; realtime_tools::RealtimePublisher&lt; diagnostic_msgs::msg::DiagnosticArray &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;realtime_tools::RealtimePublisher&lt;diagnostic_msgs::msg::DiagnosticArray&gt; &gt; dynamixel_hardware_interface::DynamixelDiagnosticController::diag_pub_realtime_</definition>
+        <argsstring></argsstring>
+        <name>diag_pub_realtime_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="101" column="5" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1ab609b1c69c3a83727214303c7c4e65cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC controller_interface::return_type</type>
+        <definition>controller_interface::return_type dynamixel_hardware_interface::DynamixelDiagnosticController::init</definition>
+        <argsstring>(const std::string &amp;controller_name) override</argsstring>
+        <name>init</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>controller_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="45" column="37" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_diagnostic_controller.cpp" bodystart="28" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1ad161be78e4c2350c0c412deeae726bd8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC controller_interface::InterfaceConfiguration</type>
+        <definition>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC controller_interface::InterfaceConfiguration dynamixel_hardware_interface::DynamixelDiagnosticController::command_interface_configuration</definition>
+        <argsstring>() const override</argsstring>
+        <name>command_interface_configuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="48" column="48" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" bodystart="48" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a4821f1c7b0f0a3b506fe5c8cba99dd81" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC controller_interface::InterfaceConfiguration</type>
+        <definition>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC controller_interface::InterfaceConfiguration dynamixel_hardware_interface::DynamixelDiagnosticController::state_interface_configuration</definition>
+        <argsstring>() const override</argsstring>
+        <name>state_interface_configuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="55" column="48" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" bodystart="55" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a4f0f6f0b3dad0e776fffd40f25b7d536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn</type>
+        <definition>rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn dynamixel_hardware_interface::DynamixelDiagnosticController::on_configure</definition>
+        <argsstring>(const rclcpp_lifecycle::State &amp;) override</argsstring>
+        <name>on_configure</name>
+        <param>
+          <type>const rclcpp_lifecycle::State &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="75" column="77" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_diagnostic_controller.cpp" bodystart="58" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1aa3474e3eca495867571c630b0204bdd4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn</type>
+        <definition>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn dynamixel_hardware_interface::DynamixelDiagnosticController::on_activate</definition>
+        <argsstring>(const rclcpp_lifecycle::State &amp;) override</argsstring>
+        <name>on_activate</name>
+        <param>
+          <type>const rclcpp_lifecycle::State &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="79" column="77" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" bodystart="79" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a1951286b4dda7d028ecce45f5e6bc462" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn</type>
+        <definition>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn dynamixel_hardware_interface::DynamixelDiagnosticController::on_deactivate</definition>
+        <argsstring>(const rclcpp_lifecycle::State &amp;) override</argsstring>
+        <name>on_deactivate</name>
+        <param>
+          <type>const rclcpp_lifecycle::State &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="86" column="77" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1aaaae13af21029b11890359002f80a80b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC controller_interface::return_type</type>
+        <definition>controller_interface::return_type dynamixel_hardware_interface::DynamixelDiagnosticController::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="93" column="37" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_diagnostic_controller.cpp" bodystart="81" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a97ed66721704dc1b2000896fceeb40ea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double dynamixel_hardware_interface::DynamixelDiagnosticController::getValue</definition>
+        <argsstring>(const std::string &amp;joint_name, const std::string &amp;interface)</argsstring>
+        <name>getValue</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>joint_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>interface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="102" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_diagnostic_controller.cpp" bodystart="69" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>controller_interface::ControllerInterface</label>
+      </node>
+      <node id="1">
+        <label>dynamixel_hardware_interface::DynamixelDiagnosticController</label>
+        <link refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>controller_interface::ControllerInterface</label>
+      </node>
+      <node id="1">
+        <label>dynamixel_hardware_interface::DynamixelDiagnosticController</label>
+        <link refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" line="42" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp" bodystart="41" bodyend="103"/>
+    <listofallmembers>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1ad161be78e4c2350c0c412deeae726bd8" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>command_interface_configuration</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1affb2bf765afa7ca4188cc3e551a62d72" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>diag_pub_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a3be3a0cb0f9758ffa4dfebe92f3d0af7" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>diag_pub_realtime_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a8f9798775a595efd1bb5b73763cecc8a" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>diagnostics_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a97ed66721704dc1b2000896fceeb40ea" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>getValue</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1ab609b1c69c3a83727214303c7c4e65cd" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>init</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a427880ddadf6d6ce08127453788307cd" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>joints_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1aa3474e3eca495867571c630b0204bdd4" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>on_activate</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a4f0f6f0b3dad0e776fffd40f25b7d536" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>on_configure</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a1951286b4dda7d028ecce45f5e6bc462" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>on_deactivate</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a4821f1c7b0f0a3b506fe5c8cba99dd81" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>state_interface_configuration</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1aaaae13af21029b11890359002f80a80b" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::DynamixelDiagnosticController</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

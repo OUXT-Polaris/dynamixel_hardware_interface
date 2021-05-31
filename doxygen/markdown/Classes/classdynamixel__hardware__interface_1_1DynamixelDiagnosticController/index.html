@@ -18,7 +18,7 @@
     
     
       
-        <title>dynamixel_hardware_interface::Address - Dynamixel Hardware Interface</title>
+        <title>dynamixel_hardware_interface::DynamixelDiagnosticController - Dynamixel Hardware Interface</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynamixel_hardware_interfaceaddress" class="md-skip">
+        <a href="#dynamixel_hardware_interfacedynamixeldiagnosticcontroller" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              dynamixel_hardware_interface::Address
+              dynamixel_hardware_interface::DynamixelDiagnosticController
             
           </span>
         </div>
@@ -347,13 +347,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#public-attributes" class="md-nav__link">
-    Public Attributes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#public-functions-documentation" class="md-nav__link">
     Public Functions Documentation
   </a>
@@ -362,49 +355,50 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-exists" class="md-nav__link">
-    function exists
+  <a href="#function-update" class="md-nav__link">
+    function update
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-address" class="md-nav__link">
-    function Address
+  <a href="#function-state_interface_configuration" class="md-nav__link">
+    function state_interface_configuration
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-address_1" class="md-nav__link">
-    function Address
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#public-attributes-documentation" class="md-nav__link">
-    Public Attributes Documentation
-  </a>
-  
-    <nav class="md-nav" aria-label="Public Attributes Documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#variable-byte_size" class="md-nav__link">
-    variable byte_size
+  <a href="#function-on_deactivate" class="md-nav__link">
+    function on_deactivate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-address" class="md-nav__link">
-    variable address
+  <a href="#function-on_configure" class="md-nav__link">
+    function on_configure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-on_activate" class="md-nav__link">
+    function on_activate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-init" class="md-nav__link">
+    function init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-command_interface_configuration" class="md-nav__link">
+    function command_interface_configuration
   </a>
   
 </li>
@@ -426,12 +420,13 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/OUXT-Polaris/dynamixel_hardware_interface/edit/master/docs/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1Address.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/OUXT-Polaris/dynamixel_hardware_interface/edit/master/docs/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1DynamixelDiagnosticController.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="dynamixel_hardware_interfaceaddress">dynamixel_hardware_interface::Address<a class="headerlink" href="#dynamixel_hardware_interfaceaddress" title="Permanent link">#</a></h1>
+                <h1 id="dynamixel_hardware_interfacedynamixeldiagnosticcontroller">dynamixel_hardware_interface::DynamixelDiagnosticController<a class="headerlink" href="#dynamixel_hardware_interfacedynamixeldiagnosticcontroller" title="Permanent link">#</a></h1>
+<p>Inherits from ControllerInterface</p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -442,57 +437,64 @@
 </thead>
 <tbody>
 <tr>
-<td>bool</td>
-<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1Address#function-exists">exists</a></strong>() const</td>
+<td>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC controller_interface::return_type</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1DynamixelDiagnosticController#function-update">update</a></strong>() override</td>
 </tr>
 <tr>
-<td></td>
-<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1Address#function-address">Address</a></strong>(uint16_t address, PacketByteSize byte_size)</td>
+<td>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC controller_interface::InterfaceConfiguration</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1DynamixelDiagnosticController#function-state_interface_configuration">state_interface_configuration</a></strong>() const override</td>
 </tr>
 <tr>
-<td></td>
-<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1Address#function-address">Address</a></strong>()</td>
-</tr>
-</tbody>
-</table>
-<h2 id="public-attributes">Public Attributes<a class="headerlink" href="#public-attributes" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>const PacketByteSize</td>
-<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1Address#variable-byte_size">byte_size</a></strong></td>
+<td>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1DynamixelDiagnosticController#function-on_deactivate">on_deactivate</a></strong>(const rclcpp_lifecycle::State &amp; ) override</td>
 </tr>
 <tr>
-<td>const uint16_t</td>
-<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1Address#variable-address">address</a></strong></td>
+<td>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1DynamixelDiagnosticController#function-on_configure">on_configure</a></strong>(const rclcpp_lifecycle::State &amp; ) override</td>
+</tr>
+<tr>
+<td>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1DynamixelDiagnosticController#function-on_activate">on_activate</a></strong>(const rclcpp_lifecycle::State &amp; ) override</td>
+</tr>
+<tr>
+<td>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC controller_interface::return_type</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1DynamixelDiagnosticController#function-init">init</a></strong>(const std::string &amp; controller_name) override</td>
+</tr>
+<tr>
+<td>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC controller_interface::InterfaceConfiguration</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1DynamixelDiagnosticController#function-command_interface_configuration">command_interface_configuration</a></strong>() const override</td>
 </tr>
 </tbody>
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
-<h3 id="function-exists">function exists<a class="headerlink" href="#function-exists" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">bool</span> <span class="n">exists</span><span class="p">()</span> <span class="k">const</span>
+<h3 id="function-update">function update<a class="headerlink" href="#function-update" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span>
 </code></pre></div>
-<h3 id="function-address">function Address<a class="headerlink" href="#function-address" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">Address</span><span class="p">(</span>
-    <span class="kt">uint16_t</span> <span class="n">address</span><span class="p">,</span>
-    <span class="n">PacketByteSize</span> <span class="n">byte_size</span>
-<span class="p">)</span>
+<h3 id="function-state_interface_configuration">function state_interface_configuration<a class="headerlink" href="#function-state_interface_configuration" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span> <span class="n">state_interface_configuration</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
 </code></pre></div>
-<h3 id="function-address_1">function Address<a class="headerlink" href="#function-address_1" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">Address</span><span class="p">()</span>
+<h3 id="function-on_deactivate">function on_deactivate<a class="headerlink" href="#function-on_deactivate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span> <span class="n">on_deactivate</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> 
+<span class="p">)</span> <span class="k">override</span>
 </code></pre></div>
-<h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">#</a></h2>
-<h3 id="variable-byte_size">variable byte_size<a class="headerlink" href="#variable-byte_size" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">PacketByteSize</span> <span class="n">byte_size</span><span class="p">;</span>
+<h3 id="function-on_configure">function on_configure<a class="headerlink" href="#function-on_configure" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span> <span class="n">on_configure</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> 
+<span class="p">)</span> <span class="k">override</span>
 </code></pre></div>
-<h3 id="variable-address">variable address<a class="headerlink" href="#variable-address" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">address</span><span class="p">;</span>
+<h3 id="function-on_activate">function on_activate<a class="headerlink" href="#function-on_activate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span> <span class="n">on_activate</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> 
+<span class="p">)</span> <span class="k">override</span>
+</code></pre></div>
+<h3 id="function-init">function init<a class="headerlink" href="#function-init" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span> <span class="n">init</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">controller_name</span>
+<span class="p">)</span> <span class="k">override</span>
+</code></pre></div>
+<h3 id="function-command_interface_configuration">function command_interface_configuration<a class="headerlink" href="#function-command_interface_configuration" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span> <span class="n">command_interface_configuration</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
 </code></pre></div>
 <hr />
 <p>Updated on 31 May 2021 at 14:28:20 UTC</p>

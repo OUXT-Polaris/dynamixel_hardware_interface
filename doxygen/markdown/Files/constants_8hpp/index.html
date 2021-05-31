@@ -510,10 +510,11 @@
   <span class="n">PRESENT_SPEED</span><span class="p">,</span>
   <span class="n">PRESENT_LOAD</span><span class="p">,</span>
   <span class="n">PRESENT_VOLTAGE</span><span class="p">,</span>
-  <span class="n">PRESENT_TEMPERATURE</span>
+  <span class="n">PRESENT_TEMPERATURE</span><span class="p">,</span>
+  <span class="n">INVALID</span>
 <span class="p">};</span>
 
-<span class="n">GENERATE_ENUM_ITERATOR</span><span class="p">(</span><span class="n">Operation</span><span class="p">,</span> <span class="n">PRESENT_TEMPERATURE</span><span class="p">)</span>
+<span class="n">GENERATE_ENUM_ITERATOR</span><span class="p">(</span><span class="n">Operation</span><span class="p">,</span> <span class="n">INVALID</span><span class="p">)</span>
 
 
 <span class="k">enum</span> <span class="k">class</span> <span class="nc">SupportedMotors</span> <span class="p">{</span>
@@ -527,12 +528,16 @@
 
 <span class="n">GENERATE_ENUM_ITERATOR</span><span class="p">(</span><span class="n">PacketByteSize</span><span class="p">,</span> <span class="n">INVALID</span><span class="p">)</span>
 
+<span class="k">enum</span> <span class="k">class</span> <span class="nc">DiagnosticsType</span> <span class="p">{</span> <span class="n">TEMPERATURE</span><span class="p">,</span> <span class="n">INVALID</span> <span class="p">};</span>
+
+<span class="n">GENERATE_ENUM_ITERATOR</span><span class="p">(</span><span class="n">DiagnosticsType</span><span class="p">,</span> <span class="n">INVALID</span><span class="p">)</span>
+
 <span class="p">}</span>  <span class="c1">//  namespace dynamixel_hardware_interface</span>
 
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 31 May 2021 at 01:47:40 UTC</p>
+<p>Updated on 31 May 2021 at 14:28:20 UTC</p>
                 
                   
                 

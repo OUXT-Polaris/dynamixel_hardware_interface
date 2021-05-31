@@ -18,7 +18,7 @@
     
     
       
-        <title>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp - Dynamixel Hardware Interface</title>
+        <title>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_diagnostic_controller.cpp - Dynamixel Hardware Interface</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#homerunnerworkdynamixel_hardware_interfacedynamixel_hardware_interfaceincludedynamixel_hardware_interfaceaddress_table_basehpp" class="md-skip">
+        <a href="#homerunnerworkdynamixel_hardware_interfacedynamixel_hardware_interfacesrcdynamixel_diagnostic_controllercpp" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              /home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp
+              /home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_diagnostic_controller.cpp
             
           </span>
         </div>
@@ -347,13 +347,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    Classes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#detailed-description" class="md-nav__link">
     Detailed Description
   </a>
@@ -379,13 +372,13 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/OUXT-Polaris/dynamixel_hardware_interface/edit/master/docs/doxygen/markdown/Files/address__table__base_8hpp.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/OUXT-Polaris/dynamixel_hardware_interface/edit/master/docs/doxygen/markdown/Files/dynamixel__diagnostic__controller_8cpp.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="homerunnerworkdynamixel_hardware_interfacedynamixel_hardware_interfaceincludedynamixel_hardware_interfaceaddress_table_basehpp">/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp<a class="headerlink" href="#homerunnerworkdynamixel_hardware_interfacedynamixel_hardware_interfaceincludedynamixel_hardware_interfaceaddress_table_basehpp" title="Permanent link">#</a></h1>
-<p>Base class for the address tabele.  <a href="#detailed-description">More...</a></p>
+                <h1 id="homerunnerworkdynamixel_hardware_interfacedynamixel_hardware_interfacesrcdynamixel_diagnostic_controllercpp">/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_diagnostic_controller.cpp<a class="headerlink" href="#homerunnerworkdynamixel_hardware_interfacedynamixel_hardware_interfacesrcdynamixel_diagnostic_controllercpp" title="Permanent link">#</a></h1>
+<p>definition of the dynamixal diagnostic controller class  <a href="#detailed-description">More...</a></p>
 <h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -399,31 +392,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>class</td>
-<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1AddressTableBase">dynamixel_hardware_interface::AddressTableBase</a></strong> <br>base class for address table class</td>
-</tr>
-<tr>
-<td>class</td>
-<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1Address">dynamixel_hardware_interface::Address</a></strong></td>
-</tr>
-</tbody>
-</table>
 <h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">#</a></h2>
-<p>Base class for the address tabele. </p>
+<p>definition of the dynamixal diagnostic controller class </p>
 <p><strong>Author</strong>: Masaya Kataoka (<a href="mailto:ms.kataoka@gmail.com">ms.kataoka@gmail.com</a>) </p>
 <p><strong>Version</strong>: 0.1 </p>
-<p><strong>Date</strong>: 2021-05-01</p>
+<p><strong>Date</strong>: 2021-05-16 </p>
 <p><strong>Copyright</strong>: Copyright (c) OUXT Polaris 2021 </p>
+<p>implementation of the dynamixal diagnostic controller class</p>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copyright (c) 2019 OUXT Polaris</span>
 <span class="c1">//</span>
@@ -439,88 +414,101 @@
 <span class="c1">// See the License for the specific language governing permissions and</span>
 <span class="c1">// limitations under the License.</span>
 
-<span class="cp">#ifndef DYNAMIXEL_HARDWARE_INTERFACE__ADDRESS_TABLE_BASE_HPP_</span>
-<span class="cp">#define DYNAMIXEL_HARDWARE_INTERFACE__ADDRESS_TABLE_BASE_HPP_</span>
-
-<span class="cp">#include</span> <span class="cpf">&lt;boost/optional.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;dynamixel_hardware_interface/constants.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp&gt;</span><span class="cp"></span>
 
 <span class="k">namespace</span> <span class="nn">dynamixel_hardware_interface</span>
 <span class="p">{</span>
-<span class="k">class</span> <span class="nc">Address</span>
+<span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span> <span class="nf">DynamixelDiagnosticController::init</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">controller_name</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="n">Address</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">address</span><span class="p">,</span> <span class="n">PacketByteSize</span> <span class="n">byte_size</span><span class="p">)</span> <span class="o">:</span> <span class="n">address</span><span class="p">(</span><span class="n">address</span><span class="p">),</span> <span class="n">byte_size</span><span class="p">(</span><span class="n">byte_size</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="n">Address</span><span class="p">()</span> <span class="o">:</span> <span class="n">address</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">byte_size</span><span class="p">(</span><span class="n">PacketByteSize</span><span class="o">::</span><span class="n">INVALID</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">address</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">PacketByteSize</span> <span class="n">byte_size</span><span class="p">;</span>
-  <span class="kt">bool</span> <span class="nf">exists</span><span class="p">()</span> <span class="k">const</span>
-  <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">byte_size</span> <span class="o">==</span> <span class="n">PacketByteSize</span><span class="o">::</span><span class="n">INVALID</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="k">auto</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">ControllerInterface</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">controller_name</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">OK</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">rclcpp</span><span class="o">::</span><span class="n">Parameter</span> <span class="n">joints</span><span class="p">;</span>
+  <span class="k">auto</span> <span class="n">node</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">();</span>
+  <span class="n">node</span><span class="o">-&gt;</span><span class="n">declare_parameter</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="s">&quot;joints&quot;</span><span class="p">,</span> <span class="p">{});</span>
+  <span class="n">joints_</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">get_parameter</span><span class="p">(</span><span class="s">&quot;joints&quot;</span><span class="p">).</span><span class="n">as_string_array</span><span class="p">();</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">joint</span> <span class="p">:</span> <span class="n">joints_</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">rclcpp</span><span class="o">::</span><span class="n">Parameter</span> <span class="n">diagnostics</span><span class="p">;</span>
+    <span class="n">node</span><span class="o">-&gt;</span><span class="n">declare_parameter</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">joint</span><span class="p">,</span> <span class="p">{});</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">get_parameter</span><span class="p">(</span><span class="n">joint</span><span class="p">,</span> <span class="n">diagnostics</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">dynamixel_hardware_interface</span><span class="o">::</span><span class="n">DiagnosticsType</span><span class="o">&gt;</span> <span class="n">diag_list</span><span class="p">;</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">diagnostics_strings</span> <span class="o">=</span> <span class="n">diagnostics</span><span class="p">.</span><span class="n">as_string_array</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">diag_string</span> <span class="p">:</span> <span class="n">diagnostics_strings</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">diag_string</span> <span class="o">==</span> <span class="s">&quot;temperature&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">diag_list</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">dynamixel_hardware_interface</span><span class="o">::</span><span class="n">DiagnosticsType</span><span class="o">::</span><span class="n">TEMPERATURE</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">diagnostics_</span><span class="p">[</span><span class="n">joint</span><span class="p">]</span> <span class="o">=</span> <span class="n">diag_list</span><span class="p">;</span>
   <span class="p">}</span>
-<span class="p">};</span>
+  <span class="k">return</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">AddressTableBase</span>
+<span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span>
+<span class="nf">DynamixelDiagnosticController::on_configure</span><span class="p">(</span><span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="cm">/*previous_state*/</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="k">explicit</span> <span class="n">AddressTableBase</span><span class="p">(</span>
-    <span class="n">Address</span> <span class="n">ADDR_TORQUE_ENABLE</span><span class="p">,</span> <span class="n">Address</span> <span class="n">ADDR_GOAL_POSITION</span><span class="p">,</span> <span class="n">Address</span> <span class="n">ADDR_MOVING_SPEED</span><span class="p">,</span>
-    <span class="n">Address</span> <span class="n">ADDR_PRESENT_POSITION</span><span class="p">,</span> <span class="n">Address</span> <span class="n">ADDR_PRESENT_SPEED</span><span class="p">,</span> <span class="n">Address</span> <span class="n">ADDR_PRESENT_LOAD</span><span class="p">,</span>
-    <span class="n">Address</span> <span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">,</span> <span class="n">Address</span> <span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">ADDR_TORQUE_ENABLE</span><span class="p">(</span><span class="n">ADDR_TORQUE_ENABLE</span><span class="p">),</span>
-    <span class="n">ADDR_GOAL_POSITION</span><span class="p">(</span><span class="n">ADDR_GOAL_POSITION</span><span class="p">),</span>
-    <span class="n">ADDR_MOVING_SPEED</span><span class="p">(</span><span class="n">ADDR_MOVING_SPEED</span><span class="p">),</span>
-    <span class="n">ADDR_PRESENT_POSITION</span><span class="p">(</span><span class="n">ADDR_PRESENT_POSITION</span><span class="p">),</span>
-    <span class="n">ADDR_PRESENT_SPEED</span><span class="p">(</span><span class="n">ADDR_PRESENT_SPEED</span><span class="p">),</span>
-    <span class="n">ADDR_PRESENT_LOAD</span><span class="p">(</span><span class="n">ADDR_PRESENT_LOAD</span><span class="p">),</span>
-    <span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">(</span><span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">),</span>
-    <span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">(</span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">)</span>
-  <span class="p">{</span>
-  <span class="p">}</span>
-  <span class="n">Address</span> <span class="n">getAddress</span><span class="p">(</span><span class="k">const</span> <span class="n">Operation</span> <span class="o">&amp;</span> <span class="n">operaiton</span><span class="p">)</span> <span class="k">const</span>
-  <span class="p">{</span>
-    <span class="k">switch</span> <span class="p">(</span><span class="n">operaiton</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">case</span> <span class="n">Operation</span><span class="o">::</span><span class="nl">TORQUE_ENABLE</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ADDR_TORQUE_ENABLE</span><span class="p">;</span>
-      <span class="k">case</span> <span class="n">Operation</span><span class="o">::</span><span class="nl">GOAL_POSITION</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ADDR_GOAL_POSITION</span><span class="p">;</span>
-      <span class="k">case</span> <span class="n">Operation</span><span class="o">::</span><span class="nl">MOVING_SPEED</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ADDR_MOVING_SPEED</span><span class="p">;</span>
-      <span class="k">case</span> <span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_POSITION</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ADDR_PRESENT_POSITION</span><span class="p">;</span>
-      <span class="k">case</span> <span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_SPEED</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ADDR_PRESENT_SPEED</span><span class="p">;</span>
-      <span class="k">case</span> <span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_LOAD</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ADDR_PRESENT_LOAD</span><span class="p">;</span>
-      <span class="k">case</span> <span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_VOLTAGE</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">;</span>
-      <span class="k">case</span> <span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_TEMPERATURE</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">;</span>
-      <span class="k">default</span><span class="o">:</span>
-        <span class="k">return</span> <span class="n">Address</span><span class="p">();</span>
+  <span class="k">auto</span> <span class="n">node</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">();</span>
+  <span class="n">diag_pub_</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">create_publisher</span><span class="o">&lt;</span><span class="n">diagnostic_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DiagnosticArray</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="s">&quot;/diagnostics&quot;</span><span class="p">,</span> <span class="n">rclcpp</span><span class="o">::</span><span class="n">SystemDefaultsQoS</span><span class="p">());</span>
+  <span class="n">diag_pub_realtime_</span> <span class="o">=</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">realtime_tools</span><span class="o">::</span><span class="n">RealtimePublisher</span><span class="o">&lt;</span><span class="n">diagnostic_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DiagnosticArray</span><span class="o">&gt;&gt;</span><span class="p">(</span>
+      <span class="n">diag_pub_</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">DynamixelDiagnosticController::getValue</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">joint_name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">interface_name</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">interface</span> <span class="p">:</span> <span class="n">state_interfaces_</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">interface</span><span class="p">.</span><span class="n">get_name</span><span class="p">()</span> <span class="o">==</span> <span class="n">joint_name</span> <span class="o">&amp;&amp;</span> <span class="n">interface</span><span class="p">.</span><span class="n">get_interface_name</span><span class="p">()</span> <span class="o">==</span> <span class="n">interface_name</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">interface</span><span class="p">.</span><span class="n">get_value</span><span class="p">();</span>
     <span class="p">}</span>
   <span class="p">}</span>
-  <span class="kt">bool</span> <span class="n">addressExists</span><span class="p">(</span><span class="k">const</span> <span class="n">Operation</span> <span class="o">&amp;</span> <span class="n">operation</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">getAddress</span><span class="p">(</span><span class="n">operation</span><span class="p">).</span><span class="n">exists</span><span class="p">();</span> <span class="p">}</span>
+  <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span>
+    <span class="s">&quot;state interface : &quot;</span> <span class="o">+</span> <span class="n">interface_name</span> <span class="o">+</span> <span class="s">&quot; does not exist in : &quot;</span> <span class="o">+</span> <span class="n">joint_name</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="k">private</span><span class="o">:</span>
-  <span class="n">AddressTableBase</span><span class="p">()</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">Address</span> <span class="n">ADDR_TORQUE_ENABLE</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">Address</span> <span class="n">ADDR_GOAL_POSITION</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">Address</span> <span class="n">ADDR_MOVING_SPEED</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">Address</span> <span class="n">ADDR_PRESENT_POSITION</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">Address</span> <span class="n">ADDR_PRESENT_SPEED</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">Address</span> <span class="n">ADDR_PRESENT_LOAD</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">Address</span> <span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">Address</span> <span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">;</span>
-<span class="p">};</span>
+<span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span> <span class="nf">DynamixelDiagnosticController::update</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">diag_pub_realtime_</span><span class="o">-&gt;</span><span class="n">trylock</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">diagnostic_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DiagnosticArray</span><span class="p">();</span>
+    <span class="n">msg</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">get_clock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">now</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">joint</span> <span class="p">:</span> <span class="n">joints_</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">const</span> <span class="k">auto</span> <span class="n">diagnostic_types</span> <span class="o">=</span> <span class="n">diagnostics_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">joint</span><span class="p">);</span>
+      <span class="k">auto</span> <span class="n">diag_msg</span> <span class="o">=</span> <span class="n">diagnostic_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DiagnosticStatus</span><span class="p">();</span>
+      <span class="n">diag_msg</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;dynamixel_diagnostics&quot;</span><span class="p">;</span>
+      <span class="n">diag_msg</span><span class="p">.</span><span class="n">hardware_id</span> <span class="o">=</span> <span class="n">joint</span><span class="p">;</span>
+      <span class="n">diag_msg</span><span class="p">.</span><span class="n">level</span> <span class="o">=</span> <span class="n">diag_msg</span><span class="p">.</span><span class="n">OK</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">diag_type</span> <span class="p">:</span> <span class="n">diagnostic_types</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">keyvalue_msg</span> <span class="o">=</span> <span class="n">diagnostic_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">KeyValue</span><span class="p">();</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">diag_type</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">case</span> <span class="n">DiagnosticsType</span><span class="o">::</span><span class="nl">TEMPERATURE</span><span class="p">:</span>
+            <span class="n">keyvalue_msg</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="s">&quot;temperature&quot;</span><span class="p">;</span>
+            <span class="n">keyvalue_msg</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">getValue</span><span class="p">(</span><span class="n">joint</span><span class="p">,</span> <span class="n">keyvalue_msg</span><span class="p">.</span><span class="n">key</span><span class="p">));</span>
+            <span class="k">break</span><span class="p">;</span>
+          <span class="k">default</span><span class="o">:</span>
+            <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;diagnostic type is invalid&quot;</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">diag_msg</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">keyvalue_msg</span><span class="p">);</span>
+        <span class="n">msg</span><span class="p">.</span><span class="n">status</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">diag_msg</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">diag_pub_realtime_</span><span class="o">-&gt;</span><span class="n">msg_</span> <span class="o">=</span> <span class="n">msg</span><span class="p">;</span>
+    <span class="n">diag_pub_realtime_</span><span class="o">-&gt;</span><span class="n">unlockAndPublish</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="p">}</span>  <span class="c1">// namespace dynamixel_hardware_interface</span>
 
-<span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__ADDRESS_TABLE_BASE_HPP_</span>
+<span class="cp">#include</span> <span class="cpf">&quot;pluginlib/class_list_macros.hpp&quot;</span><span class="cp"></span>
+
+<span class="n">PLUGINLIB_EXPORT_CLASS</span><span class="p">(</span>
+  <span class="n">dynamixel_hardware_interface</span><span class="o">::</span><span class="n">DynamixelDiagnosticController</span><span class="p">,</span>
+  <span class="n">controller_interface</span><span class="o">::</span><span class="n">ControllerInterface</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <p>Updated on 31 May 2021 at 14:28:20 UTC</p>

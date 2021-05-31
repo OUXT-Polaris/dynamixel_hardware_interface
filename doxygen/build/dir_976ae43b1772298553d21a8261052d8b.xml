@@ -5,6 +5,7 @@
     <innerdir refid="dir_928fd2f9e5178dedf5db7221eddd41a5">/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motors</innerdir>
     <innerfile refid="address__table__base_8hpp">address_table_base.hpp</innerfile>
     <innerfile refid="constants_8hpp">constants.hpp</innerfile>
+    <innerfile refid="dymanixel__diagnostic__controller_8hpp">dymanixel_diagnostic_controller.hpp</innerfile>
     <innerfile refid="dynamixel__hardware__interface_8hpp">dynamixel_hardware_interface.hpp</innerfile>
     <innerfile refid="motor__base_8hpp">motor_base.hpp</innerfile>
     <innerfile refid="util_8hpp">util.hpp</innerfile>

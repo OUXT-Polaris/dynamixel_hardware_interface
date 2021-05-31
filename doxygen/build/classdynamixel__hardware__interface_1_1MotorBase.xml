@@ -168,11 +168,11 @@
         </inbodydescription>
         <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="238" column="10" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" bodystart="238" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1MotorBase_1aacbf1e4ea97b9cc64bf6e083721deaab" prot="protected" static="no" mutable="no">
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1MotorBase_1a982916ef7cf2b35773efc5e7ce1b2128" prot="protected" static="no" mutable="no">
         <type>double</type>
-        <definition>double dynamixel_hardware_interface::MotorBase::present_tempelature_</definition>
+        <definition>double dynamixel_hardware_interface::MotorBase::present_temperature_</definition>
         <argsstring></argsstring>
-        <name>present_tempelature_</name>
+        <name>present_temperature_</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -540,7 +540,7 @@
         <argsstring>()</argsstring>
         <name>updatePresentTemperature</name>
         <briefdescription>
-<para>Execute update present tempelature command to the motor. </para>
+<para>Execute update present temperature command to the motor. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="return"><para><ref refid="structdynamixel__hardware__interface_1_1Result" kindref="compound">Result</ref> </para>
@@ -872,12 +872,12 @@
         </inbodydescription>
         <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="228" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="73" bodyend="76"/>
       </memberdef>
-      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a3ad2ce74abf0d6b8ce39f059b039ad7e" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a8e755704795e27cde2077c687b34869e" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
-        <definition>double dynamixel_hardware_interface::MotorBase::valueToTempelature</definition>
+        <definition>double dynamixel_hardware_interface::MotorBase::valueToTemperature</definition>
         <argsstring>(uint8_t value) const</argsstring>
-        <name>valueToTempelature</name>
-        <reimplementedby refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a2b692474605583de8416da1807ee3c77">valueToTempelature</reimplementedby>
+        <name>valueToTemperature</name>
+        <reimplementedby refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1ab2c5bd7f9d3ec0af65010ab64079a54d">valueToTemperature</reimplementedby>
         <param>
           <type>uint8_t</type>
           <declname>value</declname>
@@ -890,11 +890,11 @@
         </inbodydescription>
         <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="229" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="107" bodyend="110"/>
       </memberdef>
-      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a28fae4f9702aeb063d160905a64008d5" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1aa6efb52b395b0e3a359b6fe75855afba" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
-        <definition>double dynamixel_hardware_interface::MotorBase::valueToTempelature</definition>
+        <definition>double dynamixel_hardware_interface::MotorBase::valueToTemperature</definition>
         <argsstring>(uint16_t value) const</argsstring>
-        <name>valueToTempelature</name>
+        <name>valueToTemperature</name>
         <param>
           <type>uint16_t</type>
           <declname>value</declname>
@@ -907,11 +907,11 @@
         </inbodydescription>
         <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp" line="230" column="18" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp" bodystart="112" bodyend="115"/>
       </memberdef>
-      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a4f05a504eb189fe3c076530ab240642f" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1MotorBase_1a9ab7f801cae53f845af740f9f7a74c7f" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
-        <definition>double dynamixel_hardware_interface::MotorBase::valueToTempelature</definition>
+        <definition>double dynamixel_hardware_interface::MotorBase::valueToTemperature</definition>
         <argsstring>(uint32_t value) const</argsstring>
-        <name>valueToTempelature</name>
+        <name>valueToTemperature</name>
         <param>
           <type>uint32_t</type>
           <declname>value</declname>
@@ -969,7 +969,7 @@
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aff47adf49a24cdde7dc4c0ba9657607e" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>positionToRadian</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad21e92cf98c25b77c9109e778e58d708" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>positionToRadian</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aaf372d2b65dc26886d8ed06690609842" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>positionToRadian</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aacbf1e4ea97b9cc64bf6e083721deaab" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>present_tempelature_</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a982916ef7cf2b35773efc5e7ce1b2128" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>present_temperature_</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3a65d6fbf4fe86598e813e785029b631" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>radianToPosition</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad571c9fa630416e965ae5fbb09be0aa9" prot="protected" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>radianToPosition</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aec07829d735ae24b33709af115b1bbe6" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>radianToPosition</name></member>
@@ -985,9 +985,9 @@
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab6d236f81ccf27c6859cbabea544a9ca" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToRpm</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a4d9dc908f5e38862148182148343af28" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToRpm</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a411cb14662011a3a20f1970ad40da61e" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToRpm</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3ad2ce74abf0d6b8ce39f059b039ad7e" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToTempelature</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a28fae4f9702aeb063d160905a64008d5" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToTempelature</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a4f05a504eb189fe3c076530ab240642f" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToTempelature</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a8e755704795e27cde2077c687b34869e" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToTemperature</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa6efb52b395b0e3a359b6fe75855afba" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToTemperature</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a9ab7f801cae53f845af740f9f7a74c7f" prot="protected" virt="virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>valueToTemperature</name></member>
       <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa0901f99af1ab546e41c809048679d68" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::MotorBase</scope><name>~MotorBase</name></member>
     </listofallmembers>
   </compounddef>

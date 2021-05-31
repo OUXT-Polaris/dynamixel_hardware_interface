@@ -7,6 +7,7 @@
     <includes local="no">stdexcept</includes>
     <includes local="no">string</includes>
     <includedby refid="address__table__base_8hpp" local="no">/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp</includedby>
+    <includedby refid="dymanixel__diagnostic__controller_8hpp" local="no">/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp</includedby>
     <includedby refid="motor__base_8hpp" local="no">/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/motor_base.hpp</includedby>
     <includedby refid="util_8hpp" local="no">/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/util.hpp</includedby>
     <incdepgraph>
@@ -60,14 +61,26 @@
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/motor_base.cpp</label>
         <link refid="motor__base_8cpp"/>
       </node>
+      <node id="10">
+        <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/dynamixel_diagnostic_controller.cpp</label>
+        <link refid="dynamixel__diagnostic__controller_8cpp"/>
+      </node>
       <node id="1">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp</label>
         <link refid="constants_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dymanixel_diagnostic_controller.hpp</label>
+        <link refid="dymanixel__diagnostic__controller_8hpp_source"/>
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -88,15 +101,15 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="11">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/util.hpp</label>
         <link refid="util_8hpp"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="12">
         <label>/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/src/util.cpp</label>
         <link refid="util_8cpp"/>
       </node>
@@ -195,26 +208,31 @@
 <codeline lineno="67"><highlight class="normal"><sp/><sp/>PRESENT_SPEED,</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/>PRESENT_LOAD,</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/>PRESENT_VOLTAGE,</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/>PRESENT_TEMPERATURE</highlight></codeline>
-<codeline lineno="71"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal">GENERATE_ENUM_ITERATOR(Operation,<sp/>PRESENT_TEMPERATURE)</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>PRESENT_TEMPERATURE,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>INVALID</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">GENERATE_ENUM_ITERATOR(Operation,<sp/>INVALID)</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78" refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" refkind="member"><highlight class="normal">enum<sp/>class<sp/><ref refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" kindref="member">SupportedMotors</ref><sp/>{</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/>XW540_T260,</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/>INVALID</highlight></codeline>
-<codeline lineno="88"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal">GENERATE_ENUM_ITERATOR(SupportedMotors,<sp/>INVALID)</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>PacketByteSize<sp/>{<sp/>ONE_BYTE,<sp/>TWO_BYTE,<sp/>FOUR_BYTE,<sp/>INVALID<sp/>};</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal">GENERATE_ENUM_ITERATOR(PacketByteSize,<sp/>INVALID)</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>dynamixel_hardware_interface</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" refkind="member"><highlight class="normal">enum<sp/>class<sp/><ref refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" kindref="member">SupportedMotors</ref><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>XW540_T260,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>INVALID</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">GENERATE_ENUM_ITERATOR(SupportedMotors,<sp/>INVALID)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>PacketByteSize<sp/>{<sp/>ONE_BYTE,<sp/>TWO_BYTE,<sp/>FOUR_BYTE,<sp/>INVALID<sp/>};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">GENERATE_ENUM_ITERATOR(PacketByteSize,<sp/>INVALID)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>DiagnosticsType<sp/>{<sp/>TEMPERATURE,<sp/>INVALID<sp/>};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">GENERATE_ENUM_ITERATOR(DiagnosticsType,<sp/>INVALID)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>dynamixel_hardware_interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>DYNAMIXEL_HARDWARE_INTERFACE__CONSTANTS_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp"/>
   </compounddef>

@@ -213,7 +213,7 @@
 <parametername>ADDR_PRESENT_TEMPERATURE</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>If this value is boost::none, reading present_tempelature command address exists. </para>
+<para>If this value is boost::none, reading present_temperature command address exists. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>

@@ -21,6 +21,20 @@
     <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a43e69aa8a1a3a28ac6278744fba9fcad" kind="function"><name>addressExists</name></member>
     <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a88842a6e56d6e9b4d80befb6ea3fd4f3" kind="function"><name>AddressTableBase</name></member>
   </compound>
+  <compound refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController" kind="class"><name>dynamixel_hardware_interface::DynamixelDiagnosticController</name>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a427880ddadf6d6ce08127453788307cd" kind="variable"><name>joints_</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a8f9798775a595efd1bb5b73763cecc8a" kind="variable"><name>diagnostics_</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1affb2bf765afa7ca4188cc3e551a62d72" kind="variable"><name>diag_pub_</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a3be3a0cb0f9758ffa4dfebe92f3d0af7" kind="variable"><name>diag_pub_realtime_</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1ab609b1c69c3a83727214303c7c4e65cd" kind="function"><name>init</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1ad161be78e4c2350c0c412deeae726bd8" kind="function"><name>command_interface_configuration</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a4821f1c7b0f0a3b506fe5c8cba99dd81" kind="function"><name>state_interface_configuration</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a4f0f6f0b3dad0e776fffd40f25b7d536" kind="function"><name>on_configure</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1aa3474e3eca495867571c630b0204bdd4" kind="function"><name>on_activate</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a1951286b4dda7d028ecce45f5e6bc462" kind="function"><name>on_deactivate</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1aaaae13af21029b11890359002f80a80b" kind="function"><name>update</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a97ed66721704dc1b2000896fceeb40ea" kind="function"><name>getValue</name></member>
+  </compound>
   <compound refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface" kind="class"><name>dynamixel_hardware_interface::DynamixelHardwareInterface</name>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a8b945e8e564bbde7abfd2e7d5b7447d4" kind="variable"><name>port_name_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a027ed49323b295436e1b0e30ca494a16" kind="variable"><name>baudrate_</name></member>
@@ -58,7 +72,7 @@
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a1942236120379f185ba57e41b9e8c572" kind="variable"><name>goal_position_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a86bb1b4e279ba89214597cc3f75b51d5" kind="variable"><name>joint_velocity_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a54893f81b010e087a21aa10d16892596" kind="variable"><name>goal_velocity_</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aacbf1e4ea97b9cc64bf6e083721deaab" kind="variable"><name>present_tempelature_</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a982916ef7cf2b35773efc5e7ce1b2128" kind="variable"><name>present_temperature_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a283620455af3d064295177fb969e6d5e" kind="function"><name>MotorBase</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa0901f99af1ab546e41c809048679d68" kind="function"><name>~MotorBase</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a7e00bde66e9d41ec2d62772463fe9583" kind="function"><name>operationSupports</name></member>
@@ -88,9 +102,9 @@
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ab6d236f81ccf27c6859cbabea544a9ca" kind="function"><name>valueToRpm</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a4d9dc908f5e38862148182148343af28" kind="function"><name>valueToRpm</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a411cb14662011a3a20f1970ad40da61e" kind="function"><name>valueToRpm</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3ad2ce74abf0d6b8ce39f059b039ad7e" kind="function"><name>valueToTempelature</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a28fae4f9702aeb063d160905a64008d5" kind="function"><name>valueToTempelature</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a4f05a504eb189fe3c076530ab240642f" kind="function"><name>valueToTempelature</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a8e755704795e27cde2077c687b34869e" kind="function"><name>valueToTemperature</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa6efb52b395b0e3a359b6fe75855afba" kind="function"><name>valueToTemperature</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a9ab7f801cae53f845af740f9f7a74c7f" kind="function"><name>valueToTemperature</name></member>
   </compound>
   <compound refid="structdynamixel__hardware__interface_1_1Result" kind="struct"><name>dynamixel_hardware_interface::Result</name>
     <member refid="structdynamixel__hardware__interface_1_1Result_1aadf4f7601005c07f1930a3b823587dd9" kind="variable"><name>description</name></member>
@@ -105,7 +119,7 @@
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a410454f35d60ec836a234f935d55070b" kind="function"><name>positionToRadian</name></member>
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1ae3afc71eca920388803a54c596d56b47" kind="function"><name>radianToPosition</name></member>
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1af7ca356a4eda19c82d117ad20f1b9d84" kind="function"><name>valueToRpm</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a2b692474605583de8416da1807ee3c77" kind="function"><name>valueToTempelature</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1ab2c5bd7f9d3ec0af65010ab64079a54d" kind="function"><name>valueToTemperature</name></member>
   </compound>
   <compound refid="namespacedynamixel__hardware__interface" kind="namespace"><name>dynamixel_hardware_interface</name>
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90" kind="enum"><name>Operation</name></member>
@@ -117,6 +131,7 @@
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90aaa54b037ff09266656b10b8bc39bac13" kind="enumvalue"><name>PRESENT_LOAD</name></member>
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90a429899397757f3ec49b9a0fd4c5ae924" kind="enumvalue"><name>PRESENT_VOLTAGE</name></member>
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90a0200d59257342aeccddcd85cd41853ee" kind="enumvalue"><name>PRESENT_TEMPERATURE</name></member>
+    <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90accc0377a8afbf50e7094f5c23a8af223" kind="enumvalue"><name>INVALID</name></member>
     <member refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" kind="enum"><name>SupportedMotors</name></member>
     <member refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257ab38bdf146e8b4e1717a3fac10e77650e" kind="enumvalue"><name>XW540_T260</name></member>
     <member refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257accc0377a8afbf50e7094f5c23a8af223" kind="enumvalue"><name>INVALID</name></member>
@@ -125,6 +140,9 @@
     <member refid="constants_8hpp_1acc7178615a1af6be422831cca58d19d9a00878d7028ed6a80e3f1a5e7c900eb13" kind="enumvalue"><name>TWO_BYTE</name></member>
     <member refid="constants_8hpp_1acc7178615a1af6be422831cca58d19d9a57cea784ab21374ee79f490919089bf1" kind="enumvalue"><name>FOUR_BYTE</name></member>
     <member refid="constants_8hpp_1acc7178615a1af6be422831cca58d19d9accc0377a8afbf50e7094f5c23a8af223" kind="enumvalue"><name>INVALID</name></member>
+    <member refid="constants_8hpp_1a475e2cd0ae706733eddbc7f13c9d27f1" kind="enum"><name>DiagnosticsType</name></member>
+    <member refid="constants_8hpp_1a475e2cd0ae706733eddbc7f13c9d27f1ab976538812ef6e3e5881e245d5fc3c76" kind="enumvalue"><name>TEMPERATURE</name></member>
+    <member refid="constants_8hpp_1a475e2cd0ae706733eddbc7f13c9d27f1accc0377a8afbf50e7094f5c23a8af223" kind="enumvalue"><name>INVALID</name></member>
     <member refid="constants_8hpp_1a775acb9f947870ed740c890ed7f63871" kind="variable"><name>PROTOCOL_VERSION</name></member>
     <member refid="constants_8hpp_1a3adede4bf976ea268b2fa8b7fd209555" kind="variable"><name>DXL_HOME_POSITION</name></member>
     <member refid="constants_8hpp_1ae0bb0f0810579fe228630100fc770929" kind="variable"><name>DXL_MAX_POSITION</name></member>
@@ -148,6 +166,8 @@
   <compound refid="constants_8hpp" kind="file"><name>constants.hpp</name>
     <member refid="constants_8hpp_1a85e57fa16a14a8669a39480bf9c10fc5" kind="define"><name>GENERATE_ENUM_ITERATOR</name></member>
   </compound>
+  <compound refid="dymanixel__diagnostic__controller_8hpp" kind="file"><name>dymanixel_diagnostic_controller.hpp</name>
+  </compound>
   <compound refid="dynamixel__hardware__interface_8hpp" kind="file"><name>dynamixel_hardware_interface.hpp</name>
   </compound>
   <compound refid="motor__base_8hpp" kind="file"><name>motor_base.hpp</name>
@@ -164,6 +184,8 @@
     <member refid="visiblity__control_8h_1af0998db40ca4bd58a0def83644c738c3" kind="define"><name>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</name></member>
     <member refid="visiblity__control_8h_1a4759acaaebe892d488994da010e76c15" kind="define"><name>DYNAMIXEL_HARDWARE_INTERFACE_LOCAL</name></member>
     <member refid="visiblity__control_8h_1a1cd43f1edd22ec2adf74e567ebfce733" kind="define"><name>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC_TYPE</name></member>
+  </compound>
+  <compound refid="dynamixel__diagnostic__controller_8cpp" kind="file"><name>dynamixel_diagnostic_controller.cpp</name>
   </compound>
   <compound refid="dynamixel__hardware__interface_8cpp" kind="file"><name>dynamixel_hardware_interface.cpp</name>
   </compound>
