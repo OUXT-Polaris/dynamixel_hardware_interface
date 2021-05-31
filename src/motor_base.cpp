@@ -104,19 +104,19 @@ void MotorBase::radianToPosition(double, uint32_t &) const
   throw std::runtime_error("radian to position function should be implemented for each motor");
 }
 
-double MotorBase::valueToTempelature(uint8_t) const
+double MotorBase::valueToTemperature(uint8_t) const
 {
-  throw std::runtime_error("value to tempelature function should be implemented for each motor");
+  throw std::runtime_error("value to temperature function should be implemented for each motor");
 }
 
-double MotorBase::valueToTempelature(uint16_t) const
+double MotorBase::valueToTemperature(uint16_t) const
 {
-  throw std::runtime_error("value to tempelature function should be implemented for each motor");
+  throw std::runtime_error("value to temperature function should be implemented for each motor");
 }
 
-double MotorBase::valueToTempelature(uint32_t) const
+double MotorBase::valueToTemperature(uint32_t) const
 {
-  throw std::runtime_error("value to tempelature function should be implemented for each motor");
+  throw std::runtime_error("value to temperature function should be implemented for each motor");
 }
 
 Result MotorBase::getResult(int communication_result, uint8_t packet_error)
@@ -159,7 +159,7 @@ void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInter
           break;
         case Operation::PRESENT_TEMPERATURE:
           interfaces.emplace_back(
-            hardware_interface::StateInterface(joint_name, "tempelature", &present_tempelature_));
+            hardware_interface::StateInterface(joint_name, "temperature", &present_temperature_));
           break;
         default:
           break;
@@ -314,7 +314,7 @@ Result MotorBase::updatePresentTemperature()
       "PRESENT_TEMPERATURE operation does not support in " + toString(motor_type), false);
   }
   if (enable_dummy) {
-    present_tempelature_ = 0;
+    present_temperature_ = 0;
     return Result("", true);
   } else {
     uint8_t error = 0;
@@ -322,21 +322,21 @@ Result MotorBase::updatePresentTemperature()
       uint8_t present_temperature = 0;
       const auto result = packet_handler_->read1ByteTxRx(
         port_handler_.get(), id, address.address, &present_temperature, &error);
-      present_tempelature_ = valueToTempelature(present_temperature);
+      present_temperature_ = valueToTemperature(present_temperature);
       return getResult(result, error);
     }
     if (address.byte_size == PacketByteSize::TWO_BYTE) {
       uint16_t present_temperature = 0;
       const auto result = packet_handler_->read2ByteTxRx(
         port_handler_.get(), id, address.address, &present_temperature, &error);
-      present_tempelature_ = valueToTempelature(present_temperature);
+      present_temperature_ = valueToTemperature(present_temperature);
       return getResult(result, error);
     }
     if (address.byte_size == PacketByteSize::FOUR_BYTE) {
       uint32_t present_temperature = 0;
       const auto result = packet_handler_->read4ByteTxRx(
         port_handler_.get(), id, address.address, &present_temperature, &error);
-      present_tempelature_ = valueToTempelature(present_temperature);
+      present_temperature_ = valueToTemperature(present_temperature);
       return getResult(result, error);
     }
     return Result("Invalid packet size", false);

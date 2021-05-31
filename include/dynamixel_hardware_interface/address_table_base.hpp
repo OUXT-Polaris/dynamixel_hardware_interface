@@ -64,7 +64,7 @@ public:
    * @param ADDR_PRESENT_SPEED If this value is boost::none, reading present_speed command address exists.
    * @param ADDR_PRESENT_LOAD If this value is boost::none, reading present_load command address exists.
    * @param ADDR_PRESENT_VOLTAGE If this value is boost::none, reading present_voltage command address exists.
-   * @param ADDR_PRESENT_TEMPERATURE If this value is boost::none, reading present_tempelature command address exists.
+   * @param ADDR_PRESENT_TEMPERATURE If this value is boost::none, reading present_temperature command address exists.
    */
   explicit AddressTableBase(
     Address ADDR_TORQUE_ENABLE, Address ADDR_GOAL_POSITION, Address ADDR_MOVING_SPEED,

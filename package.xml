@@ -11,11 +11,15 @@
 
   <depend>dynamixel_sdk</depend>
   <depend>hardware_interface</depend>
+  <depend>controller_interface</depend>
   <depend>pluginlib</depend>
   <depend>rclcpp</depend>
   <depend>ros2_control</depend>
   <depend>robot_state_publisher</depend>
   <depend>xacro</depend>
+  <depend>diagnostic_updater</depend>
+  <depend>diagnostic_msgs</depend>
+  <depend>realtime_tools</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_cmake_gtest</test_depend>

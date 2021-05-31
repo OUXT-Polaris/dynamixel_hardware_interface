@@ -68,7 +68,6 @@ public:
   double positionToRadian(const uint32_t position) const override
   {
     return static_cast<double>(position) / static_cast<double>(4096) * M_PI * 2;
-    return 0;
   }
 
   void radianToPosition(double radian, uint32_t & value) const override
@@ -81,7 +80,7 @@ public:
     return 2.29 * 2 * M_PI / 60 * static_cast<double>(value);
   }
 
-  double valueToTempelature(uint8_t value) const override { return static_cast<double>(value); }
+  double valueToTemperature(uint8_t value) const override { return static_cast<double>(value); }
 };
 }  // namespace motors
 }  // namespace dynamixel_hardware_interface

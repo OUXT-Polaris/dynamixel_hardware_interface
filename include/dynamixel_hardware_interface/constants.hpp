@@ -67,10 +67,11 @@ enum class Operation {
   PRESENT_SPEED,
   PRESENT_LOAD,
   PRESENT_VOLTAGE,
-  PRESENT_TEMPERATURE
+  PRESENT_TEMPERATURE,
+  INVALID
 };
 
-GENERATE_ENUM_ITERATOR(Operation, PRESENT_TEMPERATURE)
+GENERATE_ENUM_ITERATOR(Operation, INVALID)
 
 /**
  * @brief Enum class of the supported motor
@@ -92,6 +93,10 @@ GENERATE_ENUM_ITERATOR(SupportedMotors, INVALID)
 enum class PacketByteSize { ONE_BYTE, TWO_BYTE, FOUR_BYTE, INVALID };
 
 GENERATE_ENUM_ITERATOR(PacketByteSize, INVALID)
+
+enum class DiagnosticsType { TEMPERATURE, INVALID };
+
+GENERATE_ENUM_ITERATOR(DiagnosticsType, INVALID)
 
 }  //  namespace dynamixel_hardware_interface
 
