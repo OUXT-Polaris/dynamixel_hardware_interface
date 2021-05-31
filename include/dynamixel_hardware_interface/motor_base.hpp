@@ -186,7 +186,7 @@ public:
    */
   virtual Result updateJointVelocity();
   /**
-   * @brief Execute update present tempelature command to the motor.
+   * @brief Execute update present temperature command to the motor.
    * @return Result 
    */
   virtual Result updatePresentTemperature();
@@ -226,9 +226,9 @@ protected:
   virtual double valueToRpm(uint8_t value) const;
   virtual double valueToRpm(uint16_t value) const;
   virtual double valueToRpm(uint32_t value) const;
-  virtual double valueToTempelature(uint8_t value) const;
-  virtual double valueToTempelature(uint16_t value) const;
-  virtual double valueToTempelature(uint32_t value) const;
+  virtual double valueToTemperature(uint8_t value) const;
+  virtual double valueToTemperature(uint16_t value) const;
+  virtual double valueToTemperature(uint32_t value) const;
   std::shared_ptr<AddressTableBase> address_table_;
   std::shared_ptr<dynamixel::PortHandler> port_handler_;
   std::shared_ptr<dynamixel::PacketHandler> packet_handler_;
@@ -236,7 +236,7 @@ protected:
   double goal_position_;
   double joint_velocity_;
   double goal_velocity_;
-  double present_tempelature_;
+  double present_temperature_;
 };
 }  //  namespace dynamixel_hardware_interface
 

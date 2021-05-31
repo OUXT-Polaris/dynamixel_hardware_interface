@@ -59,8 +59,8 @@ public:
       const auto diagnostic_types = diagnostics_.at(joint);
       for (const auto & diagnostic_type : diagnostic_types) {
         switch (diagnostic_type) {
-          case DiagnosticsType::TEMPELATURE:
-            interface_names.emplace_back(joint + "/tempelature");
+          case DiagnosticsType::TEMPERATURE:
+            interface_names.emplace_back(joint + "/temperature");
             break;
           default:
             break;
@@ -99,5 +99,6 @@ private:
   rclcpp::Publisher<diagnostic_msgs::msg::DiagnosticArray>::SharedPtr diag_pub_;
   std::shared_ptr<realtime_tools::RealtimePublisher<diagnostic_msgs::msg::DiagnosticArray>>
     diag_pub_realtime_;
+  double getValue(const std::string & joint_name, const std::string & interface);
 };
 }  // namespace dynamixel_hardware_interface

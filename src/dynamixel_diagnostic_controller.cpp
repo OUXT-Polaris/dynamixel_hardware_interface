@@ -38,15 +38,15 @@ controller_interface::return_type DynamixelDiagnosticController::init(
   joints_ = node->get_parameter("joints").as_string_array();
   for (const auto & joint : joints_) {
     rclcpp::Parameter diagnostics;
-    node->declare_parameter<std::vector<std::string>>("diagnostics/" + joint, {});
-    if (!get_node()->get_parameter("diagnostics/" + joint, diagnostics)) {
+    node->declare_parameter<std::vector<std::string>>(joint, {});
+    if (!get_node()->get_parameter(joint, diagnostics)) {
       return controller_interface::return_type::ERROR;
     }
     std::vector<dynamixel_hardware_interface::DiagnosticsType> diag_list;
     const auto diagnostics_strings = diagnostics.as_string_array();
     for (const auto & diag_string : diagnostics_strings) {
-      if (diag_string == "tempelature") {
-        diag_list.emplace_back(dynamixel_hardware_interface::DiagnosticsType::TEMPELATURE);
+      if (diag_string == "temperature") {
+        diag_list.emplace_back(dynamixel_hardware_interface::DiagnosticsType::TEMPERATURE);
       }
     }
     diagnostics_[joint] = diag_list;
@@ -63,10 +63,19 @@ DynamixelDiagnosticController::on_configure(const rclcpp_lifecycle::State & /*pr
   diag_pub_realtime_ =
     std::make_shared<realtime_tools::RealtimePublisher<diagnostic_msgs::msg::DiagnosticArray>>(
       diag_pub_);
-  for (const auto & joint : joints_) {
-    const auto diagnostic_types = diagnostics_.at(joint);
-  }
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
+}
+
+double DynamixelDiagnosticController::getValue(
+  const std::string & joint_name, const std::string & interface_name)
+{
+  for (const auto & interface : state_interfaces_) {
+    if (interface.get_name() == joint_name && interface.get_interface_name() == interface_name) {
+      return interface.get_value();
+    }
+  }
+  throw std::runtime_error(
+    "state interface : " + interface_name + " does not exist in : " + joint_name);
 }
 
 controller_interface::return_type DynamixelDiagnosticController::update()
@@ -76,6 +85,24 @@ controller_interface::return_type DynamixelDiagnosticController::update()
     msg.header.stamp = get_node()->get_clock()->now();
     for (const auto & joint : joints_) {
       const auto diagnostic_types = diagnostics_.at(joint);
+      auto diag_msg = diagnostic_msgs::msg::DiagnosticStatus();
+      diag_msg.name = "dynamixel_diagnostics";
+      diag_msg.hardware_id = joint;
+      diag_msg.level = diag_msg.OK;
+      for (const auto & diag_type : diagnostic_types) {
+        auto keyvalue_msg = diagnostic_msgs::msg::KeyValue();
+        switch (diag_type) {
+          case DiagnosticsType::TEMPERATURE:
+            keyvalue_msg.key = "temperature";
+            keyvalue_msg.value = std::to_string(getValue(joint, keyvalue_msg.key));
+            break;
+          default:
+            throw std::runtime_error("diagnostic type is invalid");
+            break;
+        }
+        diag_msg.values.emplace_back(keyvalue_msg);
+        msg.status.emplace_back(diag_msg);
+      }
     }
     diag_pub_realtime_->msg_ = msg;
     diag_pub_realtime_->unlockAndPublish();
