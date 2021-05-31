@@ -19,6 +19,7 @@
   <depend>xacro</depend>
   <depend>diagnostic_updater</depend>
   <depend>diagnostic_msgs</depend>
+  <depend>realtime_tools</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_cmake_gtest</test_depend>

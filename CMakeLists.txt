@@ -25,6 +25,7 @@ find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(ros2_control REQUIRED)
+find_package(realtime_tools REQUIRED)
 
 add_library(
   dynamixel_hardware_interface
@@ -45,6 +46,7 @@ ament_target_dependencies(
   pluginlib
   rclcpp
   ros2_control
+  realtime_tools
 )
 
 pluginlib_export_plugin_description_file(hardware_interface dynamixel_hardware_interface.xml)
@@ -68,6 +70,7 @@ ament_target_dependencies(
   ros2_control
   diagnostic_updater
   diagnostic_msgs
+  realtime_tools
 )
 pluginlib_export_plugin_description_file(controller_interface dynamixel_diagnostic_controller.xml)
 
