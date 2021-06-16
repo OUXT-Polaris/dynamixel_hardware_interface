@@ -2,6 +2,13 @@
 Changelog for package dynamixel_hardware_interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#12 <https://github.com/OUXT-Polaris/dynamixel_hardware_interface/issues/12>`_ from OUXT-Polaris/fix/depends
+  add boost to the depends
+* add boost to the depends
+* Contributors: Masaya Kataoka
+
 0.0.1 (2021-06-13)
 ------------------
 * add realtime_tools to the depends
