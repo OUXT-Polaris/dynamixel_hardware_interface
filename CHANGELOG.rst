@@ -2,8 +2,8 @@
 Changelog for package dynamixel_hardware_interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.3 (2021-06-16)
+------------------
 * Merge pull request `#12 <https://github.com/OUXT-Polaris/dynamixel_hardware_interface/issues/12>`_ from OUXT-Polaris/fix/depends
   add boost to the depends
 * add boost to the depends
