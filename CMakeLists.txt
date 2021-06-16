@@ -26,6 +26,7 @@ find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(ros2_control REQUIRED)
 find_package(realtime_tools REQUIRED)
+find_package(Boost REQUIRED)
 
 add_library(
   dynamixel_hardware_interface
@@ -38,6 +39,7 @@ target_include_directories(
   dynamixel_hardware_interface
   PRIVATE
   include
+  ${Boost_INCLUDE_DIRS}
 )
 ament_target_dependencies(
   dynamixel_hardware_interface
@@ -60,6 +62,7 @@ target_include_directories(
   dynamixel_diagnostic_controller
   PRIVATE
   include
+  ${Boost_INCLUDE_DIRS}
 )
 ament_target_dependencies(
   dynamixel_diagnostic_controller
