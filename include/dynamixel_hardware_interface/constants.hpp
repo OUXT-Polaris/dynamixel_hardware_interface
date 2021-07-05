@@ -78,6 +78,11 @@ GENERATE_ENUM_ITERATOR(Operation, INVALID)
  */
 enum class SupportedMotors {
   /**
+   * @brief Robotis xm430-w250 motor
+   * @sa https://emanual.robotis.com/docs/en/dxl/x/xm430-w350/
+   */
+  XM430_W350,
+  /**
    * @brief Robotis xw540-t260 motor
    * @sa https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/
    */

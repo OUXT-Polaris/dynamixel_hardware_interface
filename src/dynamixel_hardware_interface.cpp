@@ -113,7 +113,10 @@ DynamixelHardwareInterface::export_command_interfaces()
 SupportedMotors DynamixelHardwareInterface::strToSupportMotorsEnum(
   const std::string & motor_type) const
 {
-  if (motor_type == "XW540-T260") {
+  if (motor_type == "XM430-W350") {
+    return SupportedMotors::XM430_W350;
+  }
+  else if (motor_type == "XW540-T260") {
     return SupportedMotors::XW540_T260;
   }
   return SupportedMotors::INVALID;
@@ -137,6 +140,11 @@ std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
     }
     const auto id = static_cast<uint8_t>(getParameter<int>("id", info));
     switch (motor_type) {
+      case SupportedMotors::XM430_W350:
+        return std::make_shared<motors::XM430_W350>(
+          info.name, getHardwareParameter<bool>("enable_dummy"), baudrate_, id, port_handler_,
+          packet_handler_);
+        break;
       case SupportedMotors::XW540_T260:
         return std::make_shared<motors::XW540_T260>(
           info.name, getHardwareParameter<bool>("enable_dummy"), baudrate_, id, port_handler_,

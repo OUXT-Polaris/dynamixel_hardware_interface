@@ -30,6 +30,9 @@ namespace dynamixel_hardware_interface
 const std::string toString(const SupportedMotors motor)
 {
   switch (motor) {
+    case SupportedMotors::XM430_W350:
+      return "XM430-W350";
+      break;
     case SupportedMotors::XW540_T260:
       return "XW540-T260";
       break;
