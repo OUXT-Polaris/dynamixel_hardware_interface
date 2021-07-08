@@ -166,7 +166,7 @@
   <compound refid="constants_8hpp" kind="file"><name>constants.hpp</name>
     <member refid="constants_8hpp_1a85e57fa16a14a8669a39480bf9c10fc5" kind="define"><name>GENERATE_ENUM_ITERATOR</name></member>
   </compound>
-  <compound refid="dymanixel__diagnostic__controller_8hpp" kind="file"><name>dymanixel_diagnostic_controller.hpp</name>
+  <compound refid="dynamixel__diagnostic__controller_8hpp" kind="file"><name>dynamixel_diagnostic_controller.hpp</name>
   </compound>
   <compound refid="dynamixel__hardware__interface_8hpp" kind="file"><name>dynamixel_hardware_interface.hpp</name>
   </compound>
