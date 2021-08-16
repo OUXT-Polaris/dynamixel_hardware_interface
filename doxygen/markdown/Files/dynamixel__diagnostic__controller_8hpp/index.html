@@ -427,90 +427,90 @@
 <span class="c1">// See the License for the specific language governing permissions and</span>
 <span class="c1">// limitations under the License.</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;dynamixel_hardware_interface/visiblity_control.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;realtime_tools/realtime_buffer.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;realtime_tools/realtime_publisher.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;dynamixel_hardware_interface/visiblity_control.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;realtime_tools/realtime_buffer.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;realtime_tools/realtime_publisher.h&gt;</span><span class="cp"></span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;controller_interface/controller_interface.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;diagnostic_msgs/msg/diagnostic_array.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;dynamixel_hardware_interface/constants.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;rclcpp/subscription.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;rclcpp_lifecycle/state.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;controller_interface/controller_interface.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;diagnostic_msgs/msg/diagnostic_array.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;dynamixel_hardware_interface/constants.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rclcpp/subscription.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rclcpp_lifecycle/state.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="nn">dynamixel_hardware_interface</span>
-<span class="p">{</span>
-<span class="k">class</span> <span class="nc">DynamixelDiagnosticController</span> <span class="o">:</span> <span class="k">public</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">ControllerInterface</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span>
-  <span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span> <span class="n">init</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">controller_name</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">dynamixel_hardware_interface</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">class</span> <span class="nc">DynamixelDiagnosticController</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">ControllerInterface</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
+<span class="w">  </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">init</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">controller_name</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
 
-  <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span>
-  <span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span> <span class="n">command_interface_configuration</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span><span class="p">{</span>
-      <span class="n">controller_interface</span><span class="o">::</span><span class="n">interface_configuration_type</span><span class="o">::</span><span class="n">NONE</span><span class="p">};</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
+<span class="w">  </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span><span class="w"> </span><span class="n">command_interface_configuration</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">interface_configuration_type</span><span class="o">::</span><span class="n">NONE</span><span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span>
-  <span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span> <span class="n">state_interface_configuration</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
-  <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">interface_names</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">joint</span> <span class="p">:</span> <span class="n">joints_</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">const</span> <span class="k">auto</span> <span class="n">diagnostic_types</span> <span class="o">=</span> <span class="n">diagnostics_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">joint</span><span class="p">);</span>
-      <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">diagnostic_type</span> <span class="p">:</span> <span class="n">diagnostic_types</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">switch</span> <span class="p">(</span><span class="n">diagnostic_type</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">case</span> <span class="n">DiagnosticsType</span><span class="o">::</span><span class="nl">TEMPERATURE</span><span class="p">:</span>
-            <span class="n">interface_names</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">joint</span> <span class="o">+</span> <span class="s">&quot;/temperature&quot;</span><span class="p">);</span>
-            <span class="k">break</span><span class="p">;</span>
-          <span class="k">default</span><span class="o">:</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span><span class="p">{</span>
-      <span class="n">controller_interface</span><span class="o">::</span><span class="n">interface_configuration_type</span><span class="o">::</span><span class="n">INDIVIDUAL</span><span class="p">,</span> <span class="n">interface_names</span><span class="p">};</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
+<span class="w">  </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span><span class="w"> </span><span class="n">state_interface_configuration</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">interface_names</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nl">joint</span> <span class="p">:</span><span class="w"> </span><span class="n">joints_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">diagnostic_types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diagnostics_</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">joint</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nl">diagnostic_type</span> <span class="p">:</span><span class="w"> </span><span class="n">diagnostic_types</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">diagnostic_type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="k">case</span><span class="w"> </span><span class="n">DiagnosticsType</span><span class="o">::</span><span class="nl">TEMPERATURE</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">interface_names</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">joint</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/temperature&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">          </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">interface_configuration_type</span><span class="o">::</span><span class="n">INDIVIDUAL</span><span class="p">,</span><span class="w"> </span><span class="n">interface_names</span><span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span>
-  <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span> <span class="n">on_configure</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="cm">/*previous_state*/</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
+<span class="w">  </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="n">on_configure</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*previous_state*/</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
 
-  <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span>
-  <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span> <span class="n">on_activate</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="cm">/*previous_state*/</span><span class="p">)</span> <span class="k">override</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
+<span class="w">  </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="n">on_activate</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*previous_state*/</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span>
-  <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span> <span class="n">on_deactivate</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="cm">/*previous_state*/</span><span class="p">)</span> <span class="k">override</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
+<span class="w">  </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="n">on_deactivate</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*previous_state*/</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span>
-  <span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+<span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
+<span class="w">  </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">update</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">private</span><span class="o">:</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">joints_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">dynamixel_hardware_interface</span><span class="o">::</span><span class="n">DiagnosticsType</span><span class="o">&gt;&gt;</span>
-    <span class="n">diagnostics_</span><span class="p">;</span>
-  <span class="n">rclcpp</span><span class="o">::</span><span class="n">Publisher</span><span class="o">&lt;</span><span class="n">diagnostic_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DiagnosticArray</span><span class="o">&gt;::</span><span class="n">SharedPtr</span> <span class="n">diag_pub_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">realtime_tools</span><span class="o">::</span><span class="n">RealtimePublisher</span><span class="o">&lt;</span><span class="n">diagnostic_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DiagnosticArray</span><span class="o">&gt;&gt;</span>
-    <span class="n">diag_pub_realtime_</span><span class="p">;</span>
-  <span class="kt">double</span> <span class="nf">getValue</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">joint_name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">interface</span><span class="p">);</span>
-<span class="p">};</span>
-<span class="p">}</span>  <span class="c1">// namespace dynamixel_hardware_interface</span>
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">joints_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">dynamixel_hardware_interface</span><span class="o">::</span><span class="n">DiagnosticsType</span><span class="o">&gt;&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">diagnostics_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Publisher</span><span class="o">&lt;</span><span class="n">diagnostic_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DiagnosticArray</span><span class="o">&gt;::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">diag_pub_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">realtime_tools</span><span class="o">::</span><span class="n">RealtimePublisher</span><span class="o">&lt;</span><span class="n">diagnostic_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DiagnosticArray</span><span class="o">&gt;&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">diag_pub_realtime_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getValue</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">joint_name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">interface</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace dynamixel_hardware_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 August 2021 at 00:41:26 UTC</p>
+<p>Updated on 16 August 2021 at 00:40:53 UTC</p>
                 
                   
                 

@@ -474,36 +474,36 @@
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-update">function update<a class="headerlink" href="#function-update" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">update</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-state_interface_configuration">function state_interface_configuration<a class="headerlink" href="#function-state_interface_configuration" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span> <span class="n">state_interface_configuration</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span><span class="w"> </span><span class="n">state_interface_configuration</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-on_deactivate">function on_deactivate<a class="headerlink" href="#function-on_deactivate" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span> <span class="n">on_deactivate</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> 
-<span class="p">)</span> <span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="n">on_deactivate</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span>
+<span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-on_configure">function on_configure<a class="headerlink" href="#function-on_configure" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span> <span class="n">on_configure</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> 
-<span class="p">)</span> <span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="n">on_configure</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span>
+<span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-on_activate">function on_activate<a class="headerlink" href="#function-on_activate" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span> <span class="n">on_activate</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> 
-<span class="p">)</span> <span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="n">on_activate</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span>
+<span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-init">function init<a class="headerlink" href="#function-init" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span> <span class="n">init</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">controller_name</span>
-<span class="p">)</span> <span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">init</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">controller_name</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-command_interface_configuration">function command_interface_configuration<a class="headerlink" href="#function-command_interface_configuration" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span> <span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span> <span class="n">command_interface_configuration</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">InterfaceConfiguration</span><span class="w"> </span><span class="n">command_interface_configuration</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 August 2021 at 00:41:26 UTC</p>
+<p>Updated on 16 August 2021 at 00:40:53 UTC</p>
                 
                   
                 

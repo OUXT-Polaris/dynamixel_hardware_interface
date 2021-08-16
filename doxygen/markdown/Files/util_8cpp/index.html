@@ -419,26 +419,26 @@
 <span class="c1">// See the License for the specific language governing permissions and</span>
 <span class="c1">// limitations under the License.</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;dynamixel_hardware_interface/util.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;dynamixel_hardware_interface/util.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="nn">dynamixel_hardware_interface</span>
-<span class="p">{</span>
-<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="nf">toString</span><span class="p">(</span><span class="k">const</span> <span class="n">SupportedMotors</span> <span class="n">motor</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">SupportedMotors</span><span class="o">::</span><span class="nl">XW540_T260</span><span class="p">:</span>
-      <span class="k">return</span> <span class="s">&quot;XW540-T260&quot;</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="n">SupportedMotors</span><span class="o">::</span><span class="nl">INVALID</span><span class="p">:</span>
-      <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;invalid moter type&quot;</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">}</span>  <span class="c1">//  namespace dynamixel_hardware_interface</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">dynamixel_hardware_interface</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">toString</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">SupportedMotors</span><span class="w"> </span><span class="n">motor</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">motor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">SupportedMotors</span><span class="o">::</span><span class="nl">XW540_T260</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;XW540-T260&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">SupportedMotors</span><span class="o">::</span><span class="nl">INVALID</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;invalid moter type&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w">  </span><span class="c1">//  namespace dynamixel_hardware_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 August 2021 at 00:41:26 UTC</p>
+<p>Updated on 16 August 2021 at 00:40:53 UTC</p>
                 
                   
                 

@@ -432,9 +432,9 @@
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-getaddress">function getAddress<a class="headerlink" href="#function-getaddress" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="n">Address</span> <span class="n">getAddress</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">Operation</span> <span class="o">&amp;</span> <span class="n">operaiton</span>
-<span class="p">)</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">getAddress</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Operation</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">operaiton</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 </code></pre></div>
 <p>Get address of which operation you want to execute. </p>
 <p><strong>Parameters</strong>: </p>
@@ -447,9 +447,9 @@
 <li><strong>uint16_t</strong> address of the operation you want to execute </li>
 </ul>
 <h3 id="function-addressexists">function addressExists<a class="headerlink" href="#function-addressexists" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">bool</span> <span class="n">addressExists</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">Operation</span> <span class="o">&amp;</span> <span class="n">operation</span>
-<span class="p">)</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">addressExists</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Operation</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">operation</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 </code></pre></div>
 <p>Check the address exists or not. </p>
 <p><strong>Parameters</strong>: </p>
@@ -462,16 +462,16 @@
 <li>false address does not exist </li>
 </ul>
 <h3 id="function-addresstablebase">function AddressTableBase<a class="headerlink" href="#function-addresstablebase" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">explicit</span> <span class="n">AddressTableBase</span><span class="p">(</span>
-    <span class="n">Address</span> <span class="n">ADDR_TORQUE_ENABLE</span><span class="p">,</span>
-    <span class="n">Address</span> <span class="n">ADDR_GOAL_POSITION</span><span class="p">,</span>
-    <span class="n">Address</span> <span class="n">ADDR_MOVING_SPEED</span><span class="p">,</span>
-    <span class="n">Address</span> <span class="n">ADDR_PRESENT_POSITION</span><span class="p">,</span>
-    <span class="n">Address</span> <span class="n">ADDR_PRESENT_SPEED</span><span class="p">,</span>
-    <span class="n">Address</span> <span class="n">ADDR_PRESENT_LOAD</span><span class="p">,</span>
-    <span class="n">Address</span> <span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">,</span>
-    <span class="n">Address</span> <span class="n">ADDR_PRESENT_TEMPERATURE</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">explicit</span><span class="w"> </span><span class="n">AddressTableBase</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_TORQUE_ENABLE</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_GOAL_POSITION</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_MOVING_SPEED</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_POSITION</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_SPEED</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_LOAD</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <p>Construct a new <a href="">Address</a> Table Base object, each parameter describes the address of the operation. </p>
 <p><strong>Parameters</strong>: </p>
@@ -486,7 +486,7 @@
 <li><strong>ADDR_PRESENT_TEMPERATURE</strong> If this value is boost::none, reading present_temperature command address exists. </li>
 </ul>
 <hr />
-<p>Updated on 15 August 2021 at 00:41:26 UTC</p>
+<p>Updated on 16 August 2021 at 00:40:53 UTC</p>
                 
                   
                 
