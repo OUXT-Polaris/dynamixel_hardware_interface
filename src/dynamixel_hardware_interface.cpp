@@ -71,7 +71,7 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
     try {
       motor = constructMotorInstance(joint);
     } catch (const std::runtime_error & e) {
-      RCLCPP_ERROR(rclcpp::get_logger("dynamixel_hardware_interface"), e.what().c_str());
+      RCLCPP_ERROR(rclcpp::get_logger("dynamixel_hardware_interface"), e.what());
       return hardware_interface::return_type::ERROR;
     }
     const auto result = motor->configure();
