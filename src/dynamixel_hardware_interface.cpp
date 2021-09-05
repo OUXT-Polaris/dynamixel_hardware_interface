@@ -36,8 +36,8 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
   if (configure_default(info) != hardware_interface::return_type::OK) {
     return hardware_interface::return_type::ERROR;
   }
-  RCLCPP_INFO(
-    rclcpp::get_logger("dynamixel_hardware_interface"), "configure hardware " + info.name);
+  RCLCPP_INFO_STREAM(
+    rclcpp::get_logger("dynamixel_hardware_interface"), "configure hardware " << info.name);
   for (const auto hardware_parameter : info_.hardware_parameters) {
     RCLCPP_INFO_STREAM(
       rclcpp::get_logger("dynamixel_hardware_interface"),
@@ -76,7 +76,7 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
     }
     const auto result = motor->configure();
     if (!result.success) {
-      RCLCPP_ERROR(rclcpp::get_logger("dynamixel_hardware_interface"), result.description);
+      RCLCPP_ERROR(rclcpp::get_logger("dynamixel_hardware_interface"), result.description.c_str());
       return hardware_interface::return_type::ERROR;
     }
     motors_.emplace_back(motor);
