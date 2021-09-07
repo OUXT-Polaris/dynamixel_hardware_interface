@@ -467,7 +467,7 @@
 <span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">      </span><span class="n">motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constructMotorInstance</span><span class="p">(</span><span class="n">joint</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">get_logger</span><span class="p">(</span><span class="s">&quot;dynamixel_hardware_interface&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">());</span><span class="w"></span>
+<span class="w">      </span><span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">get_logger</span><span class="p">(</span><span class="s">&quot;dynamixel_hardware_interface&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">motor</span><span class="o">-&gt;</span><span class="n">configure</span><span class="p">();</span><span class="w"></span>
@@ -601,7 +601,7 @@
 <span class="w">  </span><span class="n">dynamixel_hardware_interface</span><span class="o">::</span><span class="n">DynamixelHardwareInterface</span><span class="p">,</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">SystemInterface</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 September 2021 at 14:08:45 UTC</p>
+<p>Updated on  7 September 2021 at 14:21:32 UTC</p>
                 
                   
                 
