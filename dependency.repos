@@ -1,8 +1,8 @@
 repositories:
   quaternion_operation:
     type: git
-    url: https://github.com/ros-controls/ros2_control.git
-    version: master
+    url: https://github.com/OUXT-Polaris/quaternion_operation.git
+    version: ros2
   ouxt_common:
     type: git
     url: https://github.com/OUXT-Polaris/ouxt_common.git
