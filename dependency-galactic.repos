@@ -1,7 +1,7 @@
 repositories:
   quaternion_operation:
     type: git
-    url: https://github.com/ros-controls/ros2_control.git
+    url: https://github.com/ros-controls/quaternion_operation.git
     version: master
   ouxt_common:
     type: git
