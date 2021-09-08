@@ -477,9 +477,12 @@
 <span class="w">      </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">interface_configuration_type</span><span class="o">::</span><span class="n">INDIVIDUAL</span><span class="p">,</span><span class="w"> </span><span class="n">interface_names</span><span class="p">};</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 
+<span class="cp">#if GALACTIC</span>
 <span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
 <span class="w">  </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="n">on_init</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*previous_state*/</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#else</span>
+<span class="cp">#endif</span>
 
 <span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
 <span class="w">  </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="n">on_configure</span><span class="p">(</span><span class="w"></span>
@@ -514,7 +517,7 @@
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace dynamixel_hardware_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on  8 September 2021 at 17:04:31 UTC</p>
+<p>Updated on  8 September 2021 at 17:12:22 UTC</p>
                 
                   
                 
