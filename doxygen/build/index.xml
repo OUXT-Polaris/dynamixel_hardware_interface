@@ -29,6 +29,7 @@
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1ab609b1c69c3a83727214303c7c4e65cd" kind="function"><name>init</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1ad161be78e4c2350c0c412deeae726bd8" kind="function"><name>command_interface_configuration</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a4821f1c7b0f0a3b506fe5c8cba99dd81" kind="function"><name>state_interface_configuration</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a45868e25f818785c69728e3d109d0c93" kind="function"><name>on_init</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a4f0f6f0b3dad0e776fffd40f25b7d536" kind="function"><name>on_configure</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1aa3474e3eca495867571c630b0204bdd4" kind="function"><name>on_activate</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a1951286b4dda7d028ecce45f5e6bc462" kind="function"><name>on_deactivate</name></member>
