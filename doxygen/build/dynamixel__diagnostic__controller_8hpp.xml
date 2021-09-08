@@ -193,7 +193,7 @@
 <codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>GALACTIC</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/>DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/>rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn<sp/>on_init(</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rclcpp_lifecycle::State<sp/>&amp;<sp/></highlight><highlight class="comment">/*previous_state*/</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rclcpp_lifecycle::State<sp/>&amp;<sp/></highlight><highlight class="comment">/*previous_state*/</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
