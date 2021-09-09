@@ -10,4 +10,4 @@ repositories:
   ros2_control: 
     url: https://github.com/ros-controls/ros2_control.git
     type: git
-    version: master
+    version: 0.8.0
