@@ -71,7 +71,6 @@ public:
       controller_interface::interface_configuration_type::INDIVIDUAL, interface_names};
   }
 
-
 #if GALACTIC
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_init()
