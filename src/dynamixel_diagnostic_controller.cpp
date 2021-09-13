@@ -34,11 +34,13 @@ controller_interface::return_type DynamixelDiagnosticController::init(
   }
   rclcpp::Parameter joints;
   auto node = get_node();
-  node->declare_parameter<std::vector<std::string>>("joints", {});
+  std::vector<std::string> joint_names = {};
+  node->declare_parameter<std::vector<std::string>>("joints", joint_names);
   joints_ = node->get_parameter("joints").as_string_array();
   for (const auto & joint : joints_) {
     rclcpp::Parameter diagnostics;
-    node->declare_parameter<std::vector<std::string>>(joint, {});
+    std::vector<std::string> joint_parameters = {};
+    node->declare_parameter<std::vector<std::string>>(joint, joint_parameters);
     if (!get_node()->get_parameter(joint, diagnostics)) {
       return controller_interface::return_type::ERROR;
     }
