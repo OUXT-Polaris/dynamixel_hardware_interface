@@ -524,8 +524,14 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 
+<span class="cp">#if GALACTIC</span>
+<span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
+<span class="w">  </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">update</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Duration</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">period</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#else</span>
 <span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
 <span class="w">  </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">update</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#endif</span>
 
 <span class="k">private</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">joints_</span><span class="p">;</span><span class="w"></span>
@@ -539,7 +545,7 @@
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace dynamixel_hardware_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on 25 September 2021 at 00:42:19 UTC</p>
+<p>Updated on 25 September 2021 at 08:13:21 UTC</p>
                 
                   
                 
