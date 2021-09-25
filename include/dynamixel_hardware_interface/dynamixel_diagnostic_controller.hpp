@@ -97,8 +97,14 @@ public:
     return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
   }
 
+#if GALACTIC
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  controller_interface::return_type update(
+    const rclcpp::Time & time, const rclcpp::Duration & period) override;
+#else
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   controller_interface::return_type update() override;
+#endif
 
 private:
   std::vector<std::string> joints_;

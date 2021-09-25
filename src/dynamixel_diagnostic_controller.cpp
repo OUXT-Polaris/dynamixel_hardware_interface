@@ -80,11 +80,20 @@ double DynamixelDiagnosticController::getValue(
     "state interface : " + interface_name + " does not exist in : " + joint_name);
 }
 
+#if GALACTIC
+controller_interface::return_type DynamixelDiagnosticController::update(
+  const rclcpp::Time & time, const rclcpp::Duration &)
+#else
 controller_interface::return_type DynamixelDiagnosticController::update()
+#endif
 {
   if (diag_pub_realtime_->trylock()) {
     auto msg = diagnostic_msgs::msg::DiagnosticArray();
+#if GALACTIC
+    msg.header.stamp = time;
+#else
     msg.header.stamp = get_node()->get_clock()->now();
+#endif
     for (const auto & joint : joints_) {
       const auto diagnostic_types = diagnostics_.at(joint);
       auto diag_msg = diagnostic_msgs::msg::DiagnosticStatus();
