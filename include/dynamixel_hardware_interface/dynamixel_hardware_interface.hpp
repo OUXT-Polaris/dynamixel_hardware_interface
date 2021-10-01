@@ -64,8 +64,14 @@ class DynamixelHardwareInterface
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(DynamixelHardwareInterface)
 
+#if GALACTIC
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_init(
+    const hardware_interface::HardwareInfo & info) override;
+#else
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   hardware_interface::return_type configure(const hardware_interface::HardwareInfo & info) override;
+#endif
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
@@ -73,11 +79,13 @@ public:
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
+#ifndef GALACTIC
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   hardware_interface::return_type start() override;
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   hardware_interface::return_type stop() override;
+#endif
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   hardware_interface::return_type read() override;
