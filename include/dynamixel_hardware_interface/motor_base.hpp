@@ -28,12 +28,20 @@
 
 #include <dynamixel_hardware_interface/address_table_base.hpp>
 #include <dynamixel_hardware_interface/constants.hpp>
+#if GALACTIC
+#include <hardware_interface/system_interface.hpp>
+#else
 #include <hardware_interface/base_interface.hpp>
+#endif
 #include <hardware_interface/handle.hpp>
 #include <hardware_interface/hardware_info.hpp>
 #include <hardware_interface/system_interface.hpp>
 #include <hardware_interface/types/hardware_interface_return_values.hpp>
+#if GALACTIC
+#include <hardware_interface/types/hardware_interface_type_values.hpp>
+#else
 #include <hardware_interface/types/hardware_interface_status_values.hpp>
+#endif
 #include <limits>
 #include <memory>
 #include <rclcpp/rclcpp.hpp>

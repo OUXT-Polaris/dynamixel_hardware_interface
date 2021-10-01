@@ -30,12 +30,20 @@
 #include <dynamixel_sdk/dynamixel_sdk.h>
 
 #include <dynamixel_hardware_interface/motors/motors.hpp>
+#if GALACTIC
+#include <hardware_interface/system_interface.hpp>
+#else
 #include <hardware_interface/base_interface.hpp>
+#endif
 #include <hardware_interface/handle.hpp>
 #include <hardware_interface/hardware_info.hpp>
 #include <hardware_interface/system_interface.hpp>
 #include <hardware_interface/types/hardware_interface_return_values.hpp>
+#if GALACTIC
+#include <hardware_interface/types/hardware_interface_type_values.hpp>
+#else
 #include <hardware_interface/types/hardware_interface_status_values.hpp>
+#endif
 #include <memory>
 #include <rclcpp/rclcpp.hpp>
 #include <string>
@@ -47,13 +55,23 @@ namespace dynamixel_hardware_interface
  * @brief Hardware interface for the dynamixel motor.
  */
 class DynamixelHardwareInterface
+#if GALACTIC
+: public hardware_interface::SystemInterface
+#else
 : public hardware_interface::BaseInterface<hardware_interface::SystemInterface>
+#endif
 {
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(DynamixelHardwareInterface)
 
+#if GALACTIC
+  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_init(
+    const hardware_interface::HardwareInfo & info) override;
+#else
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   hardware_interface::return_type configure(const hardware_interface::HardwareInfo & info) override;
+#endif
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
@@ -61,11 +79,13 @@ public:
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
+#ifndef GALACTIC
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   hardware_interface::return_type start() override;
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   hardware_interface::return_type stop() override;
+#endif
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   hardware_interface::return_type read() override;
