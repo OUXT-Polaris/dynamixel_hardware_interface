@@ -473,12 +473,20 @@
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;dynamixel_hardware_interface/address_table_base.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;dynamixel_hardware_interface/constants.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#if GALACTIC</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hardware_interface/system_interface.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#else</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hardware_interface/base_interface.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#endif</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hardware_interface/handle.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hardware_interface/hardware_info.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hardware_interface/system_interface.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hardware_interface/types/hardware_interface_return_values.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#if GALACTIC</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hardware_interface/types/hardware_interface_type_values.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#else</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hardware_interface/types/hardware_interface_status_values.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#endif</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
@@ -582,7 +590,7 @@
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__MOTOR_BASE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 October 2021 at 02:15:27 UTC</p>
+<p>Updated on  1 October 2021 at 03:45:17 UTC</p>
                 
                   
                 
