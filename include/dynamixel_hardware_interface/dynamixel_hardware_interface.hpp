@@ -30,7 +30,11 @@
 #include <dynamixel_sdk/dynamixel_sdk.h>
 
 #include <dynamixel_hardware_interface/motors/motors.hpp>
+#if GALACTIC
+#include <hardware_interface/system_interface.hpp>
+#else
 #include <hardware_interface/base_interface.hpp>
+#endif
 #include <hardware_interface/handle.hpp>
 #include <hardware_interface/hardware_info.hpp>
 #include <hardware_interface/system_interface.hpp>
@@ -47,7 +51,11 @@ namespace dynamixel_hardware_interface
  * @brief Hardware interface for the dynamixel motor.
  */
 class DynamixelHardwareInterface
+#if GALACTIC
+: public hardware_interface::SystemInterface
+#else
 : public hardware_interface::BaseInterface<hardware_interface::SystemInterface>
+#endif
 {
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(DynamixelHardwareInterface)
