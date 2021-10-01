@@ -500,8 +500,14 @@
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">RCLCPP_SHARED_PTR_DEFINITIONS</span><span class="p">(</span><span class="n">DynamixelHardwareInterface</span><span class="p">)</span><span class="w"></span>
 
+<span class="cp">#if GALACTIC</span>
+<span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
+<span class="w">  </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="n">on_init</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">HardwareInfo</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">info</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#else</span>
 <span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
 <span class="w">  </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">configure</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">HardwareInfo</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">info</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#endif</span>
 
 <span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">StateInterface</span><span class="o">&gt;</span><span class="w"> </span><span class="n">export_state_interfaces</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
@@ -509,11 +515,13 @@
 <span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">CommandInterface</span><span class="o">&gt;</span><span class="w"> </span><span class="n">export_command_interfaces</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
 
+<span class="cp">#ifndef GALACTIC</span>
 <span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
 <span class="w">  </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">start</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
 
 <span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
 <span class="w">  </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">stop</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#endif</span>
 
 <span class="w">  </span><span class="n">DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC</span><span class="w"></span>
 <span class="w">  </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">read</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
@@ -605,7 +613,7 @@
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL_HARDWARE_INTERFACE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 October 2021 at 03:45:17 UTC</p>
+<p>Updated on  1 October 2021 at 12:30:04 UTC</p>
                 
                   
                 

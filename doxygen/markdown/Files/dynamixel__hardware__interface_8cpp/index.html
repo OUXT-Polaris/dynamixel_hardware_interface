@@ -447,12 +447,25 @@
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">dynamixel_hardware_interface</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="nf">DynamixelHardwareInterface::configure</span><span class="p">(</span><span class="w"></span>
+<span class="cp">#if GALACTIC</span>
+<span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"></span>
+<span class="nf">DynamixelHardwareInterface::on_init</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">HardwareInfo</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<span class="cp">#else</span>
+<span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">DynamixelHardwareInterface</span><span class="o">::</span><span class="n">configure</span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">HardwareInfo</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<span class="cp">#endif</span>
 <span class="p">{</span><span class="w"></span>
+<span class="cp">#if GALACTIC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">SystemInterface</span><span class="o">::</span><span class="n">on_init</span><span class="p">(</span><span class="n">info</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"></span>
+<span class="w">    </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#else</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">configure_default</span><span class="p">(</span><span class="n">info</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#endif</span>
 <span class="w">  </span><span class="n">RCLCPP_INFO_STREAM</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">get_logger</span><span class="p">(</span><span class="s">&quot;dynamixel_hardware_interface&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;configure hardware &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">info</span><span class="p">.</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="nl">hardware_parameter</span> <span class="p">:</span><span class="w"> </span><span class="n">info_</span><span class="p">.</span><span class="n">hardware_parameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -479,7 +492,11 @@
 <span class="w">      </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">get_logger</span><span class="p">(</span><span class="s">&quot;dynamixel_hardware_interface&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;open serial port succeed&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">      </span><span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">get_logger</span><span class="p">(</span><span class="s">&quot;dynamixel_hardware_interface&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;open serial port failed&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="cp">#if GALACTIC</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#else</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#endif</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="w">  </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">get_logger</span><span class="p">(</span><span class="s">&quot;dynamixel_hardware_interface&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;configure each motors&quot;</span><span class="p">);</span><span class="w"></span>
@@ -489,16 +506,28 @@
 <span class="w">      </span><span class="n">motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constructMotorInstance</span><span class="p">(</span><span class="n">joint</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">      </span><span class="n">RCLCPP_ERROR_STREAM</span><span class="p">(</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">get_logger</span><span class="p">(</span><span class="s">&quot;dynamixel_hardware_interface&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">());</span><span class="w"></span>
+<span class="cp">#if GALACTIC</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#else</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#endif</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">motor</span><span class="o">-&gt;</span><span class="n">configure</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">.</span><span class="n">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">      </span><span class="n">RCLCPP_ERROR_STREAM</span><span class="p">(</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">get_logger</span><span class="p">(</span><span class="s">&quot;dynamixel_hardware_interface&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">description</span><span class="p">);</span><span class="w"></span>
+<span class="cp">#if GALACTIC</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#else</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#endif</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="n">motors_</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">motor</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#if GALACTIC</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#else</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#endif</span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">StateInterface</span><span class="o">&gt;</span><span class="w"></span>
@@ -566,6 +595,7 @@
 <span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;failed to construct motor instance&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
+<span class="cp">#ifndef GALACTIC</span>
 <span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">DynamixelHardwareInterface</span><span class="o">::</span><span class="n">start</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">status_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">status</span><span class="o">::</span><span class="n">STARTED</span><span class="p">;</span><span class="w"></span>
@@ -576,6 +606,7 @@
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
+<span class="cp">#endif</span>
 
 <span class="n">hardware_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="n">DynamixelHardwareInterface</span><span class="o">::</span><span class="n">read</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -622,7 +653,7 @@
 <span class="w">  </span><span class="n">dynamixel_hardware_interface</span><span class="o">::</span><span class="n">DynamixelHardwareInterface</span><span class="p">,</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">SystemInterface</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <hr />
-<p>Updated on  1 October 2021 at 03:45:17 UTC</p>
+<p>Updated on  1 October 2021 at 12:30:04 UTC</p>
                 
                   
                 
