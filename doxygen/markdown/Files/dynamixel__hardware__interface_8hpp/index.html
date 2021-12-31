@@ -486,7 +486,7 @@
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">dynamixel_hardware_interface</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="k">class</span> <span class="nc">DynamixelHardwareInterface</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DynamixelHardwareInterface</span><span class="w"></span>
 <span class="cp">#if GALACTIC</span>
 <span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">SystemInterface</span><span class="w"></span>
 <span class="cp">#else</span>
@@ -530,7 +530,7 @@
 <span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">baudrate_</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="n">SupportedMotors</span><span class="w"> </span><span class="nf">strToSupportMotorsEnum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">motor_type</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="n">getParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">ComponentInfo</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">info</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">param</span><span class="p">;</span><span class="w"></span>
@@ -566,7 +566,7 @@
 <span class="w">      </span><span class="n">parameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="n">getHardwareParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">param</span><span class="p">;</span><span class="w"></span>
@@ -609,7 +609,7 @@
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL_HARDWARE_INTERFACE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 30 December 2021 at 00:47:46 UTC</p>
+<p>Updated on 31 December 2021 at 00:49:40 UTC</p>
 
               
             </article>
