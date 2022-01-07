@@ -508,21 +508,21 @@
 <span class="w">  </span><span class="n">Address</span><span class="w"> </span><span class="n">getAddress</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Operation</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">operaiton</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">operaiton</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="nl">TORQUE_ENABLE</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="n">TORQUE_ENABLE</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_TORQUE_ENABLE</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="nl">GOAL_POSITION</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="n">GOAL_POSITION</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_GOAL_POSITION</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="nl">MOVING_SPEED</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="n">MOVING_SPEED</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_MOVING_SPEED</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_POSITION</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="n">PRESENT_POSITION</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_PRESENT_POSITION</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_SPEED</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="n">PRESENT_SPEED</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_PRESENT_SPEED</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_LOAD</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="n">PRESENT_LOAD</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_PRESENT_LOAD</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_VOLTAGE</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="n">PRESENT_VOLTAGE</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="nl">PRESENT_TEMPERATURE</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Operation</span><span class="o">::</span><span class="n">PRESENT_TEMPERATURE</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">;</span><span class="w"></span>
 <span class="w">      </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Address</span><span class="p">();</span><span class="w"></span>
@@ -546,7 +546,7 @@
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__ADDRESS_TABLE_BASE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  6 January 2022 at 00:54:32 UTC</p>
+<p>Updated on  7 January 2022 at 00:54:23 UTC</p>
 
               
             </article>
