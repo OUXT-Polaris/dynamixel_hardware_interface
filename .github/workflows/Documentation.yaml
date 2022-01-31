@@ -20,7 +20,7 @@ jobs:
         - name: Set up Python
           uses: actions/setup-python@v1
           with:
-            python-version: '3.9.9'
+            python-version: '3.9.10'
         - name: Install 
           run: |
             cd docs
@@ -48,9 +48,8 @@ jobs:
           run: |
             cd docs
             mkdocs build
-        - name: Publish Document
-          # if: ${{ github.event_name == 'push' || github.event_name == 'schedule'}}
-          uses: peaceiris/actions-gh-pages@v3
+        - uses: peaceiris/actions-gh-pages@v3
+          if: ${{ github.event_name != 'pull_request'}}
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: docs/site
