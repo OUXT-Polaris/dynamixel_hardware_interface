@@ -30,7 +30,7 @@
 
 namespace dynamixel_hardware_interface
 {
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
 rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
 DynamixelHardwareInterface::on_init(const hardware_interface::HardwareInfo & info)
 #else
@@ -38,7 +38,7 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
   const hardware_interface::HardwareInfo & info)
 #endif
 {
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
   if (
     SystemInterface::on_init(info) !=
     rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS) {
@@ -75,7 +75,7 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
       RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "open serial port succeed");
     } else {
       RCLCPP_ERROR(rclcpp::get_logger("dynamixel_hardware_interface"), "open serial port failed");
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
       return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::ERROR;
 #else
       return hardware_interface::return_type::ERROR;
@@ -89,7 +89,7 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
       motor = constructMotorInstance(joint);
     } catch (const std::runtime_error & e) {
       RCLCPP_ERROR_STREAM(rclcpp::get_logger("dynamixel_hardware_interface"), e.what());
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
       return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::ERROR;
 #else
       return hardware_interface::return_type::ERROR;
@@ -98,7 +98,7 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
     const auto result = motor->configure();
     if (!result.success) {
       RCLCPP_ERROR_STREAM(rclcpp::get_logger("dynamixel_hardware_interface"), result.description);
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
       return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::ERROR;
 #else
       return hardware_interface::return_type::ERROR;
@@ -106,7 +106,7 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
     }
     motors_.emplace_back(motor);
   }
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
 #else
   return hardware_interface::return_type::OK;

@@ -19,6 +19,10 @@ if($ENV{ROS_DISTRO} STREQUAL "galactic")
   add_definitions(-DGALACTIC)
 endif()
 
+if($ENV{ROS_DISTRO} STREQUAL "humble")
+  add_definitions(-DHUMBLE)
+endif()`
+
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(dynamixel_sdk REQUIRED)

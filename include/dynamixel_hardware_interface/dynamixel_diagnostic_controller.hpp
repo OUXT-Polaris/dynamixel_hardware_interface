@@ -71,7 +71,7 @@ public:
       controller_interface::interface_configuration_type::INDIVIDUAL, interface_names};
   }
 
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_init()
   {
@@ -97,7 +97,7 @@ public:
     return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
   }
 
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   controller_interface::return_type update(
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
