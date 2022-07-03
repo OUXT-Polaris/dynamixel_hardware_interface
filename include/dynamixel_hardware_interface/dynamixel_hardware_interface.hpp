@@ -79,7 +79,7 @@ public:
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
-#ifndef GALACTIC
+#if !defined(GALACTIC) || ~defined(HUMBLE)
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   hardware_interface::return_type start() override;
 
