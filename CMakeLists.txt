@@ -21,7 +21,7 @@ endif()
 
 if($ENV{ROS_DISTRO} STREQUAL "humble")
   add_definitions(-DHUMBLE)
-endif()`
+endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
