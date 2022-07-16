@@ -18,7 +18,7 @@ copyright: 'Copyright &copy; 2020- OUXT Polaris'
 markdown_extensions:
     - pymdownx.highlight
     - pymdownx.superfences
-    - fontawesome_markdown
+#    - fontawesome_markdown
     - pymdownx.arithmatex
     - codehilite:
         guess_lang: false
