@@ -26,7 +26,7 @@
 namespace dynamixel_hardware_interface
 {
 controller_interface::return_type DynamixelDiagnosticController::init(
-    const std::string & controller_name, const std::string & namespace,
+    const std::string & controller_name, const std::string & namespace_,
     const rclcpp::NodeOptions & node_options)
 {
   auto ret = ControllerInterface::init(controller_name);
