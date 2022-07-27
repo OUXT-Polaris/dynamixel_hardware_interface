@@ -79,13 +79,13 @@ public:
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
-#if !defined(GALACTIC) || ~defined(HUMBLE)
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-  hardware_interface::return_type start() override;
-
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-  hardware_interface::return_type stop() override;
-#endif
+// #if !defined(GALACTIC) || ~defined(HUMBLE)
+// #ifndef GALACTIC
+//   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+//   hardware_interface::return_type start() override;
+//   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+//   hardware_interface::return_type stop() override;
+// #endif
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   hardware_interface::return_type read() override;

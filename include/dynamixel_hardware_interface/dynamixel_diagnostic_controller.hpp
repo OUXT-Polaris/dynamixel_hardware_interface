@@ -42,7 +42,12 @@ class DynamixelDiagnosticController : public controller_interface::ControllerInt
 {
 public:
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-  controller_interface::return_type init(const std::string & controller_name) override;
+  controller_interface::return_type init(
+    const std::string & controller_name, const std::string & namespace_ = "",
+    const rclcpp::NodeOptions & node_options =
+      rclcpp::NodeOptions()
+        .allow_undeclared_parameters(true)
+        .automatically_declare_parameters_from_overrides(true)) override;
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   controller_interface::InterfaceConfiguration command_interface_configuration() const override

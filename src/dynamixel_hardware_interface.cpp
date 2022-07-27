@@ -178,18 +178,18 @@ std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
   throw std::runtime_error("failed to construct motor instance");
 }
 
-#ifndef GALACTIC
-hardware_interface::return_type DynamixelHardwareInterface::start()
-{
-  status_ = hardware_interface::status::STARTED;
-  return hardware_interface::return_type::OK;
-}
+// #ifndef GALACTIC
+// hardware_interface::return_type DynamixelHardwareInterface::start()
+// {
+//   status_ = hardware_interface::status::STARTED;
+//   return hardware_interface::return_type::OK;
+// }
 
-hardware_interface::return_type DynamixelHardwareInterface::stop()
-{
-  return hardware_interface::return_type::OK;
-}
-#endif
+// hardware_interface::return_type DynamixelHardwareInterface::stop()
+// {
+//   return hardware_interface::return_type::OK;
+// }
+// #endif
 
 hardware_interface::return_type DynamixelHardwareInterface::read()
 {
