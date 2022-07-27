@@ -30,7 +30,7 @@
 #include <dynamixel_sdk/dynamixel_sdk.h>
 
 #include <dynamixel_hardware_interface/motors/motors.hpp>
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
 #include <hardware_interface/system_interface.hpp>
 #else
 #include <hardware_interface/base_interface.hpp>
@@ -39,7 +39,7 @@
 #include <hardware_interface/hardware_info.hpp>
 #include <hardware_interface/system_interface.hpp>
 #include <hardware_interface/types/hardware_interface_return_values.hpp>
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
 #include <hardware_interface/types/hardware_interface_type_values.hpp>
 #else
 #include <hardware_interface/types/hardware_interface_status_values.hpp>
@@ -55,7 +55,7 @@ namespace dynamixel_hardware_interface
  * @brief Hardware interface for the dynamixel motor.
  */
 class DynamixelHardwareInterface
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
 : public hardware_interface::SystemInterface
 #else
 : public hardware_interface::BaseInterface<hardware_interface::SystemInterface>
@@ -64,7 +64,7 @@ class DynamixelHardwareInterface
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(DynamixelHardwareInterface)
 
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_init(
     const hardware_interface::HardwareInfo & info) override;
@@ -79,19 +79,19 @@ public:
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
-#ifndef GALACTIC
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-  hardware_interface::return_type start() override;
+// #if !defined(GALACTIC) || ~defined(HUMBLE)
+// #ifndef GALACTIC
+//   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+//   hardware_interface::return_type start() override;
+//   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+//   hardware_interface::return_type stop() override;
+// #endif
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-  hardware_interface::return_type stop() override;
-#endif
+  hardware_interface::return_type read(const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-  hardware_interface::return_type read() override;
-
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-  hardware_interface::return_type write() override;
+  hardware_interface::return_type write(const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
 private:
   std::string port_name_;

@@ -28,7 +28,7 @@
 
 #include <dynamixel_hardware_interface/address_table_base.hpp>
 #include <dynamixel_hardware_interface/constants.hpp>
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
 #include <hardware_interface/system_interface.hpp>
 #else
 #include <hardware_interface/base_interface.hpp>
@@ -37,7 +37,7 @@
 #include <hardware_interface/hardware_info.hpp>
 #include <hardware_interface/system_interface.hpp>
 #include <hardware_interface/types/hardware_interface_return_values.hpp>
-#if GALACTIC
+#if defined(GALACTIC) || defined(HUMBLE)
 #include <hardware_interface/types/hardware_interface_type_values.hpp>
 #else
 #include <hardware_interface/types/hardware_interface_status_values.hpp>
