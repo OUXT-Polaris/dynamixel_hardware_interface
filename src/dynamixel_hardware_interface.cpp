@@ -61,6 +61,7 @@ hardware_interface::return_type DynamixelHardwareInterface::configure(
   RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "initialize port handler");
   port_handler_ = std::shared_ptr<dynamixel::PortHandler>(
     dynamixel::PortHandler::getPortHandler(port_name_.c_str()));
+  port_handler_->setBaudRate(baudrate_);
   RCLCPP_INFO(rclcpp::get_logger("dynamixel_hardware_interface"), "initialize packet handler");
   packet_handler_ = std::shared_ptr<dynamixel::PacketHandler>(
     dynamixel::PacketHandler::getPacketHandler(PROTOCOL_VERSION));
