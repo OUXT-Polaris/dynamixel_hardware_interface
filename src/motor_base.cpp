@@ -138,10 +138,14 @@ Result MotorBase::configure()
   if (address_table_->addressExists(Operation::GOAL_POSITION)) {
     goal_position_ = 0;
   }
+
   if (!enable_dummy) {
-    return torqueEnable(true);
+    Result torque_result = torqueEnable(true);
+    if (!torque_result.success) {
+      return torque_result;
+    }
   }
-  return Result("", true);
+  return setJointPositionLimit(max_joint_limit, min_joint_limit);
 }
 
 void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInterface> & interfaces)
@@ -186,6 +190,36 @@ void MotorBase::appendCommandInterfaces(
       }
     }
   }
+}
+
+Result MotorBase::setJointPositionLimit(double max_joint_limit, double min_joint_limit)
+{
+  const auto address_max_joint_limit = address_table_->getAddress(Operation::MAX_POSITION_LIMIT);
+  const auto address_min_joint_limit = address_table_->getAddress(Operation::MIN_POSITION_LIMIT);
+
+  if (!address_max_joint_limit.exists()) {
+    return Result(
+      "MAX_POSITION_LIMIT operation does not support in " + toString(motor_type), false);
+  }
+  if (!address_min_joint_limit.exists()) {
+    return Result(
+      "MIN_POSITION_LIMIT operation does not support in " + toString(motor_type), false);
+  }
+  uint8_t error = 0;
+  if (address_max_joint_limit.byte_size == PacketByteSize::FOUR_BYTE) {
+    const auto result_max = packet_handler_->write4ByteTxRx(
+      port_handler_.get(), id, address_max_joint_limit.address,
+      radianToPosition<uint32_t>(max_joint_limit), &error);
+    Result result = getResult(result_max, error);
+    if (!result.success) {
+      return result;
+    }
+    const auto result_min = packet_handler_->write4ByteTxRx(
+      port_handler_.get(), id, address_min_joint_limit.address,
+      radianToPosition<uint32_t>(min_joint_limit), &error);
+    return getResult(result_min, error);
+  }
+  return Result("Invalid packet size", false);
 }
 
 Result MotorBase::torqueEnable(bool enable)
