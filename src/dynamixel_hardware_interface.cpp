@@ -165,11 +165,15 @@ std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
       throw std::runtime_error("failed to construct motor instance, motor type is invalid");
     }
     const auto id = static_cast<uint8_t>(getParameter<int>("id", info));
+
+    const auto max_joint_limit = getParameter<double>("max_joint_limit", info);
+    const auto min_joint_limit = getParameter<double>("min_joint_limit", info);
+
     switch (motor_type) {
       case SupportedMotors::XW540_T260:
         return std::make_shared<motors::XW540_T260>(
-          info.name, getHardwareParameter<bool>("enable_dummy"), baudrate_, id, port_handler_,
-          packet_handler_);
+          info.name, getHardwareParameter<bool>("enable_dummy"), baudrate_, id, max_joint_limit,
+          min_joint_limit, port_handler_, packet_handler_);
         break;
       default:
         break;
