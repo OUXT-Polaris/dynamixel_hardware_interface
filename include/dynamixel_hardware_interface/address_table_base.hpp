@@ -50,26 +50,29 @@ public:
 };
 
 /**
- * @brief base class for address table class
- */
+   * @brief base class for address table class
+   */
 class AddressTableBase
 {
 public:
   /**
-   * @brief Construct a new Address Table Base object, each parameter describes the address of the operation.
-   * @param ADDR_TORQUE_ENABLE If this value is boost::none, writing torque_enable command address exists.
-   * @param ADDR_GOAL_POSITION If this value is boost::none, writing goal_position command address exists.
-   * @param ADDR_MOVING_SPEED If this value is boost::none, writing moving_speed command address exists.
-   * @param ADDR_PRESENT_POSITION If this value is boost::none, reading present_position command address exists.
-   * @param ADDR_PRESENT_SPEED If this value is boost::none, reading present_speed command address exists.
-   * @param ADDR_PRESENT_LOAD If this value is boost::none, reading present_load command address exists.
-   * @param ADDR_PRESENT_VOLTAGE If this value is boost::none, reading present_voltage command address exists.
-   * @param ADDR_PRESENT_TEMPERATURE If this value is boost::none, reading present_temperature command address exists.
-   */
+     * @brief Construct a new Address Table Base object, each parameter describes the address of the operation.
+     * @param ADDR_TORQUE_ENABLE If this value is boost::none, writing torque_enable command address exists.
+     * @param ADDR_GOAL_POSITION If this value is boost::none, writing goal_position command address exists.
+     * @param ADDR_MOVING_SPEED If this value is boost::none, writing moving_speed command address exists.
+     * @param ADDR_PRESENT_POSITION If this value is boost::none, reading present_position command address exists.
+     * @param ADDR_PRESENT_SPEED If this value is boost::none, reading present_speed command address exists.
+     * @param ADDR_PRESENT_LOAD If this value is boost::none, reading present_load command address exists.
+     * @param ADDR_PRESENT_VOLTAGE If this value is boost::none, reading present_voltage command address exists.
+     * @param ADDR_PRESENT_TEMPERATURE If this value is boost::none, reading present_temperature command address exists.
+     * @param ADDR_MAX_POSITION_LIMIT
+     * @param ADDR_MIN_POSITION_LIMIT
+     */
   explicit AddressTableBase(
     Address ADDR_TORQUE_ENABLE, Address ADDR_GOAL_POSITION, Address ADDR_MOVING_SPEED,
     Address ADDR_PRESENT_POSITION, Address ADDR_PRESENT_SPEED, Address ADDR_PRESENT_LOAD,
-    Address ADDR_PRESENT_VOLTAGE, Address ADDR_PRESENT_TEMPERATURE)
+    Address ADDR_PRESENT_VOLTAGE, Address ADDR_PRESENT_TEMPERATURE, Address ADDR_MAX_POSITION_LIMIT,
+    Address ADDR_MIN_POSITION_LIMIT)
   : ADDR_TORQUE_ENABLE(ADDR_TORQUE_ENABLE),
     ADDR_GOAL_POSITION(ADDR_GOAL_POSITION),
     ADDR_MOVING_SPEED(ADDR_MOVING_SPEED),
@@ -77,15 +80,17 @@ public:
     ADDR_PRESENT_SPEED(ADDR_PRESENT_SPEED),
     ADDR_PRESENT_LOAD(ADDR_PRESENT_LOAD),
     ADDR_PRESENT_VOLTAGE(ADDR_PRESENT_VOLTAGE),
-    ADDR_PRESENT_TEMPERATURE(ADDR_PRESENT_TEMPERATURE)
+    ADDR_PRESENT_TEMPERATURE(ADDR_PRESENT_TEMPERATURE),
+    ADDR_MAX_POSITION_LIMIT(ADDR_MAX_POSITION_LIMIT),
+    ADDR_MIN_POSITION_LIMIT(ADDR_MIN_POSITION_LIMIT),
   {
   }
   /**
-   * @brief Get address of which operation you want to execute.
-   * @param operaiton operation you want to execute
-   * @retval boost::none operation is not supported
-   * @retval uint16_t address of the operation you want to execute
-   */
+     * @brief Get address of which operation you want to execute.
+     * @param operaiton operation you want to execute
+     * @retval boost::none operation is not supported
+     * @retval uint16_t address of the operation you want to execute
+     */
   Address getAddress(const Operation & operaiton) const
   {
     switch (operaiton) {
@@ -105,16 +110,20 @@ public:
         return ADDR_PRESENT_VOLTAGE;
       case Operation::PRESENT_TEMPERATURE:
         return ADDR_PRESENT_TEMPERATURE;
+      case Operation::MAX_POSITION_LIMIT:
+        return ADDR_MAX_POSITION_LIMIT;
+      case Operation::MAX_POSITION_LIMIT:
+        return ADDR_MIN_POSITION_LIMIT;
       default:
         return Address();
     }
   }
   /**
-   * @brief Check the address exists or not.
-   * @param operation operation you want to execute
-   * @return true address exist
-   * @return false address does not exist
-   */
+     * @brief Check the address exists or not.
+     * @param operation operation you want to execute
+     * @return true address exist
+     * @return false address does not exist
+     */
   bool addressExists(const Operation & operation) const { return getAddress(operation).exists(); }
 
 private:
@@ -127,6 +136,8 @@ private:
   const Address ADDR_PRESENT_LOAD;
   const Address ADDR_PRESENT_VOLTAGE;
   const Address ADDR_PRESENT_TEMPERATURE;
+  const Address ADDR_MAX_POSITION_LIMIT;
+  const Address ADDR_MIN_POSITION_LIMIT;
 };
 }  // namespace dynamixel_hardware_interface
 
