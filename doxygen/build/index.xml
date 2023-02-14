@@ -26,7 +26,7 @@
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a8f9798775a595efd1bb5b73763cecc8a" kind="variable"><name>diagnostics_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1affb2bf765afa7ca4188cc3e551a62d72" kind="variable"><name>diag_pub_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a3be3a0cb0f9758ffa4dfebe92f3d0af7" kind="variable"><name>diag_pub_realtime_</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1ab609b1c69c3a83727214303c7c4e65cd" kind="function"><name>init</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a9ce6f383d2a997a8dc4b2bd8bc809e64" kind="function"><name>init</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1ad161be78e4c2350c0c412deeae726bd8" kind="function"><name>command_interface_configuration</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a4821f1c7b0f0a3b506fe5c8cba99dd81" kind="function"><name>state_interface_configuration</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelDiagnosticController_1a4f0f6f0b3dad0e776fffd40f25b7d536" kind="function"><name>on_configure</name></member>
@@ -44,10 +44,8 @@
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ad0f44c8124d6768ac06cc181a850ee95" kind="function"><name>configure</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a26334a17e6798229f799293bacf2c1bb" kind="function"><name>export_state_interfaces</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1af971786f88a914f534fe471c60a2aaad" kind="function"><name>export_command_interfaces</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1adedbbaee0cac112a5a6011b00c71b8d4" kind="function"><name>start</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a9c6352e47de81cd00e97000b76025cde" kind="function"><name>stop</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a2ddd0eb8b4bfaaca6bafa10c27a13e05" kind="function"><name>read</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a551bd0018fbaa8bb6893edebff56115c" kind="function"><name>write</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1acf4151e565e4ac699c2116c8ea5c0fdf" kind="function"><name>read</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a9392d65fc49a2d87071bd8dbeb2aa0f2" kind="function"><name>write</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a15f1ffbcb24f674dfb9cfd11e7b09d4d" kind="function"><name>strToSupportMotorsEnum</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1adc541294f39d35d046806028f7c309be" kind="function"><name>getParameter</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ab42cb398baff91138d26eae457f14a8c" kind="function"><name>getParameter</name></member>
