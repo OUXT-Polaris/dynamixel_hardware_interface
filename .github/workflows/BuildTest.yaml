@@ -66,7 +66,6 @@ jobs:
           package-name: ${{ steps.list_packages.outputs.package_list }}
           target-ros2-distro: ${{ matrix.rosdistro }}
           vcs-repo-file-url: dependency-${{ matrix.rosdistro }}.repos
-          extra-cmake-args: -DBUILD_CPP_MOCK_SCENARIOS=ON
           colcon-defaults: |
             {
               "build": {
@@ -86,7 +85,6 @@ jobs:
           package-name: ${{ steps.list_packages.outputs.package_list }}
           target-ros2-distro: ${{ matrix.rosdistro }}
           vcs-repo-file-url: dependency.repos
-          extra-cmake-args: -DBUILD_CPP_MOCK_SCENARIOS=ON
           colcon-defaults: |
             {
               "build": {
@@ -105,7 +103,6 @@ jobs:
         with:
           package-name: ${{ steps.list_packages.outputs.package_list }}
           target-ros2-distro: ${{ matrix.rosdistro }}
-          extra-cmake-args: -DBUILD_CPP_MOCK_SCENARIOS=ON
           colcon-defaults: |
             {
               "build": {
