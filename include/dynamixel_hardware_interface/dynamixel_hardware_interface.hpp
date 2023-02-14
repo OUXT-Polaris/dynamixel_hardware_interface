@@ -79,19 +79,21 @@ public:
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
-// #if !defined(GALACTIC) || ~defined(HUMBLE)
-// #ifndef GALACTIC
-//   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-//   hardware_interface::return_type start() override;
-//   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-//   hardware_interface::return_type stop() override;
-// #endif
+  // #if !defined(GALACTIC) || ~defined(HUMBLE)
+  // #ifndef GALACTIC
+  //   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  //   hardware_interface::return_type start() override;
+  //   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  //   hardware_interface::return_type stop() override;
+  // #endif
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-  hardware_interface::return_type read(const rclcpp::Time & time, const rclcpp::Duration & period) override;
+  hardware_interface::return_type read(
+    const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
   DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-  hardware_interface::return_type write(const rclcpp::Time & time, const rclcpp::Duration & period) override;
+  hardware_interface::return_type write(
+    const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
 private:
   std::string port_name_;

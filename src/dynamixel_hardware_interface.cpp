@@ -192,7 +192,8 @@ std::shared_ptr<MotorBase> DynamixelHardwareInterface::constructMotorInstance(
 // }
 // #endif
 
-hardware_interface::return_type DynamixelHardwareInterface::read(const rclcpp::Time & time, const rclcpp::Duration & period)
+hardware_interface::return_type DynamixelHardwareInterface::read(
+  const rclcpp::Time & time, const rclcpp::Duration & period)
 {
   for (const auto motor : motors_) {
     if (motor->operationSupports(Operation::PRESENT_POSITION)) {
@@ -220,7 +221,8 @@ hardware_interface::return_type DynamixelHardwareInterface::read(const rclcpp::T
   return hardware_interface::return_type::OK;
 }
 
-hardware_interface::return_type DynamixelHardwareInterface::write(const rclcpp::Time & time, const rclcpp::Duration & period)
+hardware_interface::return_type DynamixelHardwareInterface::write(
+  const rclcpp::Time & time, const rclcpp::Duration & period)
 {
   for (const auto motor : motors_) {
     if (motor->operationSupports(Operation::GOAL_POSITION)) {
