@@ -52,8 +52,8 @@
 namespace dynamixel_hardware_interface
 {
 /**
- * @brief Hardware interface for the dynamixel motor.
- */
+   * @brief Hardware interface for the dynamixel motor.
+   */
 class DynamixelHardwareInterface
 #if defined(GALACTIC) || defined(HUMBLE)
 : public hardware_interface::SystemInterface
@@ -125,6 +125,14 @@ private:
     std::string param_string;
     getParameter(key, info, param_string);
     parameter = std::stoi(param_string);
+  }
+  void getParameter(
+    const std::string & key, const hardware_interface::ComponentInfo & info,
+    double & parameter) const
+  {
+    std::string param_string;
+    getParameter(key, info, param_string);
+    parameter = std::stod(param_string);
   }
   void getParameter(
     const std::string & key, const hardware_interface::ComponentInfo & info, bool & parameter) const

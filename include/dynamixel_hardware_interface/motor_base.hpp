@@ -51,77 +51,84 @@
 namespace dynamixel_hardware_interface
 {
 /**
- * @brief Struct describes the command result.
- */
+   * @brief Struct describes the command result.
+   */
 struct Result
 {
   /**
-   * @brief Description of the result.
-   */
+     * @brief Description of the result.
+     */
   const std::string description;
   /**
-   * @brief If true, command execute successfully.
-   */
+     * @brief If true, command execute successfully.
+     */
   const bool success;
   /**
-   * @brief Construct a new Result object.
-   * @param description Description of the result.
-   * @param success If true, command execute successfully.
-   */
+     * @brief Construct a new Result object.
+     * @param description Description of the result.
+     * @param success If true, command execute successfully.
+     */
   Result(const std::string & description, bool success) : description(description), success(success)
   {
   }
 };
 
 /**
- * @brief Base class for controlling dynamixel motor.
- */
+   * @brief Base class for controlling dynamixel motor.
+   */
 class MotorBase
 {
 public:
   /**
-   * @brief Describe the type of the motor.
-   */
+     * @brief Describe the type of the motor.
+     */
   const SupportedMotors motor_type;
   /**
-   * @brief Name of the joint which the motor is attaching to.
-   */
+     * @brief Name of the joint which the motor is attaching to.
+     */
   const std::string joint_name;
   /**
-   * @brief If true, you can communicate with virtual dinamixel motor.
-   */
+     * @brief If true, you can communicate with virtual dinamixel motor.
+     */
   const bool enable_dummy;
   /**
-   * @brief Baudrate of the serial communication.
-   */
+     * @brief Baudrate of the serial communication.
+     */
   const int baudrate;
   /**
-   * @brief Id of the dynamixel motor.
-   */
+     * @brief Id of the dynamixel motor.
+     */
   const uint8_t id;
+
+  const double max_joint_limit;
+  const double min_joint_limit;
   /**
-   * @brief Construct a new Motor Base object.
-   * @tparam AddressTable address table type of the motor.
-   * @param motor_type Type of the motor.
-   * @param joint_name Name of the joint which the motor is attaching to.
-   * @param enable_dummy If true, you can communicate with virtual dinamixel motor.
-   * @param table address table of the motor.
-   * @param baudrate Baudrate of the serial communication.
-   * @param id Id of the dynamixel motor.
-   * @param port_handler Port handler class of the dynamixel sdk.
-   * @param packet_handler Packet handler class of the dynamixel sdk
-   */
+     * @brief Construct a new Motor Base object.
+     * @tparam AddressTable address table type of the motor.
+     * @param motor_type Type of the motor.
+     * @param joint_name Name of the joint which the motor is attaching to.
+     * @param enable_dummy If true, you can communicate with virtual dinamixel motor.
+     * @param table address table of the motor.
+     * @param baudrate Baudrate of the serial communication.
+     * @param id Id of the dynamixel motor.
+     * @param max_joint_limit
+     * @param min_joint_limit
+     * @param port_handler Port handler class of the dynamixel sdk.
+     * @param packet_handler Packet handler class of the dynamixel sdk
+     */
   template <typename AddressTable>
   MotorBase(
     const SupportedMotors & motor_type, const std::string & joint_name, const bool enable_dummy,
-    const AddressTable & table, int baudrate, uint8_t id,
-    std::shared_ptr<dynamixel::PortHandler> port_handler,
+    const AddressTable & table, int baudrate, uint8_t id, double max_joint_limit,
+    double min_joint_limit, std::shared_ptr<dynamixel::PortHandler> port_handler,
     std::shared_ptr<dynamixel::PacketHandler> packet_handler)
   : motor_type(motor_type),
     joint_name(joint_name),
     enable_dummy(enable_dummy),
     baudrate(baudrate),
     id(id),
+    max_joint_limit(max_joint_limit),
+    min_joint_limit(min_joint_limit),
     port_handler_(port_handler),
     packet_handler_(packet_handler),
     joint_position_(std::numeric_limits<double>::quiet_NaN()),
@@ -136,84 +143,86 @@ public:
       rclcpp::get_logger("dynamixel_hardware_interface"), "end constructing motor instance");
   }
   /**
-   * @brief Destroy the Motor Base object
-   */
+     * @brief Destroy the Motor Base object
+     */
   ~MotorBase();
   /**
-   * @brief Check the operation is support in your motor.
-   * @param operation Operation which you want to execute.
-   * @return true Operation supports.
-   * @return false Operation does not support.
-   */
+     * @brief Check the operation is support in your motor.
+     * @param operation Operation which you want to execute.
+     * @return true Operation supports.
+     * @return false Operation does not support.
+     */
   bool operationSupports(const Operation & operation);
   /**
-   * @brief Get list of supported Operations in your motor.
-   * @return std::vector<Operation> List of supported operations.
-   */
+     * @brief Get list of supported Operations in your motor.
+     * @return std::vector<Operation> List of supported operations.
+     */
   virtual std::vector<Operation> getSupportedOperations();
   /**
-   * @brief Configure dynamixel motor.
-   * @return Result result of the configuration.
-   */
+     * @brief Configure dynamixel motor.
+     * @return Result result of the configuration.
+     */
   virtual Result configure();
   /**
-   * @brief Execute torqu_enabled command to the motor.
-   * @param enable if true, enable torque.
-   * @return Result result of the command.
-   */
+     * @brief Execute torqu_enabled command to the motor.
+     * @param enable if true, enable torque.
+     * @return Result result of the command.
+     */
   virtual Result torqueEnable(bool enable);
   /**
-   * @brief Execute goal_position command to the motor.
-   * @param goal_position goal position angle in radian.
-   * @return Result result of the command.
-   */
+     * @brief Execute goal_position command to the motor.
+     * @param goal_position goal position angle in radian.
+     * @return Result result of the command.
+     */
   virtual Result setGoalPosition(double goal_position);
   /**
-   * @brief Execute goal_position command to the motor without update current goal position
-   * @return Result result of the command.
-   */
+     * @brief Execute goal_position command to the motor without update current goal position
+     * @return Result result of the command.
+     */
   virtual Result setCurrentGoalPosition() { return setGoalPosition(goal_position_); }
   /**
-   * @brief Get current joint position of the motor.
-   * @return double Current joint position of the motor in radian.
-   */
+     * @brief Get current joint position of the motor.
+     * @return double Current joint position of the motor in radian.
+     */
   virtual double getJointPosition() const { return joint_position_; }
   /**
-   * @brief Get current goal position of the motor.
-   * @return double Current goal position of the motor in radian.
-   */
+     * @brief Get current goal position of the motor.
+     * @return double Current goal position of the motor in radian.
+     */
   virtual double getGoalPosition() const { return goal_position_; }
   /**
-   * @brief Execute update joint position command to the motor.
-   * @return Result result of the command.
-   */
+     * @brief Execute update joint position command to the motor.
+     * @return Result result of the command.
+     */
   virtual Result updateJointPosition();
   /**
-   * @brief Execute update joint velocity command to the motor.
-   * @return Result
-   */
+     * @brief Execute update joint velocity command to the motor.
+     * @return Result
+     */
   virtual Result updateJointVelocity();
   /**
-   * @brief Execute update present temperature command to the motor.
-   * @return Result 
-   */
+     * @brief Execute update present temperature command to the motor.
+     * @return Result
+     */
   virtual Result updatePresentTemperature();
   /**
-   * @brief Append state interface described in the URDF file.
-   * @param interfaces List of state interface.
-   */
+     * @brief Append state interface described in the URDF file.
+     * @param interfaces List of state interface.
+     */
   virtual void appendStateInterfaces(std::vector<hardware_interface::StateInterface> & interfaces);
   /**
-   * @brief Append command interface described in the URDF file.
-   * @param interfaces List of command interface.
-   */
+     * @brief Append command interface described in the URDF file.
+     * @param interfaces List of command interface.
+     */
   virtual void appendCommandInterfaces(
     std::vector<hardware_interface::CommandInterface> & interfaces);
 
+  virtual Result setJointPositionLimit(double max_joint_limit, double min_joint_limit);
+
 protected:
   /**
-   * @brief Construct a new Motor Base object
-   */
+     * @brief Construct a new Motor Base object
+     */
   MotorBase() = delete;
   Result getResult(int communication_result, uint8_t packet_error);
   template <typename T>
@@ -237,6 +246,7 @@ protected:
   virtual double valueToTemperature(uint8_t value) const;
   virtual double valueToTemperature(uint16_t value) const;
   virtual double valueToTemperature(uint32_t value) const;
+
   std::shared_ptr<AddressTableBase> address_table_;
   std::shared_ptr<dynamixel::PortHandler> port_handler_;
   std::shared_ptr<dynamixel::PacketHandler> packet_handler_;

@@ -44,7 +44,8 @@ public:
   : AddressTableBase(
       Address(64, PacketByteSize::ONE_BYTE), Address(116, PacketByteSize::FOUR_BYTE), Address(),
       Address(132, PacketByteSize::FOUR_BYTE), Address(128, PacketByteSize::FOUR_BYTE), Address(),
-      Address(), Address(146, PacketByteSize::ONE_BYTE))
+      Address(), Address(146, PacketByteSize::ONE_BYTE), Address(48, PacketByteSize::FOUR_BYTE),
+      Address(52, PacketByteSize::FOUR_BYTE))
   {
   }
 };
@@ -57,11 +58,12 @@ class XW540_T260 : public MotorBase
 public:
   explicit XW540_T260(
     const std::string joint_name, bool enable_dummy, int baudrate, uint8_t id,
+    double max_joint_limit, double min_joint_limit,
     std::shared_ptr<dynamixel::PortHandler> port_handler,
     std::shared_ptr<dynamixel::PacketHandler> packet_handler)
   : MotorBase(
       SupportedMotors::XW540_T260, joint_name, enable_dummy, address_tables::XW540_T260(), baudrate,
-      id, port_handler, packet_handler)
+      id, max_joint_limit, min_joint_limit, port_handler, packet_handler)
   {
   }
 

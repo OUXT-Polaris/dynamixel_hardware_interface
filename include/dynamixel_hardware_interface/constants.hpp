@@ -57,8 +57,8 @@ constexpr double PULSE_RESOLUTION = 4096;
   }
 
 /**
- * @brief Enum class of the commands
- */
+   * @brief Enum class of the commands
+   */
 enum class Operation {
   TORQUE_ENABLE,
   GOAL_POSITION,
@@ -68,23 +68,25 @@ enum class Operation {
   PRESENT_LOAD,
   PRESENT_VOLTAGE,
   PRESENT_TEMPERATURE,
+  MAX_POSITION_LIMIT,
+  MIN_POSITION_LIMIT,
   INVALID
 };
 
 GENERATE_ENUM_ITERATOR(Operation, INVALID)
 
 /**
- * @brief Enum class of the supported motor
- */
+   * @brief Enum class of the supported motor
+   */
 enum class SupportedMotors {
   /**
-   * @brief Robotis xw540-t260 motor
-   * @sa https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/
-   */
+     * @brief Robotis xw540-t260 motor
+     * @sa https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/
+     */
   XW540_T260,
   /**
-   * @brief Invalid motor type
-   */
+     * @brief Invalid motor type
+     */
   INVALID
 };
 
