@@ -140,12 +140,16 @@ Result MotorBase::configure()
   }
 
   if (!enable_dummy) {
+    Result joint_limit_result = setJointPositionLimit(max_joint_limit, min_joint_limit);
+    if (!joint_limit_result.success) {
+      return joint_limit_result;
+    }
     Result torque_result = torqueEnable(true);
     if (!torque_result.success) {
       return torque_result;
     }
   }
-  return setJointPositionLimit(max_joint_limit, min_joint_limit);
+  return Result("", true);
 }
 
 void MotorBase::appendStateInterfaces(std::vector<hardware_interface::StateInterface> & interfaces)
