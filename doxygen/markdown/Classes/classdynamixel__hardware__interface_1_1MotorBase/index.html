@@ -438,6 +438,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-setjointpositionlimit" class="md-nav__link">
+    function setJointPositionLimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-setgoalposition" class="md-nav__link">
     function setGoalPosition
   </a>
@@ -660,6 +667,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#variable-min_joint_limit" class="md-nav__link">
+    variable min_joint_limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-max_joint_limit" class="md-nav__link">
+    variable max_joint_limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#variable-joint_name" class="md-nav__link">
     variable joint_name
   </a>
@@ -814,6 +835,10 @@
 </tr>
 <tr>
 <td>virtual <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-setjointpositionlimit">setJointPositionLimit</a></strong>(double max_joint_limit, double min_joint_limit)</td>
+</tr>
+<tr>
+<td>virtual <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-setgoalposition">setGoalPosition</a></strong>(double goal_position) <br>Execute goal_position command to the motor.</td>
 </tr>
 <tr>
@@ -850,7 +875,7 @@
 </tr>
 <tr>
 <td>template \&lt;typename AddressTable ></br></td>
-<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-motorbase">MotorBase</a></strong>(const <a href="/dynamixel_hardware_interface/doxygen/markdown/Namespaces/namespacedynamixel__hardware__interface#enum-supportedmotors">SupportedMotors</a> &amp; motor_type, const std::string &amp; joint_name, const bool enable_dummy, const AddressTable &amp; table, int baudrate, uint8_t id, std::shared_ptr&lt; dynamixel::PortHandler &gt; port_handler, std::shared_ptr&lt; dynamixel::PacketHandler &gt; packet_handler) <br>Construct a new Motor Base object.</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-motorbase">MotorBase</a></strong>(const <a href="/dynamixel_hardware_interface/doxygen/markdown/Namespaces/namespacedynamixel__hardware__interface#enum-supportedmotors">SupportedMotors</a> &amp; motor_type, const std::string &amp; joint_name, const bool enable_dummy, const AddressTable &amp; table, int baudrate, uint8_t id, double max_joint_limit, double min_joint_limit, std::shared_ptr&lt; dynamixel::PortHandler &gt; port_handler, std::shared_ptr&lt; dynamixel::PacketHandler &gt; packet_handler) <br>Construct a new Motor Base object.</td>
 </tr>
 </tbody>
 </table>
@@ -947,6 +972,14 @@
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-motor_type">motor_type</a></strong> <br>Describe the type of the motor.</td>
 </tr>
 <tr>
+<td>const double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-min_joint_limit">min_joint_limit</a></strong></td>
+</tr>
+<tr>
+<td>const double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-max_joint_limit">max_joint_limit</a></strong></td>
+</tr>
+<tr>
 <td>const std::string</td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-joint_name">joint_name</a></strong> <br>Name of the joint which the motor is attaching to.</td>
 </tr>
@@ -1038,6 +1071,12 @@
 <li><strong>enable</strong> if true, enable torque. </li>
 </ul>
 <p><strong>Return</strong>: <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a> result of the command. </p>
+<h3 id="function-setjointpositionlimit">function setJointPositionLimit<a class="headerlink" href="#function-setjointpositionlimit" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">Result</span><span class="w"> </span><span class="n">setJointPositionLimit</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">max_joint_limit</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">min_joint_limit</span>
+<span class="p">)</span>
+</code></pre></div>
 <h3 id="function-setgoalposition">function setGoalPosition<a class="headerlink" href="#function-setgoalposition" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">Result</span><span class="w"> </span><span class="n">setGoalPosition</span><span class="p">(</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">goal_position</span>
@@ -1118,6 +1157,8 @@
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">AddressTable</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">table</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">baudrate</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">max_joint_limit</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">min_joint_limit</span><span class="p">,</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PortHandler</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">port_handler</span><span class="p">,</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PacketHandler</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">packet_handler</span>
 <span class="p">)</span>
@@ -1131,6 +1172,8 @@
 <li><strong>table</strong> address table of the motor. </li>
 <li><strong>baudrate</strong> Baudrate of the serial communication. </li>
 <li><strong>id</strong> Id of the dynamixel motor. </li>
+<li><strong>max_joint_limit</strong> </li>
+<li><strong>min_joint_limit</strong> </li>
 <li><strong>port_handler</strong> Port handler class of the dynamixel sdk. </li>
 <li><strong>packet_handler</strong> Packet handler class of the dynamixel sdk </li>
 </ul>
@@ -1238,6 +1281,12 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">SupportedMotors</span><span class="w"> </span><span class="n">motor_type</span><span class="p">;</span>
 </code></pre></div>
 <p>Describe the type of the motor. </p>
+<h3 id="variable-min_joint_limit">variable min_joint_limit<a class="headerlink" href="#variable-min_joint_limit" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">min_joint_limit</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="variable-max_joint_limit">variable max_joint_limit<a class="headerlink" href="#variable-max_joint_limit" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max_joint_limit</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="variable-joint_name">variable joint_name<a class="headerlink" href="#variable-joint_name" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">joint_name</span><span class="p">;</span>
 </code></pre></div>
@@ -1280,7 +1329,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">AddressTableBase</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">address_table_</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on  6 March 2023 at 01:19:50 UTC</p>
+<p>Updated on  6 March 2023 at 16:05:22 UTC</p>
 
 
 

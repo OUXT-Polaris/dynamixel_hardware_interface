@@ -70,6 +70,20 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90a7f7d971ad1d6e72442a2b66512abec9f" prot="public">
+          <name>MAX_POSITION_LIMIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90af65289a3c26dd27ecbb3d145bab4fa0f" prot="public">
+          <name>MIN_POSITION_LIMIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90accc0377a8afbf50e7094f5c23a8af223" prot="public">
           <name>INVALID</name>
           <briefdescription>
@@ -84,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="62" column="21" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="62" bodyend="72"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="62" column="21" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="62" bodyend="74"/>
       </memberdef>
       <memberdef kind="enum" id="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" prot="public" static="no" strong="yes">
         <type></type>
@@ -115,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="79" column="27" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="79" bodyend="89"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="81" column="27" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="81" bodyend="91"/>
       </memberdef>
       <memberdef kind="enum" id="constants_8hpp_1acc7178615a1af6be422831cca58d19d9" prot="public" static="no" strong="yes">
         <type></type>
@@ -154,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="93" column="26" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="93" bodyend="93"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="95" column="26" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="95" bodyend="95"/>
       </memberdef>
       <memberdef kind="enum" id="constants_8hpp_1a475e2cd0ae706733eddbc7f13c9d27f1" prot="public" static="no" strong="yes">
         <type></type>
@@ -179,7 +193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="97" column="27" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="97" bodyend="97"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" line="99" column="27" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/constants.hpp" bodystart="99" bodyend="99"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">

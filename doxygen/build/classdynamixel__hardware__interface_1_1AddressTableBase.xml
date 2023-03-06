@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="122" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="122" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="131" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="131" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a748dd5407fb6069eb4023c91bcac68af" prot="private" static="no" mutable="no">
         <type>const <ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="123" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="123" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="132" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="132" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a9599b1232ad9074f15f3a9ed853bfc54" prot="private" static="no" mutable="no">
         <type>const <ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="124" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="124" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="133" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="133" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a12aa3fa62b56a2f3ccabcef7fcc9ad2e" prot="private" static="no" mutable="no">
         <type>const <ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="125" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="125" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="134" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="134" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1aab18c3181921b9e62cc6f8fd829bda01" prot="private" static="no" mutable="no">
         <type>const <ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="126" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="126" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="135" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a564871d4ce48320f2e27cfad03592ffb" prot="private" static="no" mutable="no">
         <type>const <ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="127" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="127" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="136" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="136" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a897b825ab95cde8ab5ccc038f4218a90" prot="private" static="no" mutable="no">
         <type>const <ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="128" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="128" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="137" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="137" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1acd21c6495c162bbc22cba0e44b715e23" prot="private" static="no" mutable="no">
         <type>const <ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
@@ -107,14 +107,40 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="129" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="129" bodyend="-1"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="138" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a973206c7c7dc3df868af7f65fea82d36" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
+        <definition>const Address dynamixel_hardware_interface::AddressTableBase::ADDR_MAX_POSITION_LIMIT</definition>
+        <argsstring></argsstring>
+        <name>ADDR_MAX_POSITION_LIMIT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="139" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a493fe89a27e956b4feb511dff7e6abd8" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
+        <definition>const Address dynamixel_hardware_interface::AddressTableBase::ADDR_MIN_POSITION_LIMIT</definition>
+        <argsstring></argsstring>
+        <name>ADDR_MIN_POSITION_LIMIT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="140" column="17" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="140" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a1f9b990a81b2e609ffedeb59ecec30e7" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classdynamixel__hardware__interface_1_1AddressTableBase_1ad6592418abf99884e0315ec2d8e42997" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>dynamixel_hardware_interface::AddressTableBase::AddressTableBase</definition>
-        <argsstring>(Address ADDR_TORQUE_ENABLE, Address ADDR_GOAL_POSITION, Address ADDR_MOVING_SPEED, Address ADDR_PRESENT_POSITION, Address ADDR_PRESENT_SPEED, Address ADDR_PRESENT_LOAD, Address ADDR_PRESENT_VOLTAGE, Address ADDR_PRESENT_TEMPERATURE)</argsstring>
+        <argsstring>(Address ADDR_TORQUE_ENABLE, Address ADDR_GOAL_POSITION, Address ADDR_MOVING_SPEED, Address ADDR_PRESENT_POSITION, Address ADDR_PRESENT_SPEED, Address ADDR_PRESENT_LOAD, Address ADDR_PRESENT_VOLTAGE, Address ADDR_PRESENT_TEMPERATURE, Address ADDR_MAX_POSITION_LIMIT, Address ADDR_MIN_POSITION_LIMIT)</argsstring>
         <name>AddressTableBase</name>
         <param>
           <type><ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
@@ -147,6 +173,14 @@
         <param>
           <type><ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
           <declname>ADDR_PRESENT_TEMPERATURE</declname>
+        </param>
+        <param>
+          <type><ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
+          <declname>ADDR_MAX_POSITION_LIMIT</declname>
+        </param>
+        <param>
+          <type><ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
+          <declname>ADDR_MIN_POSITION_LIMIT</declname>
         </param>
         <briefdescription>
 <para>Construct a new <ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref> Table Base object, each parameter describes the address of the operation. </para>
@@ -216,12 +250,28 @@
 <para>If this value is boost::none, reading present_temperature command address exists. </para>
 </parameterdescription>
 </parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ADDR_MAX_POSITION_LIMIT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ADDR_MIN_POSITION_LIMIT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
 </parameterlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="69" column="12" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="69" bodyend="82"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="71" column="12" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="71" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1AddressTableBase_1aafbbe33ef5157bfd733e3e0d7c4fce47" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classdynamixel__hardware__interface_1_1Address" kindref="compound">Address</ref></type>
@@ -266,7 +316,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="89" column="11" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="89" bodyend="111"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="94" column="11" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="94" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel__hardware__interface_1_1AddressTableBase_1a43e69aa8a1a3a28ac6278744fba9fcad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -298,7 +348,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="118" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="118" bodyend="118"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="127" column="8" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="127" bodyend="127"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -313,7 +363,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="121" column="3"/>
+        <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="130" column="3"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -333,9 +383,11 @@
         <link refid="classdynamixel__hardware__interface_1_1AddressTableBase"/>
       </node>
     </inheritancegraph>
-    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="56" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="55" bodyend="130"/>
+    <location file="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" line="56" column="1" bodyfile="/home/runner/work/dynamixel_hardware_interface/dynamixel_hardware_interface/include/dynamixel_hardware_interface/address_table_base.hpp" bodystart="55" bodyend="141"/>
     <listofallmembers>
       <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a748dd5407fb6069eb4023c91bcac68af" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_GOAL_POSITION</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a973206c7c7dc3df868af7f65fea82d36" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_MAX_POSITION_LIMIT</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a493fe89a27e956b4feb511dff7e6abd8" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_MIN_POSITION_LIMIT</name></member>
       <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a9599b1232ad9074f15f3a9ed853bfc54" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_MOVING_SPEED</name></member>
       <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a564871d4ce48320f2e27cfad03592ffb" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_PRESENT_LOAD</name></member>
       <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a12aa3fa62b56a2f3ccabcef7fcc9ad2e" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_PRESENT_POSITION</name></member>
@@ -344,7 +396,7 @@
       <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a897b825ab95cde8ab5ccc038f4218a90" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_PRESENT_VOLTAGE</name></member>
       <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aef5fb4e505dd07b1e7c7faa07772f74b" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>ADDR_TORQUE_ENABLE</name></member>
       <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a43e69aa8a1a3a28ac6278744fba9fcad" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>addressExists</name></member>
-      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a1f9b990a81b2e609ffedeb59ecec30e7" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>AddressTableBase</name></member>
+      <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1ad6592418abf99884e0315ec2d8e42997" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>AddressTableBase</name></member>
       <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a88842a6e56d6e9b4d80befb6ea3fd4f3" prot="private" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>AddressTableBase</name></member>
       <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aafbbe33ef5157bfd733e3e0d7c4fce47" prot="public" virt="non-virtual"><scope>dynamixel_hardware_interface::AddressTableBase</scope><name>getAddress</name></member>
     </listofallmembers>

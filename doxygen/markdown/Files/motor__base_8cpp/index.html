@@ -556,8 +556,16 @@
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">addressExists</span><span class="p">(</span><span class="n">Operation</span><span class="o">::</span><span class="n">GOAL_POSITION</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">goal_position_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span>
+
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">enable_dummy</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">torqueEnable</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Result</span><span class="w"> </span><span class="n">joint_limit_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setJointPositionLimit</span><span class="p">(</span><span class="n">max_joint_limit</span><span class="p">,</span><span class="w"> </span><span class="n">min_joint_limit</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">joint_limit_result</span><span class="p">.</span><span class="n">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">joint_limit_result</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">Result</span><span class="w"> </span><span class="n">torque_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torqueEnable</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">torque_result</span><span class="p">.</span><span class="n">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">torque_result</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Result</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
 <span class="p">}</span>
@@ -604,6 +612,36 @@
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Result</span><span class="w"> </span><span class="n">MotorBase</span><span class="o">::</span><span class="n">setJointPositionLimit</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">max_joint_limit</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">min_joint_limit</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">address_max_joint_limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">(</span><span class="n">Operation</span><span class="o">::</span><span class="n">MAX_POSITION_LIMIT</span><span class="p">);</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">address_min_joint_limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">address_table_</span><span class="o">-&gt;</span><span class="n">getAddress</span><span class="p">(</span><span class="n">Operation</span><span class="o">::</span><span class="n">MIN_POSITION_LIMIT</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">address_max_joint_limit</span><span class="p">.</span><span class="n">exists</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Result</span><span class="p">(</span>
+<span class="w">      </span><span class="s">&quot;MAX_POSITION_LIMIT operation does not support in &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">address_min_joint_limit</span><span class="p">.</span><span class="n">exists</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Result</span><span class="p">(</span>
+<span class="w">      </span><span class="s">&quot;MIN_POSITION_LIMIT operation does not support in &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">toString</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">address_max_joint_limit</span><span class="p">.</span><span class="n">byte_size</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">write4ByteTxRx</span><span class="p">(</span>
+<span class="w">      </span><span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">address_max_joint_limit</span><span class="p">.</span><span class="n">address</span><span class="p">,</span>
+<span class="w">      </span><span class="n">radianToPosition</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">max_joint_limit</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Result</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getResult</span><span class="p">(</span><span class="n">result_max</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">.</span><span class="n">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">packet_handler_</span><span class="o">-&gt;</span><span class="n">write4ByteTxRx</span><span class="p">(</span>
+<span class="w">      </span><span class="n">port_handler_</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">address_min_joint_limit</span><span class="p">.</span><span class="n">address</span><span class="p">,</span>
+<span class="w">      </span><span class="n">radianToPosition</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">min_joint_limit</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getResult</span><span class="p">(</span><span class="n">result_min</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Result</span><span class="p">(</span><span class="s">&quot;Invalid packet size&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">Result</span><span class="w"> </span><span class="n">MotorBase</span><span class="o">::</span><span class="n">torqueEnable</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enable</span><span class="p">)</span>
@@ -763,7 +801,7 @@
 <span class="p">}</span><span class="w">  </span><span class="c1">//  namespace dynamixel_hardware_interface</span>
 </code></pre></div>
 <hr />
-<p>Updated on  6 March 2023 at 01:19:50 UTC</p>
+<p>Updated on  6 March 2023 at 16:05:22 UTC</p>
 
 
 

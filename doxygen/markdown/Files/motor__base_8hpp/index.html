@@ -513,17 +513,22 @@
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">enable_dummy</span><span class="p">;</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">baudrate</span><span class="p">;</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max_joint_limit</span><span class="p">;</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">min_joint_limit</span><span class="p">;</span>
 <span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">AddressTable</span><span class="o">&gt;</span>
 <span class="w">  </span><span class="n">MotorBase</span><span class="p">(</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">SupportedMotors</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">motor_type</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">joint_name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">enable_dummy</span><span class="p">,</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">AddressTable</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">table</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">baudrate</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id</span><span class="p">,</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PortHandler</span><span class="o">&gt;</span><span class="w"> </span><span class="n">port_handler</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">AddressTable</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">table</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">baudrate</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max_joint_limit</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">min_joint_limit</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PortHandler</span><span class="o">&gt;</span><span class="w"> </span><span class="n">port_handler</span><span class="p">,</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PacketHandler</span><span class="o">&gt;</span><span class="w"> </span><span class="n">packet_handler</span><span class="p">)</span>
 <span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">motor_type</span><span class="p">(</span><span class="n">motor_type</span><span class="p">),</span>
 <span class="w">    </span><span class="n">joint_name</span><span class="p">(</span><span class="n">joint_name</span><span class="p">),</span>
 <span class="w">    </span><span class="n">enable_dummy</span><span class="p">(</span><span class="n">enable_dummy</span><span class="p">),</span>
 <span class="w">    </span><span class="n">baudrate</span><span class="p">(</span><span class="n">baudrate</span><span class="p">),</span>
 <span class="w">    </span><span class="n">id</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
+<span class="w">    </span><span class="n">max_joint_limit</span><span class="p">(</span><span class="n">max_joint_limit</span><span class="p">),</span>
+<span class="w">    </span><span class="n">min_joint_limit</span><span class="p">(</span><span class="n">min_joint_limit</span><span class="p">),</span>
 <span class="w">    </span><span class="n">port_handler_</span><span class="p">(</span><span class="n">port_handler</span><span class="p">),</span>
 <span class="w">    </span><span class="n">packet_handler_</span><span class="p">(</span><span class="n">packet_handler</span><span class="p">),</span>
 <span class="w">    </span><span class="n">joint_position_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">quiet_NaN</span><span class="p">()),</span>
@@ -553,6 +558,8 @@
 <span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">appendCommandInterfaces</span><span class="p">(</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">hardware_interface</span><span class="o">::</span><span class="n">CommandInterface</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">interfaces</span><span class="p">);</span>
 
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="n">Result</span><span class="w"> </span><span class="nf">setJointPositionLimit</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">max_joint_limit</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">min_joint_limit</span><span class="p">);</span>
+
 <span class="k">protected</span><span class="o">:</span>
 <span class="w">  </span><span class="n">MotorBase</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
 <span class="w">  </span><span class="n">Result</span><span class="w"> </span><span class="nf">getResult</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">communication_result</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">packet_error</span><span class="p">);</span>
@@ -577,6 +584,7 @@
 <span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">valueToTemperature</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">valueToTemperature</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">valueToTemperature</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">AddressTableBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">address_table_</span><span class="p">;</span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PortHandler</span><span class="o">&gt;</span><span class="w"> </span><span class="n">port_handler_</span><span class="p">;</span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PacketHandler</span><span class="o">&gt;</span><span class="w"> </span><span class="n">packet_handler_</span><span class="p">;</span>
@@ -591,7 +599,7 @@
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__MOTOR_BASE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  6 March 2023 at 01:19:50 UTC</p>
+<p>Updated on  6 March 2023 at 16:05:22 UTC</p>
 
 
 

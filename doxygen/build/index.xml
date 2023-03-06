@@ -16,7 +16,9 @@
     <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a564871d4ce48320f2e27cfad03592ffb" kind="variable"><name>ADDR_PRESENT_LOAD</name></member>
     <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a897b825ab95cde8ab5ccc038f4218a90" kind="variable"><name>ADDR_PRESENT_VOLTAGE</name></member>
     <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1acd21c6495c162bbc22cba0e44b715e23" kind="variable"><name>ADDR_PRESENT_TEMPERATURE</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a1f9b990a81b2e609ffedeb59ecec30e7" kind="function"><name>AddressTableBase</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a973206c7c7dc3df868af7f65fea82d36" kind="variable"><name>ADDR_MAX_POSITION_LIMIT</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a493fe89a27e956b4feb511dff7e6abd8" kind="variable"><name>ADDR_MIN_POSITION_LIMIT</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1ad6592418abf99884e0315ec2d8e42997" kind="function"><name>AddressTableBase</name></member>
     <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1aafbbe33ef5157bfd733e3e0d7c4fce47" kind="function"><name>getAddress</name></member>
     <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a43e69aa8a1a3a28ac6278744fba9fcad" kind="function"><name>addressExists</name></member>
     <member refid="classdynamixel__hardware__interface_1_1AddressTableBase_1a88842a6e56d6e9b4d80befb6ea3fd4f3" kind="function"><name>AddressTableBase</name></member>
@@ -50,6 +52,7 @@
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1adc541294f39d35d046806028f7c309be" kind="function"><name>getParameter</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ab42cb398baff91138d26eae457f14a8c" kind="function"><name>getParameter</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a02ef84719c417fb8dbe6d4698c39e585" kind="function"><name>getParameter</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a253de984d6fba19fd64bbe0598936ddb" kind="function"><name>getParameter</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1ae013f782a5399fbc4f56b61062970f67" kind="function"><name>getParameter</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1aacc0f26c12661efe1a11d2a9ffdadbbe" kind="function"><name>getHardwareParameter</name></member>
     <member refid="classdynamixel__hardware__interface_1_1DynamixelHardwareInterface_1a08b5292c0bb72e759c5545737ac2a65f" kind="function"><name>getHardwareParameter</name></member>
@@ -63,6 +66,8 @@
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a48c5d0ab85e71ddfcd3f4add1093234a" kind="variable"><name>enable_dummy</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a2544c335b4468b9cc297dc801f813528" kind="variable"><name>baudrate</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a06d490867e164574608c317402d82343" kind="variable"><name>id</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a71832a8470e492af99727ba79adfec25" kind="variable"><name>max_joint_limit</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa924156b707db10d37f0f6a90a91218c" kind="variable"><name>min_joint_limit</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a4bad8497fcbc452e049e631506248f6c" kind="variable"><name>address_table_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ade60a9c0e0b0130383d1b4e7bae15289" kind="variable"><name>port_handler_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a7babe4c4818efb35a78a832399f8ddc8" kind="variable"><name>packet_handler_</name></member>
@@ -71,7 +76,7 @@
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a86bb1b4e279ba89214597cc3f75b51d5" kind="variable"><name>joint_velocity_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a54893f81b010e087a21aa10d16892596" kind="variable"><name>goal_velocity_</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a982916ef7cf2b35773efc5e7ce1b2128" kind="variable"><name>present_temperature_</name></member>
-    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a283620455af3d064295177fb969e6d5e" kind="function"><name>MotorBase</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa877cf55b8b11227343a4ce935334f24" kind="function"><name>MotorBase</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1aa0901f99af1ab546e41c809048679d68" kind="function"><name>~MotorBase</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a7e00bde66e9d41ec2d62772463fe9583" kind="function"><name>operationSupports</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1ad6f046868a2fbe904877885f9c6d493c" kind="function"><name>getSupportedOperations</name></member>
@@ -86,6 +91,7 @@
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a594088d475d683f10b1ed76ed0cfcb7e" kind="function"><name>updatePresentTemperature</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a01939d63582a3a4b02702ee0aa2f3ea0" kind="function"><name>appendStateInterfaces</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1af843d62c840add6bf55529328dfd8671" kind="function"><name>appendCommandInterfaces</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a9202646e41c4adc6e8bad24f6d7cede7" kind="function"><name>setJointPositionLimit</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a9c759216740b75670731b8827b169317" kind="function"><name>MotorBase</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3751a2cf2afb2e3b4ef0832429880a8e" kind="function"><name>getResult</name></member>
     <member refid="classdynamixel__hardware__interface_1_1MotorBase_1a3a65d6fbf4fe86598e813e785029b631" kind="function"><name>radianToPosition</name></member>
@@ -113,7 +119,7 @@
     <member refid="classdynamixel__hardware__interface_1_1address__tables_1_1XW540__T260_1ae3d276535eb0127dd5a8de817994cff0" kind="function"><name>XW540_T260</name></member>
   </compound>
   <compound refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260" kind="class"><name>dynamixel_hardware_interface::motors::XW540_T260</name>
-    <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a32dbaa72347b1aabadde6572a9c2014f" kind="function"><name>XW540_T260</name></member>
+    <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a4ff296a9f524ca972c94b44d5aad85d3" kind="function"><name>XW540_T260</name></member>
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1a410454f35d60ec836a234f935d55070b" kind="function"><name>positionToRadian</name></member>
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1ae3afc71eca920388803a54c596d56b47" kind="function"><name>radianToPosition</name></member>
     <member refid="classdynamixel__hardware__interface_1_1motors_1_1XW540__T260_1af7ca356a4eda19c82d117ad20f1b9d84" kind="function"><name>valueToRpm</name></member>
@@ -129,6 +135,8 @@
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90aaa54b037ff09266656b10b8bc39bac13" kind="enumvalue"><name>PRESENT_LOAD</name></member>
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90a429899397757f3ec49b9a0fd4c5ae924" kind="enumvalue"><name>PRESENT_VOLTAGE</name></member>
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90a0200d59257342aeccddcd85cd41853ee" kind="enumvalue"><name>PRESENT_TEMPERATURE</name></member>
+    <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90a7f7d971ad1d6e72442a2b66512abec9f" kind="enumvalue"><name>MAX_POSITION_LIMIT</name></member>
+    <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90af65289a3c26dd27ecbb3d145bab4fa0f" kind="enumvalue"><name>MIN_POSITION_LIMIT</name></member>
     <member refid="constants_8hpp_1ab96d5a6638e10ad66b71dc45227f9f90accc0377a8afbf50e7094f5c23a8af223" kind="enumvalue"><name>INVALID</name></member>
     <member refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257" kind="enum"><name>SupportedMotors</name></member>
     <member refid="constants_8hpp_1a7c0ca21c747a25fb3e96bbc8ba058257ab38bdf146e8b4e1717a3fac10e77650e" kind="enumvalue"><name>XW540_T260</name></member>

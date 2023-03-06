@@ -499,7 +499,8 @@
 <span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">AddressTableBase</span><span class="p">(</span>
 <span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_TORQUE_ENABLE</span><span class="p">,</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_GOAL_POSITION</span><span class="p">,</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_MOVING_SPEED</span><span class="p">,</span>
 <span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_POSITION</span><span class="p">,</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_SPEED</span><span class="p">,</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_LOAD</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">,</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">,</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">,</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_MAX_POSITION_LIMIT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_MIN_POSITION_LIMIT</span><span class="p">)</span>
 <span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">ADDR_TORQUE_ENABLE</span><span class="p">(</span><span class="n">ADDR_TORQUE_ENABLE</span><span class="p">),</span>
 <span class="w">    </span><span class="n">ADDR_GOAL_POSITION</span><span class="p">(</span><span class="n">ADDR_GOAL_POSITION</span><span class="p">),</span>
 <span class="w">    </span><span class="n">ADDR_MOVING_SPEED</span><span class="p">(</span><span class="n">ADDR_MOVING_SPEED</span><span class="p">),</span>
@@ -507,7 +508,9 @@
 <span class="w">    </span><span class="n">ADDR_PRESENT_SPEED</span><span class="p">(</span><span class="n">ADDR_PRESENT_SPEED</span><span class="p">),</span>
 <span class="w">    </span><span class="n">ADDR_PRESENT_LOAD</span><span class="p">(</span><span class="n">ADDR_PRESENT_LOAD</span><span class="p">),</span>
 <span class="w">    </span><span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">(</span><span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">),</span>
-<span class="w">    </span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">(</span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">(</span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ADDR_MAX_POSITION_LIMIT</span><span class="p">(</span><span class="n">ADDR_MAX_POSITION_LIMIT</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ADDR_MIN_POSITION_LIMIT</span><span class="p">(</span><span class="n">ADDR_MIN_POSITION_LIMIT</span><span class="p">)</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="n">Address</span><span class="w"> </span><span class="n">getAddress</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Operation</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">operaiton</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
@@ -529,6 +532,10 @@
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">;</span>
 <span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="no">Operation</span><span class="o">::</span><span class="no">PRESENT_TEMPERATURE</span><span class="p">:</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">;</span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="no">Operation</span><span class="o">::</span><span class="no">MAX_POSITION_LIMIT</span><span class="p">:</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_MAX_POSITION_LIMIT</span><span class="p">;</span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="no">Operation</span><span class="o">::</span><span class="no">MIN_POSITION_LIMIT</span><span class="p">:</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ADDR_MIN_POSITION_LIMIT</span><span class="p">;</span>
 <span class="w">      </span><span class="k">default</span><span class="o">:</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Address</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
@@ -545,13 +552,15 @@
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_LOAD</span><span class="p">;</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_VOLTAGE</span><span class="p">;</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_PRESENT_TEMPERATURE</span><span class="p">;</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_MAX_POSITION_LIMIT</span><span class="p">;</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">ADDR_MIN_POSITION_LIMIT</span><span class="p">;</span>
 <span class="p">};</span>
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace dynamixel_hardware_interface</span>
 
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__ADDRESS_TABLE_BASE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  6 March 2023 at 01:19:50 UTC</p>
+<p>Updated on  6 March 2023 at 16:05:22 UTC</p>
 
 
 

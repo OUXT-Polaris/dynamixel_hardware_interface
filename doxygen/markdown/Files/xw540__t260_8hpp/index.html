@@ -495,7 +495,8 @@
 <span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">AddressTableBase</span><span class="p">(</span>
 <span class="w">      </span><span class="n">Address</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="n">PacketByteSize</span><span class="o">::</span><span class="n">ONE_BYTE</span><span class="p">),</span><span class="w"> </span><span class="n">Address</span><span class="p">(</span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">),</span><span class="w"> </span><span class="n">Address</span><span class="p">(),</span>
 <span class="w">      </span><span class="n">Address</span><span class="p">(</span><span class="mi">132</span><span class="p">,</span><span class="w"> </span><span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">),</span><span class="w"> </span><span class="n">Address</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">),</span><span class="w"> </span><span class="n">Address</span><span class="p">(),</span>
-<span class="w">      </span><span class="n">Address</span><span class="p">(),</span><span class="w"> </span><span class="n">Address</span><span class="p">(</span><span class="mi">146</span><span class="p">,</span><span class="w"> </span><span class="n">PacketByteSize</span><span class="o">::</span><span class="n">ONE_BYTE</span><span class="p">))</span>
+<span class="w">      </span><span class="n">Address</span><span class="p">(),</span><span class="w"> </span><span class="n">Address</span><span class="p">(</span><span class="mi">146</span><span class="p">,</span><span class="w"> </span><span class="n">PacketByteSize</span><span class="o">::</span><span class="n">ONE_BYTE</span><span class="p">),</span><span class="w"> </span><span class="n">Address</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">),</span>
+<span class="w">      </span><span class="n">Address</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span><span class="w"> </span><span class="n">PacketByteSize</span><span class="o">::</span><span class="n">FOUR_BYTE</span><span class="p">))</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">};</span>
@@ -508,11 +509,12 @@
 <span class="k">public</span><span class="o">:</span>
 <span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">XW540_T260</span><span class="p">(</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">joint_name</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">enable_dummy</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">baudrate</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">max_joint_limit</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">min_joint_limit</span><span class="p">,</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PortHandler</span><span class="o">&gt;</span><span class="w"> </span><span class="n">port_handler</span><span class="p">,</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PacketHandler</span><span class="o">&gt;</span><span class="w"> </span><span class="n">packet_handler</span><span class="p">)</span>
 <span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">MotorBase</span><span class="p">(</span>
 <span class="w">      </span><span class="n">SupportedMotors</span><span class="o">::</span><span class="n">XW540_T260</span><span class="p">,</span><span class="w"> </span><span class="n">joint_name</span><span class="p">,</span><span class="w"> </span><span class="n">enable_dummy</span><span class="p">,</span><span class="w"> </span><span class="n">address_tables</span><span class="o">::</span><span class="n">XW540_T260</span><span class="p">(),</span><span class="w"> </span><span class="n">baudrate</span><span class="p">,</span>
-<span class="w">      </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">port_handler</span><span class="p">,</span><span class="w"> </span><span class="n">packet_handler</span><span class="p">)</span>
+<span class="w">      </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">max_joint_limit</span><span class="p">,</span><span class="w"> </span><span class="n">min_joint_limit</span><span class="p">,</span><span class="w"> </span><span class="n">port_handler</span><span class="p">,</span><span class="w"> </span><span class="n">packet_handler</span><span class="p">)</span>
 <span class="w">  </span><span class="p">{</span>
 <span class="w">  </span><span class="p">}</span>
 
@@ -539,7 +541,7 @@
 <span class="cp">#endif  </span><span class="c1">// DYNAMIXEL_HARDWARE_INTERFACE__MOTORS__XW540_T260_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  6 March 2023 at 01:19:50 UTC</p>
+<p>Updated on  6 March 2023 at 16:05:22 UTC</p>
 
 
 

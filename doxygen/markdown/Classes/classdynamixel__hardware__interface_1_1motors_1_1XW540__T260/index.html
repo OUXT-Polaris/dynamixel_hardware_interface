@@ -475,7 +475,7 @@
 </tr>
 <tr>
 <td></td>
-<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1motors_1_1XW540__T260#function-xw540_t260">XW540_T260</a></strong>(const std::string joint_name, bool enable_dummy, int baudrate, uint8_t id, std::shared_ptr&lt; dynamixel::PortHandler &gt; port_handler, std::shared_ptr&lt; dynamixel::PacketHandler &gt; packet_handler)</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1motors_1_1XW540__T260#function-xw540_t260">XW540_T260</a></strong>(const std::string joint_name, bool enable_dummy, int baudrate, uint8_t id, double max_joint_limit, double min_joint_limit, std::shared_ptr&lt; dynamixel::PortHandler &gt; port_handler, std::shared_ptr&lt; dynamixel::PacketHandler &gt; packet_handler)</td>
 </tr>
 </tbody>
 </table>
@@ -508,6 +508,10 @@
 <tr>
 <td>virtual <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-torqueenable">torqueEnable</a></strong>(bool enable) <br>Execute torqu_enabled command to the motor.</td>
+</tr>
+<tr>
+<td>virtual <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-setjointpositionlimit">setJointPositionLimit</a></strong>(double max_joint_limit, double min_joint_limit)</td>
 </tr>
 <tr>
 <td>virtual <a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/structdynamixel__hardware__interface_1_1Result">Result</a></td>
@@ -547,7 +551,7 @@
 </tr>
 <tr>
 <td></td>
-<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-motorbase">MotorBase</a></strong>(const <a href="/dynamixel_hardware_interface/doxygen/markdown/Namespaces/namespacedynamixel__hardware__interface#enum-supportedmotors">SupportedMotors</a> &amp; motor_type, const std::string &amp; joint_name, const bool enable_dummy, const AddressTable &amp; table, int baudrate, uint8_t id, std::shared_ptr&lt; dynamixel::PortHandler &gt; port_handler, std::shared_ptr&lt; dynamixel::PacketHandler &gt; packet_handler) <br>Construct a new Motor Base object.</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#function-motorbase">MotorBase</a></strong>(const <a href="/dynamixel_hardware_interface/doxygen/markdown/Namespaces/namespacedynamixel__hardware__interface#enum-supportedmotors">SupportedMotors</a> &amp; motor_type, const std::string &amp; joint_name, const bool enable_dummy, const AddressTable &amp; table, int baudrate, uint8_t id, double max_joint_limit, double min_joint_limit, std::shared_ptr&lt; dynamixel::PortHandler &gt; port_handler, std::shared_ptr&lt; dynamixel::PacketHandler &gt; packet_handler) <br>Construct a new Motor Base object.</td>
 </tr>
 </tbody>
 </table>
@@ -586,6 +590,14 @@
 <tr>
 <td>const <a href="/dynamixel_hardware_interface/doxygen/markdown/Namespaces/namespacedynamixel__hardware__interface#enum-supportedmotors">SupportedMotors</a></td>
 <td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-motor_type">motor_type</a></strong> <br>Describe the type of the motor.</td>
+</tr>
+<tr>
+<td>const double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-min_joint_limit">min_joint_limit</a></strong></td>
+</tr>
+<tr>
+<td>const double</td>
+<td><strong><a href="/dynamixel_hardware_interface/doxygen/markdown/Classes/classdynamixel__hardware__interface_1_1MotorBase#variable-max_joint_limit">max_joint_limit</a></strong></td>
 </tr>
 <tr>
 <td>const std::string</td>
@@ -680,12 +692,14 @@
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">enable_dummy</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">baudrate</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">max_joint_limit</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">min_joint_limit</span><span class="p">,</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PortHandler</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">port_handler</span><span class="p">,</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">dynamixel</span><span class="o">::</span><span class="n">PacketHandler</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">packet_handler</span>
 <span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>Updated on  6 March 2023 at 01:19:50 UTC</p>
+<p>Updated on  6 March 2023 at 16:05:22 UTC</p>
 
 
 
